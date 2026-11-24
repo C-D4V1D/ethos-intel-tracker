@@ -690,6 +690,8 @@ def run() -> str:
         _ws.sheet_properties.pageSetUpPr.fitToPage = True
         _ws.page_setup.fitToWidth = 1
         _ws.page_setup.fitToHeight = 0
+    from openpyxl.workbook.properties import CalcProperties
+    wb.calculation = CalcProperties(fullCalcOnLoad=True)  # Excel recalculates on open
     wb.save(path)
     log("build_tracker", "ok", f"{path.name}: {counts}")
     return str(path)
