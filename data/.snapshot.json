@@ -188,6 +188,78 @@
    "ethos_relationship": "Target",
    "design_team": "Not public",
    "_name": "Vantage Gro\u00df-Gerau campus (revived)"
+  },
+  "P-UK-04": {
+   "stage": "Permitting",
+   "capacity_mw": "",
+   "investment_eur_m": "",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "East Havering Campus & Ecology Park"
+  },
+  "P-DE-05": {
+   "stage": "Under construction",
+   "capacity_mw": "6",
+   "investment_eur_m": "",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "NorthC data center Frankfurt"
+  },
+  "P-FR-02": {
+   "stage": "Under construction",
+   "capacity_mw": "",
+   "investment_eur_m": "45000",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "Hauts-de-France Hub"
+  },
+  "P-FR-03": {
+   "stage": "Permitting",
+   "capacity_mw": "",
+   "investment_eur_m": "5000",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "Escaudain Campus"
+  },
+  "P-IE-03": {
+   "stage": "Permitted",
+   "capacity_mw": "",
+   "investment_eur_m": "",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "Google data center expansion at Grange Castle Business Park"
+  },
+  "P-SE-03": {
+   "stage": "Announced",
+   "capacity_mw": "",
+   "investment_eur_m": "",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "Downing Renewable Developments Pipeline"
+  },
+  "P-IT-02": {
+   "stage": "Announced",
+   "capacity_mw": "576",
+   "investment_eur_m": "",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "Moncalieri Hyperscale Data Centre Project"
+  },
+  "P-IT-03": {
+   "stage": "Under construction",
+   "capacity_mw": "27",
+   "investment_eur_m": "50",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "Retelit Milan and Rome Data Centre Deployments"
   }
  },
  "policy": {
@@ -258,7 +330,7 @@
    "_name": "Government approves data centre sustainability royal decree"
   },
   "SRC003": {
-   "link_status": "BLOCKED",
+   "link_status": "OK",
    "_name": "SpainDC to file Supreme Court appeal against the decree"
   },
   "SRC004": {
@@ -410,7 +482,7 @@
    "_name": "Digital Realty breaks ground on FRA20, Frankfurt"
   },
   "SRC041": {
-   "link_status": "OK",
+   "link_status": "OK (reader)",
    "_name": "EnEfG \u00a711 (data centre PUE, heat reuse, renewables)"
   },
   "SRC042": {
@@ -454,7 +526,7 @@
    "_name": "atNorth signs Calentix heat reuse deal at SWE04"
   },
   "SRC052": {
-   "link_status": "BLOCKED",
+   "link_status": "OK (reader)",
    "_name": "EdgeConneX looks to enter Swedish market (Skellefte\u00e5)"
   },
   "SRC053": {
@@ -482,7 +554,7 @@
    "_name": "Eiffage: Campus AI enters implementation phase (substation)"
   },
   "SRC059": {
-   "link_status": "BLOCKED",
+   "link_status": "OK (reader)",
    "_name": "QTS Calatorao: 300 MW electrical capacity planned"
   },
   "SRC060": {
@@ -502,7 +574,7 @@
    "_name": "Digital Realty earmarks ~\u20ac500m for Madrid and Barcelona (MAD5 20-24 MW)"
   },
   "SRC064": {
-   "link_status": "BLOCKED",
+   "link_status": "OK (reader)",
    "_name": "Goodman MAD01: 6 MW IT, 9 MW on site"
   },
   "SRC065": {
@@ -514,8 +586,8 @@
    "_name": "Microsoft region in Arag\u00f3n: La Muela 146 ha, \u20ac2,179m"
   },
   "SRC067": {
-   "link_status": "BROKEN",
-   "_name": "Castilla-La Mancha approves Meta PSI: \u20ac750m investment"
+   "link_status": "OK",
+   "_name": "Meta accelerates Talavera campus: 191 ha, \u20ac750m investment"
   },
   "SRC068": {
    "link_status": "OK",
@@ -548,6 +620,38 @@
   "SRC075": {
    "link_status": "OK",
    "_name": "Campus IA project calendar (Mistral 200 MW anchor client)"
+  },
+  "SRC076": {
+   "link_status": "OK (reader)",
+   "_name": "10 UK data centre construction projects to watch - Construction Wave"
+  },
+  "SRC077": {
+   "link_status": "OK (reader)",
+   "_name": "NorthC breaks ground on data center in Frankfurt, Germany &#8211; BeBeez International"
+  },
+  "SRC078": {
+   "link_status": "OK (reader)",
+   "_name": "SoftBank Group to Build 5 GW of AI Data Center Capacity in France | SoftBank Group Corp."
+  },
+  "SRC079": {
+   "link_status": "OK (reader)",
+   "_name": "In Northern France, Data4 launches its largest data center campus to support Europe\u2019s AI growth\u00a0 - DATA4"
+  },
+  "SRC080": {
+   "link_status": "OK (reader)",
+   "_name": "Google gets approval for data center expansion in South Dublin &#8211; w.media"
+  },
+  "SRC081": {
+   "link_status": "OK (reader)",
+   "_name": "Downing Renewable Developments expands into data centre sector with 500MW development pipeline  \u2013 Downing Renewable Developments"
+  },
+  "SRC082": {
+   "link_status": "OK (reader)",
+   "_name": "Plans unveiled for \u2018largest\u2019 data center in Italy - DCD"
+  },
+  "SRC083": {
+   "link_status": "OK (reader)",
+   "_name": "Retelit secures \u20ac50m extra for data center expansion &#8211; BeBeez International"
   }
  }
 }

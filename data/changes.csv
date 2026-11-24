@@ -1,4 +1,12 @@
 date,item_type,item_id,item_name,field,old_value,new_value,impact,source,logged_by
+2026-11-24,projects,P-UK-04,East Havering Campus & Ecology Park,(new item),,added,New project found automatically and confirmed on a source page,SRC076,AI (verified)
+2026-11-24,projects,P-DE-05,NorthC data center Frankfurt,(new item),,added,New project found automatically and confirmed on a source page,SRC077,AI (verified)
+2026-11-24,projects,P-FR-02,Hauts-de-France Hub,(new item),,added,New project found automatically and confirmed on a source page,SRC078,AI (verified)
+2026-11-24,projects,P-FR-03,Escaudain Campus,(new item),,added,New project found automatically and confirmed on a source page,SRC079,AI (verified)
+2026-11-24,projects,P-IE-03,Google data center expansion at Grange Castle Business Park,(new item),,added,New project found automatically and confirmed on a source page,SRC080,AI (verified)
+2026-11-24,projects,P-SE-03,Downing Renewable Developments Pipeline,(new item),,added,New project found automatically and confirmed on a source page,SRC081,AI (verified)
+2026-11-24,projects,P-IT-02,Moncalieri Hyperscale Data Centre Project,(new item),,added,New project found automatically and confirmed on a source page,SRC082,AI (verified)
+2026-11-24,projects,P-IT-03,Retelit Milan and Rome Data Centre Deployments,(new item),,added,New project found automatically and confirmed on a source page,SRC083,AI (verified)
 2026-11-24,projects,P-ES-01,QTS Calatorao campus (Project Rhodes),capacity_mw,,300,Filled from verified research,SRC059,David C.
 2026-11-24,projects,P-ES-01,QTS Calatorao campus (Project Rhodes),capacity_basis,Unclear,Grid,Updated from verified research,SRC059,David C.
 2026-11-24,projects,P-ES-01,QTS Calatorao campus (Project Rhodes),target_online,,2028,Filled from verified research,SRC059,David C.
@@ -44,3 +52,11 @@ date,item_type,item_id,item_name,field,old_value,new_value,impact,source,logged_
 2026-11-24,sources,SRC003,SpainDC to file Supreme Court appeal against the decree,link_status,OK,BLOCKED,Source needs attention,,auto
 2026-11-24,sources,SRC052,EdgeConneX looks to enter Swedish market (Skellefteå),link_status,OK (reader),BLOCKED,Source needs attention,,auto
 2026-11-24,sources,SRC036,"Engineering a sustainable mega campus (Deerns with TTSP, Hanau)",link_status,OK (reader),BLOCKED,Source needs attention,,auto
+2026-11-24,sources,SRC077,"NorthC breaks ground on data center in Frankfurt, Germany &#8211; BeBeez International",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC078,SoftBank Group to Build 5 GW of AI Data Center Capacity in France | SoftBank Group Corp.,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC079,"In Northern France, Data4 launches its largest data center campus to support Europe’s AI growth  - DATA4",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC083,Retelit secures €50m extra for data center expansion &#8211; BeBeez International,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC080,Google gets approval for data center expansion in South Dublin &#8211; w.media,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC081,Downing Renewable Developments expands into data centre sector with 500MW development pipeline  – Downing Renewable Developments,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC082,Plans unveiled for ‘largest’ data center in Italy - DCD,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC076,10 UK data centre construction projects to watch - Construction Wave,(new item),,added,New item to review,,auto

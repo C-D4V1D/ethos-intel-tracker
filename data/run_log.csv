@@ -111,3 +111,15 @@ run_at,step,status,detail,credits_used
 2026-11-24 07:24 UTC,detect_changes,ok,21 changes logged,0
 2026-11-24 07:24 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 21, 'Accounts': 10, 'Markets scored': 8, 'Sources': 75, 'Change-log entries': 45, 'News items': 70, 'AI scans': 31, 'Grid data months': 24, 'Public tenders': 84}",0
 2026-11-24 07:24 UTC,run_all,done,workbook rebuilt in output/,0
+2026-11-24 07:26 UTC,run_all,start,live,0
+2026-11-24 07:26 UTC,sync_from_excel,skipped,Ethos_European_DC_Intelligence_Tracker.xlsx not found,0
+2026-11-24 07:29 UTC,check_sources,ok,"OK 70, OK (reader) 4, BLOCKED 1, BROKEN 0, ERROR 0",0
+2026-11-24 07:29 UTC,refresh_grid_data,ok,25 months; latest 2026-10 = 48.5% renewable,0
+2026-11-24 07:29 UTC,news_watch,ok,"RSS: 21 queries ({'rss': 21}), 8 new articles, 0 failed",0
+2026-11-24 07:30 UTC,tender_watch,ok,"TED: 83 matches, 0 new (API total 97); FTS: 1 matches, 0 new",0
+2026-11-24 07:31 UTC,grid_markets,ok,"7 markets, 13 months; failed: Denmark: HTTPError",0
+2026-11-24 07:32 UTC,auto_update,ok,"0 projects checked with AI Mode, 0 facts auto-applied (verified on source page), 0 sent for review; 8 new projects added, 3 possible new projects for review",7
+2026-11-24 07:35 UTC,next_actions,ok,29 suggestions; Gemini rewrote 25,0
+2026-11-24 07:35 UTC,detect_changes,ok,8 changes logged,0
+2026-11-24 07:35 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 29, 'Accounts': 10, 'Markets scored': 8, 'Sources': 83, 'Change-log entries': 61, 'News items': 78, 'AI scans': 34, 'Grid data months': 24, 'Public tenders': 84}",0
+2026-11-24 07:35 UTC,run_all,done,workbook rebuilt in output/,0
