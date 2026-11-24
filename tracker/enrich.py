@@ -375,7 +375,7 @@ def account_notes() -> str:
 
 
 def briefing() -> str:
-    week = lambda d: (days_since(d) or 999) <= 7
+    week = lambda d: (days_since(d) or 0) <= 7 if d else False
     ch = [c for c in read_table("changes") if week(c["date"])][:40]
     nw = [n for n in read_table("news") if week(n["date_found"]) and n.get("implication")][:20]
     td = [t for t in read_table("tenders") if t.get("relevance") in ("4", "5")][:8]
@@ -390,7 +390,7 @@ def briefing() -> str:
         try:
             cand, _m = gemini(f"{ETHOS}\nWrite this week's briefing for Ethos's business development team: exactly 5 bullet "
                          "points starting with '• ', max 25 words each, most important first, plain English, "
-                         "only from these facts (say if a week was quiet):\n" + json.dumps(facts, ensure_ascii=False))
+                         "only from these facts. Never write about a topic that has no facts below, and never say that something did not happen:\n" + json.dumps(facts, ensure_ascii=False))
         except Exception as e:  # noqa: BLE001
             return f"briefing failed: {str(e)[:80]}"
         bullets = [b.strip() for b in cand.splitlines() if b.strip().startswith("•") and len(b.split()) >= 6]
