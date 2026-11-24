@@ -242,7 +242,7 @@
    "_name": "Government approves data centre sustainability royal decree"
   },
   "SRC003": {
-   "link_status": "BLOCKED",
+   "link_status": "OK",
    "_name": "SpainDC to file Supreme Court appeal against the decree"
   },
   "SRC004": {
@@ -394,7 +394,7 @@
    "_name": "Digital Realty breaks ground on FRA20, Frankfurt"
   },
   "SRC041": {
-   "link_status": "BROKEN",
+   "link_status": "ERROR",
    "_name": "EnEfG \u00a711 (data centre PUE, heat reuse, renewables)"
   },
   "SRC042": {
