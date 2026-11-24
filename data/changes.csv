@@ -1,4 +1,11 @@
 date,item_type,item_id,item_name,field,old_value,new_value,impact,source,logged_by
+2026-11-24,projects,P-ES-02,Tillion Aragón campus,permit,,2024,Auto-updated: value found on the cited page,SRC084,AI (verified)
+2026-11-24,projects,P-ES-02,Tillion Aragón campus,target_online,,2028,Auto-updated: value found on the cited page,SRC098,AI (verified)
+2026-11-24,projects,P-UK-02,"Vantage South Wales AI Growth Zone expansion (Newport, Bridgend, Bro Tathan)",design_team,Not public,"CarneySweeney, Hoare Lea",Auto-updated: value found on the cited page,SRC099,AI (verified)
+2026-11-24,projects,P-UK-04,Castleforge & Galaxy Data Centers Campus,(new item),,added,New project found automatically and confirmed on a source page,SRC100,AI (verified)
+2026-11-24,projects,P-DE-06,Langenhorn Data Center Project,(new item),,added,New project found automatically and confirmed on a source page,SRC101,AI (verified)
+2026-11-24,projects,P-FR-04,Verne / Ardian Group (Paris-Villaroche),(new item),,added,New project found automatically and confirmed on a source page,SRC102,AI (verified)
+2026-11-24,projects,P-IE-04,Keppel Data Centres Citywest Business Campus,(new item),,added,New project found automatically and confirmed on a source page,SRC103,AI (verified)
 2026-11-24,projects,P-DE-05,NorthC FRA01 Frankfurt,construction_start,,2026-09,Auto-updated: value found on the cited page,SRC097,AI (verified)
 2026-11-24,projects,P-DE-05,NorthC FRA01 Frankfurt,target_online,,2028,Auto-updated: value found on the cited page,SRC097,AI (verified)
 2026-11-24,projects,P-ES-05,AWS La Cartuja campus,stage,Permitting,Permitted,Auto-updated: value found on the cited page,SRC081,AI (verified)
@@ -98,3 +105,8 @@ date,item_type,item_id,item_name,field,old_value,new_value,impact,source,logged_
 2026-11-24,projects,P-SE-04,Vertical Data Central Sweden Data Center,(removed),present,,Item removed,,auto
 2026-11-24,projects,P-SE-03,Downing Renewable Developments Central Sweden Data Centre,(removed),present,,Item removed,,auto
 2026-11-24,sources,SRC098,Downing Renewable Developments expands into data centre sector with 500MW development pipeline  – Downing Renewable Developments,(removed),present,,Item removed,,auto
+2026-11-24,sources,SRC100,Data Center Projects in the United Kingdom (2026): Tenders & Awards,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC103,"Government publishes Large Energy User Action Plan (LEAP), laying the foundation for future investments in energy intensive sectors - DETE",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC102,"France AI Data Center Project Tracker: Announced, Authorised, In Service",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC099,St Athan data centre: Vantage Bro Tathan | Data Centre Watch,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC101,"Data center in Langenhorn, Germany, receives provisional approval from municipal authorities - DCD",(new item),,added,New item to review,,auto

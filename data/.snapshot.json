@@ -13,7 +13,7 @@
    "stage": "Permitting",
    "capacity_mw": "300",
    "investment_eur_m": "2000",
-   "target_online": "",
+   "target_online": "2028",
    "ethos_relationship": "Target",
    "design_team": "Not public",
    "_name": "Tillion Arag\u00f3n campus"
@@ -87,7 +87,7 @@
    "investment_eur_m": "",
    "target_online": "",
    "ethos_relationship": "Target",
-   "design_team": "Not public",
+   "design_team": "CarneySweeney, Hoare Lea",
    "_name": "Vantage South Wales AI Growth Zone expansion (Newport, Bridgend, Bro Tathan)"
   },
   "P-UK-03": {
@@ -233,6 +233,42 @@
    "ethos_relationship": "Target",
    "design_team": "Not public",
    "_name": "Moncalieri Hyperscale Data Centre Project"
+  },
+  "P-UK-04": {
+   "stage": "Announced",
+   "capacity_mw": "15",
+   "investment_eur_m": "",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "Castleforge & Galaxy Data Centers Campus"
+  },
+  "P-DE-06": {
+   "stage": "Permitting",
+   "capacity_mw": "150",
+   "investment_eur_m": "",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "Langenhorn Data Center Project"
+  },
+  "P-FR-04": {
+   "stage": "Announced",
+   "capacity_mw": "500",
+   "investment_eur_m": "",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "Verne / Ardian Group (Paris-Villaroche)"
+  },
+  "P-IE-04": {
+   "stage": "Permitting",
+   "capacity_mw": "",
+   "investment_eur_m": "",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "Keppel Data Centres Citywest Business Campus"
   }
  },
  "policy": {
@@ -303,7 +339,7 @@
    "_name": "Government approves data centre sustainability royal decree"
   },
   "SRC003": {
-   "link_status": "BLOCKED",
+   "link_status": "OK",
    "_name": "SpainDC to file Supreme Court appeal against the decree"
   },
   "SRC004": {
@@ -677,6 +713,30 @@
   "SRC097": {
    "link_status": "OK",
    "_name": "NorthC breaks ground on data center in Frankfurt, Germany - DCD"
+  },
+  "SRC098": {
+   "link_status": "OK (reader)",
+   "_name": "https://www.datacentermap.com/spain/zaragoza/tilion-aragon/"
+  },
+  "SRC099": {
+   "link_status": "OK (reader)",
+   "_name": "St Athan data centre: Vantage Bro Tathan | Data Centre Watch"
+  },
+  "SRC100": {
+   "link_status": "OK (reader)",
+   "_name": "Data Center Projects in the United Kingdom (2026): Tenders & Awards"
+  },
+  "SRC101": {
+   "link_status": "OK (reader)",
+   "_name": "Data center in Langenhorn, Germany, receives provisional approval from municipal authorities - DCD"
+  },
+  "SRC102": {
+   "link_status": "OK (reader)",
+   "_name": "France AI Data Center Project Tracker: Announced, Authorised, In Service"
+  },
+  "SRC103": {
+   "link_status": "OK (reader)",
+   "_name": "Government publishes Large Energy User Action Plan (LEAP), laying the foundation for future investments in energy intensive sectors - DETE"
   }
  }
 }

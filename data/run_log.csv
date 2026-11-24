@@ -173,3 +173,19 @@ run_at,step,status,detail,credits_used
 2026-11-24 08:29 UTC,run_all,done,workbook rebuilt in output/,0
 2026-11-24 14:49 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 26, 'Accounts': 10, 'Markets scored': 8, 'Sources': 97, 'Change-log entries': 99, 'News items': 95, 'AI scans': 57, 'Grid data months': 24, 'Public tenders': 84, 'Waiting for your decision': 0, 'Hiring signals': 0, 'Events': 0}",0
 2026-11-24 15:00 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 26, 'Accounts': 10, 'Markets scored': 8, 'Sources': 97, 'Change-log entries': 99, 'News items': 95, 'AI scans': 57, 'Grid data months': 24, 'Public tenders': 84, 'Waiting for your decision': 0, 'Hiring signals': 0, 'Events': 0}",0
+2026-11-24 15:08 UTC,run_all,start,full,0
+2026-11-24 15:08 UTC,onedrive,skipped,OneDrive not connected (MS_CLIENT_ID / MS_REFRESH_TOKEN missing),0
+2026-11-24 15:08 UTC,sync_from_excel,skipped,Ethos_European_DC_Intelligence_Tracker.xlsx not found,0
+2026-11-24 15:11 UTC,check_sources,ok,"OK 91, OK (reader) 5, BLOCKED 1, BROKEN 0, ERROR 0",0
+2026-11-24 15:12 UTC,refresh_grid_data,ok,25 months; latest 2026-10 = 48.5% renewable,0
+2026-11-24 15:13 UTC,grid_markets,ok,"8 markets, 13 months",0
+2026-11-24 15:15 UTC,news_watch,ok,"RSS: 26 queries ({'serp_news': 26}), 90 new articles, 0 failed",0
+2026-11-24 15:15 UTC,tender_watch,ok,"TED: 83 matches, 0 new (API total 97); FTS: 1 matches, 1 new",0
+2026-11-24 15:45 UTC,auto_update,ok,"25 projects checked with AI Mode, 3 facts auto-applied (verified on source page), 4 sent for review; 4 new projects added, 1 possible new projects for review",32
+2026-11-24 16:17 UTC,enrich,credits,SerpApi searches used by enrichment,37
+2026-11-24 16:20 UTC,enrich,ok,news summarised 6; tenders triaged 12; jobs 1 new; events 36 new; gaps asked 7; policy proposals 10; fill_prices failed: 'list' object has no attribute 'get'; source dates 14; accounts noted 10; briefing written,0
+2026-11-24 16:24 UTC,next_actions,ok,30 suggestions; Gemini rewrote 25,0
+2026-11-24 16:24 UTC,detect_changes,ok,5 changes logged,0
+2026-11-24 16:24 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 30, 'Accounts': 10, 'Markets scored': 8, 'Sources': 103, 'Change-log entries': 111, 'News items': 185, 'AI scans': 82, 'Grid data months': 24, 'Public tenders': 85, 'Waiting for your decision': 19, 'Hiring signals': 1, 'Events': 36}",0
+2026-11-24 16:24 UTC,run_all,done,workbook rebuilt in output/,0
+2026-11-24 16:24 UTC,onedrive,skipped,OneDrive not connected (MS_CLIENT_ID / MS_REFRESH_TOKEN missing),0

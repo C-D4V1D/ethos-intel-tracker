@@ -516,3 +516,562 @@ Would you like details on NorthC's other Frankfurt facilities \(such as Frankfur
 2026-11-24,NEW,East Havering Campus & Ecology Park (United Kingdom),discovery,East Havering Campus & Ecology Park,https://constructionwave.co.uk/2026/07/09/10-uk-data-centre-construction-projects-to-watch/,"Possible new project: Local Development Order / Municipal-private partnership, East Havering, London - looks like a programme or several sites, not one campus",Replaced (re-checked next run)
 2026-11-24,NEW,UK-wide Strategic AI Data Centre Initiatives (United Kingdom),discovery,UK-wide Strategic AI Data Centre Initiatives,https://www.legal500.com/intelligence/united-kingdom/energy-and-natural-resources/the-uk-governments-data-centre-covenant-explained,"Possible new project: Multiple private hyperscale operators under new government framework, Culham, Teesside, Newcastle, North/South Wales - not confirmed on a source page",Replaced (re-checked next run)
 2026-11-24,NEW,Avalon Campus expansion (Italy),discovery,"Retelit’s data centre arm secured an additional €50 million in financing from UniCredit (via an accordion option on an existing €375 million line) to scale up its footprint by 27 MW across new data centre deployments in Milan and Rome, building on its ongoing construction work at its Avalon Campus ecosystem in Corsico.",https://bebeez.eu/2026/11/23/retelit-secures-e50m-extra-for-data-center-expansion/,"Possible new project: Retelit, Milan and Rome - looks like a programme or several sites, not one campus",Replaced (re-checked next run)
+2026-11-24,P-IT-02,Moncalieri Hyperscale Data Centre Project,"Latest status of the Moncalieri Hyperscale Data Centre Project data centre by Moncalieri Logistics in Moncalieri, Piedmont, Italy: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","- Project Name / Application: Moncalieri Hyperscale Data Centre Project \(proposed on the former Industria Libraria Tipografica Editrice / ILTE industrial site\)
+- Developer / Proponent: Moncalieri Logistics, backed by real estate fund Logistics Capital Partners \(LCP\)
+- Current Status: Halted/Put on hold by Moncalieri municipal authorities \(Mayor Lorenzo Mauro\) as of October 2026, pending more details on environmental impact, energy consumption, and local employment. Billed as a massive project before being paused, it will not advance through the planning process until concerns are addressed.
+- Capacity: 576 MW of electrical capacity
+- Floor Space & Scale: Approximately 2.7 million m² \(2.9 million sq ft\) of floor space
+- Land Acquisition Cost: Land acquired by LCP in 2022 for €9 million \(10.1 million USD\) \(initially intended for a Zalando warehouse before pivoting to a data centre\)
+- Total Investment: Not publicly detailed/finalised beyond the land acquisition cost, as the project is stalled at the municipal application phase.
+- Planning Permit Date: Not permitted / Halted \(Application put on hold by the mayor in October 2026\)
+- Construction Start: Not started \(on hold\)
+- Expected Opening: Not scheduled / Undetermined \(delayed/blocked by local review\)
+- Named Architects, Engineers, or Contractors: Not publicly disclosed in current filings, other than developer Logistics Capital Partners \(LCP\) and Moncalieri Logistics. [0]
+
+### Sources
+
+- Data Center Dynamics \(October 17, 2026\): ""Plans for data center in Moncalieri, Italy, put on hold by town mayor""
+
+Would you like me to track further updates on this project or look into other data center developments across the Piedmont region?
+
+
+### References
+
+[0] [Plans for data center in Moncalieri, Italy, put on","Plans for data center in Moncalieri, Italy, put on hold by town mayor: https://www.datacenterdynamics.com/en/news/plans-for-data-center-in-moncalieri-italy-put-on-hold-by-town-mayor/","Gemini extraction failed: gemini-flash-latest: HTTP 503 {
+  ""error"": {
+    ""code"": 503,
+    ""message"": ""This model is currently experiencing high ",Error
+2026-11-24,P-ES-04,Microsoft La Muela campus,"Latest status of the Microsoft La Muela campus data centre by Microsoft in La Muela, Aragón, Spain: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","\[Highlight start\] Here is the latest status and breakdown of Microsoft’s La Muela campus data centre project in Aragón, Spain \[Highlight end\] :
+
+### Project Overview & Location
+
+- Location: La Muela \(west of Zaragoza\), Aragón, Spain
+- Campus Size: 146.12 hectares \(approx. 361–363 acres\), making it the largest of the three Microsoft\-planned campuses in the Aragón PIGA \(Plan de Interés General de Aragón\) region, alongside Villamayor de Gállego and Zaragoza. [0] [1]
+
+### Capacity \(IT / Grid\)
+
+- IT/Grid Power Capacity: Planned capacity is reported at 223 MW \(IT/grid scale associated with the broader multi\-phase regional rollout\).
+- Build\-out Timeline: Phased development scheduled over a multi\-year horizon \(spanning roughly a 7\-to\-10\-year build\-out\). [2]
+
+### Investment & Economics
+
+- Total Investment: The broader Microsoft Aragón multi\-campus initiative features building and infrastructure costs estimated to exceed €5.3 billion to €10 billion across the regional footprint.
+- Job Creation: Projected to generate 1,000 to 2,000 construction jobs per phase and roughly 200 to 900 permanent operational jobs upon completion.
+
+### Planning Permits & Milestones
+
+- Initial PIGA Approval Date: Formally granted initial approval by the Government of Aragón \(signed by Octavio López, Minister of Development, Housing, Logistics, and Territorial Cohesion\) on November 14, 2025.
+- Public Information Period: Subject to a 30\-business\-day public participation and review window following its publication in the Official Gazette of Aragón.
+
+### Construction & Expected Opening
+
+- Construction Start: Simultaneous phase\-one construction planning initiated following the late 2025 PIGA green light.
+- Expected Opening / Phase 1 Operation: Initial phases are targeted for oper",Microsoft: La Muela Data Center - Baxtel: https://baxtel.com/data-center/microsoft-la-muela | Microsoft gets initial approval for data center campuses in Aragón ...: https://www.datacenterdynamics.com/en/news/microsoft-gets-initial-approval-for-data-center-campuses-in-arag%C3%B3n-spain/ | The digital and green transition dilemma: Is there room for ...: https://www.sciencedirect.com/science/article/pii/S0301421525005683 | Understanding Microsoft datacenters in Aragón: https://local.microsoft.com/blog/understanding-microsoft-datacenters-in-aragon/,"Gemini extraction failed: gemini-flash-latest: HTTP 503 {
+  ""error"": {
+    ""code"": 503,
+    ""message"": ""This model is currently experiencing high ",Error
+2026-11-24,P-ES-02,Tillion Aragón campus,"Latest status of the Tillion Aragón campus data centre by Azora in Zaragoza, Aragón, Spain: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","Here is the latest status of the \[Highlight start\] Tillion Aragón campus data centre project developed by Azora in the Zaragoza region of Spain \[Highlight end\] :
+
+### Project Overview & Status
+
+- Location: Near Villamayor de Gállego \(approx. 3 km from the high\-voltage transmission substation\), Zaragoza, Aragón, Spain \(\~80 hectares total site area\). [0] [1]
+- Capacity \(IT / Grid\): [0] [1]
+  - Initial phase: 150 MW \(grid connection concession approved by Red Eléctrica\).
+  - Total expanded capacity: 300 MW of IT capacity upon full buildout. [0] [1]
+- Investment: [0]
+  - Up to €2 billion total infrastructure investment by Azora \(with roughly €1.1 billion allocated for phase one\).
+  - An additional €5 billion estimated downstream investment by end\-users in computing hardware. [0]
+- Planning Permit & Government Approvals: [0]
+  - Grid connection approved by Red Eléctrica in 2024.
+  - Granted DIGA \(Declaración de Interés General de Aragón\) status as a Declaration of General Interest by the Government of Aragón. [0]
+- Construction Timeline: [0] [1]
+  - Construction start: 2026.
+  - Expected operational start: 2028 \(with full campus buildout spanning 7 to 8 years\). [0] [1]
+- Architects, Engineers, and Contractors: [0] [1]
+  - Developed under Azora’s dedicated specialized data centre platform, Tillion Data Centres \(launched as part of their broader digital infrastructure strategy succeeding Quetta Data Centres\). Specific third\-party architectural firms or general construction EPC contractors for the main build have not yet been heavily publicized or locked into exclusive public filings. [0] [1]
+
+Sources:
+
+- Official announcement via [Azora Blog](https://www.azora.com/en/blog/azora-to-invest-e2-billion-in-zaragoza-data-centre/) \(March 13, 2025\)
+- Industry",Azora to invest €2 billion in Zaragoza data centre: https://www.azora.com/en/blog/azora-to-invest-e2-billion-in-zaragoza-data-centre/ | Tillion Aragon Data Center in Zaragoza (300 MW): https://www.datacentermap.com/spain/zaragoza/tilion-aragon/,"Sent to the Review tab: stage, capacity_basis",In Review tab
+2026-11-24,P-DE-03,Vantage Bad Vilbel 'Im Schleid' (FRA62),"Latest status of the Vantage Bad Vilbel 'Im Schleid' (FRA62) data centre by Vantage Data Centers in Bad Vilbel, Frankfurt, Germany: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","\[Highlight start\] Here is the latest status overview for the Vantage Data Centers FRA62 project \[Highlight end\] \(Im Schleid, Bad Vilbel, Frankfurt metropolitan region, Germany\). [0] [1]
+
+### Key Project Metrics & Status
+
+- Capacity \(IT / Grid\): Planned for 160 MW of IT power capacity \(part of a broader municipal/site planning encompassing roughly 160 MW for the development\). [0] [2]
+- Location: Im Schleid industrial/commercial area, Bad Vilbel, Hesse, Germany \(adjacent to Vantage's FRA61 campus project\). [0] [3]
+- Investment: Specific total capital expenditure figure has not been officially itemized in public disclosures, though it involves a \~10\-hectare land acquisition and large\-scale hyperscale development. [2]
+- Planning Permit / Zoning Date: The municipal zoning process \(5. Änderung des Bebauungsplans „Im Schleid“\) has been underway through the city of Bad Vilbel and engineering/planning partners, with feasibility and noise\-emission studies published around May 2025 and public information sessions held in June 2025. [1] [2] [3]
+- Construction Start: Targeted alongside the local rollout sequence for the Bad Vilbel campus, with an estimated construction window of roughly 2 years following permit clearance. [2]
+- Expected Opening / Completion: Targeted for 2028. [0]
+- Named Architects, Engineers, or Contractors: [1] [2] [3]
+  - TTSP HWP Consultants GmbH \(Frankfurt am Main\) – Master planning / architectural & consulting services for project FRA62 \(Machbarkeitsstudie zur 5. Änderung des Bebauungsplans\).
+  - Ingenieurbüro ROB – Municipal land\-use plan adaptation \(5. Änderung des B\-Planes „Im Schleid“\).
+  - Grid/Power Supply: Fed via the Rendel substation \(Umspannwerk Rendel\) with backup generator capacity \(approx. 80–100 diesel generators pla",FRA62 Bad Vilbel - Vantage Data Centers - ocolo: https://www.ocolo.io/colocation/vantage-data-centers/fra62-bad-vilbel/ | Bauvorhaben „Vantage Data Centre Projekt FRA62“ in Bad Vilbel: https://rim.ekom21.de/bad-vilbel/sdnetrim/UGhVM0hpd2NXNFdFcExjZfSVqjB-_rKk6zhFvFjeyx9r6GyR1xCQvMqGQ_HTM0HF/RLK-n_324P6_R.plt.pdf | Viele Fragen zum Rechenzentrum: https://www.fr.de/rhein-main/wetterau/bad-vilbel-ort112595/viele-fragen-zum-rechenzentrum-93812566.html | 5. Änderung des Bebauungsplans „Im Schleid“: https://rim.ekom21.de/bad-vilbel/sdnetrim/UGhVM0hpd2NXNFdFcExjZan85jEi55LwuPOgVkXKT7ky2NTXUEhk0XqqEmsfKqCH/Erlaeuterungen_Stand_250528.pdf,"Gemini extraction failed: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=90)",Error
+2026-11-24,P-SE-02,EdgeConneX Skellefteå campus,"Latest status of the EdgeConneX Skellefteå campus data centre by EdgeConneX (EQT) in Skellefteå, Sweden: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","Here is the latest status of the EdgeConneX Skellefteå Campus data centre project in Skellefteå, Sweden, \[Highlight start\] based on official announcements from EdgeConneX and EQT \[Highlight end\] :
+
+### Overview & Status Summary
+
+- Project Status: Early planning and acquisition phase. EdgeConneX announced its intent to enter the Swedish market and acquire the site from Lyten on February 27, 2026. [0]
+- Capacity: Potential IT/grid capacity of up to one gigawatt \(1 GW\) once fully developed, making it positioned to be one of the largest renewable\-powered data center campuses in Europe. [0]
+- Investment: Specific total capital expenditure figures have not yet been publicly disclosed by EdgeConneX or parent company EQT, though it forms part of a major Pan\-European digital infrastructure expansion. [0]
+- Planning Permit Date: Subject to ongoing administrative and regulatory processes with local authorities \(coordinating with Skellefteå Municipality\) following the site acquisition announcement in February 2026. [0]
+- Construction Start: Not yet commenced; pending completion of administrative, zoning, and regulatory sign\-offs. [0]
+- Expected Opening: A specific launch or completion date has not yet been formally scheduled. [0]
+- Named Architects, Engineers, or Contractors: Not yet publicly named or contracted; site acquisition involves taking over land previously tied to industrial/energy development \(acquired via Lyten, which took over assets associated with Northvolt's footprint in Skellefteå\). [0] [1]
+
+### Key Stakeholders & Sources
+
+- Developer: EdgeConneX \(backed by EQT\)
+- Previous Site Owner / Partner: Lyten \(acquired the footprint in early 2026\)
+- Local Municipal Contact: Kristina Sundin Jonsson \(Head of Administration, Skellefteå Municipality\)
+- Offici",EdgeConneX Plans Swedish Data Center Campus for AI & Cloud ...: https://www.edgeconnex.com/news/press-releases/edgeconnex-looks-to-enter-swedish-market-as-part-of-european-data-center-expansion-strategy/ | Operations - Lyten Sweden - Energy Storage | AI Data Center Power Management | Lightweight Lithium-Sulfur Cells: https://lyten.com/operations/lyten-sweden/,"Gemini extraction failed: gemini-flash-latest: HTTP 503 {
+  ""error"": {
+    ""code"": 503,
+    ""message"": ""This model is currently experiencing high ",Error
+2026-11-24,P-ES-06,Digital Realty MAD5,"Latest status of the Digital Realty MAD5 data centre by Digital Realty in Madrid, Spain: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","Digital Realty’s MAD5 data centre in Madrid, Spain is in the \[Highlight start\] planning and early development stage \[Highlight end\] as the company's fifth facility in the local market. [0]
+
+### Key Details & Status
+
+- Location: Calle de Alcalá, San Blas\-Canillejas district \(MaDBit technology district / Julián Camarillo industrial estate\), Madrid, Spain [0]
+- Capacity: Projected at 20–24 MW of IT/grid capacity [0]
+- Land Acquisition & Investment: Acquired approximately 3 acres of land for €25 million \(\~$26 million\) [0]
+- Announcement / Planning Timeline: Publicly disclosed / stage change noted in Q3/Q4 2024 earnings reporting following the land purchase. [0]
+- Construction Start & Expected Opening: Detailed construction commencement dates, exact permit issuance dates, and named architectural, engineering, or general contractor firms have not yet been formally published or finalized in public filings as of late 2026.
+- Broader Footprint Context: Digital Realty operates a multi\-facility footprint in Madrid \(totaling 4 active/operational facilities prior to MAD5, such as MAD4 at Calle de Alfonso Gómez 4\) and recently expanded its broader Spanish platform with the launch of its BCN1 data center in Barcelona in May 2026 \(14 MW\). [1] [2] [3]
+
+Source reference: Data Center Map \- Calle de Alcalá Data Center \(MAD5\) \(updated through 2024–2026 tracking\) and Digital Realty Press Releases \(May 18, 2026\). [0] [3]
+
+Would you like me to track local municipal licensing registries in Madrid for upcoming building permit publications, or look into Digital Realty's specific power\-connection applications with Red Eléctrica for MAD5?
+
+
+### References
+
+[0] [Calle de Alcalá Data Center in Madrid \| Digital Realty](https://www.datacentermap.com/spain/madrid/calle-de-alcal-m","Calle de Alcalá Data Center in Madrid | Digital Realty: https://www.datacentermap.com/spain/madrid/calle-de-alcal-mad5/ | MAD4 Data Center | Calle de Alfonso Gómez 4 - Digital Realty: https://www.digitalrealty.com/data-centers/emea/madrid/mad4 | Europe, Middle East & Africa Data Centers & Colocation | EMEA Data Center Locations | Digital Realty: https://www.digitalrealty.com/data-centers/emea | Digital Realty Opens First Data Center in Barcelona ...: https://www.digitalrealty.com/about/newsroom/press-releases/30226/digital-realty-opens-first-data-center-in-barcelona-strengthening-its-position-across-the-mediterranean","Up to date (nothing new, or all changes verified and applied)",No action
+2026-11-24,P-FR-02,SoftBank 5 GW AI data centre plan (Hauts-de-France),"Latest status of the SoftBank 5 GW AI data centre plan (Hauts-de-France) data centre by SoftBank Group (partnering with Schneider Electric and EDF) in Hauts-de-France region (Dunkirk/Loon-Plage, Bosquel, Bouchain), France: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","SoftBank Group announced its landmark plan to develop and operate 5 GW of AI data center capacity across France— \[Highlight start\] announced during the 2026 Choose France summit \[Highlight end\] . [0]
+
+### Capacity \(IT / Grid\)
+
+- Total Program Commitment: 5 GW of total AI data center capacity nationwide \(up to €75 billion total investment\). [0]
+- Phase 1 \(Hauts\-de\-France\): 3.1 GW of capacity scheduled to be delivered by 2031 \(part of an initial €45 billion Phase 1 investment\). [0]
+- Phase 1 Regional Breakdown & Sites: [0]
+  - Dunkirk / Loon\-Plage: Hosting a major site plus a robotized industrial cluster.
+  - Bosquel: Regional data center deployment site.
+  - Bouchain: Site developed in strategic partnership with EDF. [0]
+
+### Investment
+
+- Total Projected Program: Up to €75 billion.
+- Phase 1 \(Hauts\-de\-France 3.1 GW\): An initial €45 billion investment. [0]
+
+### Timeline & Milestones
+
+- Announcement / Commitment Date: Announced May 30, 2026 \(unveiled in connection with the Choose France presidential summit\).
+- Planning Permits & Approvals: Under active early\-stage development and administrative coordination following the May 2026 announcement \(specific local zoning/permit issue dates are pending formal municipal/state filings\).
+- Construction Start: Targeted for upcoming phases leading to the 2031 operational target.
+- Expected Opening / Completion: Phase 1 \(3.1 GW across Hauts\-de\-France\) is scheduled for delivery by 2031. [0]
+
+### Partners, Architects, Engineers, & Contractors
+
+- SoftBank Group / SB Energy: Lead developer and operator; managing robotics and enclosure manufacturing facilities. [0]
+- Schneider Electric: Strategic industrial partner. Collaborating at the Port of Dunkirk on an integrated industrial cluster featuring a facility ope",SoftBank Group to Build 5 GW of AI Data Center Capacity in France: https://group.softbank/en/news/press/20260531_0,Sent to the Review tab: investment_eur_m,In Review tab
+2026-11-24,P-UK-02,"Vantage South Wales AI Growth Zone expansion (Newport, Bridgend, Bro Tathan)","Latest status of the Vantage South Wales AI Growth Zone expansion (Newport, Bridgend, Bro Tathan) data centre by Vantage Data Centers in Newport / Bridgend / Bro Tathan, United Kingdom: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","\[Highlight start\] Vantage Data Centers is executing a multi\-billion\-pound investment strategy across South Wales, aiming to deliver over 1GW \(1,000 MW\) of AI\-ready capacity spanning three primary strategic campuses: Newport \(CWL1\), Bro Tathan \(St Athan\), and Bridgend. \[Highlight end\] [0]
+
+### Overview of South Wales AI Growth Zone Strategy
+
+- Total Target Capacity: \>1GW \(1,000 MW\) of AI\-ready capacity across the three hubs.
+- Investment Scope: Multi\-billion\-pound regional capital commitment.
+- Key Anchor Customer / Deal: Announced in August 2026, Nebius partnered with Vantage for a high\-density, NVIDIA\-powered \(DSX AI factory reference design\) deployment at the Newport campus as the first major commercial capacity commitment in the South Wales AI Growth Zone.
+
+### Campus Status Breakdown
+
+### 1. Newport Campus \(CWL1\)
+
+- Location: Imperial Park, Coedkernew, Newport \(operational since 2010, formerly NGD\).
+- Capacity: Part of the greater \>1GW regional pool; most recently scaled up with high\-density AI infrastructure deployments.
+- Investment / Commitments: Anchored by commercial AI cloud expansion deals including Nebius \(announced August 2026\).
+- Planning Permit Date: Long\-established operational campus with ongoing brownfield/expansion approvals.
+- Construction / Operational Status: Operational; active high\-density AI builds deployed through 2026.
+- Cooling & Sustainability: Utilises closed\-loop cooling systems, air\-cooled chillers, and 100% certified renewable energy matching. [1]
+
+### 2. Bro Tathan Campus \(CWL21 — St Athan\)
+
+- Location: Land north of Ffordd Bro Tathan, Bro Tathan Business Park \(former St Athan airfield\), Vale of Glamorgan \(CF62 4QP\). [2]
+- Capacity: Up to 120 MW IT capacity across a phased development \(structure","Vantage Data Centers and Nebius Expand UK AI Infrastructure with ...: https://vantage-dc.com/news/vantage-data-centers-and-nebius-expand-uk-ai-infrastructure-with-first-deployment-in-south-wales-ai-growth-zone/ | Vantage Bridgend Data Centre (Former Ford Plant): https://aienergyintelligence.co.uk/uk-data-centre-tracker/vantage-bridgend | Vantage Bro Tathan data centre campus (CWL21), St Athan: https://datacentrewatch.uk/scheme/vantage-st-athan-bro-tathan/","Up to date (nothing new, or all changes verified and applied)",No action
+2026-11-24,P-FR-03,Escaudain Campus,"Latest status of the Escaudain Campus data centre by Data4 Group in Escaudain (Parc des Soufflantes former industrial site, Northern France), France: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","### Project Overview: Data4 Escaudain Campus
+
+- Location: Parc des Soufflantes \(former Usinor factory site\), Escaudain, Hauts\-de\-France, Northern France
+- Developer: [Data4 Group](https://www.data4group.com/en/news-data4/in-northern-france-data4-launches-its-largest-data-center-campus-to-support-europes-ai-growth/)
+- Site Area: 33 hectares
+- Job Creation: 2,400 permanent jobs upon completion [0] [1]
+
+### Key Metrics & Status
+
+- Capacity \(IT / Grid\): [0] [1]
+  - Planned total capacity of 700 MW across the campus.
+  - Comprises 4 next\-generation data centre buildings \(starting with DC01 and subsequent phases\). [0] [1]
+- Total Investment: [0]
+  - €5 billion committed by Data4 Group for the site redevelopment and infrastructure. [0]
+- Selection & Partner Status: [1]
+  - Selected as the exclusive partner for the site's rehabilitation by local authority La Communauté d’Agglomération de La Porte du Hainaut at the end of 2025. [1]
+- Planning Permit & Launch Date: [0]
+  - Official project launch and completion of initial feasibility studies announced on June 12, 2026.
+  - Permitting, regulatory submissions, and detailed urban/environmental clearances follow the June 2026 milestone as the brownfield transition progresses. [0]
+- Construction Start & Expected Opening: [0] [1]
+  - Following the announcement in June 2026, site preparation and phased development timelines are rolling out following completion of pre\-construction baseline studies. Exact multi\-year rollout schedules for the first operational data halls are slated for subsequent phase deployments. [0] [1]
+- Named Architects, Engineers, or Contractors: [1]
+  - Developed in direct coordination with local and regional public\-private stakeholders \(La Porte du Hainaut, regional authorities in Hauts\-de\-France\). ","In Northern France, Data4 launches its largest data center campus ...: https://www.data4group.com/en/news-data4/in-northern-france-data4-launches-its-largest-data-center-campus-to-support-europes-ai-growth/ | Data4 confirms its largest data center project in the North of France: https://www.data4group.com/wp-content/uploads/2026/06/Press-release_Data4-launches-a-new-campus-in-France.pdf","Gemini extraction failed: gemini-flash-latest: HTTP 503 {
+  ""error"": {
+    ""code"": 503,
+    ""message"": ""This model is currently experiencing high ",Error
+2026-11-24,P-UK-03,DataVita Lanarkshire AI Growth Zone,"Latest status of the DataVita Lanarkshire AI Growth Zone data centre by DataVita (with CoreWeave) in Airdrie, North Lanarkshire, United Kingdom: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","### Overview of the Lanarkshire AI Growth Zone
+
+- Location: Airdrie / Chapelhall, North Lanarkshire, Scotland, United Kingdom
+- Operator / Developer: DataVita \(in partnership with AI cloud firm CoreWeave\)
+- Announcement Date: January 29, 2026 \(broader AI Growth Zone framework\); August 18, 2026 \(major financing milestone for DV1 and DV3 rollout\) [0] [1] [2]
+
+### Key Project Metrics & Status
+
+- Capacity: [0] [2]
+  - Existing DV1 centre: 16 MW \(largest in Scotland, currently undergoing expansion\)
+  - New DV3 building: 24 MW \(currently under construction\)
+  - Future expansion: Planning permission also being sought for an additional 120 MW facility on site.
+  - Contract status: Full capacity of both DV1 and DV3 is contracted to CoreWeave under a 15\-year lease agreement. [0] [2]
+- Investment: [0] [1]
+  - Stated total long\-term framework / private investment committed: Up to £8.2 billion across the wider zone initiative.
+  - Debt facility backed in August 2026: £300 million debt facility \(unlocked by a £202 million guarantee from the UK's National Wealth Fund and lent via a syndicate including ING, ABN AMRO, Santander, SNIB, and Siemens Financial Services\). [0] [1]
+- Planning Permit Date: Approved as part of the designated Lanarkshire AI Growth Zone framework, with ongoing applications for subsequent phases \(such as the 120 MW expansion\) active through late 2026. [1] [2]
+- Construction Start & Progress: Construction and expansion work on site is well underway as of mid\-to\-late 2026, with the initial expanded facilities targeted for completion through late 2026. [0]
+- Expected Opening: First phase completions scheduled for late 2026. [0]
+- Named Partners, Contractors & Ecosystem: [0] [1]
+  - CoreWeave: Primary tenant / cloud infrastructure partner \(15\-year c","DataVita Secures £300m for data centre rollout: https://blog.datavita.co.uk/blog/datavita-secures-funding-data-centre-expansion | Lanarkshire AI Growth Zone: DataVita, CoreWeave & Plans: https://aienergyintelligence.co.uk/uk-data-centre-tracker/lanarkshire-ai-growth-zone | Inside the heated debate over Scotland's data centres - BBC News: https://www.bbc.co.uk/news/articles/c6d912e1420eo","Gemini extraction failed: gemini-flash-latest: HTTP 503 {
+  ""error"": {
+    ""code"": 503,
+    ""message"": ""This model is currently experiencing high ",Error
+2026-11-24,P-DE-04,Vantage Groß-Gerau campus (revived),"Latest status of the Vantage Groß-Gerau campus (revived) data centre by Vantage Data Centers in Groß-Gerau, Frankfurt, Germany: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","### Vantage Data Centers Campus \(FRA5\) — Groß\-Gerau, Germany
+
+- Project Name/ID: \(Lausböhl industrial park\)
+- Location: Groß\-Gerau \(approx. 30 km / 19 miles south of Frankfurt, Hesse, Germany\)
+- Site Area: \~14 to 14.4 hectares \(former ARS Altmann automotive logistics site, acquired by Vantage in 2022\)
+- IT Capacity: 174 MW planned
+- Planned Structure: Up to five four\-story data center buildings with integrated waste heat reuse
+- Estimated Investment: Approximately €2.5 billion \($2.97 billion USD\) [0] [1]
+
+### Status & Timeline
+
+- Site Acquisition \(2022\): Vantage Data Centers purchased the former ARS Altmann property in the Lausböhl industrial park. [0]
+- Initial City Council Rejection \(February 2026\): [0] [1]
+  - The Groß\-Gerau city council voted 18–14 against entering contract negotiations and moving forward with the zoning/development agreement.
+  - Opposition \(SPD, Greens, FDP, Free Voters, Left Party\) cited concerns over low local tax retention, minimal job creation, massive scale, and local resistance, overriding support from the CDU and parts of the Free Voters' Association.
+  - This marked a rare total rejection of a major data center project in the Frankfurt Rhine\-Main region. [0] [1]
+- Revived Push / New Negotiations \(November 2026\): [1] [2]
+  - In November 2026, Vantage Data Centers officially re\-initiated talks and approached the city council with new concessions and adjusted proposals to resurrect the campus.
+  - Formal planning permits, construction start dates, expected opening milestones, and specific engineering/contractor rosters are pending the outcome of these renewed municipal discussions. [1] [2]
+
+### Key Sources
+
+- Vantage denied permission for data center outside Frankfurt — DatacenterDynamics \(February 9, 2026\)
+- VDC ma",Vantage denied permission for data center outside Frankfurt: https://www.datacenterdynamics.com/en/news/vantage-denied-permission-for-data-center-outside-frankfurt/ | VDC makes a new push for a data center in Groß-Gerau: https://www.iz.de/izgermany/news/-vdc-makes-a-new-push-for-a-data-center-in-gross-gerau-2000050472 | VDC nimmt neuen Anlauf für Rechenzentrum in Groß: https://www.iz.de/projekte/news/-vdc-nimmt-neuen-anlauf-fuer-rechenzentrum-in-gross-gerau-2000050320 | VDC versucht's noch mal - Immobilien Zeitung: https://www.iz.de/projekte/news/-vdc-versuchts-noch-mal-2000050654,"Gemini extraction failed: gemini-flash-latest: HTTP 503 {
+  ""error"": {
+    ""code"": 503,
+    ""message"": ""This model is currently experiencing high ",Error
+2026-11-24,P-SE-01,atNorth SWE04 Sollefteå,"Latest status of the atNorth SWE04 Sollefteå data centre by atNorth in Långsele, Sollefteå, Sweden: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","- Capacity \(IT / Grid\): 300 MW total campus power capacity \(with a 200 MW initial grid\-connection agreement secured with E.ON\). Designed for high\-density AI, cloud, and high\-performance computing \(HPC\) workloads with a target PUE of ≤ 1.2. \(Source: [atNorth Sollefteå Data Center Overview](https://www.atnorth.com/nordic-data-centers/sweden-data-centers/solleftea-swe04/) and [Business Sweden Client Case, Nov 22, 2026](https://www.business-sweden.com/insights/client-cases/atNorth-invests-in-Swedens-AI-infrastructure/)\) [0] [1] [2]
+- Investment: Multi\-million\-euro mega\-site investment by atNorth \(exact total capital expenditure figure is privately/partially phased, tied to a 300 MW multi\-building rollout\). \(Source: [Business Sweden, Nov 22, 2026](https://www.business-sweden.com/insights/client-cases/atNorth-invests-in-Swedens-AI-infrastructure/)\) [0] [1]
+- Planning Permit Date & Status: The project sits on a 50\-hectare plot \(Hamre 1\) at Hamre Industrial Park. It features a legally approved detailed development plan and an approved groundwork permit, alongside a signed land purchase agreement. \(Source: Business Sweden, Nov 22, 2026\) [0] [1]
+- Construction Start: Enabled by pre\-zoned, development\-ready industrial land at Hamre Industrial Park in Långsele; site preparation and groundwork phases are underway following local approvals. \(Source: [atNorth Announcement, Feb 23, 2026](https://www.atnorth.com/news/new-300mw-mega-site-in-solleftea-sweden/)\) [0] [1]
+- Expected Opening: Scheduled to become operational in the first half of 2028 \(H1 2028\). \(Source: atNorth Announcement, Feb 23, 2026\) [0]
+- Named Architects, Engineers, or Contractors: [1] [2]
+  - Grid Partner: E.ON \(for the 200 MW grid\-connection agreement\).
+  - Design/Architecture Approa","New 300MW mega site in Sollefteå, Sweden - atNorth: https://www.atnorth.com/news/new-300mw-mega-site-in-solleftea-sweden/ | atNorth invests in Sweden's AI infrastructure: https://www.business-sweden.com/insights/client-cases/atNorth-invests-in-Swedens-AI-infrastructure/ | Sollefteå Data Center - Sustainable Data Center - atNorth: https://www.atnorth.com/nordic-data-centers/sweden-data-centers/solleftea-swe04/","Gemini extraction failed: gemini-flash-latest: HTTP 429 {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please ch",Error
+2026-11-24,P-DE-02,EdgeConneX Heusenstamm (EDCFRA02),"Latest status of the EdgeConneX Heusenstamm (EDCFRA02) data centre by EdgeConneX (EQT) in Heusenstamm, Frankfurt, Germany: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","Here is the \[Highlight start\] latest status and available project breakdown \[Highlight end\] for the EdgeConneX Heusenstamm \(EDCFRA02\) data centre campus in Heusenstamm, near Frankfurt, Germany:
+
+### Project Overview & Status Summary
+
+- Location: Jahnstraße 64, 63150 Heusenstamm \(Greater Frankfurt region\), Germany
+- Developer/Parent Company: EdgeConneX \(backed by EQT\)
+- Campus Scope: Two main data centre buildings spanning a site area of approximately 57,000 m² \(land plot acquired around March 2023\).
+- Current Status: Proposed and advancing through local municipal review; recommended by the Heusenstamm building committee for city council approval as of late January 2025. Some tracking platforms \(such as DC Atlas\) note early/initial phase estimates around 5 MW under preliminary development, though full\-scale capacity specs are tied to the broader campus build\-out. [0] [1] [2]
+
+### Key Metrics & Specifications
+
+- Investment: Estimated at €600 million [1]
+- Capacity \(IT / Grid\): Specific total IT megawatt \(MW\) ceiling hasn't been heavily itemized in public filings yet, though early infrastructure estimates on [DC Atlas](https://dcatlas.io/en/explore/facilities/edgeconnex-fra02-heusenstamm-data-center-heusenstamm) list an initial phase of roughly 5 MW. Power will be routed via a dedicated new high\-capacity power line extension connecting from Dietzenbach. [1] [2]
+- Sustainability & Community Integration: [0] [1]
+  - Powered 100% by renewable energy.
+  - Features a dedicated heating center on the northern edge of the site to capture and feed server waste heat into the local municipal district heating network.
+  - Commits €5 million to a regional climate protection and environmental fund. [0] [1]
+
+### Timeline & Key Dates
+
+- March 2023: EdgeConneX acquired","EdgeConneX proposes data center campus in Heusenstamm, Germany - DCD: https://www.datacenterdynamics.com/en/news/edgeconnnex-proposes-data-center-campus-in-heusenstamm-germany/ | EdgeConneX Heusenstamm - EDCFRA02 in Frankfurt: https://www.datacentermap.com/germany/frankfurt/edgeconnex-heusenstamm-edcfra02/ | FRA02 · Heusenstamm EdgeConnex 003 · DC Atlas: https://dcatlas.io/en/explore/facilities/edgeconnex-fra02-heusenstamm-data-center-heusenstamm","Gemini extraction failed: gemini-flash-latest: HTTP 429 {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please ch",Error
+2026-11-24,P-FR-01,Campus IA Fouju,"Latest status of the Campus IA Fouju data centre by Campus IA (MGX, Mistral AI, Nvidia, Bpifrance) in Fouju, Seine-et-Marne, France: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","### Campus IA \(Fouju\) — Key Project Metrics & Status
+
+The Campus IA project in Fouju, Seine\-et\-France, is a hyperscale AI data centre and high\-performance computing \(HPC\) cluster developed by a joint venture comprising MGX, Bpifrance, Mistral AI, and Nvidia. [0]
+
+### Overview & Capacity
+
+- Site Location: ZAC des Bordes, Fouju, Seine\-et\-Marne, France \(89 hectares total land area, with \~73 hectares designated for infrastructure and \~15\+ hectares preserved for agricultural and ecological uses\). [1] [2]
+- Target Capacity: \*\*1.4 GW \(1,400 MW\) \*\* gross energy/grid capacity.
+  - Note on Grid Connection: As of mid\-2026, 700 MW has been officially contracted with France's national grid operator, RTE \(per French Senate filings from May 2026\).
+
+### Timeline & Permitting Status
+
+- Announcement Date: May 2025 \(unveiled during the Choose France summit\).
+- Planning & Public Inquiry \(Enquête publique\): An official public inquiry took place between April 30 and May 30, 2026, through the Préfecture de Seine\-et\-Marne as part of the permitting workflow. The project is currently in its active permitting and pre\-construction phase.
+- Construction Start: Scheduled for the second half of 2026 \(H2 2026\).
+- Expected Opening / Commissioning: Gradual start of operations and commissioning is slated for 2028 \(with initial supercomputer buildings targeting late 2028\).
+
+### Investment & Scale
+
+- Estimated Cost / Investment: High\-magnitude capital project; overall cumulative or long\-term program estimates range broadly \(with total multi\-year infrastructure projections cited up to several billion / multi\-billion euros, though initial phase figures remain under tight corporate/JV disclosure\). [3]
+
+### Named Partners, Engineers, Architects & Contractors
+
+- Joint Ven","MGX, Bpifrance, Nvidia, and Mistral AI plan 1.4GW Paris data center ...: https://www.datacenterdynamics.com/en/news/mgx-bpifrance-nvidia-and-mistral-ai-plan-14gw-paris-data-center-campus/ | Supporting the development of Europe's largest campus dedicated ...: https://www.socotec.com/media/client-projects/supporting-development-largest-campus-dedicated-artificial | Campus IA Fouju - BEP AI Infrastructure Tracker: https://tracker.bepresearch.com/projects/campus-ia-fouju-ile-de-france | France is preparing to build Europe's largest artificial intelligence ...: https://www.facebook.com/RFI.English/videos/france-is-preparing-to-build-europes-largest-artificial-intelligence-data-centre/1002233846211342/","Gemini extraction failed: gemini-flash-latest: HTTP 429 {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please ch",Error
+2026-11-24,P-ES-05,AWS La Cartuja campus,"Latest status of the AWS La Cartuja campus data centre by Amazon Web Services in Zaragoza, Aragón, Spain: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","Here is the latest status of the \[Highlight start\] Amazon Web Services \(AWS\) La Cartuja campus data centre project in Zaragoza, Aragón, Spain \[Highlight end\] :
+
+### Capacity \(Grid / Electrical Power\)
+
+- Grid Capacity: Up to 850 MW of electrical power planned across the phased development, making it one of the largest digital infrastructure deployments in Spain to support cloud growth and artificial intelligence workloads \(Data Center Dynamics, July 29, 2026\). [0]
+
+### Investment
+
+- Project Investment: Approximately €879 million earmarked for the civil works of the La Cartuja campus \(El Periódico de Aragón, November 24, 2026\).
+- Broader Regional Commitment: Part of Amazon’s larger planned investment of €33.7 billion across Aragón through 2035 \(About Amazon, October 27, 2026\). [1] [2]
+
+### Planning & Permitting
+
+- Environmental & Urban Planning Documentation: Advanced through regional and municipal regulatory channels through mid\-2026, structured to be built progressively across multiple parcels in the La Cartuja business and industrial area \(Data Center Dynamics, July 29, 2026\). [0]
+
+### Construction Start & Status
+
+- Current Status / Start: Initial site and preliminary works have commenced as AWS moves forward with phased rollout stages \(Data Center Dynamics, July 29, 2026 / El Periódico de Aragón, November 24, 2026\). [0] [2]
+
+### Expected Opening
+
+- Timeline: Phased/stepped construction rolling out sequentially in line with cloud and AI capacity demands, though a final full\-campus completion date is scheduled progressively over the coming years of Amazon's broader 2035 roadmap \(Data Center Dynamics, July 29, 2026\). [0]
+
+### Contractors & Partners
+
+- Civil Works Contractor: Awarded to a prominent Catalan construction firm for the primary civil work",El campus de Amazon en Zaragoza demandará hasta 850 MW de ...: https://www.datacenterdynamics.com/es/noticias/el-campus-de-amazon-en-zaragoza-demandar%C3%A1-hasta-850-mw-de-potencia-el%C3%A9ctrica/ | How Aragonese businesses are growing with Amazon Data Centers: https://www.aboutamazon.eu/news/aws/aragon-businesses-amazon-data-centers | Amazon prescinde de una constructora de Florentino Pérez para ...: https://www.elperiodico.com/es/economia/20261124/amazon-prescinde-constructora-florentino-perez-136780508,"Gemini extraction failed: gemini-flash-latest: HTTP 503 {
+  ""error"": {
+    ""code"": 503,
+    ""message"": ""This model is currently experiencing high ",Error
+2026-11-24,P-ES-01,QTS Calatorao campus (Project Rhodes),"Latest status of the QTS Calatorao campus (Project Rhodes) data centre by QTS (Blackstone) in Calatorao, Aragón, Spain: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","Here is the latest status of \[Highlight start\] Project Rhodes \[Highlight end\] , the QTS \(Blackstone\) data centre campus in Calatorao, Aragón, Spain. [0]
+
+### Project Overview & Key Metrics
+
+- Name / Codename: Project Rhodes \(QTS Calatorao Campus / Sector SUI\-4 ""Campus Data Center"" or former Polígono Europa\-Puerta Sur\). [0] [1]
+- Promoter & Operator: Promoted/owned by Calanza Inmuebles S.L. \(a Blackstone\-controlled vehicle\) and operated by QTS Data Centers. [0] [1]
+- Site Size: \~224 hectares \(approx. 496 acres total\) across sector SUI\-4 along the A\-2 motorway \(km 281–284.5\), near Calatorao, Zaragoza province, with the initial phase covering \~112 hectares. [0] [1]
+- Capacity: 300 MW of planned total electrical/IT capacity. [0]
+- Planned Infrastructure: [0] [1]
+  - Phase 1 comprises up to eight separate data centre buildings \(starting with Calatorao 1 and related expansion parcels\).
+  - Includes an on\-site high\-voltage electrical substation tied into Red Eléctrica infrastructure. [0] [1]
+- Investment: [0] [2]
+  - Initially cited/planned at €7.5 billion for the first phase in general industry tracking.
+  - Quantified by the President of the Government of Aragón, Jorge Azcón, at approximately €13.471 billion total across the comprehensive development. [0] [2]
+
+### Timeline & Permits
+
+- Planning Permits / Regional Approval: The regional Government of Aragón gave official green light and clearance to the PIGA \(Proyecto de Interés General de Aragón\) planning framework governing the campus. [2]
+- Substation / Early Infrastructure: High\-voltage substation preliminary steps and planning targeted initial groundwork proceeding through late 2024. [0]
+- Construction Start: Phase 1 execution \(encompassing the initial buildings and site utilities\) is slated",QTS Data Centers: Calatorao Data Center: https://www.datacenters.com/qts-calatorao | QTS: Calatorao 1 Data Center: https://baxtel.com/data-center/qts-calatorao-1 | Azcón fears for Blackstone's investment in Calatorao: https://www.democrata.es/en/economy/azcon-warns-that-the-decree-on-data-centers-puts-at-risk-the-investment-of-13-471-million-from-blackstone/ | Calatorao-EN - QTS Data Centers: https://q.com/data-centers/calatorao-en/,"Gemini extraction failed: gemini-flash-latest: HTTP 429 {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please ch",Error
+2026-11-24,P-ES-08,Meta Talavera de la Reina campus,"Latest status of the Meta Talavera de la Reina campus data centre by Meta in Talavera, Castilla-La Mancha, Spain: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","- Capacity \(Grid Power\): Maximum approved grid power demand of 248 MW. [0]
+- Investment: Estimated at €750 million \($750M investment announced by regional authorities\), alongside local urban development payments \(e.g., €1.09 million paid to the Talavera City Council for urban aprovechement as of September 2026\). [1] [2]
+- Planning Permit / Approval Date: Formally designated and approved as a Proyecto de Singular Interés \(PSI\) by the Castilla\-La Mancha regional government in 2023, with subsequent reparcelling approvals advancing into September 2026. [0] [2] [3]
+- Construction Start & Timeline: Rules following the PSI approval stipulated a window for construction commencement, with regional officials noting a framework allowing up to a 10\-year maximum execution phase across stages. [1]
+- Expected Opening: Phased deployment spanning ongoing site development following land acquisitions from Sepes and the Talavera municipality \(noted as 60% Sepes\-owned and 40% municipal land\). [1]
+- Campus Scale & Specs: Spans roughly 191 hectares \(472 acres\) within Phase 2 of the Torrehierro Industrial Park \(Polígono Industrial de Torrehierro\), featuring around 130,000 to 300,000 m² of gross buildable area across six multi\-story data center buildings, closed\-loop dry\-air cooling, and an integrated solar photovoltaic installation. [0]
+- Architects, Engineers, and Contractors: Developed directly by Meta Platforms, Inc. via regional institutional coordination \(Castilla\-La Mancha regional government and SEPES\). Specific architectural and engineering firms leading the private build\-out have not been prominently itemized in public municipal registries beyond Meta's internal hyperscale engineering standards. [0] [1]
+
+Sources:
+
+- [Castilla\-La Mancha Regional Government Pres","Meta Data Center Campus Talavera de la Reina Toledo Spain 248MW: https://dcpulse.com/project/meta-data-center-campus-talavera | La inversión de 11,5 millones de euros para llevar la fibra óptica de ...: https://www.castillalamancha.es/actualidad/notasdeprensa/la-inversion-de-115-millones-de-euros-para-llevar-la-fibra-optica-de-alta-capacidad-talavera-inicia | Meta ingresará 1,09 millones de euros al Ayuntamiento de Talavera ...: https://www.abc.es/espana/castilla-la-mancha/toledo/talavera/meta-ingresara-109-millones-euros-ayuntamiento-talavera-20260928125045-nt.html | Data Centres: Spain's Digital Boom Meets Environmental Limits: https://amwaj-alliance.com/tayyarat/data-centres-spains-digital-boom-meets-environmental-limits/","Gemini extraction failed: gemini-flash-latest: HTTP 429 {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please ch",Error
+2026-11-24,P-IE-02,Art Data Centres Ennis campus,"Latest status of the Art Data Centres Ennis campus data centre by Art Data Centres in Ennis, Co. Clare, Ireland: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.",,,"Up to date (nothing new, or all changes verified and applied)",No action
+2026-11-24,P-IE-03,Google data center expansion at Grange Castle Business Park,"Latest status of the Google data center expansion at Grange Castle Business Park data centre by Google in South Dublin, Ireland: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","Here is the latest status of Google’s data center expansion at Grange Castle Business Park in South Dublin, Ireland, following the milestone rulings. [0] [1]
+
+### Project Overview & Status
+
+- Project Scope: Construction of a third data center building \(72,400 m² / 779,310 sq ft\) on a 50\-acre campus site. [0] [1]
+- Planning Permit Date: September 29, 2026 – Granted by An Coimisiún Pleanála \(Ireland's national planning board\), which formally overturned a previous August 2024 refusal by South Dublin County Council. [1]
+- Current Status: Approved, though subject to strict sustainability and environmental conditions \(including power purchase agreement requirements, renewable fuels for emergency backup generators, and ecological enhancements\), and potential judicial review challenges. [0] [1]
+
+### Key Metrics & Specifications
+
+- Site / Building Size: 72,400 m² floor area \(Phase 3 of the Grange Castle campus\).
+- Capacity \(MW / Grid\): Specific IT/grid megawatt figures have not been formally itemized in public filings, though Google successfully cited a pre\-existing 2021 grid connection agreement to overcome initial local council grid\-capacity objections.
+- Estimated Investment: Undisclosed in official planning documents \(multi\-million euro hyperscale infrastructure investment typical of Google campus expansions\).
+- Construction Start: Pending final pre\-construction clearance and post\-approval compliance; active site mobilization is expected following the September 2026 greenlight.
+- Expected Opening: Not yet formally announced by Google. [0] [1]
+
+### Key Partners & Stakeholders
+
+- Developer / Applicant: Google Ireland Limited
+- Planning Authority \(Appeal Winner\): An Coimisiún Pleanála \(overturning South Dublin County Council\)
+- Architects / Engineers / Con",Google wins planning permission for Dublin data centre extension – The Irish Times: https://www.irishtimes.com/business/2026/09/28/google-wins-planning-permission-for-dublin-data-centre-extension/ | Google receives planning permission to expand data center in ...: https://www.datacenterdynamics.com/en/news/google-receives-planning-permission-to-expand-data-center-in-dublin-ireland/,Sent to the Review tab: permit,In Review tab
+2026-11-24,P-ES-03,Zaragoza-WIND campus,"Latest status of the Zaragoza-WIND campus data centre by Merlin Properties in Botorrita, Zaragoza, Spain: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","The Zaragoza\-WIND campus data centre project is \[Highlight start\] developed by Merlin Properties \(through its Merlin Edged platform\) in Botorrita, Zaragoza, Spain \[Highlight end\] . [0]
+
+### Key Project Metrics & Status
+
+- IT Capacity: 144 MW of IT capacity \(the largest single capacity promoted by Merlin Properties in Spain\).
+- Built Area: Over 156,000 m² of built infrastructure.
+- Total Investment: €1,225 million.
+- Planning Permit / Regulatory Status: The Government of Aragón approved the Declaration of Investment of Regional Interest with General Interest for Aragón \(DIGA\) status for the project.
+- Construction Start: Scheduled following regional approvals/permits pipeline \(announced mid\-to\-late 2026\).
+- Expected Opening / Operations: Operations are scheduled to commence in the second half of 2029.
+- Renewable Energy Integration: Designed for up to 87% renewable self\-consumption driven by a combined wind and solar power setup \(aligned with Zero Water and Zero Carbon design principles\).
+- Employment Impact: Estimated at around 5,000 construction jobs and \>500 permanent specialized jobs.
+- Architects, Engineers & Contractors: Specific third\-party architectural or general contracting firms have not yet been publicly itemized in mainstream rollout disclosures, though the project is engineered under Merlin's proprietary Merlin Edged sustainable framework. [0] [1]
+
+### Sources
+
+- Merlin Properties Official Announcement: [Zaragoza\-WIND: Renewable Self\-Consumption for Data Centers in Aragón](https://www.merlinproperties.com/en/dia-a-dia/zaragoza-wind-renewable-self-consumption-data-centers-aragon/) \(Published 2026\)
+- Iberian Property: [Merlin to develop €1.2B data centre in Zaragoza](https://www.iberian.property/news/data-centers/merlin-to-develop-eur1",Zaragoza-WIND: renewable self-consumption for data centers in ...: https://www.merlinproperties.com/en/dia-a-dia/zaragoza-wind-renewable-self-consumption-data-centers-aragon/ | Merlin to develop €1.2B data centre in Zaragoza: https://www.iberian.property/news/data-centers/merlin-to-develop-eur1-2b-data-centre-in-zaragoza/,"Gemini extraction failed: gemini-flash-latest: HTTP 429 {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please ch",Error
+2026-11-24,P-UK-01,QTS Cambois campus,"Latest status of the QTS Cambois campus data centre by QTS (Blackstone) in Cambois, Northumberland, United Kingdom: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","### Overview of QTS Cambois Campus
+
+The QTS Data Centers \(backed by Blackstone\) campus in Cambois, Northumberland, United Kingdom \(near Blyth\) is \[Highlight start\] one of the largest digital infrastructure developments in the UK \[Highlight end\] , situated on a former power station site \(approx. 100 hectares\). [0] [1] [2]
+
+### Key Metrics & Status
+
+- Total Capacity: [3]
+  - IT Capacity: Approximately 72 MW per building across up to 10 data centre buildings, delivering a total of 720 MW of IT capacity across the full campus.
+  - Grid / Operational Power Requirement: An estimated 1,100 MW total operational power requirement utilizing an on\-site SSE substation connecting to a National Grid substation nearby.
+  - Backup Generation: 580 diesel standby generators totaling roughly 1,380.5 MW of backup capacity \(58 generators per building\). [3]
+- Investment: Up to £10 billion \(representing one of the largest private inward investments in the UK\). As part of the economic package, Northumberland County Council also receives a £110m fund for the Northumberland Line economic corridor. [0] [1]
+- Planning Permit Date: Outline planning permission was formally granted by Northumberland County Council on March 4 / May 8, 2025, with phase 1 reserved matters approved in December 2025. [0] [3]
+- Construction Start: Initial site preparatory works and earthworks officially began in October 2025 following council green lights in late August/October 2025. [1] [3]
+- Expected Opening & Timeline: [2]
+  - Developed over 5 phases across a decade.
+  - Phase 1 opening is projected for early 2028 \(comprising land remediation, infrastructure set up, and two initial data centre halls\).
+  - Full campus completion and tenant onboarding are expected by 2035. [2]
+
+### Design, Architecture, &","Cambois - QTS Data Centers: https://q.com/data-centers/cambois/ | New milestone reached on multi: https://www.northumberland.gov.uk/news/new-milestone-reached-multi-billion-pound-data-centre-project | QTS Data Center Campus Cambois - Corgan: https://www.corgan.com/projects/qts-data-center-campus-cambois | Cambois Data Centre, Blyth (QTS): Status & Plans: https://aienergyintelligence.co.uk/uk-data-centre-tracker/cambois-data-centre-campus","Gemini extraction failed: gemini-flash-latest: HTTP 503 {
+  ""error"": {
+    ""code"": 503,
+    ""message"": ""This model is currently experiencing high ",Error
+2026-11-24,P-DE-01,Data4 Hanau campus (FRA1),"Latest status of the Data4 Hanau campus (FRA1) data centre by Data4 (Brookfield) in Hanau, Hesse, Germany: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","Here is the latest status of Data4’s \(Brookfield\) FRA1 data center campus in Hanau, Hesse, Germany \( \[Highlight start\] located on the former Großauheim military barracks site at Depotstraße \[Highlight end\] \): [0] [1]
+
+### Key Metrics & Project Overview
+
+- Location: Depotstraße, 63457 Hanau \(Großauheim barracks site, \~30 mins from Frankfurt\)
+- IT / Grid Power Capacity: 180 MW of total available electrical power capacity.
+- Investment: Up to €2 billion \(2.37 billion USD\) total planned investment \(announced initially as over €1 billion in early 2023 and scaled/peaked up to €2 billion\).
+- Site Size: 25 hectares \(\~25 acres\). [0] [1] [2]
+
+### Timeline & Milestones
+
+- Site Acquisition: Purchased in 2023 \(announced February 2023\). [0] [1]
+- Planning & Permits / Background: Developed on a conversion site \(former US military Großauheim barracks\), featuring integration of recycled old barracks materials, plans for a combined heat and power plant, an electrical substation, and waste heat utilization for local district/home heating. [1]
+- Construction Start / Groundbreaking: Officially broke ground on September 15/17, 2025 \(attended by Hesse's Minister for Digital Affairs, Prof. Dr. Kristina Sinemus\). [1]
+- Expected Opening / Phase Rollout: Initial data center module targeted / planned starting around 2025/2026. [2]
+- Sustainability Profile: Designed to run on 100% renewable energy. [1] [2]
+
+### Stakeholders & Backing
+
+- Parent Company: Data4 is owned by Brookfield \(part of Brookfield's broader European digital infrastructure investments\).
+- Leadership: CEO Olivier Micheli.
+- Architects, Engineers & Contractors: Specific sub\-contractor and engineering rosters for the full buildout phase operate via Data4's standard European delivery framework, with local r","Data4 sets its sights on Germany with more than one billion ...: https://www.data4group.com/en/news-data4/data4-met-le-cap-sur-lallemagne-avec-un-investissement-de-plus-dun-milliard-deuros-pour-son-nouveau-campus/ | Data4 breaks ground on data center project in Hanau, Germany - DCD: https://www.datacenterdynamics.com/en/news/data4-breaks-ground-on-data-center-project-in-hanau-germany/ | Our campus of Data Centers in Germany - DATA4: https://www.data4group.com/en/data-center-in-frankfurt-germany/","Gemini extraction failed: gemini-flash-latest: HTTP 503 {
+  ""error"": {
+    ""code"": 503,
+    ""message"": ""This model is currently experiencing high ",Error
+2026-11-24,P-IE-01,Echelon DUB20 Arklow,"Latest status of the Echelon DUB20 Arklow data centre by Echelon Data Centres in Arklow, Co. Wicklow, Ireland: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","The Echelon DUB20 data centre campus in Arklow, County Wicklow, Ireland, is positioned as a \[Highlight start\] pioneering Government\-aligned Green Energy Park \[Highlight end\] . [0]
+
+### Key Project Metrics & Status
+
+- Location: Former Irish Fertilisers Industries site, Avoca River Business Park, Arklow, Co. Wicklow \(100\-acre site; initial footprint \~45,000 m²\). [1]
+- IT / Grid Capacity: [2]
+  - Phase 1 delivers 90 MW of firm IT load capacity, with planning applications/expansions targeting up to 204 MW.
+  - On\-site energy center generation capacity of 293 MW, integrated with a shared 220kV grid substation.
+  - Co\-located with energy infrastructure including battery energy storage systems \(BESS\) and tied into SSE's offshore wind initiatives. [2]
+- Investment: Part of a broader €4.2 billion combined investment by Echelon across its DUB20 and DUB30 Wicklow facilities \(with specific phase/campus valuations estimated around €92M\+ for initial DUB20 slices\). [3]
+- Planning Permit Date:
+  - Major approvals and subsequent expansion/ICT facility permissions granted by Wicklow County Council \(including key clearance decisions finalized through mid\-2026, such as the approval for Crag Digital Avoca Ltd components in May 2026\).
+- Construction Start: Officially broke ground / entered active on\-site construction phase \(marked on\-site by government officials in October 2026\).
+- Expected Opening / Completion: Targeted for 2028.
+- Architects, Engineers & Contractors:
+  - Main Contractor: Not yet formally announced as a single general contractor; project uses multiple engineering partners and specialist subcontractors.
+  - Development / Planning Entity: Crag Digital Avoca Limited / Echelon Data Centres.
+  - Key Energy / Infrastructure Partners: Linked with SSE Renewab","Echelon to establish Ireland's first green energy park at data centre ...: https://echelon-dc.com/echelon-to-establish-irelands-first-green-energy-park-at-data-centre-campus-in-wicklow/ | Arklow DUB20 - Echelon Data Centres - ocolo: https://www.ocolo.io/colocation/echelon-data-centres/arklow-dub20/ | ICT facility proposal approved, without solar farm element: https://www.theplanner.co.uk/2026/05/07/ict-facility-proposal-approved-without-solar-farm-element | Echelon DUB20 Data Centre in Arklow Ireland Leads in Renewable ...: https://www.linkedin.com/posts/daniel-flower-%F0%9F%8C%B8-0244b6125_datacentres-irishconstruction-renewableenergy-activity-7486346749150904320--g_G","Gemini extraction failed: gemini-flash-latest: HTTP 429 {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please ch",Error
+2026-11-24,P-IT-01,Vantage MXP2 Milan II,"Latest status of the Vantage MXP2 Milan II data centre by Vantage Data Centers in Castelletto, Milan, Italy: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","\[Highlight start\] Vantage Data Centers' MXP2 Milan II campus in Castelletto, Italy, is a €350 million \($407 million USD\) development delivering 32 MW of critical IT capacity, with its first phase scheduled to be operational in spring 2026 \[Highlight end\] . [0]
+
+### Capacity & Spatial Details
+
+- IT Capacity: 32 MW of critical IT capacity across two modern data centres.
+- Footprint: Approximately 10,000 m² \(108,000 sq ft\) of building space.
+- Broader Context: Combined with the MXP1 campus, Vantage's total critical IT capacity in Italy reaches 96 MW. The broader multi\-campus investment across Italy is recognized as a national strategic investment under Article 13 of Decree Law 104/2023. [0]
+
+### Financial & Investment
+
+- Campus Investment: More than €350 million \($407 million USD\) for MXP2.
+- Wider National Plan: Vantage's total planned investment across its Italian footprint reaches €4 billion \($4.6 billion USD\).
+- Economic Impact: Projected to employ 4,000 construction workers over an eight\-year span and create 250 permanent operational jobs. [0]
+
+### Timeline & Milestones
+
+- Announcement Date: October 15, 2025.
+- Planning / Recognition: Designated as a national strategic investment by the Italian Government under Decree Law 104/2023.
+- Construction Start / Status: Announced alongside an active development schedule moving toward a spring 2026 launch.
+- Expected Opening: Phase one slated to go operational in spring 2026. [0]
+
+### Architecture, Engineering & Contractors
+
+- Specific named architectural firms, engineering consultancies, or primary construction contractors for the individual Castelletto MXP2 site have not been publicly detailed in Vantage Data Centers' official corporate announcements. [0]
+
+Would you like me to track down local Italian municipal",Vantage Data Centers Expands European Footprint with Second Italian Campus - Vantage Data Centers: https://vantage-dc.com/news/vantage-data-centers-expands-european-footprint-with-second-italian-campus/,"Gemini extraction failed: gemini-flash-latest: HTTP 503 {
+  ""error"": {
+    ""code"": 503,
+    ""message"": ""This model is currently experiencing high ",Error
+2026-11-24,P-ES-07,Goodman MAD01 (San Blas-Canillejas),"Latest status of the Goodman MAD01 (San Blas-Canillejas) data centre by Goodman in Madrid, Spain: capacity in MW (IT or grid), investment, planning permit date, construction start, expected opening, and named architects, engineers or contractors. Cite sources with dates.","### Project Overview: Goodman MAD01 \(Madrid, Spain\)
+
+- Location: C/ Provisional Iveco\-Pegaso Cinco, 2, 28022 Madrid, Spain \(East Corridor / A2 highway; \~3 km from Adolfo Suárez Madrid–Barajas Airport and \~7 km from the San Blas data centre hub\).
+- Status: Power secured, construction underway. [0] [1]
+
+### Capacity \(IT and Grid\)
+
+- IT Power Capacity: 11.7 MW total across phases \(6 MW IT power for Phase 1; 5.7 MW IT power for Phase 2\).
+- Facility / On\-Site Power Capacity: 17.6 MW total power capacity on\-site \(9 MW initial power infrastructure pre\-built and delivered to the plot via 15 kV line\).
+- PUE & Density: Target PUE of 1.25; floor load 2 tons/m², 6m clear height, air\-cooled with liquid cooling and waterless cooling readiness. [0] [1]
+
+### Investment & Financials
+
+- Investment Volume: Exact aggregate capital expenditure figures have not been formally itemised in public releases by Goodman, though the project leverages pre\-installed grid infrastructure \(9 MW switching centre built on\-site\) to accelerate time\-to\-market. [0]
+
+### Planning Permits & Timeline
+
+- Planning Permit Status: Building and regulatory permitting processes have been progressed/obtained through local authorities with power allocation secured from the grid operator. [0] [1]
+- Construction Start: July 2026. [1]
+- Expected Opening / Ready for Service \(RFS\): [1]
+  - Phase 1 \(6 MW IT\): Expected RFS in First Half \(H1\) of 2028.
+  - Total Project RFS: 2028. [1]
+
+### Design, Compliance & Certifications
+
+- Tier Compliance: Tier III compliant design \(block redundancy\).
+- Certifications: Targeted LEED Platinum, ISO 27001, and ISO 9001.
+- Connectivity Providers: On\-net fiber providers including Colt, Lyntia, and Reintel.
+- Architects, Engineers & Contractors: Specific third\-party","THE FUTURE Goodman MAD 01 D ata C entre C / Provisional Iveco-Pegaso Cinco, 2, 28022, M adrid: https://es.goodman.com/-/media/project/goodman/spain/files/property/properties-for-lease/mad01/es_mad-01_data-centre_digibrochure_en.pdf | Goodman MAD01 6 MW IT power data centre | Madrid, Spain: https://es.goodman.com/en/data-centres/madrid/mad01","Gemini extraction failed: gemini-flash-latest: HTTP 429 {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please ch",Error
