@@ -251,3 +251,21 @@ run_at,step,status,detail,credits_used
 2026-11-24 19:51 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 29, 'Accounts': 10, 'Markets scored': 8, 'Sources': 105, 'Change-log entries': 122, 'News items': 202, 'AI scans': 36, 'Grid data months': 24, 'Public tenders': 85, 'Waiting for your decision': 18, 'Hiring signals': 1, 'Events': 11}",0
 2026-11-24 19:51 UTC,run_all,done,workbook rebuilt in output/,0
 2026-11-24 19:55 UTC,onedrive,failed,file locked (open in Excel); will retry next run,0
+2026-11-24 19:56 UTC,run_all,start,light,0
+2026-11-24 19:57 UTC,sync_from_excel,skipped,no record of the last published workbook yet,0
+2026-11-24 19:57 UTC,onedrive,ok,pulled edits from OneDrive copy (0 changes taken),0
+2026-11-24 19:57 UTC,sync_from_excel,skipped,Ethos_European_DC_Intelligence_Tracker.xlsx not found,0
+2026-11-24 19:57 UTC,news_watch,ok,"RSS: 29 queries ({'rss': 29}), 3 new articles, 0 failed",0
+2026-11-24 19:58 UTC,tender_watch,ok,"TED: 83 matches, 0 new (API total 97); FTS: 1 matches, 0 new",0
+2026-11-24 20:16 UTC,enrich,ok,"news summarised 24; tenders triaged 0; events rated 0; source dates 0; accounts noted 10; briefing written; 4 AI batches failed (first: gemini-flash-latest: HTTP 503 {
+  ""error"": {
+    ""code"": 503,
+    ""message"": ""This model is currently experiencing high )",0
+2026-11-24 20:17 UTC,next_actions,ok,"29 suggestions; Gemini rewrote 1; Gemini stopped: gemini-flash-latest: HTTP 429 {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please check your plan and billing details. For more information on this error,",0
+2026-11-24 20:17 UTC,detect_changes,ok,0 changes logged,0
+2026-11-24 20:17 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 29, 'Accounts': 10, 'Markets scored': 8, 'Sources': 105, 'Change-log entries': 122, 'News items': 205, 'AI scans': 36, 'Grid data months': 24, 'Public tenders': 85, 'Waiting for your decision': 18, 'Hiring signals': 1, 'Events': 11}",0
+2026-11-24 20:17 UTC,run_all,done,workbook rebuilt in output/,0
+2026-11-24 20:22 UTC,onedrive,failed,file locked (open in Excel); will retry next run,0
