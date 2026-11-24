@@ -45,3 +45,14 @@ run_at,step,status,detail,credits_used
 2026-11-24 05:44 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 20, 'Accounts': 10, 'Markets scored': 8, 'Sources': 58, 'Change-log entries': 2, 'News items': 0, 'AI scans': 0, 'Grid data months': 24, 'Public tenders': 0}",0
 2026-11-24 05:44 UTC,next_actions,ok,20 suggestions; Gemini rewrote 0 (no GEMINI_API_KEY: rules only),0
 2026-11-24 05:44 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 20, 'Accounts': 10, 'Markets scored': 8, 'Sources': 58, 'Change-log entries': 2, 'News items': 0, 'AI scans': 0, 'Grid data months': 24, 'Public tenders': 0}",0
+2026-11-24 05:45 UTC,run_all,start,live,0
+2026-11-24 05:45 UTC,sync_from_excel,skipped,Ethos_European_DC_Intelligence_Tracker.xlsx not found,0
+2026-11-24 05:47 UTC,check_sources,ok,"OK 54, BLOCKED 3, BROKEN 0, ERROR 1",0
+2026-11-24 05:47 UTC,refresh_grid_data,ok,25 months; latest 2026-10 = 48.5% renewable,0
+2026-11-24 05:49 UTC,news_watch,ok,"Google News RSS: 0 queries, 0 new articles, 20 failed",0
+2026-11-24 05:49 UTC,tender_watch,ok,"TED: 0 matches, 0 new; FTS: 1 matches, 1 new",0
+2026-11-24 05:49 UTC,serpapi,skipped,no SERPAPI_KEY set or --no-serp used,0
+2026-11-24 05:49 UTC,next_actions,ok,20 suggestions; Gemini rewrote 0 (no GEMINI_API_KEY: rules only),0
+2026-11-24 05:49 UTC,detect_changes,ok,1 changes logged,0
+2026-11-24 05:49 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 20, 'Accounts': 10, 'Markets scored': 8, 'Sources': 58, 'Change-log entries': 3, 'News items': 0, 'AI scans': 0, 'Grid data months': 24, 'Public tenders': 1}",0
+2026-11-24 05:49 UTC,run_all,done,workbook rebuilt in output/,0
