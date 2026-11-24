@@ -16,3 +16,11 @@ run_at,step,status,detail,credits_used
 2026-11-24 05:18 UTC,detect_changes,ok,1 changes logged,0
 2026-11-24 05:18 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 20, 'Accounts': 10, 'Markets scored': 8, 'Sources': 58, 'Change-log entries': 2, 'News items': 0, 'AI scans': 0, 'Grid data months': 24}",0
 2026-11-24 05:18 UTC,run_all,done,workbook rebuilt in output/,0
+2026-11-24 05:19 UTC,run_all,start,live,0
+2026-11-24 05:19 UTC,sync_from_excel,skipped,Ethos_European_DC_Intelligence_Tracker.xlsx not found,0
+2026-11-24 05:20 UTC,check_sources,ok,"OK 55, BLOCKED 3, BROKEN 0, ERROR 0",0
+2026-11-24 05:20 UTC,refresh_grid_data,ok,25 months; latest 2026-10 = 48.5% renewable,0
+2026-11-24 05:20 UTC,serpapi,skipped,no SERPAPI_KEY set or --no-serp used,0
+2026-11-24 05:20 UTC,detect_changes,ok,1 changes logged,0
+2026-11-24 05:20 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 20, 'Accounts': 10, 'Markets scored': 8, 'Sources': 58, 'Change-log entries': 3, 'News items': 0, 'AI scans': 0, 'Grid data months': 24}",0
+2026-11-24 05:20 UTC,run_all,done,workbook rebuilt in output/,0
