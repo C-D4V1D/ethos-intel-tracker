@@ -1,0 +1,469 @@
+{
+ "projects": {
+  "P-ES-01": {
+   "stage": "Permitted",
+   "capacity_mw": "",
+   "investment_eur_m": "13471",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "QTS Calatorao campus (Project Rhodes)"
+  },
+  "P-ES-02": {
+   "stage": "Permitting",
+   "capacity_mw": "300",
+   "investment_eur_m": "2000",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "Tillion Arag\u00f3n campus"
+  },
+  "P-ES-03": {
+   "stage": "Permitted",
+   "capacity_mw": "",
+   "investment_eur_m": "",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "Zaragoza-WIND campus"
+  },
+  "P-ES-04": {
+   "stage": "Permitting",
+   "capacity_mw": "345.6",
+   "investment_eur_m": "",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "Microsoft La Muela campus"
+  },
+  "P-ES-05": {
+   "stage": "Permitting",
+   "capacity_mw": "850",
+   "investment_eur_m": "",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "AWS La Cartuja campus"
+  },
+  "P-ES-06": {
+   "stage": "Announced",
+   "capacity_mw": "",
+   "investment_eur_m": "300",
+   "target_online": "",
+   "ethos_relationship": "Existing client",
+   "design_team": "Not appointed (B-Global Tech designed BCN1)",
+   "_name": "Digital Realty MAD5"
+  },
+  "P-ES-07": {
+   "stage": "Under construction",
+   "capacity_mw": "",
+   "investment_eur_m": "",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "Goodman MAD01 (San Blas-Canillejas)"
+  },
+  "P-ES-08": {
+   "stage": "Permitting",
+   "capacity_mw": "248",
+   "investment_eur_m": "",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "Meta Talavera de la Reina campus"
+  },
+  "P-UK-01": {
+   "stage": "Under construction",
+   "capacity_mw": "720",
+   "investment_eur_m": "",
+   "target_online": "2029",
+   "ethos_relationship": "Target",
+   "design_team": "Corgan (architect), Cundall (civil), Arcadis, Quod",
+   "_name": "QTS Cambois campus"
+  },
+  "P-UK-02": {
+   "stage": "Announced",
+   "capacity_mw": "1000",
+   "investment_eur_m": "",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "Vantage CWL1 Newport + South Wales AIGZ"
+  },
+  "P-UK-03": {
+   "stage": "Announced",
+   "capacity_mw": "500",
+   "investment_eur_m": "",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "DataVita Lanarkshire AI Growth Zone"
+  },
+  "P-IE-01": {
+   "stage": "Under construction",
+   "capacity_mw": "90",
+   "investment_eur_m": "4200",
+   "target_online": "2028",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "Echelon DUB20 Arklow"
+  },
+  "P-IE-02": {
+   "stage": "Permitted",
+   "capacity_mw": "200",
+   "investment_eur_m": "1600",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "John Spain (planning); MEP not public",
+   "_name": "Art Data Centres Ennis campus"
+  },
+  "P-DE-01": {
+   "stage": "Under construction",
+   "capacity_mw": "180",
+   "investment_eur_m": "2000",
+   "target_online": "",
+   "ethos_relationship": "Competitor-held",
+   "design_team": "Deerns with TTSP",
+   "_name": "Data4 Hanau campus (FRA1)"
+  },
+  "P-DE-02": {
+   "stage": "Permitting",
+   "capacity_mw": "",
+   "investment_eur_m": "600",
+   "target_online": "2027",
+   "ethos_relationship": "Existing client",
+   "design_team": "Not public",
+   "_name": "EdgeConneX Heusenstamm (EDCFRA02)"
+  },
+  "P-DE-03": {
+   "stage": "Permitting",
+   "capacity_mw": "160",
+   "investment_eur_m": "",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "Vantage Bad Vilbel 'Im Schleid' (FRA62)"
+  },
+  "P-FR-01": {
+   "stage": "Permitting",
+   "capacity_mw": "1400",
+   "investment_eur_m": "",
+   "target_online": "2028",
+   "ethos_relationship": "Target",
+   "design_team": "Arcadis (permitting); Eiffage (substation)",
+   "_name": "Campus IA Fouju"
+  },
+  "P-IT-01": {
+   "stage": "Under construction",
+   "capacity_mw": "32",
+   "investment_eur_m": "350",
+   "target_online": "2026",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "Vantage MXP2 Milan II"
+  },
+  "P-SE-01": {
+   "stage": "Permitted",
+   "capacity_mw": "300",
+   "investment_eur_m": "",
+   "target_online": "2028",
+   "ethos_relationship": "Existing client",
+   "design_team": "Not public (Calentix: heat reuse)",
+   "_name": "atNorth SWE04 Sollefte\u00e5"
+  },
+  "P-SE-02": {
+   "stage": "Announced",
+   "capacity_mw": "1000",
+   "investment_eur_m": "",
+   "target_online": "",
+   "ethos_relationship": "Existing client",
+   "design_team": "Not public",
+   "_name": "EdgeConneX Skellefte\u00e5 campus"
+  }
+ },
+ "policy": {
+  "Spain": {
+   "policy_change": "RD 1032/2026: data centre sustainability decree",
+   "next_milestone": "SpainDC Supreme Court appeal",
+   "milestone_date": "2026-11-26",
+   "rag": "Red",
+   "_name": "Spain"
+  },
+  "United Kingdom": {
+   "policy_change": "AI Growth Zones: up to \u00a324/MWh discount (Scotland), connection reallocation/reservation",
+   "next_milestone": "AIGZ electricity discount starts",
+   "milestone_date": "2027-04-01",
+   "rag": "Green",
+   "_name": "United Kingdom"
+  },
+  "Germany": {
+   "policy_change": "EnEfG \u00a711: new DCs PUE \u22641.2, ERF \u226510%; existing PUE \u22641.5 from Jul 2027",
+   "next_milestone": "100% renewable electricity required",
+   "milestone_date": "2027-01-01",
+   "rag": "Amber",
+   "_name": "Germany"
+  },
+  "France": {
+   "policy_change": "RTE fast-track connection procedure (CRE approved 7 May 2025)",
+   "next_milestone": "Campus IA prefectoral authorisations",
+   "milestone_date": "2026-12-31",
+   "rag": "Green",
+   "_name": "France"
+  },
+  "Ireland": {
+   "policy_change": "CRU2025236: match import with on-site/nearby generation; 80% new renewables over 6-year glide path",
+   "next_milestone": "",
+   "milestone_date": "",
+   "rag": "Amber",
+   "_name": "Ireland"
+  },
+  "Sweden": {
+   "policy_change": "Svenska kraftn\u00e4t: maturity requirements and conditional connection agreements",
+   "next_milestone": "",
+   "milestone_date": "",
+   "rag": "Green",
+   "_name": "Sweden"
+  },
+  "Italy": {
+   "policy_change": "DL 21/2026 converted by Law 49/2026: single authorisation for data centres",
+   "next_milestone": "Enabling law (legge delega) in Senate",
+   "milestone_date": "",
+   "rag": "Amber",
+   "_name": "Italy"
+  }
+ },
+ "sources": {
+  "SRC001": {
+   "link_status": "OK",
+   "_name": "Real Decreto 1032/2026 (data centre sustainability decree)"
+  },
+  "SRC002": {
+   "link_status": "OK",
+   "_name": "Government approves data centre sustainability royal decree"
+  },
+  "SRC003": {
+   "link_status": "BLOCKED",
+   "_name": "SpainDC to file Supreme Court appeal against the decree"
+  },
+  "SRC004": {
+   "link_status": "OK",
+   "_name": "Green light for works on QTS Calatorao campus"
+  },
+  "SRC005": {
+   "link_status": "OK",
+   "_name": "TSJ Arag\u00f3n admits appeal against Calatorao campus"
+  },
+  "SRC006": {
+   "link_status": "OK",
+   "_name": "Luz verde a una inversi\u00f3n de 13.471 millones en Calatorao"
+  },
+  "SRC007": {
+   "link_status": "OK",
+   "_name": "Azora to invest \u20ac2 billion in Zaragoza data centre"
+  },
+  "SRC008": {
+   "link_status": "OK",
+   "_name": "PIGA Tillion Arag\u00f3n"
+  },
+  "SRC009": {
+   "link_status": "OK",
+   "_name": "Tillion Arag\u00f3n: 300 MW campus with 2.2 MW rooftop solar"
+  },
+  "SRC010": {
+   "link_status": "OK",
+   "_name": "Zaragoza-WIND receives DIGA approval"
+  },
+  "SRC011": {
+   "link_status": "OK",
+   "_name": "Merlin doubles down on Arag\u00f3n with a second campus"
+  },
+  "SRC012": {
+   "link_status": "OK",
+   "_name": "Microsoft advances 345.6 MW La Muela campus (6 x 57.6 MW)"
+  },
+  "SRC013": {
+   "link_status": "OK",
+   "_name": "Microsoft prepares land in Zaragoza, La Muela & Villamayor"
+  },
+  "SRC014": {
+   "link_status": "OK",
+   "_name": "AWS La Cartuja (Zaragoza) campus to need up to 850 MW"
+  },
+  "SRC015": {
+   "link_status": "OK",
+   "_name": "Ministry note on Amazon (AWS) investment"
+  },
+  "SRC016": {
+   "link_status": "OK",
+   "_name": "Digital Realty puts almost \u20ac500m into Madrid and Barcelona (MAD5)"
+  },
+  "SRC017": {
+   "link_status": "OK",
+   "_name": "Digital Realty MAD5: planned, construction not started"
+  },
+  "SRC018": {
+   "link_status": "OK",
+   "_name": "Goodman starts construction of data centre in San Blas-Canillejas"
+  },
+  "SRC019": {
+   "link_status": "OK",
+   "_name": "Final approval of land reparcelation, Meta Talavera"
+  },
+  "SRC020": {
+   "link_status": "OK",
+   "_name": "Meta plans Talavera data centre: 180 ha, 248 MW installed power"
+  },
+  "SRC021": {
+   "link_status": "OK",
+   "_name": "Ethos projects (atNorth, EdgeConneX, Digital Realty)"
+  },
+  "SRC022": {
+   "link_status": "OK",
+   "_name": "Blackstone gets green light for \u00a310bn QTS data center in Northumberland"
+  },
+  "SRC023": {
+   "link_status": "OK",
+   "_name": "Multi-billion pound data centre campus gets green light from planners"
+  },
+  "SRC024": {
+   "link_status": "OK",
+   "_name": "Green light for \u00a310bn data hub prep works in Northumberland"
+  },
+  "SRC025": {
+   "link_status": "OK",
+   "_name": "Cambois campus project team (Quod, Corgan, Arcadis, Cundall)"
+  },
+  "SRC026": {
+   "link_status": "OK",
+   "_name": "Vantage and Nebius: first deployment in South Wales AI Growth Zone"
+  },
+  "SRC027": {
+   "link_status": "OK",
+   "_name": "Lanarkshire named latest AI Growth Zone (3,400+ jobs)"
+  },
+  "SRC028": {
+   "link_status": "OK",
+   "_name": "North Lanarkshire AI Growth Zone could unlock 500MW"
+  },
+  "SRC029": {
+   "link_status": "OK",
+   "_name": "Delivering AI Growth Zones"
+  },
+  "SRC030": {
+   "link_status": "OK",
+   "_name": "Echelon plans Ireland's first Green Energy Park in Co Wicklow"
+  },
+  "SRC031": {
+   "link_status": "OK",
+   "_name": "Major Irish data center clears final hurdle (DUB20 phase 1 90 MW)"
+  },
+  "SRC032": {
+   "link_status": "OK",
+   "_name": "Supreme Court rejects application to appeal Ennis data centre"
+  },
+  "SRC033": {
+   "link_status": "OK",
+   "_name": "Art Data Centres judicial review dismissed; 83MVA grid application"
+  },
+  "SRC034": {
+   "link_status": "OK",
+   "_name": "CRU decision on new electricity connection policy for data centres (CRU2025236)"
+  },
+  "SRC035": {
+   "link_status": "OK",
+   "_name": "Data4 lays foundations for Hanau campus (press release)"
+  },
+  "SRC036": {
+   "link_status": "BLOCKED",
+   "_name": "Engineering a sustainable mega campus (Deerns with TTSP, Hanau)"
+  },
+  "SRC037": {
+   "link_status": "OK",
+   "_name": "EdgeConneX proposes data center campus in Heusenstamm"
+  },
+  "SRC038": {
+   "link_status": "OK",
+   "_name": "Bad Vilbel council: 5th amendment B-Plan 'Im Schleid' (Vantage, 160 MW IT)"
+  },
+  "SRC039": {
+   "link_status": "OK",
+   "_name": "Petition response: Vantage campus 160 MW IT on ~10 ha"
+  },
+  "SRC040": {
+   "link_status": "OK",
+   "_name": "Digital Realty breaks ground on FRA20, Frankfurt"
+  },
+  "SRC041": {
+   "link_status": "OK",
+   "_name": "EnEfG \u00a711 (data centre PUE, heat reuse, renewables)"
+  },
+  "SRC042": {
+   "link_status": "OK",
+   "_name": "Campus IA and RTE sign fast-track grid connection contract (Fouju)"
+  },
+  "SRC043": {
+   "link_status": "OK",
+   "_name": "Calendrier du projet Campus IA"
+  },
+  "SRC044": {
+   "link_status": "OK",
+   "_name": "Arcadis joins Europe's largest AI campus (permitting)"
+  },
+  "SRC045": {
+   "link_status": "OK",
+   "_name": "Publication of the fast-track procedure (CRE approved 7 May 2025)"
+  },
+  "SRC046": {
+   "link_status": "OK",
+   "_name": "Datacenters: how France powers the AI wave (28.6 GW requested)"
+  },
+  "SRC047": {
+   "link_status": "OK",
+   "_name": "Vantage expands with second Italian campus (MXP2, 32MW, \u20ac350m+)"
+  },
+  "SRC048": {
+   "link_status": "OK",
+   "_name": "Italy passes new data center regulations (LD 21/2026)"
+  },
+  "SRC049": {
+   "link_status": "OK",
+   "_name": "Data center in Italia: Law 49/2026 converts the 'decreto bollette'"
+  },
+  "SRC050": {
+   "link_status": "OK",
+   "_name": "atNorth confirms 300MW mega site in Sollefte\u00e5 (operational H1 2028)"
+  },
+  "SRC051": {
+   "link_status": "OK",
+   "_name": "atNorth signs Calentix heat reuse deal at SWE04"
+  },
+  "SRC052": {
+   "link_status": "BLOCKED",
+   "_name": "EdgeConneX looks to enter Swedish market (Skellefte\u00e5)"
+  },
+  "SRC053": {
+   "link_status": "OK",
+   "_name": "Setterwalls advised EdgeConneX: site up to 1 GW"
+  },
+  "SRC054": {
+   "link_status": "OK",
+   "_name": "Svenska kraftn\u00e4t intensifies effort to connect mature projects"
+  },
+  "SRC055": {
+   "link_status": "OK",
+   "_name": "Energinet introduces temporary pause on new grid connections"
+  },
+  "SRC056": {
+   "link_status": "ERROR",
+   "_name": "REData API: generation structure (monthly, Spain)"
+  },
+  "SRC057": {
+   "link_status": "OK",
+   "_name": "Echelon secures grid connection for Co Wicklow data centre"
+  },
+  "SRC058": {
+   "link_status": "OK",
+   "_name": "Eiffage: Campus AI enters implementation phase (substation)"
+  }
+ }
+}
