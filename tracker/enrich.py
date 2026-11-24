@@ -170,7 +170,11 @@ def events(serp) -> str:
             seen.add((name, when))
             new.append({"date_found": today(), "name": name, "date": when,
                         "venue": ", ".join(e.get("address") or []), "country": country,
-                        "url": e.get("link", ""), "why": ""})
+                        "url": e.get("link") or ((e.get("ticket_info") or [{}])[0].get("link", ""))
+                        or "https://www.google.com/search?q=" + requests.utils.quote(f"{name} {when}"),
+                        "why": ""})
+    new = new + [r for r in rows if not r.get("why")]   # retry rows the AI could not rate last time
+    rows = [r for r in rows if r.get("why")]
     if new and gemini_key():
         items = [{"i": i, "name": x["name"], "when": x["date"], "where": x["venue"]} for i, x in enumerate(new)]
         try:
@@ -185,6 +189,9 @@ def events(serp) -> str:
             except (KeyError, ValueError, IndexError):
                 pass
     new = [e for e in new if not e["why"].lower().startswith("low relevance")]
+    for e in new:
+        if not e.get("url"):
+            e["url"] = "https://www.google.com/search?q=" + requests.utils.quote(e["name"])
     write_table("events", (new + rows)[:150])
     return f"events {len(new)} new"
 
