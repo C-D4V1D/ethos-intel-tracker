@@ -5,10 +5,13 @@ link_status values:
   BLOCKED   - site refuses automated checks (401/403/429); open it by hand
   BROKEN    - 404/410: the page is gone; find a replacement
   ERROR     - no answer (timeout / unreachable) or a server error; retried next run
+  OK (reader) - the site blocks robots, but the free Jina Reader (r.jina.ai) could
+              still fetch the page, so the source is alive
 """
 from __future__ import annotations
 
 import argparse
+import time
 
 import requests
 
@@ -55,10 +58,26 @@ def _check(url: str, timeout: int, force_get: bool = False) -> int | None:
         return None
 
 
+def jina_alive(url: str, timeout: int) -> bool:
+    """Ask the free Jina Reader to fetch the page. True if it returns real page text."""
+    import os
+    headers = {"Accept": "text/plain", "X-Return-Format": "text"}
+    if os.environ.get("JINA_API_KEY"):  # optional: higher rate limit
+        headers["Authorization"] = f"Bearer {os.environ['JINA_API_KEY']}"
+    try:
+        r = requests.get("https://r.jina.ai/" + url, headers=headers, timeout=timeout * 3)
+    except requests.RequestException:
+        return False
+    text = r.text or ""
+    bad = ("403 forbidden", "access denied", "404 not found", "page not found", "just a moment",
+           "attention required", "target url returned error")
+    return r.status_code == 200 and len(text) > 800 and not any(b in text[:1500].lower() for b in bad)
+
+
 def run(dry_run: bool = False) -> dict:
     cfg = load_config()["source_check"]
     rows = read_table("sources")
-    counts = {"OK": 0, "BLOCKED": 0, "BROKEN": 0, "ERROR": 0}
+    counts = {"OK": 0, "OK (reader)": 0, "BLOCKED": 0, "BROKEN": 0, "ERROR": 0}
     for i, row in enumerate(rows):
         if i >= cfg["max_per_run"]:
             break
@@ -69,10 +88,14 @@ def run(dry_run: bool = False) -> dict:
         else:
             code = check_url(row["url"], cfg["timeout_seconds"])
         status = classify(code)
+        if status in ("BLOCKED", "ERROR") and not dry_run and cfg.get("jina_fallback", True):
+            if jina_alive(row["url"], cfg["timeout_seconds"]):
+                status = "OK (reader)"
+                time.sleep(3)  # free Jina tier is rate-limited
         counts[status] += 1
         row["http_status"] = str(code or "")
         row["link_status"] = status
-        if status == "OK":
+        if status.startswith("OK"):
             # A working link counts as re-checked; blocked/broken ones keep
             # their old date so the freshness flag still shows.
             row["last_checked"] = today()

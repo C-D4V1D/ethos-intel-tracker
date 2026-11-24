@@ -953,7 +953,7 @@ def run() -> str:
         tab="7F8C8D", span=8, refs=refs)
     add_age_rules(ws, sc_("_age"), last)
     ls = sc_("link_status")
-    for txt, f_, t in (("BROKEN", RED_F, RED_T), ("BLOCKED", AMBER_F, AMBER_T), ("ERROR", AMBER_F, AMBER_T), ("OK", GREEN_F, GREEN_T)):
+    for txt, f_, t in (("BROKEN", RED_F, RED_T), ("BLOCKED", AMBER_F, AMBER_T), ("ERROR", AMBER_F, AMBER_T), ("OK", GREEN_F, GREEN_T), ("OK (reader)", GREEN_F, GREEN_T)):
         ws.conditional_formatting.add(f"{ls}{FIRST}:{ls}{MAXR}",
             CellIsRule(operator="equal", formula=[f'"{txt}"'], fill=fill(f_), font=F(10, True, t)))
 

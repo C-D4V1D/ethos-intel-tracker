@@ -42,19 +42,45 @@ def rss(q: str) -> list[dict]:
     return out
 
 
+def bing_rss(q: str) -> list[dict]:
+    import urllib.parse
+    import xml.etree.ElementTree as ET
+    import requests
+    url = "https://www.bing.com/news/search?format=rss&q=" + urllib.parse.quote(q)
+    r = requests.get(url, timeout=30, headers={"User-Agent": "Mozilla/5.0 EthosIntelTracker/1.0"})
+    r.raise_for_status()
+    out = []
+    for it in ET.fromstring(r.content).iter("item"):
+        link = it.findtext("link", "")
+        if "url=" in link:  # Bing wraps the publisher link
+            link = urllib.parse.unquote(urllib.parse.parse_qs(urllib.parse.urlparse(link).query).get("url", [link])[0])
+        src = it.findtext("{https://www.bing.com/news/search?q=rss}Source") or urllib.parse.urlparse(link).netloc
+        out.append({"title": it.findtext("title", ""), "link": link, "source": {"name": src},
+                    "date": it.findtext("pubDate", "")[5:16], "snippet": it.findtext("description", "")[:200]})
+    return out
+
+
 def run_rss(dry_run: bool) -> int:
     import time
     news = read_table("news")
     seen = {n["url"] for n in news}
     seen_titles = {n["title"].lower() for n in news}
     added, queries, fails = 0, 0, 0
+    used, errs = {}, []
     for row in read_table("projects"):
         q = query_for(row, "projects")
-        try:
-            arts = [] if dry_run else rss(q)
-        except Exception:  # noqa: BLE001 - one failed feed should not stop the run
-            fails += 1
-            continue
+        arts = []
+        if not dry_run:
+            for fn in (rss, bing_rss):
+                try:
+                    arts = fn(q)
+                    used[fn.__name__] = used.get(fn.__name__, 0) + 1
+                    break
+                except Exception as e:  # noqa: BLE001 - try the next free feed
+                    errs.append(f"{fn.__name__}: {type(e).__name__} {str(e)[:120]}")
+            else:
+                fails += 1
+                continue
         queries += 1
         for a in arts[:3]:
             if not a["link"] or a["link"] in seen or a["title"].lower() in seen_titles:
@@ -68,7 +94,8 @@ def run_rss(dry_run: bool) -> int:
     news.sort(key=lambda n: n["date_found"], reverse=True)
     write_table("news", news[:400])
     log("news_watch", "dry-run" if dry_run else "ok",
-        f"Google News RSS: {queries} queries, {added} new articles, {fails} failed")
+        f"RSS: {queries} queries ({used}), {added} new articles, {fails} failed"
+        + (f"; first error: {errs[0]}" if errs else ""))
     return added
 
 

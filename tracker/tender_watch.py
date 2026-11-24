@@ -48,8 +48,10 @@ def ted(cfg, since: dt.date) -> list[dict]:
     r = requests.post(TED_URL, json=body, timeout=60)
     if r.status_code != 200:
         raise RuntimeError(f"TED HTTP {r.status_code}: {r.text[:300]}")
+    js = r.json()
+    ted.total = js.get("totalNoticeCount", len(js.get("notices", [])))
     out = []
-    for n in r.json().get("notices", []):
+    for n in js.get("notices", []):
         pn = _first(n.get("publication-number"))
         out.append({"source": "TED", "notice_id": pn, "title": _first(n.get("notice-title")),
                     "buyer": _first(n.get("buyer-name")), "country": _first(n.get("buyer-country")),
@@ -117,7 +119,8 @@ def run(dry_run: bool = False) -> int:
             seen.add((t["source"], t["notice_id"]))
             new += 1
         added += new
-        notes.append(f"{name}: {len(found)} matches, {new} new")
+        notes.append(f"{name}: {len(found)} matches, {new} new"
+                     + (f" (API total {getattr(fn, 'total', '?')})" if name == "TED" else ""))
     rows.sort(key=lambda r: (r["published"], r["date_found"]), reverse=True)
     write_table("tenders", rows[:300])
     log("tender_watch", "dry-run" if dry_run else "ok", "; ".join(notes))

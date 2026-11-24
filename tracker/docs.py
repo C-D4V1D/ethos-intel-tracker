@@ -68,7 +68,7 @@ TIPS = {
     "type": "P = primary (company, regulator, grid operator, planning file). S = secondary (press, data trackers).",
     "published": "Publication date of the source.",
     "url": "Click to open the source.",
-    "link_status": "Result of the weekly link check. OK = opens. BLOCKED = site refuses automated checks, open by hand. ERROR = no answer this week, retried next week. BROKEN = page gone, replace it.",
+    "link_status": "Result of the weekly link check. OK = opens. OK (reader) = the site blocks robots but the free Jina Reader fetched it, so it is alive. BLOCKED = site refuses automated checks, open by hand. ERROR = no answer this week, retried next week. BROKEN = page gone, replace it.",
     "http_status": "Technical response code from the link check (200 = OK, 403 = blocked, 404 = not found).",
     "used_in": "Rows or tabs that rely on this source.",
     # changes
@@ -206,6 +206,8 @@ FREE_TOOLS = [
     ("Google News RSS", "Headlines per project. No key, no credit limit.", "In use"),
     ("TED Search API v3 (EU)", "Public tenders mentioning data centres in EU target markets. No key.", "In use"),
     ("UK Find a Tender API (OCDS)", "UK public tenders mentioning data centres. No key.", "In use"),
+    ("Jina Reader (r.jina.ai)", "Second attempt for sources whose sites block automated link checks. Free, no key.", "In use"),
+    ("Bing News RSS", "Backup headline feed when Google News RSS is unavailable. No key.", "In use"),
     ("SerpApi Google AI Mode", "Weekly AI status check per project. Free plan 250 searches/month.", "Needs SERPAPI_KEY secret"),
     ("Google Gemini API (free tier)", "Rewrites the suggested next action from the row, news and AI answers.", "Needs GEMINI_API_KEY secret"),
 ]
