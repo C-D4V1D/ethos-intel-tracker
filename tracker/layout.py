@@ -8,7 +8,7 @@ Keys starting with "_" are formula columns and are never read back.
 HEADER_ROW = 4  # rows 1-3 hold the sheet title, purpose line and key
 
 PIPELINE = [
-    ("id", "ID", 7, "text"),
+    ("id", "ID", 9, "text"),
     ("project", "Project / campus", 30, "text"),
     ("developer", "Developer / operator", 22, "text"),
     ("country", "Country", 13, "list:countries"),
@@ -39,7 +39,7 @@ PIPELINE = [
 ]
 
 ACCOUNTS = [
-    ("id", "ID", 7, "text"),
+    ("id", "ID", 9, "text"),
     ("account", "Account", 22, "text"),
     ("hq", "HQ", 16, "text"),
     ("ethos_relationship", "Ethos relationship", 15, "list:relationship"),
@@ -85,7 +85,7 @@ POLICY = [
 ]
 
 SOURCES = [
-    ("id", "ID", 7, "text"),
+    ("id", "ID", 9, "text"),
     ("title", "Title", 52, "text"),
     ("publisher", "Publisher", 22, "text"),
     ("type", "P / S", 6, "list:ps"),
@@ -112,7 +112,7 @@ CHANGES = [
 ]
 
 GAPS = [
-    ("id", "ID", 7, "text"),
+    ("id", "ID", 9, "text"),
     ("gap", "What we don't know yet", 50, "text"),
     ("why_it_matters", "Why it matters", 40, "text"),
     ("how_to_close", "How to close it", 40, "text"),
@@ -123,7 +123,7 @@ GAPS = [
 
 NEWS = [
     ("date_found", "Found", 11, "date"),
-    ("item_id", "ID", 7, "text"),
+    ("item_id", "ID", 9, "text"),
     ("item_name", "Project / account", 26, "text"),
     ("title", "Headline", 60, "text"),
     ("publisher", "Publisher", 18, "text"),
@@ -146,7 +146,7 @@ TENDERS = [
 
 AI_SCAN = [
     ("date", "Scanned", 11, "date"),
-    ("item_id", "ID", 7, "text"),
+    ("item_id", "ID", 9, "text"),
     ("item_name", "Project", 26, "text"),
     ("review_status", "Review", 13, "list:review"),
     ("flags", "Possible changes spotted", 44, "text"),
@@ -160,7 +160,7 @@ GRID_ES = [
     ("_gap", "Gap to 90% (pts)", 12, "formula"),
     ("renewable_gwh", "Renewable (GWh)", 13, "num"),
     ("total_gwh", "Total generation (GWh)", 15, "num"),
-    ("fetched", "Fetched", 18, "text"),
+    ("fetched", "Fetched", 20, "text"),
 ]
 
 LISTS = {

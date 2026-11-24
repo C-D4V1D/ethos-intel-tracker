@@ -90,3 +90,27 @@ Options:
 - Confidence is High, Medium or Low.
 - Megawatt (MW) figures state their basis: IT, Grid or Unclear.
 - Scoring weights live on the Lists sheet of the workbook.
+
+
+## Free services used
+
+| Service | What it does here | Key needed? |
+|---|---|---|
+| Google News RSS (Bing News RSS as backup) | Weekly headlines for every project | No |
+| EU TED Search API v3 | Public tenders mentioning data centres, limited to construction / engineering / M&E categories (CPV) | No |
+| UK Find a Tender (OCDS API) | UK public tenders mentioning data centres | No |
+| Jina Reader (r.jina.ai) | Second attempt for sources whose sites block the link checker; a page it can read is marked `OK (reader)` | No (optional `JINA_API_KEY` for higher limits) |
+| Red Eléctrica REData API | Spain monthly renewable share | No |
+| SerpApi Google AI Mode | Weekly AI status check per project (review tab, never overwrites data) | `SERPAPI_KEY` secret |
+| Google Gemini API, free tier | Rewrites each project's suggested next action from the row, news and AI answer | `GEMINI_API_KEY` secret |
+
+### Suggested next actions
+Every project gets a **Suggested next action (auto)** each week. A rule engine writes it from the stage,
+Ethos relationship, design-team status, freshness, recent headlines, AI Scan flags and the market's policy
+rating. With `GEMINI_API_KEY` set, Gemini rewrites it (labelled "Gemini", unverified). The human
+**Next action (agreed)** column is never changed by automation.
+
+### Adding the two keys (one time)
+GitHub repo > Settings > Secrets and variables > Actions > New repository secret:
+`SERPAPI_KEY` (from serpapi.com > Dashboard > API key) and `GEMINI_API_KEY`
+(from aistudio.google.com > Get API key). Never paste keys into chat, code or the workbook.

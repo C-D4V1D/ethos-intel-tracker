@@ -607,20 +607,20 @@ def sheet_dashboard(wb, pipe_last, sortcol, countries, cfg):
         for cc in (7, 8):
             ws.cell(rr, cc).border = BOX
     # by relationship (feeds a chart)
-    rrel = r + 3 + len(stages) + len(services) + 1
-    section(ws, rrel, 2, "MW by Ethos relationship", 4)
+    rrel = rs + len(services) + 2
+    section(ws, rrel, 7, "MW by Ethos relationship", 4)
     for i, h in enumerate(["Relationship", "Projects", "MW"]):
-        c = ws.cell(rrel + 1, 2 + i, h)
+        c = ws.cell(rrel + 1, 7 + i, h)
         c.font = F(9, True, "FFFFFF"); c.fill = fill(NAVY); c.alignment = CENTER
     for j, rel in enumerate(LY.LISTS["relationship"]):
         rr = rrel + 2 + j
-        ws.cell(rr, 2, rel).font = F(10, True, NAVY)
-        ws.cell(rr, 3, f'=COUNTIF({rng("ethos_relationship")},B{rr})').font = F(10)
-        ws.cell(rr, 4, f'=SUMIF({rng("ethos_relationship")},B{rr},{rng("capacity_mw")})').font = F(10)
-        ws.cell(rr, 4).number_format = "#,##0"
-        for cc in range(2, 5):
+        ws.cell(rr, 7, rel).font = F(10, True, NAVY)
+        ws.cell(rr, 8, f'=COUNTIF({rng("ethos_relationship")},G{rr})').font = F(10)
+        ws.cell(rr, 9, f'=SUMIF({rng("ethos_relationship")},G{rr},{rng("capacity_mw")})').font = F(10)
+        ws.cell(rr, 9).number_format = "#,##0"
+        for cc in range(7, 10):
             ws.cell(rr, cc).border = BOX
-    end_c = max(end_c, rrel + 1 + len(LY.LISTS["relationship"]))
+    blocks_end = max(end_c, rrel + 1 + len(LY.LISTS["relationship"]))
 
     # charts
     ch = BarChart()
@@ -640,7 +640,7 @@ def sheet_dashboard(wb, pipe_last, sortcol, countries, cfg):
     ch.dataLabels.showCatName = False
     ch.dataLabels.showLegendKey = False
     style_chart(ch)
-    ws.add_chart(ch, f"B{max(end_c, rs + 6) + 2}")
+    ws.add_chart(ch, f"B{blocks_end + 6}")
 
     ch2 = BarChart()
     ch2.style = 10
@@ -656,10 +656,10 @@ def sheet_dashboard(wb, pipe_last, sortcol, countries, cfg):
     ch2.dataLabels.showCatName = False
     ch2.dataLabels.showLegendKey = False
     style_chart(ch2)
-    ws.add_chart(ch2, f"G{max(end_c, rs + 6) + 2}")
+    ws.add_chart(ch2, f"G{blocks_end + 6}")
 
     # top 10
-    rt = max(end_c, rs + 6) + 19
+    rt = blocks_end + 24
     section(ws, rt, 2, "Top 10 opportunities (by priority score)", 10)
     hdr = ["#", "Project", "Developer", "Market", "Stage", "MW", "Score", "Next action"]
     spans = [(2, 2), (3, 4), (5, 5), (6, 6), (7, 7), (8, 8), (9, 9), (10, 11)]
@@ -719,7 +719,7 @@ def sheet_dashboard(wb, pipe_last, sortcol, countries, cfg):
         ws.row_dimensions[rr].height = 30
 
     # Spain line chart
-    rl = rc + 9
+    rl = rc + 10
     section(ws, rl, 2, "Spain: renewable share of generation vs the decree's 90% level", 10)
     lc = LineChart()
     lc.title = None
@@ -738,9 +738,9 @@ def sheet_dashboard(wb, pipe_last, sortcol, countries, cfg):
     lc.legend.position = "b"
     for _s in lc.series:
         _s.smooth = False
-    ws.add_chart(lc, f"B{rl + 1}")
+    ws.add_chart(lc, f"B{rl + 2}")
 
-    rm = rl + 18
+    rm = rl + 21
     section(ws, rm, 2, "Why these markets: score breakdown (1-5 per test) and MW by relationship", 10)
     mk = wb["Markets"]
     n_m = len(countries)
@@ -759,21 +759,21 @@ def sheet_dashboard(wb, pipe_last, sortcol, countries, cfg):
     sb.height, sb.width = 8.5, 14
     style_chart(sb)
     sb.legend.position = "b"
-    ws.add_chart(sb, f"B{rm + 1}")
+    ws.add_chart(sb, f"B{rm + 2}")
     rc3 = BarChart()
     rc3.style = 10
     rc3.title = "MW by Ethos relationship"
-    rc3.add_data(Reference(ws, min_col=4, min_row=rrel + 1, max_row=rrel + 1 + len(LY.LISTS["relationship"])),
+    rc3.add_data(Reference(ws, min_col=9, min_row=rrel + 1, max_row=rrel + 1 + len(LY.LISTS["relationship"])),
                  titles_from_data=True)
-    rc3.set_categories(Reference(ws, min_col=2, min_row=rrel + 2, max_row=rrel + 1 + len(LY.LISTS["relationship"])))
+    rc3.set_categories(Reference(ws, min_col=7, min_row=rrel + 2, max_row=rrel + 1 + len(LY.LISTS["relationship"])))
     rc3.legend = None
     rc3.height, rc3.width = 8.5, 10
     rc3.series[0].graphicalProperties.solidFill = TEAL
     rc3.dataLabels = DataLabelList(); rc3.dataLabels.showVal = True
     rc3.dataLabels.showSerName = rc3.dataLabels.showCatName = rc3.dataLabels.showLegendKey = False
     style_chart(rc3)
-    ws.add_chart(rc3, f"H{rm + 1}")
-    ws.print_area = f"A1:L{rm + 19}"
+    ws.add_chart(rc3, f"H{rm + 2}")
+    ws.print_area = f"A1:L{rm + 22}"
     ws.page_setup.orientation = "portrait"
     ws.page_setup.fitToWidth = 1
     ws.page_setup.fitToHeight = 0
@@ -844,7 +844,7 @@ def sheet_scoring(wb):
                 pts_cells[v] = f"=Lists!{L(cc + 1)}{rr}"
     for part, d in (("Stage", LY.STAGE_POINTS), ("Ethos relationship", LY.REL_POINTS), ("Confidence", LY.CONF_POINTS)):
         for k in d:
-            _row(ws, r, [part, k, pts_cells.get(k, d[k]), why.get(k, "")], h=30); r += 1
+            _row(ws, r, [part, k, pts_cells.get(k, d[k]), why.get(k, "")], h=34); r += 1
     for k, v, w in (("200 MW or more", 3, "Large campus: multi-year design fees."),
                     ("50 to 199 MW", 2, "Mid-size project."), ("Under 50 MW", 1, "Small or single building."),
                     ("MW unknown", 0, "Not scored until confirmed (see Gaps).")):
@@ -871,7 +871,7 @@ def sheet_scoring(wb):
     ws.merge_cells(start_row=r, start_column=2, end_row=r, end_column=7); r += 2
     _head(ws, r, ["Score", "5", "4", "3", "2", "1"][:1] + [t for t, *_ in DOCS.MARKET_RUBRIC]); r += 1
     for lvl in range(5):
-        _row(ws, r, [str(5 - lvl)] + [lv[lvl] for _t, _k, lv in DOCS.MARKET_RUBRIC], h=46); r += 1
+        _row(ws, r, [str(5 - lvl)] + [lv[lvl] for _t, _k, lv in DOCS.MARKET_RUBRIC], h=48); r += 1
     r += 1
     section(ws, r, 2, "3. Other ratings", 6); r += 1
     for k, v in (("Risk (Grid & Policy)", "Red = rules or grid make new projects hard now. Amber = possible with engineering effort. Green = supportive."),
@@ -926,7 +926,7 @@ def sheet_readme(wb, cfg, counts):
         ("The tabs", [
             ("Dashboard", "Headline numbers, top 10 opportunities, latest changes, charts. Read this first."),
             ("Pipeline", "Every tracked project with stage, size, Ethos fit, priority score, sources and freshness."),
-            ("Markets", "Why these countries: each scored 0-5 on pipeline, investment, grid access, policy and Ethos fit."),
+            ("Markets", "Why these countries: each scored 1-5 on pipeline, investment, grid access, policy and Ethos fit."),
             ("Grid & Policy", "Grid connection conditions and the latest rule change per market, with a Red/Amber/Green risk."),
             ("Accounts", "Developers and operators to target, linked to their projects, with the next step."),
             ("Sources", "Every source with publisher, date, primary/secondary label and whether the link still works."),
@@ -1020,7 +1020,7 @@ def run() -> str:
     mc = lambda k: col(LY.MARKETS, k)
     ws, last = sheet_simple(
         wb, "Markets", LY.MARKETS, T["markets"], "Market selection: where the deals are",
-        "Each candidate market scored 0-5 on five tests; the top markets get the pipeline research. Scores are judgements backed by the evidence column.",
+        "Each candidate market scored 1-5 on five tests (rubric on the Scoring guide tab); the top markets get the pipeline research. Scores are judgements backed by the evidence column.",
         "Pipeline = MW under construction + planned. Investment = 2025-26 announcements. Grid access = how fast large loads connect. Policy = how supportive the rules are. Ethos fit = match with Ethos services.",
         fx={"_total": lambda r: f"=SUM({mc('pipeline_score')}{r}:{mc('fit_score')}{r})",
             "_rank": lambda r: f"=RANK({mc('_total')}{r},${mc('_total')}${FIRST}:${mc('_total')}${FIRST + len(T['markets']) - 1})",
@@ -1068,6 +1068,8 @@ def run() -> str:
     ws, last = sheet_simple(wb, "AI Scan", LY.AI_SCAN, T["ai_scan"], "Google AI Mode status scan",
                             "AI answers are leads, not facts. A flagged row means the answer disagrees with the Pipeline; confirm against a real source before changing anything.",
                             tab="95A5A6", span=6, refs=refs)
+    if not T["ai_scan"]:
+        ws.cell(FIRST, 3, "No scans yet. Add the SERPAPI_KEY secret on GitHub and the next weekly run fills this tab.").font = F(10, italic=True, color=MUTED)
     rv = col(LY.AI_SCAN, "review_status")
     ws.conditional_formatting.add(f"{rv}{FIRST}:{rv}{MAXR}",
         CellIsRule(operator="equal", formula=['"Needs review"'], fill=fill(AMBER_F), font=F(10, True, AMBER_T)))
@@ -1082,13 +1084,16 @@ def run() -> str:
                             "Monthly renewable share of Spanish generation from Red Eléctrica's REData API (free, no key). Refreshed weekly.",
                             "Real Decreto 1032/2026 requires 80% hourly renewable matching for 10 MW+ data centres until renewables exceed 90% of the mix.",
                             fx={"_gap": lambda r: f"=IF({gc('renewable_share_pct')}{r}=\"\",\"\",{sc['threshold']}-{gc('renewable_share_pct')}{r})"},
-                            tab="16A085", span=6)
+                            tab="16A085", span=10)
     ws.cell(LY.HEADER_ROW, 7, "Decree level (%)").font = F(10, True, "FFFFFF")
     ws.cell(LY.HEADER_ROW, 7).fill = fill(TEAL)
     ws.column_dimensions["G"].width = 14
     for r in range(FIRST, max(last, FIRST + 30) + 1):
         if r <= last and T["grid_es"]:
             ws.cell(r, 7, f"={sc['threshold']}").font = F(10)
+            ws.cell(r, 7).border = BOX
+            ws.cell(r, 7).alignment = Alignment(horizontal="right", vertical="top")
+            ws.row_dimensions[r].height = 16
 
     sheet_scoring(wb)
     sheet_glossary(wb)

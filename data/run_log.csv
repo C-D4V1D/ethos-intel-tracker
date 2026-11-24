@@ -79,3 +79,4 @@ run_at,step,status,detail,credits_used
 2026-11-24 06:00 UTC,detect_changes,ok,0 changes logged,0
 2026-11-24 06:00 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 20, 'Accounts': 10, 'Markets scored': 8, 'Sources': 58, 'Change-log entries': 3, 'News items': 24, 'AI scans': 0, 'Grid data months': 24, 'Public tenders': 84}",0
 2026-11-24 06:00 UTC,run_all,done,workbook rebuilt in output/,0
+2026-11-24 06:02 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 20, 'Accounts': 10, 'Markets scored': 8, 'Sources': 58, 'Change-log entries': 1, 'News items': 24, 'AI scans': 0, 'Grid data months': 24, 'Public tenders': 84}",0
