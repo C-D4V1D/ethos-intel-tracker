@@ -144,6 +144,8 @@ def push() -> str:
         info = {"item_id": item["id"], "view_link": lk.get("link", {}).get("webUrl", ""),
                 "owner_link": item.get("webUrl", "")}
     info["uploaded_ctag"] = item.get("cTag", "")
+    from .sync_from_excel import remember_published
+    remember_published(f)  # what people will see = the baseline for spotting their edits
     INFO.write_text(json.dumps(info, indent=2))
     log("onedrive", "ok", f"uploaded; view link {info.get('view_link', '')}")
     return info.get("view_link", "")
