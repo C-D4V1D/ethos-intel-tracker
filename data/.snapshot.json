@@ -58,7 +58,7 @@
    "stage": "Under construction",
    "capacity_mw": "6",
    "investment_eur_m": "200",
-   "target_online": "2028",
+   "target_online": "2027",
    "ethos_relationship": "Target",
    "design_team": "Not public",
    "_name": "Goodman MAD01 (San Blas-Canillejas)"
@@ -76,19 +76,19 @@
    "stage": "Under construction",
    "capacity_mw": "720",
    "investment_eur_m": "",
-   "target_online": "2028",
+   "target_online": "2029",
    "ethos_relationship": "Target",
-   "design_team": "Corgan",
+   "design_team": "Corgan (architect), Cundall (civil), Arcadis, Quod",
    "_name": "QTS Cambois campus"
   },
   "P-UK-02": {
-   "stage": "Operational",
+   "stage": "Announced",
    "capacity_mw": "1000",
    "investment_eur_m": "",
    "target_online": "",
    "ethos_relationship": "Target",
    "design_team": "Not public",
-   "_name": "Vantage CWL1 Newport + South Wales AIGZ"
+   "_name": "Vantage South Wales AI Growth Zone expansion (Newport, Bridgend, Bro Tathan)"
   },
   "P-UK-03": {
    "stage": "Announced",
@@ -123,7 +123,7 @@
    "investment_eur_m": "2000",
    "target_online": "",
    "ethos_relationship": "Competitor-held",
-   "design_team": "FTA (Faruk Tepe Architektur)",
+   "design_team": "Deerns with TTSP; FTA (Faruk Tepe Architektur) named as architect",
    "_name": "Data4 Hanau campus (FRA1)"
   },
   "P-DE-02": {
@@ -150,7 +150,7 @@
    "investment_eur_m": "8500",
    "target_online": "2028",
    "ethos_relationship": "Target",
-   "design_team": "MGX, Bpifrance, Mistral AI, Nvidia, EDG Group, Sipartech, RTE, Bouygues, \u00c9cole Polytechnique",
+   "design_team": "Arcadis (permitting); Eiffage (substation)",
    "_name": "Campus IA Fouju"
   },
   "P-IT-01": {
@@ -193,7 +193,7 @@
    "stage": "Under construction",
    "capacity_mw": "6",
    "investment_eur_m": "",
-   "target_online": "",
+   "target_online": "2028",
    "ethos_relationship": "Target",
    "design_team": "Not public",
    "_name": "NorthC FRA01 Frankfurt"
@@ -228,11 +228,29 @@
   "P-IT-02": {
    "stage": "Permitting",
    "capacity_mw": "576",
-   "investment_eur_m": "9",
+   "investment_eur_m": "",
    "target_online": "",
    "ethos_relationship": "Target",
    "design_team": "Not public",
    "_name": "Moncalieri Hyperscale Data Centre Project"
+  },
+  "P-SE-03": {
+   "stage": "Announced",
+   "capacity_mw": "",
+   "investment_eur_m": "",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "Downing Renewable Developments Central Sweden Data Centre"
+  },
+  "P-SE-04": {
+   "stage": "Announced",
+   "capacity_mw": "",
+   "investment_eur_m": "",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "Vertical Data Central Sweden Data Center"
   }
  },
  "policy": {
@@ -611,68 +629,76 @@
    "_name": "Google gets approval for data center expansion in South Dublin &#8211; w.media"
   },
   "SRC082": {
-   "link_status": "OK (reader)",
+   "link_status": "OK",
    "_name": "Plans for data center in Moncalieri, Italy, put on hold by town mayor - DCD"
   },
   "SRC081": {
-   "link_status": "OK (reader)",
+   "link_status": "OK",
    "_name": "#datacentres #spain #aws | DC Spotter | European Data Centre Construction News"
   },
   "SRC083": {
-   "link_status": "OK (reader)",
+   "link_status": "OK",
    "_name": "Microsoft gets initial approval for data center campuses in Arag\u00f3n, Spain - DCD"
   },
   "SRC084": {
-   "link_status": "OK (reader)",
+   "link_status": "OK",
    "_name": "Azora to invest \u20ac2 billion in Zaragoza data centre"
   },
   "SRC085": {
-   "link_status": "OK (reader)",
+   "link_status": "OK",
    "_name": "Meta Data Center Campus Talavera Spain Specs"
   },
   "SRC086": {
-   "link_status": "OK (reader)",
+   "link_status": "OK",
    "_name": "El Gobierno regional aprueba definitivamente la reparcelaci\u00f3n del PSI del futuro campus de centros de datos de Meta en Talavera de la Reina"
   },
   "SRC087": {
-   "link_status": "OK (reader)",
+   "link_status": "OK",
    "_name": "New 300MW mega site in Sollefte\u00e5, Sweden - atNorth"
   },
   "SRC088": {
-   "link_status": "OK (reader)",
+   "link_status": "OK",
    "_name": "MGX, Bpifrance, Nvidia, and Mistral AI plan 1.4GW Paris data center campus - DCD"
   },
   "SRC089": {
-   "link_status": "OK (reader)",
+   "link_status": "OK",
    "_name": "Blackstone to develop 300MW data center campus in Aragon, Spain - DCD"
   },
   "SRC090": {
-   "link_status": "OK (reader)",
+   "link_status": "OK",
    "_name": "Google Dublin 180 MW Hyperscale Data Center Campus Ireland"
   },
   "SRC091": {
-   "link_status": "OK (reader)",
+   "link_status": "OK",
    "_name": "Google wins planning permission for Dublin data centre extension \u2013 The Irish Times"
   },
   "SRC092": {
-   "link_status": "OK (reader)",
+   "link_status": "OK",
    "_name": "New milestone reached on multi-billion pound data centre project | Northumberland County Council"
   },
   "SRC093": {
-   "link_status": "OK (reader)",
+   "link_status": "OK",
    "_name": "Cambois - QTS Data Centers"
   },
   "SRC094": {
-   "link_status": "OK (reader)",
+   "link_status": "OK",
    "_name": "QTS Data Center Campus Cambois | Corgan"
   },
   "SRC095": {
-   "link_status": "OK (reader)",
+   "link_status": "OK",
    "_name": "Place Viewer"
   },
   "SRC096": {
    "link_status": "OK (reader)",
    "_name": "https://es.goodman.com/en/data-centres/madrid/mad01"
+  },
+  "SRC097": {
+   "link_status": "OK (reader)",
+   "_name": "NorthC breaks ground on data center in Frankfurt, Germany - DCD"
+  },
+  "SRC098": {
+   "link_status": "OK (reader)",
+   "_name": "Downing Renewable Developments expands into data centre sector with 500MW development pipeline  \u2013 Downing Renewable Developments"
   }
  }
 }

@@ -1,4 +1,8 @@
 date,item_type,item_id,item_name,field,old_value,new_value,impact,source,logged_by
+2026-11-24,projects,P-DE-05,NorthC FRA01 Frankfurt,construction_start,,2026-09,Auto-updated: value found on the cited page,SRC097,AI (verified)
+2026-11-24,projects,P-DE-05,NorthC FRA01 Frankfurt,target_online,,2028,Auto-updated: value found on the cited page,SRC097,AI (verified)
+2026-11-24,projects,P-SE-03,Downing Renewable Developments Central Sweden Data Centre,(new item),,added,New project found automatically and confirmed on a source page,SRC098,AI (verified)
+2026-11-24,projects,P-SE-04,Vertical Data Central Sweden Data Center,(new item),,added,New project found automatically and confirmed on a source page,SRC098,AI (verified)
 2026-11-24,projects,P-ES-05,AWS La Cartuja campus,stage,Permitting,Permitted,Auto-updated: value found on the cited page,SRC081,AI (verified)
 2026-11-24,projects,P-ES-05,AWS La Cartuja campus,permit,,2024-05-22,Auto-updated: value found on the cited page,SRC081,AI (verified)
 2026-11-24,projects,P-ES-04,Microsoft La Muela campus,permit,,2025-11-14,Auto-updated: value found on the cited page,SRC083,AI (verified)
@@ -86,3 +90,11 @@ date,item_type,item_id,item_name,field,old_value,new_value,impact,source,logged_
 2026-11-24,sources,SRC087,"New 300MW mega site in Sollefteå, Sweden - atNorth",(new item),,added,New item to review,,auto
 2026-11-24,sources,SRC089,"Blackstone to develop 300MW data center campus in Aragon, Spain - DCD",(new item),,added,New item to review,,auto
 2026-11-24,sources,SRC076,10 UK data centre construction projects to watch - Construction Wave,(removed),present,,Item removed,,auto
+2026-11-24,projects,P-IT-02,Moncalieri Hyperscale Data Centre Project,investment_eur_m,9,,Re-size opportunity,,auto
+2026-11-24,projects,P-DE-01,Data4 Hanau campus (FRA1),design_team,FTA (Faruk Tepe Architektur),Deerns with TTSP; FTA (Faruk Tepe Architektur) named as architect,Competitor or partner named,,auto
+2026-11-24,projects,P-FR-01,Campus IA Fouju,design_team,"MGX, Bpifrance, Mistral AI, Nvidia, EDG Group, Sipartech, RTE, Bouygues, École Polytechnique",Arcadis (permitting); Eiffage (substation),Competitor or partner named,,auto
+2026-11-24,projects,P-UK-02,"Vantage South Wales AI Growth Zone expansion (Newport, Bridgend, Bro Tathan)",stage,Operational,Announced,Check consultant appointment window,,auto
+2026-11-24,projects,P-UK-01,QTS Cambois campus,target_online,2028,2029,Timeline moved,,auto
+2026-11-24,projects,P-UK-01,QTS Cambois campus,design_team,Corgan,"Corgan (architect), Cundall (civil), Arcadis, Quod",Competitor or partner named,,auto
+2026-11-24,sources,SRC098,Downing Renewable Developments expands into data centre sector with 500MW development pipeline  – Downing Renewable Developments,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC097,"NorthC breaks ground on data center in Frankfurt, Germany - DCD",(new item),,added,New item to review,,auto
