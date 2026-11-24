@@ -824,7 +824,7 @@ def sheet_grid(wb, rows):
     countries = ["Spain", "United Kingdom", "Germany", "France", "Ireland", "Sweden", "Italy", "Denmark"]
     months = sorted({r["month"] for r in rows})
     val = {(r["country"], r["month"]): r for r in rows}
-    ws.column_dimensions["A"].width = 12
+    ws.column_dimensions["A"].width = 22
     for i, c in enumerate(countries):
         ws.column_dimensions[L(2 + i)].width = 14
     # row 5: header, row 6: latest, rows 8+: monthly renewable share
