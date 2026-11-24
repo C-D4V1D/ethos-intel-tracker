@@ -1,3 +1,4 @@
 date,item_type,item_id,item_name,field,old_value,new_value,impact,source,logged_by
 2026-11-24,Tracker,,Tracker,Baseline,none,"20 projects, 10 accounts, 7 policy rows, 58 sources",Baseline set; future changes logged automatically,,David C.
 2026-11-24,sources,SRC003,SpainDC to file Supreme Court appeal against the decree,link_status,OK,BLOCKED,Source needs attention,,auto
+2026-11-24,sources,SRC041,"EnEfG §11 (data centre PUE, heat reuse, renewables)",link_status,OK,BROKEN,Source needs attention,,auto
