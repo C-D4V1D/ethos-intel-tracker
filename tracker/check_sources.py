@@ -31,10 +31,22 @@ def classify(code: int | None) -> str:
 
 
 def check_url(url: str, timeout: int) -> int | None:
+    """Check once; if the site timed out, errored or said 404, wait and retry with a
+    full GET so one slow or flaky response never marks a good source as broken."""
+    import time
+    code = _check(url, timeout)
+    if code is None or code in (404, 410) or code >= 500:
+        time.sleep(5)
+        code = _check(url, timeout * 2, force_get=True)
+    return code
+
+
+def _check(url: str, timeout: int, force_get: bool = False) -> int | None:
     headers = {"User-Agent": UA, "Accept-Language": "en,es;q=0.8"}
     try:
-        r = requests.head(url, headers=headers, timeout=timeout, allow_redirects=True)
-        if r.status_code in (405, 403, 400) or r.status_code >= 500:
+        r = None if force_get else requests.head(url, headers=headers, timeout=timeout,
+                                                 allow_redirects=True)
+        if r is None or r.status_code in (405, 403, 400) or r.status_code >= 500:
             r = requests.get(url, headers=headers, timeout=timeout,
                              allow_redirects=True, stream=True)
             r.close()
