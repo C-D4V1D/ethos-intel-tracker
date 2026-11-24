@@ -262,6 +262,9 @@ def discover(serp, cfg, projects, sources, scans, changes, use_ai):
             name, dev = (c.get("project") or "").strip(), (c.get("developer") or "").strip()
             if not name or not dev:
                 continue
+            place = (c.get("city_region") or "")
+            vague = (re.search(r"pipeline|projects|deployments|portfolio|programme|program\b|partnership|order\b",
+                               f"{name} {dev}", re.I) or "/" in dev or " and " in place or ";" in place)
             dup = any(dev.lower()[:6] in p["developer"].lower() and
                       ((c.get("city_region") or "").lower()[:5] in p["city_region"].lower() or
                        name.lower()[:8] in p["project"].lower()) for p in projects)
@@ -269,10 +272,12 @@ def discover(serp, cfg, projects, sources, scans, changes, use_ai):
                 continue
             urls = [resolve(c.get("url") or "")] + [u for _t, u in refs]
             proof = next((u for u in urls[:3] if u and page_supports(read_page(u), "", f"{dev} {c.get('city_region','')}")), "")
-            if not proof:
+            if not proof or vague:
                 scans.append({"date": today(), "item_id": "NEW", "item_name": f"{name} ({country})",
                               "query": "discovery", "summary": c.get("quote", ""), "references": c.get("url", ""),
-                              "flags": f"Possible new project: {dev}, {c.get('city_region','')} - not confirmed on a source page",
+                              "flags": (f"Possible new project: {dev}, {place} - "
+                                        + ("looks like a programme or several sites, not one campus" if vague
+                                           else "not confirmed on a source page")),
                               "review_status": "Needs review"})
                 queued += 1
                 continue
@@ -283,6 +288,9 @@ def discover(serp, cfg, projects, sources, scans, changes, use_ai):
                 pid = f"P-{CODES.get(country, 'XX')}-{n_country:02d}"
             sid = _source_row(sources, proof, read_page(proof), pid)
             stage = c.get("stage") if c.get("stage") in STAGES else "Announced"
+            if stage != "Announced" and not supports(read_page(proof), "stage", stage, "",
+                                                     {"developer": dev, "project": name}, cfg):
+                stage = "Announced"
             mw = _norm_value("capacity_mw", c.get("capacity_mw"))
             inv = _norm_value("investment_eur_m", c.get("investment_eur_m"))
             projects.append({"id": pid, "project": name, "developer": dev, "country": country,

@@ -18,7 +18,7 @@ def gemini_key() -> str:
     return os.environ.get("GEMINI_API_KEY", "").strip()
 
 
-def gemini(prompt: str, json_mode: bool = False, max_tokens: int = 1500) -> tuple[str, str]:
+def gemini(prompt: str, json_mode: bool = False, max_tokens: int = 4000) -> tuple[str, str]:
     """Return (text, model). Tries each configured free model in turn."""
     cfg = load_config().get("gemini", {})
     key = gemini_key()
