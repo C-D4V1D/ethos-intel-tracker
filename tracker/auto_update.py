@@ -41,8 +41,10 @@ EXTRACT = """You extract facts about one data centre project from a search answe
 {{"facts": {{ "<field>": {{"value": <value>, "quote": "<exact words from the answer that state it>",
    "url": "<the reference URL that supports it, from the list>", "as_of": "<date of the fact if given>"}} }} }}
 Fields allowed: stage (one of {stages}), capacity_mw (number, MW), capacity_basis ("IT" or "Grid"),
-investment_eur_m (number, € millions; skip if not in euros), permit (date of main approval, YYYY-MM-DD or YYYY),
-construction_start (YYYY-MM-DD or YYYY), target_online (YYYY), design_team (named architects/engineers/contractors).
+investment_eur_m (number, € millions, total project investment - NOT land or site purchase price; skip if not in euros), permit (date of main approval, YYYY-MM-DD or YYYY),
+construction_start (YYYY-MM-DD or YYYY; ONLY if construction has actually started, not planned), target_online (YYYY),
+design_team (named architects, engineering consultants or construction contractors working on THIS project;
+never owners, investors, funds, tenants, customers or utilities).
 Only include a field if the answer states it explicitly for THIS project. Never guess. Omit unknown fields.
 
 Project: {project} by {developer} in {place}.
@@ -129,14 +131,41 @@ def supports(page, field, new, quote, p, cfg):
         firms = [w for w in norm(new).split() if len(w) > 3]
         return bool(firms) and sum(f in low for f in firms) / len(firms) >= 0.6
     if field == "capacity_basis":
-        return True if new in ("IT", "Grid") else False
+        return new in ("IT", "Grid")
+    if field in ("capacity_mw", "investment_eur_m"):
+        return number_in_context(page, new, field)
     return page_supports(page, new, quote)
 
 
-def _decide(field, old, new):
-    """'apply' | 'review' | 'same'."""
-    if not new or new == old:
+def number_in_context(page, value, field):
+    """The number must sit next to its unit (MW) or a money word, not appear anywhere."""
+    try:
+        n = float(value)
+    except ValueError:
+        return False
+    forms = {f"{n:g}", f"{n:,.0f}", f"{n:,.0f}".replace(",", "."), f"{n:,.0f}".replace(",", " ")}
+    if field == "investment_eur_m" and n >= 1000:
+        forms |= {f"{n/1000:g}", f"{n/1000:.1f}", f"{n/1000:.1f}".replace(".", ","), f"{n/1000:g}".replace(".", ",")}
+    if field == "capacity_mw" and n >= 1000:
+        forms |= {f"{n/1000:g}", f"{n/1000:g}".replace(".", ",")}
+    unit = (r"(mw|megawat|megavat|gw|gigawat)" if field == "capacity_mw" else
+            r"(€|eur|euro|million|millones|milliards?|miliardi|milioni|mrd|bn|billion|£|m\b)")
+    low = page.lower()
+    for f in forms:
+        for m in re.finditer(r"(?<![\d.,])" + re.escape(f.lower()) + r"(?![\d])", low):
+            win = low[max(0, m.start() - 12): m.end() + 14]
+            if re.search(unit, win):
+                return True
+    return False
+
+
+def _decide(field, old, new, stage=""):
+    """'apply' | 'review' | 'same'. Blanks can be filled; existing facts are only changed by a person,
+    except a forward stage move."""
+    if not new or new == old or (old and new and (old.startswith(new) or new.startswith(old))):
         return "same"
+    if field == "construction_start" and stage not in ("Under construction", "Operational"):
+        return "review"
     if not old:
         return "apply"
     if field == "stage":
@@ -152,7 +181,7 @@ def _decide(field, old, new):
         return "review"
     if field == "design_team" and old.lower().startswith("not"):
         return "apply"
-    return "apply"
+    return "review"  # existing dates / design team: a person decides
 
 
 def update_projects(serp, cfg, projects, sources, scans, changes, use_ai):
@@ -194,7 +223,11 @@ def update_projects(serp, cfg, projects, sources, scans, changes, use_ai):
                     continue
                 new = _norm_value(field, f.get("value"))
                 old = (p.get(field) or "").strip()
-                decision = _decide(field, old, new)
+                if field == "investment_eur_m" and new and float(new) < 50 and float(p.get("capacity_mw") or 0) >= 50:
+                    todo.append(f"investment: '{new}' looks too small for a {p['capacity_mw']} MW project (land price?)")
+                    reviewed += 1
+                    continue
+                decision = _decide(field, old, new, facts.get("stage", {}).get("value") if isinstance(facts.get("stage"), dict) and _decide("stage", p["stage"], facts["stage"].get("value")) == "apply" else p["stage"])
                 if decision == "same":
                     continue
                 urls = [resolve(f.get("url") or "")] + [u for _t, u in refs if u != f.get("url")]

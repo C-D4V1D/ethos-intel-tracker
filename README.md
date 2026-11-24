@@ -114,3 +114,18 @@ rating. With `GEMINI_API_KEY` set, Gemini rewrites it (labelled "Gemini", unveri
 GitHub repo > Settings > Secrets and variables > Actions > New repository secret:
 `SERPAPI_KEY` (from serpapi.com > Dashboard > API key) and `GEMINI_API_KEY`
 (from aistudio.google.com > Get API key). Never paste keys into chat, code or the workbook.
+
+
+## AI auto-update (how the AI keeps the tracker current)
+Every week, for every project, Google AI Mode (via SerpApi) is asked for the latest facts. Gemini turns the
+answer into fields with the exact supporting quote and the cited link. The link is opened and the value
+must appear on that page, next to its unit or currency, and the page must be about the same project.
+Only then is it written, with the page added to Sources and the change logged as **AI (verified)**.
+
+Safety rules: blanks can be filled and stages can move forward; existing figures, dates and design teams are
+never overwritten automatically (they go to the AI Scan tab as *Needs review*); construction start is only
+filled once a project is under construction; very small investment figures on large projects are rejected.
+
+Each week the same engine also searches every focus market for **new projects** (AI Mode + free market news).
+A new project is added (confidence *Low*, owner *Auto*) only when a source page names the developer and place;
+programmes, portfolios and multi-site plans go to review instead.
