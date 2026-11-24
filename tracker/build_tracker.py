@@ -478,6 +478,8 @@ def sheet_dashboard(wb, pipe_last, sortcol, countries, cfg):
     lc.series[1].graphicalProperties.line.dashStyle = "dash"
     style_chart(lc)
     lc.legend.position = "b"
+    for _s in lc.series:
+        _s.smooth = False
     ws.add_chart(lc, f"B{rl + 1}")
     ws.print_area = f"A1:L{rl + 17}"
     ws.page_setup.orientation = "portrait"
