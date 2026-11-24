@@ -17,6 +17,13 @@ from __future__ import annotations
 
 import argparse
 import re
+import time
+
+START = time.time()
+
+
+def out_of_time(cfg) -> bool:
+    return (time.time() - START) / 60 > cfg.get("auto_update", {}).get("max_minutes", 40)
 
 from .common import load_config, log, read_table, today, write_table
 from .llm import gemini_json, gemini_key, page_supports, page_title, read_page
@@ -135,7 +142,11 @@ def update_projects(serp, cfg, projects, sources, scans, changes, use_ai):
     byid = {p["id"]: p for p in projects}
     applied = reviewed = scanned = 0
     for row in items:
+        if out_of_time(cfg):
+            log("auto_update", "stopped", "time budget reached; remaining projects next run")
+            break
         p = byid[row["id"]]
+        print(f"[auto_update] {p['id']} {p['project'][:40]}", flush=True)
         place = ", ".join(x for x in (p["city_region"], p["country"]) if x)
         q = p.get("ai_query") or (
             f"Latest status of the {p['project']} data centre by {p['developer']} in {place}: "
@@ -165,7 +176,7 @@ def update_projects(serp, cfg, projects, sources, scans, changes, use_ai):
                 if decision == "same":
                     continue
                 urls = [f.get("url")] + [u for _t, u in refs if u != f.get("url")]
-                proof = next((u for u in urls[:4] if u and page_supports(read_page(u), new if field not in ("stage", "design_team") else "", f.get("quote", "")) ), "")
+                proof = next((u for u in urls[:2] if u and page_supports(read_page(u), new if field not in ("stage", "design_team") else "", f.get("quote", "")) ), "")
                 if decision == "apply" and proof:
                     sid = _source_row(sources, proof, read_page(proof), p["id"])
                     changes.append({"date": today(), "item_type": "projects", "item_id": p["id"],
@@ -199,6 +210,9 @@ def discover(serp, cfg, projects, sources, scans, changes, use_ai):
     news = read_table("news")
     added = queued = 0
     for country in markets:
+        if out_of_time(cfg):
+            break
+        print(f"[auto_update] discovery {country}", flush=True)
         known = [f"{p['project']} ({p['developer']}, {p['city_region']})" for p in projects if p["country"] == country]
         text, refs = "", []
         if serp is not None:
@@ -230,7 +244,7 @@ def discover(serp, cfg, projects, sources, scans, changes, use_ai):
             if dup:
                 continue
             urls = [c.get("url")] + [u for _t, u in refs]
-            proof = next((u for u in urls[:4] if u and page_supports(read_page(u), "", f"{dev} {c.get('city_region','')}")), "")
+            proof = next((u for u in urls[:2] if u and page_supports(read_page(u), "", f"{dev} {c.get('city_region','')}")), "")
             if not proof:
                 scans.append({"date": today(), "item_id": "NEW", "item_name": f"{name} ({country})",
                               "query": "discovery", "summary": c.get("quote", ""), "references": c.get("url", ""),

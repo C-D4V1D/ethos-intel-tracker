@@ -26,6 +26,9 @@ tenders:                       # free official APIs, no key: EU TED + UK Find a 
   # 31 electrical equipment, 39717 HVAC appliances, 507 building M&E repair, 093 energy
   cpv: ["45000000", "71000000", "42500000", "31000000", "39717000", "50700000", "09300000"]
 
+auto_update:
+  max_minutes: 40              # stop the AI step cleanly after this; the rest is picked up next week
+
 discovery:                     # weekly search for NEW projects (AI Mode + market news, Gemini, source check)
   markets: ["Spain", "United Kingdom", "Germany", "France", "Ireland", "Sweden", "Italy"]
   max_new_per_market: 3        # ~30 searches/month

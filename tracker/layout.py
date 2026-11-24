@@ -82,7 +82,7 @@ POLICY = [
     ("next_milestone", "Next milestone to watch", 34, "text"),
     ("milestone_date", "Milestone date", 12, "date"),
     ("rag_reason", "Why this rating", 36, "text"),
-    ("ethos_opening", "Commercial opening for Ethos", 40, "text"),
+    ("ethos_opening", "Work Ethos could sell", 40, "text"),
     ("source_ids", "Source IDs", 12, "text"),
     ("last_checked", "Last checked", 12, "date"),
 ]
@@ -160,7 +160,7 @@ AI_SCAN = [
 GRID_ES = [
     ("month", "Month", 10, "text"),
     ("renewable_share_pct", "Renewable share (%)", 14, "num"),
-    ("_gap", "Gap to 90% (pts)", 12, "formula"),
+    ("_gap", "Gap to 90% (percentage points)", 14, "formula"),
     ("renewable_gwh", "Renewable (GWh)", 13, "num"),
     ("total_gwh", "Total generation (GWh)", 15, "num"),
     ("fetched", "Fetched", 20, "text"),

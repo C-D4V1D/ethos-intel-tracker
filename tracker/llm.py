@@ -59,7 +59,7 @@ def gemini_json(prompt: str):
 _cache: dict[str, str] = {}
 
 
-def read_page(url: str, timeout: int = 45) -> str:
+def read_page(url: str, timeout: int = 25) -> str:
     """Page text via Jina Reader (handles JavaScript sites and many bot blocks). '' on failure."""
     if not url:
         return ""

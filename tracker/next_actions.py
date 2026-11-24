@@ -54,11 +54,11 @@ def rule_action(p: dict, news, scans, policy, cfg) -> str:
                      if rel == "Existing client" else
                      f"Find {dev}'s design / preconstruction lead for {place} and get an introduction before the design team is set.")
     elif stage == "Permitting":
-        parts.append(f"Track the planning decision; prepare a short credentials pack (similar-size Ethos projects) for {dev} so Ethos is ready when consent lands.")
+        parts.append(f"Track the planning decision; prepare a short pack of similar-size Ethos projects for {dev} so Ethos is ready when consent lands.")
     elif stage == "Permitted":
         parts.append(f"Design team held by {team}: offer specialist packages (CFD, energy, commissioning) or target later phases."
                      if team_known else
-                     f"Consent granted and no design team public: approach {dev} now, this is the appointment window.")
+                     f"Approved and no design team named yet: approach {dev} now, this is when design firms are usually hired.")
     elif stage == "Under construction":
         parts.append(f"Late stage: target fit-out, commissioning or the next phase; log contractor contacts" +
                      (f" ({team})." if team_known else "."))
@@ -69,7 +69,7 @@ def rule_action(p: dict, news, scans, policy, cfg) -> str:
 
     pol = policy.get(p["country"])
     if pol and pol.get("rag") == "Red" and stage in EARLY:
-        parts.append(f"Raise the {pol['policy_change'].split(':')[0]} impact on design as a talking point.")
+        parts.append(f"Use the new rules ({pol['policy_change']}) as a talking point on design.")
     return " ".join(parts)
 
 

@@ -231,7 +231,7 @@ def polish(ws, cols, last):
     if ws.title == "Changes" and "field" in keys:
         c = C("field")
         ws.conditional_formatting.add(f"A{FIRST}:{L(len(cols))}{MAXR}", FormulaRule(
-            formula=[f'OR(${c}{FIRST}="stage",${c}{FIRST}="rag",${c}{FIRST}="design_team")'],
+            formula=[f'OR(${c}{FIRST}="Stage",${c}{FIRST}="Risk rating",${c}{FIRST}="Known design team / contractors",${c}{FIRST}="New item added")'],
             fill=fill(AMBER_F)))
     # zebra banding on plain data columns only (formula/auto columns keep their tint)
     blocks, start = [], None
@@ -355,6 +355,10 @@ def col(cols, key) -> str:
 
 
 # ---------------------------------------------------------------- sheets
+LIST_NAMES = {"rag": "Risk colour", "ps": "Source type", "gapstatus": "Gap status", "mstatus": "Market status",
+              "basis": "MW basis", "types": "Project type", "relationship": "Ethos relationship"}
+
+
 def sheet_lists(wb):
     ws = wb.create_sheet("Lists")
     title_block(ws, "Lists & scoring rules",
@@ -362,7 +366,7 @@ def sheet_lists(wb):
                 span=8)
     refs, c = {}, 1
     for name, values in LY.LISTS.items():
-        ws.cell(LY.HEADER_ROW, c, name.title()).font = F(10, True, "FFFFFF")
+        ws.cell(LY.HEADER_ROW, c, LIST_NAMES.get(name, name.title())).font = F(10, True, "FFFFFF")
         ws.cell(LY.HEADER_ROW, c).fill = fill(NAVY)
         for i, v in enumerate(values):
             ws.cell(FIRST + i, c, v).font = F(10)
@@ -400,8 +404,8 @@ def sheet_pipeline(wb, rows, refs, sc):
     ws = wb.create_sheet("Pipeline")
     cols = LY.PIPELINE
     title_block(ws, "Project & opportunity pipeline",
-                "Named European data centre projects where Ethos could win work. White cells are editable; teal cells are formulas.",
-                "Priority = stage + relationship + confidence + size (rules on the Lists tab). Days since check turns amber at 90, red at 180.",
+                "Named European data centre projects where Ethos could win work. Navy headers = you can edit; teal = calculated; purple = filled automatically each week.",
+                "Priority = score out of 12 from stage, client relationship, confidence and size (see the Scoring guide tab). 'Days since check' turns amber at 90 days, red at 180.",
                 span=14)
     header_row(ws, cols)
     st, rel, conf, mw, chk = (col(cols, k) for k in ("stage", "ethos_relationship", "confidence", "capacity_mw", "last_checked"))
@@ -418,7 +422,7 @@ def sheet_pipeline(wb, rows, refs, sc):
     last = write_rows(ws, cols, rows, fx, refs)
     # hidden sort key for the dashboard's top-10 (priority + tiny row tie-break)
     kc = len(cols) + 1
-    ws.cell(LY.HEADER_ROW, kc, "_sortkey")
+    ws.cell(LY.HEADER_ROW, kc, "Sort helper (do not edit)")
     for r in range(FIRST, last + 1):
         ws.cell(r, kc, f"={pr}{r}+(1000-ROW())/100000")
     ws.column_dimensions[L(kc)].hidden = True
@@ -463,14 +467,14 @@ def rag_rules(ws, c):
 TILE_TIPS = {
     "PROJECTS TRACKED": "Count of rows on the Pipeline tab.",
     "MW TRACKED": "Sum of 'Capacity (MW)' on the Pipeline tab. Mixes IT and grid MW where sources differ; see the MW basis column.",
-    "IN THE CONSULTANT WINDOW": "Projects at Announced, Permitting or Permitted: the stages when design consultants are usually appointed.",
+    "OPEN FOR DESIGN HIRING": "Projects at Announced, Permitting or Permitted: the stages when design consultants are usually appointed.",
     "WITH EXISTING CLIENTS": "Projects whose developer already works with Ethos.",
     "SPAIN RENEWABLE SHARE": "Latest monthly renewable share of Spanish generation (Red Eléctrica API). Spain's decree requirement eases once this passes 90%.",
     "HIGH-PRIORITY PROJECTS": "Projects scoring 9 or more out of 12. See the Scoring guide tab.",
     "SOURCES DUE A RE-CHECK": "Sources not confirmed for 90+ days.",
     "BROKEN / BLOCKED LINKS": "Sources the weekly link check could not open. Blocked sites usually open fine in a browser.",
     "AI FLAGS TO REVIEW": "Google AI Mode answers that disagree with the Pipeline and need a person to check.",
-    "OPEN INTELLIGENCE GAPS": "Open questions on the Gaps tab.",
+    "OPEN QUESTIONS": "Open questions on the Gaps tab.",
     "PUBLIC TENDERS (90 DAYS)": "Public notices mentioning data centres found in EU TED and UK Find a Tender in the last 90 days.",
     "HEADLINES (14 DAYS)": "New headlines found by the free Google News watch in the last 14 days.",
     "DESIGN TEAM NOT PUBLIC": "Projects with no published design team: openings to ask clients about.",
@@ -527,16 +531,16 @@ def sheet_dashboard(wb, pipe_last, sortcol, countries, cfg):
     rng = lambda k: f"{P}${pc[k]}${FIRST}:${pc[k]}${MAXR}"
     tile(ws, 5, 2, "PROJECTS TRACKED", f"=COUNTA({rng('project')})", note="Named projects across target markets")
     tile(ws, 5, 4, "MW TRACKED", f"=SUM({rng('capacity_mw')})", note="Sum of published capacity (IT or grid)")
-    tile(ws, 5, 6, "IN THE CONSULTANT WINDOW",
+    tile(ws, 5, 6, "OPEN FOR DESIGN HIRING",
          f'=COUNTIF({rng("stage")},"Announced")+COUNTIF({rng("stage")},"Permitting")+COUNTIF({rng("stage")},"Permitted")',
-         note="Announced, permitting or permitted")
+         note="Announced, in planning or approved: design firms usually hired now")
     tile(ws, 5, 8, "WITH EXISTING CLIENTS", f'=COUNTIF({rng("ethos_relationship")},"Existing client")',
          note="Projects of accounts Ethos already serves")
     tile(ws, 5, 10, "SPAIN RENEWABLE SHARE",
          f"=IF(COUNT('Live Data'!$B${FIRST}:$B${MAXR})=0,\"n/a\",INDEX('Live Data'!$B${FIRST}:$B${MAXR},COUNT('Live Data'!$B${FIRST}:$B${MAXR}))/100)",
-         fmt="0.0%", note="Latest month (Red Eléctrica). Decree eases at 90%")
+         fmt="0.0%", note="Latest month, Spain's grid operator. Spain's rule eases at 90%")
     # health row
-    tile(ws, 10, 2, "HIGH-PRIORITY PROJECTS", f'=COUNTIF({rng("_tier")},"High")', note="Priority score 9+")
+    tile(ws, 10, 2, "HIGH-PRIORITY PROJECTS", f'=COUNTIF({rng("_tier")},"High")', note="Scored 9 or more out of 12")
     tile(ws, 10, 4, "SOURCES DUE A RE-CHECK",
          f'=COUNTIF(Sources!$H${FIRST}:$H${MAXR},">="&{cfg["freshness"]["amber_days"]})',
          note=f"Not checked for {cfg['freshness']['amber_days']}+ days")
@@ -544,18 +548,18 @@ def sheet_dashboard(wb, pipe_last, sortcol, countries, cfg):
          f'=COUNTIF(Sources!$I${FIRST}:$I${MAXR},"BROKEN")+COUNTIF(Sources!$I${FIRST}:$I${MAXR},"BLOCKED")',
          note="From the weekly link check")
     tile(ws, 10, 8, "AI FLAGS TO REVIEW", f"=COUNTIF('AI Scan'!$D${FIRST}:$D${MAXR},\"Needs review\")",
-         note="Google AI Mode answers that disagree")
-    tile(ws, 10, 10, "OPEN INTELLIGENCE GAPS", f'=COUNTIF(Gaps!$F${FIRST}:$F${MAXR},"Open")',
-         note="Questions to close with clients")
+         note="AI answers that conflict with our data")
+    tile(ws, 10, 10, "OPEN QUESTIONS", f'=COUNTIF(Gaps!$F${FIRST}:$F${MAXR},"Open")',
+         note="Unknowns listed on the Gaps tab")
     pd = f"Pipeline!${col(LY.PIPELINE, 'design_team')}${FIRST}:${col(LY.PIPELINE, 'design_team')}${MAXR}"
     ms = f"'Grid & Policy'!${col(LY.POLICY, 'milestone_date')}${FIRST}:${col(LY.POLICY, 'milestone_date')}${MAXR}"
     tile(ws, 15, 2, "PUBLIC TENDERS (90 DAYS)", f'=COUNTIF(Tenders!$A${FIRST}:$A${MAXR},">="&(TODAY()-90))',
-         note="EU TED + UK Find a Tender")
+         note="Official EU and UK tender notices")
     tile(ws, 15, 4, "HEADLINES (14 DAYS)", f'=COUNTIF(News!$A${FIRST}:$A${MAXR},">="&(TODAY()-14))',
-         note="Free Google News watch")
-    tile(ws, 15, 6, "DESIGN TEAM NOT PUBLIC", f'=COUNTIF({pd},"Not*")', note="Openings to ask clients about")
+         note="Free weekly news search")
+    tile(ws, 15, 6, "DESIGN TEAM NOT PUBLIC", f'=COUNTIF({pd},"Not*")', note="Design team unnamed: a question for the client")
     tile(ws, 15, 8, "MW WITH EXISTING CLIENTS",
-         f'=SUMIF({rng("ethos_relationship")},"Existing client",{rng("capacity_mw")})', note="Warm-door capacity")
+         f'=SUMIF({rng("ethos_relationship")},"Existing client",{rng("capacity_mw")})', note="MW at companies Ethos already works for")
     tile(ws, 15, 10, "NEXT POLICY MILESTONE",
          f'=IFERROR(SMALL({ms},COUNTIF({ms},"<"&TODAY())+1),"none set")', fmt="dd mmm yyyy",
          note="Earliest upcoming date, Grid & Policy tab")
@@ -813,9 +817,9 @@ def sheet_grid(wb, rows):
     ws.sheet_view.showGridLines = False
     title_block(ws, "Grid by market: renewable share and power price",
                 "Monthly share of electricity from renewables in each market, refreshed weekly from free official data "
-                "(Energy-Charts / Fraunhofer ISE; UK from the NESO Carbon Intensity API).",
-                "Why it matters: Ireland, Germany and Spain now tie new data centres to renewable supply, and power price "
-                "drives running cost. The latest month may be part-month. Prices: only open-licence markets are shown.",
+                "(Fraunhofer ISE's Energy-Charts for EU markets; the UK grid operator NESO for the UK).",
+                "Why it matters: Ireland, Germany and Spain now require new data centres to be matched with renewable power, and the power price "
+                "drives running cost. The latest month may be part-month. Prices shown only where free public price data exists.",
                 span=10)
     countries = ["Spain", "United Kingdom", "Germany", "France", "Ireland", "Sweden", "Italy", "Denmark"]
     months = sorted({r["month"] for r in rows})
@@ -963,7 +967,7 @@ def sheet_scoring(wb):
     section(ws, r, 2, "3. Other ratings", 6); r += 1
     for k, v in (("Risk (Grid & Policy)", "Red = rules or grid make new projects hard now. Amber = possible with engineering effort. Green = supportive."),
                  ("Confidence", "High = primary source confirms key figures. Medium = reputable secondary source. Low = partial or single-tracker data."),
-                 ("Freshness", "Days since last check: amber at 90, red at 180 (set in config.yaml)."),
+                 ("Freshness", "Days since last check: amber at 90 days, red at 180 days."),
                  ("AI Scan flags", "An AI answer that mentions a different stage, MW (±10%) or target year. Always checked by a person.")):
         _row(ws, r, [k, v], h=32)
         ws.merge_cells(start_row=r, start_column=3, end_row=r, end_column=7); r += 1
@@ -1041,15 +1045,15 @@ def sheet_readme(wb, cfg, counts):
             ("UNVERIFIED / blank", "Left blank rather than guessed. Every blank is a research task, listed on the Gaps tab where it matters."),
         ]),
         ("Automation", [
-            ("What runs weekly", "1) keep edits made in this workbook  2) re-open every source link  3) pull Red Eléctrica grid data  4) Google News headlines per project (free RSS)  5) public tenders from EU TED and UK Find a Tender  6) Google AI Mode status check per project  7) suggested next action per project (rules + Gemini)  8) log what changed  9) rebuild this workbook."),
-            ("Where it runs", "GitHub Actions (free, in the cloud). Nothing needs to run on your computer."),
+            ("What runs weekly", "1) save edits made in this workbook  2) re-check every source link  3) pull Red Eléctrica grid data  4) Google News headlines per project (free RSS)  5) public tenders from EU TED and UK Find a Tender  6) Google AI Mode status check per project  7) suggested next action per project (rules + Gemini)  8) log what changed  9) rebuild this workbook."),
+            ("Where it runs", "On GitHub's free cloud servers (GitHub Actions). Nothing runs on your computer."),
             ("Code & run history", cfg["workbook"]["repo_url"]),
             ("Latest workbook", cfg["workbook"]["latest_download"]),
-            ("AI guard-rail", "AI answers never overwrite the data. They are logged on the AI Scan tab and flagged for a person to check against a real source."),
-            ("SerpApi credits", f"Only the AI Mode check uses SerpApi; capped at {cfg['serpapi']['monthly_budget']} searches a month (free plan = 250)."),
+            ("AI safety rule", "AI never writes a fact unless the same value is found on the web page it cites. That page is added to Sources and the change is logged. Anything unconfirmed waits on the AI Scan tab."),
+            ("SerpApi credits", f"Only the Google AI search uses a paid-per-search service (SerpApi), capped at {cfg['serpapi']['monthly_budget']} searches a month to stay inside its 250 free searches."),
             ("Cost", "All services used are free tiers or free public APIs. The full list is on the Glossary tab."),
         ]),
-        ("This build", [(k, str(v)) for k, v in counts.items()]),
+        ("This version contains", [(k, str(v)) for k, v in counts.items()]),
     ]
     r = 4
     for head, items in blocks:
@@ -1081,6 +1085,15 @@ def run() -> str:
     T = {k: read_table(k) for k in ("projects", "accounts", "markets", "policy", "sources",
                                     "changes", "gaps", "news", "ai_scan", "grid_es")}
     T["changes"].sort(key=lambda r: r["date"], reverse=True)
+    # show plain labels instead of internal field names
+    labels = {k: lbl for lay in (LY.PIPELINE, LY.POLICY, LY.SOURCES, LY.ACCOUNTS, LY.MARKETS)
+              for k, lbl, *_ in lay}
+    labels.update({"(new item)": "New item added", "(removed)": "Item removed", "rag": "Risk rating"})
+    areas = {"projects": "Pipeline", "policy": "Grid & Policy", "sources": "Sources",
+             "accounts": "Accounts", "markets": "Markets", "Tracker": "Tracker"}
+    for c in T["changes"]:
+        c["field"] = labels.get(c["field"], c["field"])
+        c["item_type"] = areas.get(c["item_type"], c["item_type"])
     T["news"].sort(key=lambda r: r["date_found"], reverse=True)
     T["ai_scan"].sort(key=lambda r: (r["review_status"] != "Needs review", r["date"]), reverse=False)
     def prio(p):
@@ -1108,7 +1121,7 @@ def run() -> str:
     mc = lambda k: col(LY.MARKETS, k)
     ws, last = sheet_simple(
         wb, "Markets", LY.MARKETS, T["markets"], "Market selection: where the deals are",
-        "Each candidate market scored 1-5 on five tests (rubric on the Scoring guide tab); the top markets get the pipeline research. Scores are judgements backed by the evidence column.",
+        "Each candidate market scored 1-5 on five tests (scoring rules on the Scoring guide tab); the top markets get the pipeline research. Scores are judgements backed by the evidence column.",
         "Pipeline = MW under construction + planned. Investment = 2025-26 announcements. Grid access = how fast large loads connect. Policy = how supportive the rules are. Ethos fit = match with Ethos services.",
         fx={"_total": lambda r: f"=SUM({mc('pipeline_score')}{r}:{mc('fit_score')}{r})",
             "_rank": lambda r: f"=RANK({mc('_total')}{r},${mc('_total')}${FIRST}:${mc('_total')}${FIRST + len(T['markets']) - 1})",
@@ -1138,7 +1151,7 @@ def run() -> str:
     sc_ = lambda k: col(LY.SOURCES, k)
     ws, last = sheet_simple(wb, "Sources", LY.SOURCES, T["sources"], "Source register",
         "Every source behind the tracker. Click a link to open it. The weekly check re-opens each link and stamps the date.",
-        "Link status: OK = opens; BLOCKED = site refuses robots, check by hand; BROKEN = gone, find a replacement.",
+        "Link status: OK = opens. OK (reader) = site blocks automated checks but a free reader service opened it. BLOCKED = open it by hand. BROKEN = page gone, find a replacement.",
         fx={"_age": lambda r: f'=IF({sc_("last_checked")}{r}="","",TODAY()-{sc_("last_checked")}{r})'},
         tab="7F8C8D", span=8, refs=refs)
     add_age_rules(ws, sc_("_age"), last)
@@ -1148,15 +1161,15 @@ def run() -> str:
             CellIsRule(operator="equal", formula=[f'"{txt}"'], fill=fill(f_), font=F(10, True, t)))
 
     sheet_simple(wb, "Changes", LY.CHANGES, T["changes"], "Change log",
-                 "What changed, when, and why it matters. 'auto' rows come from the weekly comparison; add your own as you learn things.",
+                 "What changed, when, and why it matters. Rows logged by 'auto' or 'AI (verified)' were found by the weekly run; add your own as you learn things.",
                  tab="E67E22", span=9)
     ws, _ = sheet_simple(wb, "Gaps", LY.GAPS, T["gaps"], "Intelligence gaps",
                          "What we don't know yet, why it matters, and how to close it.", tab="E67E22", span=6, refs=refs)
     sheet_simple(wb, "News", LY.NEWS, T["news"], "News watch",
-                 "Headlines found by the weekly Google News search (SerpApi) for each project. Newest first.",
+                 "Headlines found by the free weekly news search, for each project and each market. Newest first.",
                  tab="95A5A6", span=6)
-    ws, last = sheet_simple(wb, "AI Scan", LY.AI_SCAN, T["ai_scan"], "Google AI Mode status scan",
-                            "AI answers are leads, not facts. A flagged row means the answer disagrees with the Pipeline; confirm against a real source before changing anything.",
+    ws, last = sheet_simple(wb, "AI Scan", LY.AI_SCAN, T["ai_scan"], "AI status check (Google AI Mode)",
+                            "Each week Google's AI search is asked about every project. Facts found on the cited web page are applied automatically (see Changes, 'AI (verified)'). Rows marked 'Needs review' could not be confirmed: check them by hand.",
                             tab="95A5A6", span=6, refs=refs)
     if not T["ai_scan"]:
         ws.cell(FIRST, 3, "No scans yet. Add the SERPAPI_KEY secret on GitHub and the next weekly run fills this tab.").font = F(10, italic=True, color=MUTED)
@@ -1165,17 +1178,18 @@ def run() -> str:
         CellIsRule(operator="equal", formula=['"Needs review"'], fill=fill(AMBER_F), font=F(10, True, AMBER_T)))
 
     ws, last = sheet_simple(wb, "Tenders", LY.TENDERS, T["tenders"], "Public tender watch",
-        "Public notices mentioning data centres in the target markets, found weekly in the EU's TED and the UK's Find a Tender (both free, official). Newest first.",
-        "Deadline turns red when it is 21 days away or less, grey once passed. Most private campuses never go to public tender; these show public-sector and enabling work.",
+        "Public tender notices mentioning data centres in the target markets, found weekly in the official EU (TED) and UK (Find a Tender) databases. Newest first.",
+        "Deadline turns red when 21 days or less away, grey once passed. Private campuses rarely go to public tender; these show public-sector projects and supporting works.",
         tab="2C3E50", span=8)
 
     gc = lambda k: col(LY.GRID_ES, k)
-    ws, last = sheet_simple(wb, "Live Data", LY.GRID_ES, T["grid_es"], "Live data: Spain generation mix",
-                            "Monthly renewable share of Spanish generation from Red Eléctrica's REData API (free, no key). Refreshed weekly.",
-                            "Real Decreto 1032/2026 requires 80% hourly renewable matching for 10 MW+ data centres until renewables exceed 90% of the mix.",
+    ws, last = sheet_simple(wb, "Live Data", LY.GRID_ES, T["grid_es"], "Live data: Spain's renewable share and the decree trigger",
+                            "Monthly share of Spain's electricity from renewables, from Red Eléctrica (Spain's grid operator, free public data). Refreshed weekly.",
+                            "Spain's Royal Decree 1032/2026 makes data centres of 10 MW or more match 80% of their power with renewables, hour by hour, until renewables reach 90% of Spain's electricity.",
                             fx={"_gap": lambda r: f"=IF({gc('renewable_share_pct')}{r}=\"\",\"\",{sc['threshold']}-{gc('renewable_share_pct')}{r})"},
                             tab="16A085", span=10)
     ws.cell(LY.HEADER_ROW, 7, "Decree level (%)").font = F(10, True, "FFFFFF")
+    tip(ws.cell(LY.HEADER_ROW, 7), "The 90% renewable level set by Spain's Royal Decree 1032/2026, after which its matching rule eases.")
     ws.cell(LY.HEADER_ROW, 7).fill = fill(TEAL)
     ws.column_dimensions["G"].width = 14
     for r in range(FIRST, max(last, FIRST + 30) + 1):
