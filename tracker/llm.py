@@ -57,6 +57,33 @@ def gemini_json(prompt: str):
 
 
 _cache: dict[str, str] = {}
+UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"}
+
+
+def resolve(url: str) -> str:
+    """Google AI Mode cites sources as google.com/goto?url=... redirects; return the real page URL."""
+    if not url or "google." not in url.split("/")[2:3][0] if url.startswith("http") else True:
+        return url
+    try:
+        r = requests.get(url, allow_redirects=False, timeout=20, headers=UA)
+        loc = r.headers.get("location", "")
+        return loc if loc.startswith("http") else url
+    except requests.RequestException:
+        return url
+
+
+def _direct(url: str) -> str:
+    try:
+        r = requests.get(url, timeout=20, headers=UA)
+        if r.status_code != 200 or "html" not in r.headers.get("content-type", "html"):
+            return ""
+        html = re.sub(r"(?is)<(script|style|noscript)[^>]*>.*?</\1>", " ", r.text)
+        title = re.search(r"(?is)<title[^>]*>(.*?)</title>", html)
+        text = re.sub(r"<[^>]+>", " ", html)
+        text = re.sub(r"&nbsp;|&#160;", " ", text)
+        return (f"Title: {title.group(1).strip()}\n" if title else "") + re.sub(r"\s+", " ", text)
+    except requests.RequestException:
+        return ""
 
 
 def read_page(url: str, timeout: int = 25) -> str:
@@ -65,13 +92,16 @@ def read_page(url: str, timeout: int = 25) -> str:
         return ""
     if url in _cache:
         return _cache[url]
+    text = _direct(url)
+    if len(text) > 1500:
+        _cache[url] = text
+        return text
     headers = {"Accept": "text/plain", "X-Return-Format": "text"}
     if os.environ.get("JINA_API_KEY"):
         headers["Authorization"] = f"Bearer {os.environ['JINA_API_KEY']}"
-    text = ""
     try:
         r = requests.get("https://r.jina.ai/" + url, headers=headers, timeout=timeout)
-        if r.status_code == 200:
+        if r.status_code == 200 and len(r.text) > len(text):
             text = r.text
     except requests.RequestException:
         pass

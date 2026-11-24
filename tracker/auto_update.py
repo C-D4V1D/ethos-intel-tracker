@@ -26,7 +26,7 @@ def out_of_time(cfg) -> bool:
     return (time.time() - START) / 60 > cfg.get("auto_update", {}).get("max_minutes", 40)
 
 from .common import load_config, log, read_table, today, write_table
-from .llm import gemini_json, gemini_key, page_supports, page_title, read_page
+from .llm import gemini_json, gemini_key, norm, page_supports, page_title, read_page, resolve
 from .serp import BudgetExceeded, Serp, pick_items
 
 FIELDS = ["stage", "capacity_mw", "capacity_basis", "investment_eur_m", "permit",
@@ -80,7 +80,7 @@ def _flatten(blocks) -> str:
 def _ai_mode(serp, q):
     data = serp.search("google_ai_mode", q)
     text = data.get("reconstructed_markdown") or _flatten(data.get("text_blocks"))
-    refs = [(r.get("title") or r.get("source") or "", r.get("link", "")) for r in data.get("references") or []]
+    refs = [(r.get("title") or r.get("source") or "", resolve(r.get("link", ""))) for r in (data.get("references") or [])[:8]]
     return text, refs
 
 
@@ -114,6 +114,25 @@ def _source_row(sources, url, page, item):
     return sid
 
 
+def supports(page, field, new, quote, p, cfg):
+    """Is the value really on the page, for THIS project?"""
+    if not page:
+        return False
+    low = norm(page)
+    names = [w for w in norm(p["developer"]).split() + norm(p["project"]).split() if len(w) > 3]
+    if names and not any(n in low for n in names[:4]):
+        return False  # page is not about this project
+    if field == "stage":
+        words = cfg["ai_scan"]["stage_keywords"].get(new, [])
+        return any(w in low for w in words)
+    if field == "design_team":
+        firms = [w for w in norm(new).split() if len(w) > 3]
+        return bool(firms) and sum(f in low for f in firms) / len(firms) >= 0.6
+    if field == "capacity_basis":
+        return True if new in ("IT", "Grid") else False
+    return page_supports(page, new, quote)
+
+
 def _decide(field, old, new):
     """'apply' | 'review' | 'same'."""
     if not new or new == old:
@@ -127,7 +146,10 @@ def _decide(field, old, new):
             o, n = float(old), float(new)
         except ValueError:
             return "review"
-        return "same" if abs(n - o) <= 0.05 * o else "apply"
+        # never overwrite an existing figure automatically (often phase vs total); a person decides
+        return "same" if abs(n - o) <= 0.05 * o else "review"
+    if field == "capacity_basis":
+        return "review"
     if field == "design_team" and old.lower().startswith("not"):
         return "apply"
     return "apply"
@@ -175,8 +197,8 @@ def update_projects(serp, cfg, projects, sources, scans, changes, use_ai):
                 decision = _decide(field, old, new)
                 if decision == "same":
                     continue
-                urls = [f.get("url")] + [u for _t, u in refs if u != f.get("url")]
-                proof = next((u for u in urls[:2] if u and page_supports(read_page(u), new if field not in ("stage", "design_team") else "", f.get("quote", "")) ), "")
+                urls = [resolve(f.get("url") or "")] + [u for _t, u in refs if u != f.get("url")]
+                proof = next((u for u in urls[:3] if u and supports(read_page(u), field, new, f.get("quote", ""), p, cfg)), "")
                 if decision == "apply" and proof:
                     sid = _source_row(sources, proof, read_page(proof), p["id"])
                     changes.append({"date": today(), "item_type": "projects", "item_id": p["id"],
@@ -189,8 +211,10 @@ def update_projects(serp, cfg, projects, sources, scans, changes, use_ai):
                     p["last_checked"] = today()
                     applied += 1
                 else:
-                    todo.append(f"{field}: '{old or 'blank'}' -> '{new}'"
-                                + (" (not found on cited page)" if not proof else " (would move backwards)"))
+                    why = ("not found on the cited page" if not proof else
+                           "would move the stage backwards" if field == "stage" else
+                           "differs from the current figure; a person decides")
+                    todo.append(f"{field}: '{old or 'blank'}' -> '{new}' ({why})")
                     reviewed += 1
         elif text:
             todo.append("AI answer stored; add GEMINI_API_KEY to extract and auto-apply facts")
@@ -243,8 +267,8 @@ def discover(serp, cfg, projects, sources, scans, changes, use_ai):
                        name.lower()[:8] in p["project"].lower()) for p in projects)
             if dup:
                 continue
-            urls = [c.get("url")] + [u for _t, u in refs]
-            proof = next((u for u in urls[:2] if u and page_supports(read_page(u), "", f"{dev} {c.get('city_region','')}")), "")
+            urls = [resolve(c.get("url") or "")] + [u for _t, u in refs]
+            proof = next((u for u in urls[:3] if u and page_supports(read_page(u), "", f"{dev} {c.get('city_region','')}")), "")
             if not proof:
                 scans.append({"date": today(), "item_id": "NEW", "item_name": f"{name} ({country})",
                               "query": "discovery", "summary": c.get("quote", ""), "references": c.get("url", ""),
