@@ -233,3 +233,21 @@ run_at,step,status,detail,credits_used
 2026-11-24 19:18 UTC,onedrive,failed,file locked (open in Excel); will retry next run,0
 2026-11-24 19:28 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 29, 'Accounts': 10, 'Markets scored': 8, 'Sources': 105, 'Change-log entries': 122, 'News items': 193, 'AI scans': 82, 'Grid data months': 24, 'Public tenders': 85, 'Waiting for your decision': 19, 'Hiring signals': 1, 'Events': 36}",0
 2026-11-24 19:31 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 29, 'Accounts': 10, 'Markets scored': 8, 'Sources': 105, 'Change-log entries': 122, 'News items': 193, 'AI scans': 36, 'Grid data months': 24, 'Public tenders': 85, 'Waiting for your decision': 18, 'Hiring signals': 1, 'Events': 0}",0
+2026-11-24 19:31 UTC,run_all,start,light,0
+2026-11-24 19:31 UTC,sync_from_excel,ok,18 edited cells and 0 new rows taken from onedrive_copy.xlsx,0
+2026-11-24 19:31 UTC,onedrive,ok,pulled edits from OneDrive copy (18 changes taken),0
+2026-11-24 19:31 UTC,sync_from_excel,skipped,Ethos_European_DC_Intelligence_Tracker.xlsx not found,0
+2026-11-24 19:32 UTC,news_watch,ok,"RSS: 29 queries ({'rss': 26, 'bing_rss': 3}), 9 new articles, 0 failed; first error: rss: HTTPError 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=Microsoft%20La%20Muela%20centro%20de%2",0
+2026-11-24 19:33 UTC,tender_watch,ok,"TED: 83 matches, 0 new (API total 97); FTS: 1 matches, 0 new",0
+2026-11-24 19:49 UTC,enrich,ok,"news summarised 42; tenders triaged 37; events rated 36; source dates 0; accounts noted 10; briefing written; 1 AI batches failed (first: gemini-flash-latest: HTTP 503 {
+  ""error"": {
+    ""code"": 503,
+    ""message"": ""This model is currently experiencing high )",0
+2026-11-24 19:51 UTC,next_actions,ok,"29 suggestions; Gemini rewrote 8; Gemini stopped: gemini-flash-latest: HTTP 429 {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please check your plan and billing details. For more information on this error,",0
+2026-11-24 19:51 UTC,detect_changes,ok,0 changes logged,0
+2026-11-24 19:51 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 29, 'Accounts': 10, 'Markets scored': 8, 'Sources': 105, 'Change-log entries': 122, 'News items': 202, 'AI scans': 36, 'Grid data months': 24, 'Public tenders': 85, 'Waiting for your decision': 18, 'Hiring signals': 1, 'Events': 11}",0
+2026-11-24 19:51 UTC,run_all,done,workbook rebuilt in output/,0
+2026-11-24 19:55 UTC,onedrive,failed,file locked (open in Excel); will retry next run,0

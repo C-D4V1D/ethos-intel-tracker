@@ -1,37 +1,12 @@
 date_found,name,date,venue,country,url,why
-2026-11-24,HPE Discover,"Dec 2, 8:30 AM","Fira de Barcelona, Barcelona, Spain",Spain,,
-2026-11-24,International Conference on Cloud and Big Data Computing,"Jul 1, 10:00 AM","Alcalá University, Alcala de Henares, Spain",Spain,,
-2026-11-24,Open Sovereign AI + Cloud Day Europe,Mar 15,"International Barcelona Convention Center, Barcelona, Spain",Spain,,
-2026-11-24,World Conference on Artificial Intelligence in Supply Chain and Operations,"Jan 11, 10:00 AM","Hotel EL CASTELL de Sant Boi, Sant Boi de Llobregat, Spain",Spain,,
-2026-11-24,AI Day @Bcombinator: From pilots to operations,"Nov 26, 10:00 AM","Bcombinator | Hub de Innovación, Barcelona, Spain",Spain,,
-2026-11-24,Tech Women Talk,"Nov 25, 6:00 PM","eDreams ODIGEO, Barcelona, Spain",Spain,,
-2026-11-24,Data Dreamland - Conference,"Nov 26, 9:00 AM","Novotel Hannover, Hanover, Germany",Germany,,
-2026-11-24,DATA festival | Data & AI Event | BARC,"Mar 17, 9:30 AM","Munich Central Station, Munich, Germany",Germany,,
-2026-11-24,AI & Data Summit and Quantum Summit,Sep 21,"bcc Berlin Congress Center GmbH, Berlin, Germany",Germany,,
-2026-11-24,Big Data & AI World Frankfurt,May 6,"Messe Frankfurt, Frankfurt am Main, Germany",Germany,,
-2026-11-24,TDWI Munich,"Jun 15, 9:00 AM","MOC – Event Center Messe Munich, Munich, Germany",Germany,,
-2026-11-24,DATA festival,Mar 17,"Muffathalle, Munich, Germany",Germany,,
-2026-11-24,Green IO Paris – From Dependency to Sustainability,"Dec 2, 12:00 AM","Westfield CNIT, Puteaux, France",France,,
-2026-11-24,BIG DATA & AI PARIS,Sep 29,"Paris Expo Porte de Versailles, Paris, France",France,,
-2026-11-24,"International Conference on Emerging Technologies, Big Data, and Cloud Computing","Jan 12, 10:00 AM","ibis Paris CDG Airport, Roissy-en-France, France",France,,
-2026-11-24,Data + AI World Tour Paris,"Dec 8, 12:00 AM","Plenitude Arena, Nanterre, France",France,,
-2026-11-24,Future Intelligence,"Dec 10, 1:00 AM","Centre Hospitalier Universitaire de Toulouse, Toulouse, France",France,,
-2026-11-24,Adopt AI,"Nov 30, 10:00 AM","Grand Palais, Paris, France",France,,
-2026-11-24,International Conference on Bioinformatics in Environmental Biosensing and Engineering,Dec 9,"The Alex Hotel Dublin, Dublin, Ireland",Ireland,,
-2026-11-24,Dublin Tech Summit,"May 25, 6:30 PM","Laya Arena, Dublin, Ireland",Ireland,,
-2026-11-24,European Quantum Technologies Conference,Nov 30,"The Convention Centre Dublin, Dublin, Ireland",Ireland,,
-2026-11-24,IoT Belfast 36: IoT for MedTech,"Nov 26, 6:30 PM","Ulster University, Belfast, United Kingdom",Ireland,,
-2026-11-24,Manufacturing & Supply Chain West Conference & Expo,"Nov 25, 9:00 AM","UL Arena, Limerick, Ireland",Ireland,,
-2026-11-24,Knowledge Summit,Jun 3,"Trinity College Dublin, Dublin, Ireland",Ireland,,
-2026-11-24,"Data Innovation Summit: Dates, Venue and Who Should Go",May 18,"Kistamässan, Sollentuna, Sweden",Sweden,,
-2026-11-24,BIG DATA & AI EXPO,May 25,"Stockholmsmässan, Stockholm Municipality, Sweden",Sweden,,
-2026-11-24,AI Live,"Jan 29, 9:00 AM","Eriksbergshallen, Gothenburg, Sweden",Sweden,,
-2026-11-24,AI for Entrepreneurs and Leaders – Free introductory lecture,"Nov 27, 4:00 PM","Älvsjö gård, Stockholm, Sweden",Sweden,,
-2026-11-24,Stockholm Tech Show,May 25,"Kistamässan, Sollentuna, Sweden",Sweden,,
-2026-11-24,AUTOMATIONSTEKNIK,May 19,"MalmöMässan, Malmö, Sweden",Sweden,,
-2026-11-24,GITEX AI Mediterranean Italy,"Apr 21, 9:00 AM","La Nuvola, Rome, Italy",Italy,,
-2026-11-24,AWS Summit,"May 27, 2:00 AM","FIERA MILANO Spa, Rho, Italy",Italy,,
-2026-11-24,We Make Future,Jun 10,"Rimini Expo Center, Rimini, Italy",Italy,,
-2026-11-24,AI WEEK 2027,May 25,"FIERA MILANO Spa, Rho, Italy",Italy,,
-2026-11-24,Startup & AI Thinking: Open Innovation Reinvents Itself,"Dec 1, 9:30 AM","Aula De Carli, Milan, Italy",Italy,,
-2026-11-24,Expo Elettronica,Nov 28,"Fiera di Forlì, Forli, Italy",Italy,,
+2026-11-24,HPE Discover,"Dec 2, 8:30 AM","Fira de Barcelona, Barcelona, Spain",Spain,,Meet enterprise cloud and infrastructure leaders to discuss upcoming European data centre facility requirements.
+2026-11-24,Open Sovereign AI + Cloud Day Europe,Mar 15,"International Barcelona Convention Center, Barcelona, Spain",Spain,,Connect with cloud operators planning European infrastructure expansion and sovereign data centre needs.
+2026-11-24,Big Data & AI World Frankfurt,May 6,"Messe Frankfurt, Frankfurt am Main, Germany",Germany,,Engage with major data centre operators and technology firms planning new infrastructure in Germany.
+2026-11-24,Green IO Paris – From Dependency to Sustainability,"Dec 2, 12:00 AM","Westfield CNIT, Puteaux, France",France,,Meet European sustainability and digital infrastructure leaders for green data centre design opportunities.
+2026-11-24,Dublin Tech Summit,"May 25, 6:30 PM","Laya Arena, Dublin, Ireland",Ireland,,Connect with Irish tech and infrastructure leaders to pitch data centre engineering services.
+2026-11-24,Manufacturing & Supply Chain West Conference & Expo,"Nov 25, 9:00 AM","UL Arena, Limerick, Ireland",Ireland,,"Meet industrial developers and manufacturing leaders needing M&E design, energy, and sustainability consultancy services."
+2026-11-24,"Data Innovation Summit: Dates, Venue and Who Should Go",May 18,"Kistamässan, Sollentuna, Sweden",Sweden,,Connect with data centre operators and tech leaders planning new facility infrastructure and sustainable expansions.
+2026-11-24,BIG DATA & AI EXPO,May 25,"Stockholmsmässan, Stockholm Municipality, Sweden",Sweden,,"Meet AI and data infrastructure leaders planning high-density, energy-efficient data centres requiring specialized M&E."
+2026-11-24,Stockholm Tech Show,May 25,"Kistamässan, Sollentuna, Sweden",Sweden,,"Network with tech companies, developers, and data centre stakeholders requiring energy and engineering consultancy."
+2026-11-24,AUTOMATIONSTEKNIK,May 19,"MalmöMässan, Malmö, Sweden",Sweden,,Meet automation and industrial engineering experts involved in facility development and sustainable infrastructure projects.
+2026-11-24,AWS Summit,"May 27, 2:00 AM","FIERA MILANO Spa, Rho, Italy",Italy,,Meet hyperscale cloud providers needing new sustainable data centre infrastructure design.
