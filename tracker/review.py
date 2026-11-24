@@ -85,6 +85,14 @@ def apply_decisions() -> dict:
                             "field": "(new item)", "old_value": "", "new_value": "added",
                             "impact": "New project approved from the review queue", "source": sid,
                             "logged_by": "Approved"})
+        elif r["area"] == "Grid by market":
+            country, month = r["item_id"].split("|")
+            gm = read_table("grid_markets")
+            for g in gm:
+                if g["country"] == country and g["month"] == month:
+                    g["price_eur_mwh"] = r["proposed_value"]
+                    g["source"] = (g["source"] + f"; price approved from {r['source_url']}").strip("; ")
+            write_table("grid_markets", gm)
         else:
             t = TABLE.get(r["area"])
             if not t:

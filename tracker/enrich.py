@@ -249,6 +249,72 @@ def policy_watch(serp) -> str:
     return f"policy proposals {n}"
 
 
+def fill_prices(serp) -> str:
+    """Markets with no open price feed: ask Google AI Mode for last month's average day-ahead price,
+    and write it only if the number is on the cited page next to EUR/MWh (otherwise -> Review)."""
+    from .auto_update import _ai_mode as am
+    from .llm import read_page
+    rows = read_table("grid_markets")
+    months = sorted({r["month"] for r in rows})
+    if len(months) < 2:
+        return "prices: no months"
+    target = months[-2]  # last complete month
+    reviews, done = read_table("reviews"), 0
+    zone = {"Spain": "Spain (OMIE)", "United Kingdom": "Great Britain (convert GBP to EUR only if the source does)",
+            "Ireland": "Ireland (SEM / SEMO)", "Sweden": "Sweden SE3 (Stockholm)"}
+    for country, z in zone.items():
+        row = next((r for r in rows if r["country"] == country and r["month"] == target), None)
+        if not row or row.get("price_eur_mwh"):
+            continue
+        try:
+            text, refs = am(serp, f"Average day-ahead wholesale electricity price in {z} for {target} in EUR/MWh. Cite the source.")
+            res = gemini_json("From the answer, return JSON {\"price\": <number in EUR/MWh or null>, \"quote\": \"<exact "
+                              f"words>\", \"url\": \"<reference>\"}} for the {target} monthly average day-ahead price in "
+                              f"{z}. Null if not stated for that exact month.\nReferences:\n"
+                              + "\n".join(u for _t, u in refs[:8]) + "\nAnswer:\n" + text[:4000])[0]
+        except BudgetExceeded:
+            break
+        except Exception:  # noqa: BLE001
+            continue
+        if not res.get("price"):
+            continue
+        val = f"{float(res['price']):.1f}"
+        url = resolve(res.get("url") or "")
+        page = read_page(url).lower() if url else ""
+        num = val.rstrip("0").rstrip(".")
+        if page and (num in page or val in page) and ("mwh" in page):
+            row["price_eur_mwh"] = val
+            row["source"] = (row["source"] + f"; price via AI search: {url}").strip("; ")
+            done += 1
+        else:
+            RV.add(reviews, "Grid by market", f"{country}|{target}", f"{country} price {target}", "price_eur_mwh",
+                   "", val, res.get("quote", ""), url, "AI found a price but the cited page does not show it")
+    write_table("grid_markets", rows)
+    write_table("reviews", reviews)
+    return f"prices filled {done}"
+
+
+def source_dates(max_items=40) -> str:
+    """Fill blank 'published' dates on Sources from the page itself (meta tags), free."""
+    import re
+    import requests
+    from .llm import UA
+    src = read_table("sources")
+    done = 0
+    for s in [s for s in src if not s.get("published")][:max_items]:
+        try:
+            html = requests.get(s["url"], timeout=20, headers=UA).text[:200000]
+        except Exception:  # noqa: BLE001
+            continue
+        m = re.search(r'(?:article:published_time|datePublished|pubdate|publish-date|date)["\']?\s*(?:content|:)\s*=?\s*["\']'
+                      r'(\d{4}-\d{2}-\d{2})', html, re.I)
+        if m:
+            s["published"] = m.group(1)
+            done += 1
+    write_table("sources", src)
+    return f"source dates {done}"
+
+
 def account_notes() -> str:
     accounts, projects = read_table("accounts"), read_table("projects")
     news, jobs = read_table("news"), read_table("jobs")
@@ -312,13 +378,13 @@ def run(dry_run: bool = False, weekly: bool = True) -> None:
         except RuntimeError:
             serp = None
         if serp:
-            for fn in (hiring_signals, events, gap_answers, policy_watch):
+            for fn in (hiring_signals, events, gap_answers, policy_watch, fill_prices):
                 try:
                     notes.append(fn(serp))
                 except Exception as e:  # noqa: BLE001
                     notes.append(f"{fn.__name__} failed: {str(e)[:80]}")
             log("enrich", "credits", "SerpApi searches used by enrichment", serp.spent)
-    for fn in (account_notes, briefing):
+    for fn in (source_dates, account_notes, briefing):
         try:
             notes.append(fn())
         except Exception as e:  # noqa: BLE001

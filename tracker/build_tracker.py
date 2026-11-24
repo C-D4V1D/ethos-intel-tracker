@@ -863,7 +863,7 @@ def sheet_grid(wb, rows):
         ws.cell(rr, 1, m).font = F(10, True, NAVY)
         for i, c in enumerate(countries):
             v = to_num(val.get((c, m), {}).get("renewable_share_pct", ""))
-            cell = ws.cell(rr, 2 + i, v)
+            cell = ws.cell(rr, 2 + i, v if v is not None else ("month not complete" if m == months[-1] else "no data"))
             cell.number_format = "0.0"; cell.font = F(10); cell.border = BOX
     last = r0 + len(months)
     rp = last + 3
@@ -878,7 +878,7 @@ def sheet_grid(wb, rows):
         ws.cell(rr, 1, m).font = F(10, True, NAVY)
         for i, c in enumerate(countries):
             v = to_num(val.get((c, m), {}).get("price_eur_mwh", ""))
-            cell = ws.cell(rr, 2 + i, v if v is not None else "n/a")
+            cell = ws.cell(rr, 2 + i, v if v is not None else ("not yet" if j >= len(months) - 2 else "-"))
             cell.number_format = "0.0"; cell.font = F(10, color=INK if v is not None else MUTED); cell.border = BOX
     plast = rp + len(months)
     for i, c in enumerate(countries):
@@ -894,7 +894,7 @@ def sheet_grid(wb, rows):
         start_type="num", start_value=20, start_color="F8696B", mid_type="num", mid_value=50,
         mid_color="FFEB84", end_type="num", end_value=90, end_color="63BE7B"))
     tip(ws["A6"], "Most recent month with data for each market (may be part-month).")
-    tip(ws["A7"], "Average day-ahead wholesale price, most recent month. Spain, Sweden and Ireland prices are under a licence that forbids republishing, and the UK is not covered by this free feed.")
+    tip(ws["A7"], "Average day-ahead wholesale price, most recent month. Germany, France, Italy and Denmark come from an open feed. For Spain, UK, Ireland and Sweden the weekly AI search looks up last month's average from a published source and writes it only if the figure is on that page.")
     if months:
         lc = LineChart()
         lc.title = "Renewable share of generation (%)"
