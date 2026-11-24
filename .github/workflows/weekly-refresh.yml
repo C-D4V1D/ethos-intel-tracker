@@ -50,6 +50,7 @@ jobs:
       - name: Refresh data and rebuild workbook
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           if [ "${{ inputs.skip_serp }}" = "true" ]; then
             python -m tracker.run_all --no-serp

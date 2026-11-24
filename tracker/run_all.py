@@ -8,10 +8,12 @@ Steps
  1. sync_from_excel   - keep hand edits made in the workbook
  2. check_sources     - is every source link still alive? stamp the date
  3. refresh_grid_data - Spain renewable share from Red Electrica
- 4. news_watch        - new headlines per project (SerpApi Google News)
- 5. ai_mode_scan      - Google AI Mode status check per project (SerpApi)
- 6. detect_changes    - log what moved since last run
- 7. build_tracker     - rebuild the formatted Excel workbook
+ 4. news_watch        - new headlines per project (free Google News RSS)
+ 5. tender_watch      - public tenders mentioning data centres (EU TED, UK Find a Tender)
+ 6. ai_mode_scan      - Google AI Mode status check per project (SerpApi, needs key)
+ 7. next_actions      - suggested next action per project (rules; Gemini if key set)
+ 8. detect_changes    - log what moved since last run
+ 9. build_tracker     - rebuild the formatted Excel workbook
 A failed step is logged and the run continues, so one broken site never blocks
 the weekly update.
 """
@@ -21,7 +23,7 @@ import argparse
 import traceback
 
 from . import (ai_mode_scan, build_tracker, check_sources, detect_changes,
-               news_watch, refresh_grid_data, sync_from_excel)
+               news_watch, next_actions, refresh_grid_data, sync_from_excel, tender_watch)
 from .common import log, serpapi_key
 
 
@@ -70,11 +72,13 @@ def main() -> None:
     if not a.skip_links:
         step("check_sources", check_sources.run, dry)
     step("refresh_grid_data", refresh_grid_data.run, dry)
+    step("news_watch", news_watch.run, dry)          # free Google News RSS by default
+    step("tender_watch", tender_watch.run, dry)      # free EU TED + UK Find a Tender
     if dry or (not a.no_serp and serpapi_key()):
-        step("news_watch", news_watch.run, dry)
         step("ai_mode_scan", ai_mode_scan.run, dry)
     else:
         log("serpapi", "skipped", "no SERPAPI_KEY set or --no-serp used")
+    step("next_actions", next_actions.run, dry)      # rules, + Gemini if GEMINI_API_KEY set
     step("detect_changes", detect_changes.run, dry)
     step("build_tracker", build_tracker.run)
     log("run_all", "done", "workbook rebuilt in output/")

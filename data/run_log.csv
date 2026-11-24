@@ -40,3 +40,8 @@ run_at,step,status,detail,credits_used
 2026-11-24 05:25 UTC,detect_changes,ok,0 changes logged,0
 2026-11-24 05:25 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 20, 'Accounts': 10, 'Markets scored': 8, 'Sources': 58, 'Change-log entries': 2, 'News items': 0, 'AI scans': 0, 'Grid data months': 24}",0
 2026-11-24 05:25 UTC,run_all,done,workbook rebuilt in output/,0
+2026-11-24 05:43 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 20, 'Accounts': 10, 'Markets scored': 8, 'Sources': 58, 'Change-log entries': 2, 'News items': 0, 'AI scans': 0, 'Grid data months': 24}",0
+2026-11-24 05:43 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 20, 'Accounts': 10, 'Markets scored': 8, 'Sources': 58, 'Change-log entries': 2, 'News items': 0, 'AI scans': 0, 'Grid data months': 24, 'Public tenders': 0}",0
+2026-11-24 05:44 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 20, 'Accounts': 10, 'Markets scored': 8, 'Sources': 58, 'Change-log entries': 2, 'News items': 0, 'AI scans': 0, 'Grid data months': 24, 'Public tenders': 0}",0
+2026-11-24 05:44 UTC,next_actions,ok,20 suggestions; Gemini rewrote 0 (no GEMINI_API_KEY: rules only),0
+2026-11-24 05:44 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 20, 'Accounts': 10, 'Markets scored': 8, 'Sources': 58, 'Change-log entries': 2, 'News items': 0, 'AI scans': 0, 'Grid data months': 24, 'Public tenders': 0}",0

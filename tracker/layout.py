@@ -27,7 +27,9 @@ PIPELINE = [
     ("ethos_fit", "Ethos service fit", 30, "text"),
     ("ethos_relationship", "Ethos relationship", 15, "list:relationship"),
     ("design_team", "Known design team / contractors", 28, "text"),
-    ("next_action", "Next action", 32, "text"),
+    ("next_action", "Next action (agreed)", 32, "text"),
+    ("suggested_action", "Suggested next action (auto)", 40, "auto"),
+    ("suggested_by", "Suggested by", 10, "auto"),
     ("owner", "Owner", 12, "text"),
     ("confidence", "Confidence", 11, "list:confidence"),
     ("source_ids", "Source IDs", 12, "text"),
@@ -54,11 +56,11 @@ ACCOUNTS = [
 
 MARKETS = [
     ("country", "Country", 14, "text"),
-    ("pipeline_score", "Pipeline (0-5)", 10, "num"),
-    ("capex_score", "Investment (0-5)", 10, "num"),
-    ("grid_score", "Grid access (0-5)", 10, "num"),
-    ("policy_score", "Policy (0-5)", 10, "num"),
-    ("fit_score", "Ethos fit (0-5)", 10, "num"),
+    ("pipeline_score", "Pipeline (1-5)", 10, "num"),
+    ("capex_score", "Investment (1-5)", 10, "num"),
+    ("grid_score", "Grid access (1-5)", 10, "num"),
+    ("policy_score", "Policy (1-5)", 10, "num"),
+    ("fit_score", "Ethos fit (1-5)", 10, "num"),
     ("_total", "Total /25", 9, "formula"),
     ("_rank", "Rank", 7, "formula"),
     ("_projects", "Projects tracked", 10, "formula"),
@@ -73,9 +75,9 @@ POLICY = [
     ("rag", "Risk", 8, "list:rag"),
     ("grid_lead_time", "Grid connection (large loads)", 38, "text"),
     ("policy_change", "Latest rule change (2025-26)", 48, "text"),
-    ("policy_date", "In force / dated", 13, "text"),
+    ("policy_date", "In force / dated", 13, "date"),
     ("next_milestone", "Next milestone to watch", 34, "text"),
-    ("milestone_date", "Milestone date", 12, "text"),
+    ("milestone_date", "Milestone date", 12, "date"),
     ("rag_reason", "Why this rating", 36, "text"),
     ("ethos_opening", "Commercial opening for Ethos", 40, "text"),
     ("source_ids", "Source IDs", 12, "text"),
@@ -127,6 +129,19 @@ NEWS = [
     ("publisher", "Publisher", 18, "text"),
     ("published", "Published", 14, "text"),
     ("url", "Link", 34, "url"),
+]
+
+TENDERS = [
+    ("date_found", "Found", 11, "date"),
+    ("source", "Source", 7, "text"),
+    ("country", "Country", 10, "text"),
+    ("title", "Tender title", 60, "text"),
+    ("buyer", "Buyer", 30, "text"),
+    ("published", "Published", 12, "date"),
+    ("deadline", "Deadline", 12, "date"),
+    ("notice_type", "Notice type", 18, "text"),
+    ("matched", "Matched", 16, "text"),
+    ("url", "Link", 30, "url"),
 ]
 
 AI_SCAN = [

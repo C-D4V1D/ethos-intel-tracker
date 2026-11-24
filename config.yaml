@@ -5,10 +5,28 @@ serpapi:
   # Free plan = 250 searches/month. Each AI Mode or News query = 1 search.
   monthly_budget: 230          # hard stop, leaves headroom under 250
   ai_mode_per_run: 12          # projects/accounts scanned by Google AI Mode per run
-  news_per_run: 12             # news queries per run
+  news_per_run: 12             # only used when news.source = serpapi
   rescan_after_days: 21        # don't re-scan an item more often than this
   hl: en                       # result language
   gl: uk                       # Google country edition
+
+news:
+  source: rss                  # rss = free Google News RSS (no key); serpapi = uses SerpApi credits
+
+tenders:                       # free official APIs, no key: EU TED + UK Find a Tender
+  enabled: true
+  lookback_days: 30
+  max_results: 50
+  fts_max_pages: 15
+  keywords: ["data centre", "data center", "datacenter", "centro de datos", "centre de données",
+             "Rechenzentrum", "datacenter", "data centro", "datacentre"]
+  countries: ["Spain", "Germany", "France", "Italy", "Sweden", "Ireland", "Denmark"]
+
+gemini:                        # free tier; needs the GEMINI_API_KEY secret
+  enabled: true
+  max_per_run: 25
+  pause_seconds: 5
+  models: ["gemini-3.5-flash-lite", "gemini-3.6-flash", "gemini-flash-lite-latest", "gemini-flash-latest"]
 
 freshness:
   amber_days: 90               # source/project not checked for 90+ days -> amber

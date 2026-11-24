@@ -28,7 +28,7 @@ SCHEMAS: dict[str, list[str]] = {
         "announced", "permit", "construction_start", "target_online",
         "ethos_fit", "ethos_relationship", "design_team", "next_action",
         "owner", "confidence", "source_ids", "notes", "last_checked",
-        "news_query", "ai_query",
+        "news_query", "ai_query", "suggested_action", "suggested_by",
     ],
     "accounts": [
         "id", "account", "hq", "european_pipeline", "why_now",
@@ -55,6 +55,10 @@ SCHEMAS: dict[str, list[str]] = {
     "gaps": [
         "id", "gap", "why_it_matters", "how_to_close", "owner", "status",
         "opened",
+    ],
+    "tenders": [
+        "date_found", "source", "notice_id", "title", "buyer", "country",
+        "published", "deadline", "notice_type", "url", "matched",
     ],
     "news": [
         "date_found", "item_id", "item_name", "title", "publisher",
