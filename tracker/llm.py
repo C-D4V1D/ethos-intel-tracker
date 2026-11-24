@@ -36,12 +36,16 @@ def gemini(prompt: str, json_mode: bool = False, max_tokens: int = 4000) -> tupl
                               timeout=90)
             if r.status_code == 200:
                 try:
-                    txt = r.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
-                    time.sleep(cfg.get("pause_seconds", 5))
-                    return txt, m
+                    cand = r.json()["candidates"][0]
+                    txt = "".join(p.get("text", "") for p in cand["content"]["parts"]).strip()
                 except (KeyError, IndexError):
                     last = f"{m}: empty answer"
                     break
+                if cand.get("finishReason") == "MAX_TOKENS" or not txt:
+                    last = f"{m}: answer cut off"
+                    break  # try the next model rather than keep a half answer
+                time.sleep(cfg.get("pause_seconds", 5))
+                return txt, m
             last = f"{m}: HTTP {r.status_code} {r.text[:160]}"
             if r.status_code in (429, 500, 503) and attempt == 0:
                 time.sleep(30)

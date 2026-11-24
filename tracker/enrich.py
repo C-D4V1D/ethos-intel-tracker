@@ -151,6 +151,30 @@ def hiring_signals(serp) -> str:
     return f"jobs {len(new)} new"
 
 
+def events_rate(max_items=40) -> str:
+    """Rate events the AI has not rated yet (runs daily, no search credits)."""
+    rows = read_table("events")
+    todo = [e for e in rows if not e.get("why")][:max_items]
+    done = 0
+    for batch in _chunks(todo, 10):
+        items = [{"i": i, "name": x["name"], "when": x["date"], "where": x["venue"]} for i, x in enumerate(batch)]
+        try:
+            res = as_items(gemini_json(f"{ETHOS}\nFor each event return JSON {{\"items\": [{{\"i\": n, \"why\": \"<max 18 words: "
+                                       "who Ethos could meet or why it matters; say 'Low relevance' if it is not about data "
+                                       "centres, energy or construction>\"}}]}}. Events:\n" + json.dumps(items))[0], "items")
+        except Exception as e:  # noqa: BLE001
+            ERRORS.append(str(e)[:120])
+            continue
+        for x in res:
+            try:
+                batch[int(x["i"])]["why"] = x.get("why", "")
+                done += 1
+            except (KeyError, ValueError, IndexError):
+                pass
+    write_table("events", [e for e in rows if not e.get("why", "").lower().startswith("low relevance")])
+    return f"events rated {done}"
+
+
 def events(serp) -> str:
     cfg = load_config().get("discovery", {})
     rows = read_table("events")
@@ -356,20 +380,27 @@ def briefing() -> str:
     nw = [n for n in read_table("news") if week(n["date_found"]) and n.get("implication")][:20]
     td = [t for t in read_table("tenders") if t.get("relevance") in ("4", "5")][:8]
     jb = [j for j in read_table("jobs") if week(j["date_found"])][:10]
-    pend = sum(1 for r in read_table("reviews") if r["decision"] == "Pending")
     facts = {"changes": [f"{c['item_name']}: {c['field']} {c['old_value']} -> {c['new_value']}" for c in ch],
              "news": [f"{n['title']} -> {n['implication']}" for n in nw],
              "tenders": [t.get("title_en") or t["title"] for t in td],
              "jobs": [f"{j['company']}: {j['title']} ({j['location']})" for j in jb],
-             "pending_reviews": pend}
-    try:
-        txt, _m = gemini(f"{ETHOS}\nWrite this week's briefing for Ethos's business development team: exactly 5 bullet "
+             }
+    txt = ""
+    for _attempt in range(3):
+        try:
+            cand, _m = gemini(f"{ETHOS}\nWrite this week's briefing for Ethos's business development team: exactly 5 bullet "
                          "points starting with '• ', max 25 words each, most important first, plain English, "
                          "only from these facts (say if a week was quiet):\n" + json.dumps(facts, ensure_ascii=False))
-    except Exception as e:  # noqa: BLE001
-        return f"briefing failed: {str(e)[:80]}"
+        except Exception as e:  # noqa: BLE001
+            return f"briefing failed: {str(e)[:80]}"
+        bullets = [b.strip() for b in cand.splitlines() if b.strip().startswith("•") and len(b.split()) >= 6]
+        if len(bullets) >= 3:
+            txt = "\n".join(bullets[:5])
+            break
+    if not txt:
+        return "briefing skipped: AI answer incomplete (previous briefing kept)"
     rows = read_table("briefing")
-    rows = [{"date": today(), "text": txt.strip()}] + [r for r in rows if r["date"] != today()]
+    rows = [{"date": today(), "text": txt}] + [r for r in rows if r["date"] != today()]
     write_table("briefing", rows[:30])
     return "briefing written"
 
@@ -379,7 +410,7 @@ def run(dry_run: bool = False, weekly: bool = True) -> None:
         log("enrich", "skipped", "dry-run or no GEMINI_API_KEY")
         return
     notes = []
-    for fn in (news_summaries, tender_triage):
+    for fn in (news_summaries, tender_triage, events_rate):
         try:
             notes.append(fn())
         except Exception as e:  # noqa: BLE001

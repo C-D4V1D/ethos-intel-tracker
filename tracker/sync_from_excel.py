@@ -53,13 +53,14 @@ def read_workbook(wb_path) -> dict:
         if not cols:
             continue
         key = "id" if "id" in dict(cols) else cols[0][0]
+        url_cols = [(k, labels[lbl]) for k, lbl, _w, kind in layout if kind == "url" and lbl in labels]
         rows = {}
         for r in range(HEADER_ROW + 1, ws.max_row + 1):
             rec = {k: cell_text(ws.cell(r, ci).value) for k, ci in cols}
-            if url_col := dict(cols).get("url"):
-                link = ws.cell(r, url_col).hyperlink
+            for k, ci in url_cols:  # link columns show a short domain; keep the full address
+                link = ws.cell(r, ci).hyperlink
                 if link and link.target:
-                    rec["url"] = link.target
+                    rec[k] = link.target
             if any(rec.values()) and rec.get(key):
                 rows[rec[key]] = rec
         out[table] = {"key": key, "rows": rows}

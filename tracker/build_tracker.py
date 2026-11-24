@@ -24,6 +24,13 @@ from openpyxl.cell.text import InlineFont
 
 from . import docs as DOCS
 from . import layout as LY
+
+
+def xcol(layout, key: str) -> str:
+    """Column letter of `key` in a sheet layout, so cross-sheet formulas survive column reordering."""
+    from openpyxl.utils import get_column_letter
+    keys = [k for k, *_ in layout]
+    return get_column_letter(keys.index(key) + 1)
 from .common import DATA, OUTPUT, WORKBOOK_NAME, load_config, log, now, read_table
 
 # ---------------------------------------------------------------- style kit
@@ -475,7 +482,7 @@ TILE_TIPS = {
     "HIGH-PRIORITY PROJECTS": "Projects scoring 9 or more out of 12. See the Scoring guide tab.",
     "SOURCES DUE A RE-CHECK": "Sources not confirmed for 90+ days.",
     "BROKEN / BLOCKED LINKS": "Sources the weekly link check could not open. Blocked sites usually open fine in a browser.",
-    "WAITING FOR YOUR DECISION": "Items on the Review tab the automation could not confirm on its own. Approve or reject them there, or tick the boxes in the GitHub 'Review queue' page.",
+    "TENDERS STILL OPEN": "Public tender notices on the Tenders tab whose response deadline has not passed yet.",
     "OPEN QUESTIONS": "Open questions on the Gaps tab.",
     "PUBLIC TENDERS (90 DAYS)": "Public notices mentioning data centres found in EU TED and UK Find a Tender in the last 90 days.",
     "HEADLINES (14 DAYS)": "New headlines found by the free Google News watch in the last 14 days.",
@@ -544,20 +551,20 @@ def sheet_dashboard(wb, pipe_last, sortcol, countries, cfg):
     # health row
     tile(ws, 10, 2, "HIGH-PRIORITY PROJECTS", f'=COUNTIF({rng("_tier")},"High")', note="Scored 9 or more out of 12")
     tile(ws, 10, 4, "SOURCES DUE A RE-CHECK",
-         f'=COUNTIF(Sources!$H${FIRST}:$H${MAXR},">="&{cfg["freshness"]["amber_days"]})',
+         f'=COUNTIF(Sources!${xcol(LY.SOURCES,"_age")}${FIRST}:${xcol(LY.SOURCES,"_age")}${MAXR},">="&{cfg["freshness"]["amber_days"]})',
          note=f"Not checked for {cfg['freshness']['amber_days']}+ days")
     tile(ws, 10, 6, "BROKEN / BLOCKED LINKS",
-         f'=COUNTIF(Sources!$I${FIRST}:$I${MAXR},"BROKEN")+COUNTIF(Sources!$I${FIRST}:$I${MAXR},"BLOCKED")',
+         f'=COUNTIF(Sources!${xcol(LY.SOURCES,"link_status")}${FIRST}:${xcol(LY.SOURCES,"link_status")}${MAXR},"BROKEN")+COUNTIF(Sources!${xcol(LY.SOURCES,"link_status")}${FIRST}:${xcol(LY.SOURCES,"link_status")}${MAXR},"BLOCKED")',
          note="From the weekly link check")
-    tile(ws, 10, 8, "WAITING FOR YOUR DECISION", f'=COUNTIF(Review!$A${FIRST}:$A${MAXR},"Pending")',
-         note="Approve or reject on the Review tab")
-    tile(ws, 10, 10, "OPEN QUESTIONS", f'=COUNTIF(Gaps!$F${FIRST}:$F${MAXR},"Open")',
+    tile(ws, 10, 8, "TENDERS STILL OPEN", f'=COUNTIF(Tenders!${xcol(LY.TENDERS,"deadline")}${FIRST}:${xcol(LY.TENDERS,"deadline")}${MAXR},">="&TODAY())',
+         note="Public tenders whose deadline is still ahead")
+    tile(ws, 10, 10, "OPEN QUESTIONS", f'=COUNTIF(Gaps!${xcol(LY.GAPS,"status")}${FIRST}:${xcol(LY.GAPS,"status")}${MAXR},"Open")',
          note="Unknowns listed on the Gaps tab")
     pd = f"Pipeline!${col(LY.PIPELINE, 'design_team')}${FIRST}:${col(LY.PIPELINE, 'design_team')}${MAXR}"
     ms = f"'Grid & Policy'!${col(LY.POLICY, 'milestone_date')}${FIRST}:${col(LY.POLICY, 'milestone_date')}${MAXR}"
-    tile(ws, 15, 2, "PUBLIC TENDERS (90 DAYS)", f'=COUNTIF(Tenders!$A${FIRST}:$A${MAXR},">="&(TODAY()-90))',
+    tile(ws, 15, 2, "PUBLIC TENDERS (90 DAYS)", f'=COUNTIF(Tenders!${xcol(LY.TENDERS,"published")}${FIRST}:${xcol(LY.TENDERS,"published")}${MAXR},">="&(TODAY()-90))',
          note="Official EU and UK tender notices")
-    tile(ws, 15, 4, "HEADLINES (14 DAYS)", f'=COUNTIF(News!$A${FIRST}:$A${MAXR},">="&(TODAY()-14))',
+    tile(ws, 15, 4, "HEADLINES (14 DAYS)", f'=COUNTIF(News!${xcol(LY.NEWS,"date_found")}${FIRST}:${xcol(LY.NEWS,"date_found")}${MAXR},">="&(TODAY()-14))',
          note="Free weekly news search")
     tile(ws, 15, 6, "DESIGN TEAM NOT PUBLIC", f'=COUNTIF({pd},"Not*")', note="Design team unnamed: a question for the client")
     tile(ws, 15, 8, "MW WITH EXISTING CLIENTS",
@@ -1027,31 +1034,34 @@ def sheet_readme(wb, cfg, counts):
         ("What this is", [
             ("Purpose", "One place to see where Ethos can win data centre work in Europe: named projects, the markets behind them, the rules that change them, and the accounts to call."),
             ("Who it is for", "Client Partners preparing meetings, Marketing planning campaigns, and leadership choosing which markets to prioritise."),
-            ("How current", f"Rebuilt automatically every Monday. This copy was built {now()}."),
+            ("How current", f"News, tenders and AI summaries refresh every day; the full check of every project and market runs every Monday. This copy was built {now()}."),
         ]),
         ("The tabs", [
-            ("Dashboard", "Headline numbers, top 10 opportunities, latest changes, charts. Read this first."),
+            ("Dashboard", "Start here: headline numbers, this week's brief, top 10 opportunities, latest changes and charts."),
             ("Pipeline", "Every tracked project with stage, size, Ethos fit, priority score, sources and freshness."),
+            ("Accounts", "Developers and operators to target, linked to their projects, with why now and the next step."),
             ("Markets", "Why these countries: each scored 1-5 on pipeline, investment, grid access, policy and Ethos fit."),
             ("Grid & Policy", "Grid connection conditions and the latest rule change per market, with a Red/Amber/Green risk."),
-            ("Accounts", "Developers and operators to target, linked to their projects, with the next step."),
-            ("Sources", "Every source with publisher, date, primary/secondary label and whether the link still works."),
-            ("Changes", "Dated log of what moved since the last refresh, and why it matters."),
-            ("Gaps", "What we don't know yet and how to find out (often a question for the client)."),
-            ("News", "Latest headlines per project, collected weekly from Google News (free RSS feed)."),
-            ("Tenders", "Public tenders mentioning data centres in the target markets (EU TED and UK Find a Tender)."),
-            ("AI Scan", "Google AI Mode's latest status answer per project, with automatic flags where it disagrees with the tracker. Unverified until a person reviews it."),
-            ("Grid by market", "Monthly renewable share of electricity (all 8 markets) and wholesale power price (open-licence markets), refreshed weekly."),
+            ("Grid by market", "Monthly renewable share of electricity (all 8 markets) and wholesale power price where the data is openly licensed."),
             ("Live Data", "Spain's official monthly renewable share (Red Eléctrica) against the 90% level in Real Decreto 1032/2026."),
+            ("News", "Latest headlines per project and market, each with a short summary and what it means for Ethos."),
+            ("Tenders", "Public tenders mentioning data centres in the target markets (EU TED and UK Find a Tender), most relevant first."),
+            ("Hiring signals", "Data-centre jobs posted by the developers we track: a sign of where they are building next."),
+            ("Events", "Upcoming industry events in the focus markets worth attending, and why."),
+            ("Gaps", "What we don't know yet and how to find out (often a question for the client)."),
+            ("Changes", "Dated log of what moved since the last refresh, and why it matters."),
+            ("Sources", "Every source with publisher, date, primary/secondary label, whether the link still works, and an archived copy."),
             ("Scoring guide", "How the Priority score and the Market score are worked out, point by point, with a live worked example."),
             ("Glossary", "Plain-English meaning of every technical term and abbreviation, plus the free tools behind the automation."),
+            ("Review", "For the tracker's owner only: facts waiting for a yes or no before they are used. Not needed to read the tracker."),
+            ("AI Scan", "Background reference: Google AI Mode's raw weekly answer per project. Unverified; nothing here is used unless confirmed."),
             ("Lists", "Dropdown values and the scoring points. Change a number here and every score updates."),
         ]),
         ("How to use it", [
             ("Hover for help", "Every column header has a note (small red corner). Hover over it to see what the column means and how it is filled."),
             ("Sort & filter", "Click the arrow in any header to sort (e.g. Priority score, largest first) or filter (e.g. Country = Spain). Pipeline is already sorted by priority."),
             ("Colours", "Navy headers = data you can edit. Teal headers = formulas, don't type over them. Purple headers = written automatically each week. Green / amber / red = good / watch / act."),
-            ("Approving", "Review tab: choose Approve or Reject in the first column (OneDrive copy). Or tick boxes on the GitHub 'Review queue' page, also from the GitHub phone app."),
+            ("Owner only: approving", "Review tab: choose Approve or Reject in the first column (OneDrive copy). Or tick boxes on the GitHub 'Review queue' page, also from the GitHub phone app."),
             ("Next actions", "'Next action (agreed)' is yours. 'Suggested next action (auto)' is rebuilt weekly from stage, relationship, news, AI flags and policy (and improved by Gemini when enabled). Copy a suggestion across when you agree with it."),
         ]),
         ("How to read it", [
@@ -1061,9 +1071,9 @@ def sheet_readme(wb, cfg, counts):
             ("UNVERIFIED / blank", "Left blank rather than guessed. Every blank is a research task, listed on the Gaps tab where it matters."),
         ]),
         ("Automation", [
-            ("Every day", "Your edits and Review decisions are pulled from the OneDrive copy and applied; new headlines (with AI summaries) and public tenders (AI-rated) are added; the workbook is rebuilt and the OneDrive copy replaced."),
+            ("Every day", "The owner's edits and Review decisions are pulled from the OneDrive copy and applied; new headlines (with AI summaries) and public tenders (AI-rated) are added; the workbook is rebuilt and the OneDrive copy replaced."),
             ("Every Monday", "Also: every source link re-checked; grid data for all markets; Google's AI search checks every project and looks for new ones (facts applied only when found on the cited page); hiring signals, events, answers to open questions and rule changes; AI next actions and the weekly briefing."),
-            ("Within minutes", "When you tick Approve / Reject on the GitHub 'Review queue' page."),
+            ("Within minutes", "When the owner ticks Approve / Reject on the GitHub 'Review queue' page."),
             ("Where it runs", "On GitHub's free cloud servers (GitHub Actions). Nothing runs on your computer."),
             ("Code & run history", cfg["workbook"]["repo_url"]),
             ("Latest workbook", cfg["workbook"]["latest_download"]),
@@ -1117,7 +1127,8 @@ def run() -> str:
     T["news"].sort(key=lambda r: r["date_found"], reverse=True)
     T["reviews"] = read_table("reviews")
     T["jobs"] = read_table("jobs")
-    T["events"] = read_table("events")
+    T["events"] = [e for e in read_table("events") if e.get("why") and not e["why"].lower().startswith("low relevance")]
+    T["ai_scan"] = [r for r in T["ai_scan"] if not r.get("review_status", "").startswith("Replaced")]
     T["ai_scan"].sort(key=lambda r: (r["review_status"] != "Needs review", r["date"]), reverse=False)
     def prio(p):
         mw = to_num(p["capacity_mw"]) or 0
@@ -1129,6 +1140,7 @@ def run() -> str:
     T["gaps"].sort(key=lambda g: ({"Open": 0, "In progress": 1, "Closed": 2}.get(g["status"], 3), g["id"]))
     T["tenders"] = read_table("tenders")
     T["tenders"].sort(key=lambda t: t["published"], reverse=True)
+    T["tenders"].sort(key=lambda t: int(t.get("relevance") or 0), reverse=True)  # most relevant first
     T["markets"].sort(key=lambda r: -sum(to_num(r[k]) or 0 for k in
                                          ("pipeline_score", "capex_score", "grid_score", "policy_score", "fit_score")))
 
@@ -1199,7 +1211,7 @@ def run() -> str:
                                       TextBlock(InlineFont(rFont="Arial", sz=9, i=True, color="555555"), "\n" + n["summary"]))
             ws.row_dimensions[FIRST + i].height = max(48, est_height([(n["title"] + " " + n["summary"], 70)]))
     ws, last = sheet_simple(wb, "AI Scan", LY.AI_SCAN, T["ai_scan"], "AI status check (Google AI Mode)",
-                            "Each week Google's AI search is asked about every project. Facts found on the cited web page are applied automatically (see Changes, 'AI (verified)'). Rows marked 'Needs review' could not be confirmed: check them by hand.",
+                            "Background check, for reference: each week Google's AI search is asked about every project. Facts it finds are applied only when the cited web page confirms them (see Changes, 'AI (verified)'). Its answers here are unverified and are not used anywhere else.",
                             tab="95A5A6", span=6, refs=refs)
     if not T["ai_scan"]:
         ws.cell(FIRST, 3, "No scans yet. Add the SERPAPI_KEY secret on GitHub and the next weekly run fills this tab.").font = F(10, italic=True, color=MUTED)
@@ -1209,11 +1221,11 @@ def run() -> str:
 
     pending = [r for r in T["reviews"] if r["decision"] in ("Pending", "")]
     done = [r for r in T["reviews"] if r["decision"] not in ("Pending", "", "Superseded")][-40:][::-1]
-    ws, last = sheet_simple(wb, "Review", LY.REVIEWS, pending + done, "Your review queue",
-        "Things the automation found but could not confirm on its own. Pick Approve or Reject in the first column; "
+    ws, last = sheet_simple(wb, "Review", LY.REVIEWS, pending + done, "Owner's review queue (not needed to read the tracker)",
+        "For the person who maintains the tracker: facts the automation found but could not confirm on its own. Nothing here is shown elsewhere until approved. Pick Approve or Reject in the first column; "
         "the next run (daily) applies it everywhere and logs it. Or tick the boxes on the GitHub 'Review queue' page: applied within minutes.",
         f"{len(pending)} waiting. Approve = the proposed value is written to its tab and its source added. Reject = never proposed again. "
-        "Leave 'Pending' if unsure.", tab="C0392B", span=8, refs=refs)
+        "Leave 'Pending' if unsure.", tab="95A5A6", span=8, refs=refs)
     chips(ws, "A", {"Approve": (GREEN_F, GREEN_T), "Reject": (RED_F, RED_T), "Pending": (AMBER_F, AMBER_T)})
     issue = cfg["workbook"]["repo_url"].rstrip("/") + "/issues"
     ws.cell(3, 10, "Open the GitHub tick-box page").hyperlink = issue
@@ -1226,8 +1238,8 @@ def run() -> str:
                  "new location often means a project is moving. AI notes what each one signals.",
                  tab="8E44AD", span=8)
     sheet_simple(wb, "Events", LY.EVENTS, T["events"], "Industry events (Google Events)",
-                 "Upcoming data-centre, energy and construction events in the focus markets, found weekly. AI notes why "
-                 "each is worth attending.", tab="8E44AD", span=6)
+                 "Upcoming data-centre, energy and construction events in the focus markets, found weekly. Only events "
+                 "the AI judged relevant to Ethos are listed, each with why it is worth attending.", tab="8E44AD", span=6)
 
     ws, last = sheet_simple(wb, "Tenders", LY.TENDERS, T["tenders"], "Public tender watch",
         "Public tender notices mentioning data centres in the target markets, found in the official EU (TED) and UK (Find a Tender) databases. Most relevant first (AI-rated 1-5).",
@@ -1265,8 +1277,9 @@ def run() -> str:
         "Hiring signals": len(T["jobs"]), "Events": len(T["events"]),
     }
     sheet_readme(wb, cfg, counts)
-    order = ["Read me", "Dashboard", "Review", "Pipeline", "Markets", "Grid & Policy", "Grid by market", "Accounts", "Sources",
-             "Changes", "Gaps", "News", "Tenders", "Hiring signals", "Events", "AI Scan", "Live Data", "Scoring guide", "Glossary", "Lists"]
+    order = ["Read me", "Dashboard", "Pipeline", "Accounts", "Markets", "Grid & Policy", "Grid by market", "Live Data",
+             "News", "Tenders", "Hiring signals", "Events", "Gaps", "Changes", "Sources", "Scoring guide", "Glossary",
+             "Review", "AI Scan", "Lists"]
     wb._sheets = [wb[n] for n in order]
     wb.active = 1
     for ws in wb.worksheets:

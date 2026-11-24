@@ -29,6 +29,10 @@ ISSUE_TITLE = "Review queue (tick to approve or reject)"
 def add(reviews, area, item_id, item_name, field, current, proposed, evidence="", source_url="", reason=""):
     """Queue a decision unless the same proposal is already pending or was rejected before."""
     proposed = str(proposed)
+    if field == "stage":
+        order = ["Announced", "Permitting", "Permitted", "Under construction", "Operational"]
+        if current in order and proposed in order and order.index(proposed) < order.index(current):
+            return None  # stages only move forward; a step back is almost always a misreading
     for r in reviews:
         if r["item_id"] == item_id and r["field"] == field and r["proposed_value"] == proposed \
                 and r["decision"] in ("Pending", "Reject", ""):
@@ -143,17 +147,39 @@ def _issue_number():
     return None
 
 
+FIELD_NAMES = None
+
+
+def _label(field: str) -> str:
+    """Plain column name (as shown in the workbook) for a data field."""
+    global FIELD_NAMES
+    if FIELD_NAMES is None:
+        from . import layout as LY
+        FIELD_NAMES = {}
+        for lay in (LY.PIPELINE, LY.POLICY, LY.ACCOUNTS, LY.MARKETS, LY.GAPS):
+            for k, lbl, *_ in lay:
+                FIELD_NAMES.setdefault(k, lbl)
+    return FIELD_NAMES.get(field, field.replace("_", " "))
+
+
 def _line(r):
-    short = lambda v: (v[:70] + "…") if len(v) > 70 else v
+    short = lambda v: (v[:90] + "…") if len(v) > 90 else v
     if r["field"] == "(new project)":
         p = json.loads(r["proposed_value"])
-        what = f"**New project:** {p['project']} — {p['developer']}, {p['city_region']} ({p['country']})"
+        title = f"Add new project: {p['project']}"
+        what = (f"Add **{p['project']}** ({p['developer']}, {p['city_region']}, {p['country']}"
+                f"{', ' + str(p.get('capacity_mw')) + ' MW' if p.get('capacity_mw') else ''}) to the Pipeline tab.")
     else:
-        what = (f"**{r['item_name']}** · {r['field']}: `{short(r['current_value']) or 'blank'}` → "
-                f"`{short(r['proposed_value'])}`")
-    src = f" · [source]({r['source_url']})" if r["source_url"] else ""
-    return (f"- [ ] ✅ Approve `{r['id']}` {what}{src}\n"
-            f"  - [ ] ❌ Reject `{r['id']}` — _{r['reason'] or 'needs a person'}_")
+        title = f"{r['item_name']}: {_label(r['field'])}"
+        what = (f"Change **{_label(r['field'])}** from `{short(r['current_value']) or 'blank'}` "
+                f"to `{short(r['proposed_value'])}`.")
+    src = f" [Open the source]({r['source_url']})." if r["source_url"] else ""
+    quote = r.get("evidence", "").strip().replace("\n", " ")
+    quote = f"\n> {quote[:220]}{'…' if len(quote) > 220 else ''}" if quote else ""
+    return (f"#### `{r['id']}` · {title}\n"
+            f"{what}\nWhy it needs you: {r['reason'] or 'the automation could not confirm it'}.{src}{quote}\n\n"
+            f"- [ ] ✅ Approve `{r['id']}`: make this change\n"
+            f"- [ ] ❌ Reject `{r['id']}`: keep things as they are\n")
 
 
 def read_issue_ticks() -> int:
@@ -184,13 +210,19 @@ def publish_issue() -> None:
     if not os.environ.get("GH_TOKEN"):
         return
     pending = [r for r in read_table("reviews") if r["decision"] in ("Pending", "")]
-    head = (f"**{len(pending)} item(s) waiting.** Tick ✅ to approve or ❌ to reject; changes are applied "
-            "automatically within a few minutes and the workbook is rebuilt. You can also decide in the "
-            "workbook's *Review* tab.\n\n")
+    head = (f"## {len(pending)} item(s) need a yes or no\n\n"
+            "The tracker updates itself, but when a source does not clearly confirm a fact it asks you first. "
+            "**How to answer:**\n\n"
+            "1. Read an item below (what would change, why, and the source).\n"
+            "2. Tick **one** box: ✅ Approve to make the change, or ❌ Reject to keep things as they are.\n"
+            "3. That's all. Ticking saves by itself. Within about 5 minutes the change is applied, the item "
+            "disappears from this page, and the workbook and the OneDrive copy are rebuilt.\n\n"
+            "Items you leave unticked simply wait. A rejected proposal is never suggested again. "
+            "You can also answer in the workbook's *Review* tab (Approve/Reject in the first column).\n\n---\n\n")
     groups = {}
     for r in pending:
         groups.setdefault(r["area"] if r["field"] != "(new project)" else "New projects", []).append(r)
-    body = head + "\n\n".join(f"### {g}\n" + "\n".join(_line(r) for r in rs[:60]) for g, rs in groups.items())
+    body = head + "\n".join(f"### {g}\n\n" + "\n".join(_line(r) for r in rs[:60]) for g, rs in groups.items())
     if not pending:
         body = head + "_Nothing to review._"
     n = _issue_number()
