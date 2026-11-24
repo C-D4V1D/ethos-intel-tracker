@@ -1,9 +1,9 @@
 country,status,status_reason,pipeline_score,capex_score,grid_score,policy_score,fit_score,evidence,source_ids,last_checked
-Spain,Focus,Top-7 market: live pipeline Ethos can reach.,5,5,3,2,5,"Aragón GW-scale pipeline (QTS, Microsoft, AWS, Azora); RD 1032/2026 adds cost and is under appeal",SRC001; SRC006; SRC012,2026-11-24
 United Kingdom,Focus,Top-7 market: live pipeline Ethos can reach.,4,5,4,5,3,"Cambois 720 MW, South Wales >1 GW, Lanarkshire 500 MW; AIGZ price discounts from Apr 2027",SRC022; SRC026; SRC029,2026-11-24
-Germany,Focus,Top-7 market: live pipeline Ethos can reach.,4,4,3,3,4,"Frankfurt pipeline (Data4 180 MW, Vantage 160 MW, EdgeConneX); strict EnEfG PUE/heat rules; Ethos delivered Digital Realty FRA20 retrofit (SRC021)",SRC035; SRC038; SRC041,2026-11-24
+Spain,Focus,Top-7 market: live pipeline Ethos can reach.,5,5,3,2,5,"Aragón GW-scale pipeline (QTS, Microsoft, AWS, Azora); RD 1032/2026 adds cost and is under appeal",SRC001; SRC006; SRC012,2026-11-24
 France,Focus,Top-7 market: live pipeline Ethos can reach.,5,4,4,4,3,28.6 GW requested; RTE fast-track; Campus IA 1.4 GW,SRC042; SRC046,2026-11-24
-Ireland,Focus,Top-7 market: live pipeline Ethos can reach.,3,4,2,3,5,Home market; CRU2025236 reopens connections with on-site generation and 80% renewables,SRC034; SRC032,2026-11-24
+Germany,Focus,Top-7 market: live pipeline Ethos can reach.,4,4,3,3,4,"Frankfurt pipeline (Data4 180 MW, Vantage 160 MW, EdgeConneX); strict EnEfG PUE/heat rules; Ethos delivered Digital Realty FRA20 retrofit (SRC021)",SRC035; SRC038; SRC041,2026-11-24
 Sweden,Focus,Top-7 market: live pipeline Ethos can reach.,4,3,3,4,4,"atNorth 300 MW, EdgeConneX up to 1 GW; SvK queue maturity rules",SRC050; SRC052; SRC054,2026-11-24
+Ireland,Focus,Top-7 market: live pipeline Ethos can reach.,3,4,2,3,5,Home market; CRU2025236 reopens connections with on-site generation and 80% renewables,SRC034; SRC032,2026-11-24
 Italy,Focus,Top-7 market: live pipeline Ethos can reach.,3,2,3,4,3,"Single authorisation procedure (Law 49/2026); Vantage MXP2; only one sourced investment (€350m) so far, see gap G-08",SRC048; SRC049; SRC047,2026-11-24
 Denmark,Watch,Not pursued for now: grid connections paused in 2026 (Energinet); revisit when the pause lifts.,3,2,1,2,3,Energinet paused new grid connection agreements in 2026 (~60 GW queue vs ~7 GW peak),SRC055,2026-11-24

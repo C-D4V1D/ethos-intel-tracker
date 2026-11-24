@@ -189,3 +189,18 @@ run_at,step,status,detail,credits_used
 2026-11-24 16:24 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 30, 'Accounts': 10, 'Markets scored': 8, 'Sources': 103, 'Change-log entries': 111, 'News items': 185, 'AI scans': 82, 'Grid data months': 24, 'Public tenders': 85, 'Waiting for your decision': 19, 'Hiring signals': 1, 'Events': 36}",0
 2026-11-24 16:24 UTC,run_all,done,workbook rebuilt in output/,0
 2026-11-24 16:24 UTC,onedrive,skipped,OneDrive not connected (MS_CLIENT_ID / MS_REFRESH_TOKEN missing),0
+2026-11-24 16:28 UTC,run_all,start,light,0
+2026-11-24 16:28 UTC,sync_from_excel,ok,314 rows read from onedrive_copy.xlsx,0
+2026-11-24 16:28 UTC,onedrive,ok,pulled edits from OneDrive copy (314 rows read),0
+2026-11-24 16:28 UTC,sync_from_excel,skipped,Ethos_European_DC_Intelligence_Tracker.xlsx not found,0
+2026-11-24 16:29 UTC,news_watch,ok,"RSS: 26 queries ({'rss': 26}), 4 new articles, 0 failed",0
+2026-11-24 16:29 UTC,tender_watch,ok,"TED: 83 matches, 0 new (API total 97); FTS: 1 matches, 0 new",0
+2026-11-24 16:43 UTC,enrich,ok,"news summarised 24; tenders triaged 0; source dates 12; accounts noted 10; briefing written; 9 AI batches failed (first: gemini-flash-latest: HTTP 503 {
+  ""error"": {
+    ""code"": 503,
+    ""message"": ""This model is currently experiencing high )",0
+2026-11-24 16:47 UTC,next_actions,ok,"26 suggestions; Gemini rewrote 18; Gemini stopped: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=60)",0
+2026-11-24 16:47 UTC,detect_changes,ok,13 changes logged,0
+2026-11-24 16:47 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 26, 'Accounts': 10, 'Markets scored': 8, 'Sources': 97, 'Change-log entries': 112, 'News items': 189, 'AI scans': 57, 'Grid data months': 24, 'Public tenders': 85, 'Waiting for your decision': 19, 'Hiring signals': 1, 'Events': 36}",0
+2026-11-24 16:47 UTC,run_all,done,workbook rebuilt in output/,0
+2026-11-24 16:47 UTC,onedrive,ok,uploaded; view link https://1drv.ms/x/c/3aac4f65e8a264b6/IQB3yoSBMt6RSITvvHjY4YmBAQZQAfnt5KXRF7giAYKJq5A,0
