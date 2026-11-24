@@ -1,0 +1,27 @@
+name: Make share links for PDFs in the OneDrive folder
+
+# Creates view-only, no-sign-in links for every PDF in the tracker's OneDrive folder
+# and saves them to share-links.txt in that folder (they are not printed here).
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Create links
+        env:
+          MS_CLIENT_ID: ${{ secrets.MS_CLIENT_ID }}
+          MS_REFRESH_TOKEN: ${{ secrets.MS_REFRESH_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: python -m tracker.share_links
