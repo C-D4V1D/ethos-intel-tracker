@@ -3,8 +3,8 @@
 link_status values:
   OK        - page answered 2xx/3xx
   BLOCKED   - site refuses automated checks (401/403/429); open it by hand
-  BROKEN    - 404/410 or the host could not be reached; find a replacement
-  ERROR     - other server error; try again next run
+  BROKEN    - 404/410: the page is gone; find a replacement
+  ERROR     - no answer (timeout / unreachable) or a server error; retried next run
 """
 from __future__ import annotations
 
@@ -20,7 +20,7 @@ UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
 
 def classify(code: int | None) -> str:
     if code is None:
-        return "BROKEN"
+        return "ERROR"  # timeouts are usually temporary or a block on cloud IPs
     if 200 <= code < 400:
         return "OK"
     if code in (401, 403, 429, 999):

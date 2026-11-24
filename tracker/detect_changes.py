@@ -63,8 +63,8 @@ def run(dry_run: bool = False) -> int:
         for k in n.keys() & o.keys():
             for f in fields:
                 if (o[k].get(f) or "") != (n[k].get(f) or ""):
-                    if table == "sources" and n[k].get(f) == "OK":
-                        continue  # a link recovering is not news
+                    if table == "sources" and n[k].get(f) in ("OK", "ERROR"):
+                        continue  # a link recovering, or a one-off timeout, is not news
                     changes.append({"item_type": table, "item_id": k, "item_name": n[k]["_name"],
                                     "field": f, "old_value": o[k].get(f, ""),
                                     "new_value": n[k].get(f, ""), "impact": IMPACT.get(f, "")})
