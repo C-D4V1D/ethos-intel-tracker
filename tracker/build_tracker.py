@@ -732,7 +732,7 @@ def sheet_dashboard(wb, pipe_last, sortcol, countries, cfg):
         src = FIRST + n
         vals = [(f'=IF(Changes!A{src}="","",Changes!A{src})', 2, 2),
                 (f'=IF(Changes!D{src}="","",Changes!D{src})', 3, 5),
-                (f'=IF(Changes!E{src}="","",Changes!E{src}&": "&Changes!F{src}&" → "&Changes!G{src})', 6, 7),
+                (f'=IF(Changes!A{src}="","",Changes!E{src}&IF(Changes!G{src}="added","",IF(Changes!F{src}="",": "&Changes!G{src},": "&Changes!F{src}&" → "&Changes!G{src})))', 6, 7),
                 (f'=IF(Changes!H{src}="","",Changes!H{src})', 8, 11)]
         for v, a, b in vals:
             ws.merge_cells(start_row=rr, start_column=a, end_row=rr, end_column=b)
@@ -1071,7 +1071,7 @@ def sheet_readme(wb, cfg, counts):
             ("UNVERIFIED / blank", "Left blank rather than guessed. Every blank is a research task, listed on the Gaps tab where it matters."),
         ]),
         ("Automation", [
-            ("Every day", "The owner's edits and Review decisions are pulled from the OneDrive copy and applied; new headlines (with AI summaries) and public tenders (AI-rated) are added; the workbook is rebuilt and the OneDrive copy replaced."),
+            ("Every day", "The owner's edits (values, column widths, formatting and formula fixes) and Review decisions are pulled from the OneDrive copy and applied; new headlines (with AI summaries) and public tenders (AI-rated) are added; the workbook is rebuilt and the OneDrive copy replaced."),
             ("Every Monday", "Also: every source link re-checked; grid data for all markets; Google's AI search checks every project and looks for new ones (facts applied only when found on the cited page); hiring signals, events, answers to open questions and rule changes; AI next actions and the weekly briefing."),
             ("Within minutes", "When the owner ticks Approve / Reject on the GitHub 'Review queue' page."),
             ("Where it runs", "On GitHub's free cloud servers (GitHub Actions). Nothing runs on your computer."),
@@ -1302,6 +1302,8 @@ def run() -> str:
     add_banding(wb)
     from openpyxl.workbook.properties import CalcProperties
     wb.calculation = CalcProperties(fullCalcOnLoad=True)  # Excel recalculates on open
+    from .owner_layout import apply as owner_layout
+    kept = owner_layout(wb)  # the owner's own layout changes from the OneDrive copy
     wb.save(path)
     log("build_tracker", "ok", f"{path.name}: {counts}")
     return str(path)

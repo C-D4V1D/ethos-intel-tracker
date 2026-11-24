@@ -87,6 +87,30 @@ def connect() -> None:
     sys.exit("Sign-in timed out; run the workflow again.")
 
 
+BASELINE_ASSET = "onedrive-baseline.xlsx"
+
+
+def _baseline_upload(f) -> None:
+    """Keep a copy of exactly what was uploaded (a release asset), to spot layout edits later."""
+    import shutil
+    if not os.environ.get("GH_TOKEN"):
+        return
+    b = OUTPUT / BASELINE_ASSET
+    shutil.copy(f, b)
+    subprocess.run(["gh", "release", "upload", "latest", str(b), "--clobber"], capture_output=True, text=True)
+
+
+def _baseline_download():
+    if not os.environ.get("GH_TOKEN"):
+        return None
+    d = OUTPUT / "baseline"
+    d.mkdir(parents=True, exist_ok=True)
+    r = subprocess.run(["gh", "release", "download", "latest", "-p", BASELINE_ASSET, "-D", str(d), "--clobber"],
+                       capture_output=True, text=True)
+    p = d / BASELINE_ASSET
+    return p if r.returncode == 0 and p.exists() else None
+
+
 def pull() -> bool:
     """Download the OneDrive copy and pull edits + review decisions back into data/."""
     try:
@@ -112,6 +136,11 @@ def pull() -> bool:
     tmp.write_bytes(r.content)
     from . import sync_from_excel
     n = sync_from_excel.run(str(tmp))
+    base = _baseline_download()
+    if base:  # keep the owner's layout changes (widths, formatting, formula fixes)
+        from .owner_layout import capture
+        k = capture(base, tmp)
+        log("owner_layout", "ok", f"{k} layout changes kept from the OneDrive copy")
     log("onedrive", "ok", f"pulled edits from OneDrive copy ({n} changes taken)")
     return True
 
@@ -146,6 +175,7 @@ def push() -> str:
     info["uploaded_ctag"] = item.get("cTag", "")
     from .sync_from_excel import remember_published
     remember_published(f)  # what people will see = the baseline for spotting their edits
+    _baseline_upload(f)
     INFO.write_text(json.dumps(info, indent=2))
     log("onedrive", "ok", f"uploaded; view link {info.get('view_link', '')}")
     return info.get("view_link", "")
