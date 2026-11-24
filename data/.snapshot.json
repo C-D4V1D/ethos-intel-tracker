@@ -2,9 +2,9 @@
  "projects": {
   "P-ES-01": {
    "stage": "Permitted",
-   "capacity_mw": "",
+   "capacity_mw": "300",
    "investment_eur_m": "13471",
-   "target_online": "",
+   "target_online": "2028",
    "ethos_relationship": "Target",
    "design_team": "Not public",
    "_name": "QTS Calatorao campus (Project Rhodes)"
@@ -20,9 +20,9 @@
   },
   "P-ES-03": {
    "stage": "Permitted",
-   "capacity_mw": "",
-   "investment_eur_m": "",
-   "target_online": "",
+   "capacity_mw": "144",
+   "investment_eur_m": "1225",
+   "target_online": "2029",
    "ethos_relationship": "Target",
    "design_team": "Not public",
    "_name": "Zaragoza-WIND campus"
@@ -30,7 +30,7 @@
   "P-ES-04": {
    "stage": "Permitting",
    "capacity_mw": "345.6",
-   "investment_eur_m": "",
+   "investment_eur_m": "2179",
    "target_online": "",
    "ethos_relationship": "Target",
    "design_team": "Not public",
@@ -47,18 +47,18 @@
   },
   "P-ES-06": {
    "stage": "Announced",
-   "capacity_mw": "",
+   "capacity_mw": "24",
    "investment_eur_m": "300",
-   "target_online": "",
+   "target_online": "2028",
    "ethos_relationship": "Existing client",
    "design_team": "Not appointed (B-Global Tech designed BCN1)",
    "_name": "Digital Realty MAD5"
   },
   "P-ES-07": {
    "stage": "Under construction",
-   "capacity_mw": "",
-   "investment_eur_m": "",
-   "target_online": "",
+   "capacity_mw": "6",
+   "investment_eur_m": "200",
+   "target_online": "2027",
    "ethos_relationship": "Target",
    "design_team": "Not public",
    "_name": "Goodman MAD01 (San Blas-Canillejas)"
@@ -66,7 +66,7 @@
   "P-ES-08": {
    "stage": "Permitting",
    "capacity_mw": "248",
-   "investment_eur_m": "",
+   "investment_eur_m": "750",
    "target_online": "",
    "ethos_relationship": "Target",
    "design_team": "Not public",
@@ -112,7 +112,7 @@
    "stage": "Permitted",
    "capacity_mw": "200",
    "investment_eur_m": "1600",
-   "target_online": "",
+   "target_online": "2028",
    "ethos_relationship": "Target",
    "design_team": "John Spain (planning); MEP not public",
    "_name": "Art Data Centres Ennis campus"
@@ -127,7 +127,7 @@
    "_name": "Data4 Hanau campus (FRA1)"
   },
   "P-DE-02": {
-   "stage": "Permitting",
+   "stage": "Permitted",
    "capacity_mw": "",
    "investment_eur_m": "600",
    "target_online": "2027",
@@ -145,9 +145,9 @@
    "_name": "Vantage Bad Vilbel 'Im Schleid' (FRA62)"
   },
   "P-FR-01": {
-   "stage": "Permitting",
+   "stage": "Permitted",
    "capacity_mw": "1400",
-   "investment_eur_m": "",
+   "investment_eur_m": "8500",
    "target_online": "2028",
    "ethos_relationship": "Target",
    "design_team": "Arcadis (permitting); Eiffage (substation)",
@@ -179,6 +179,15 @@
    "ethos_relationship": "Existing client",
    "design_team": "Not public",
    "_name": "EdgeConneX Skellefte\u00e5 campus"
+  },
+  "P-DE-04": {
+   "stage": "Announced",
+   "capacity_mw": "174",
+   "investment_eur_m": "2520",
+   "target_online": "",
+   "ethos_relationship": "Target",
+   "design_team": "Not public",
+   "_name": "Vantage Gro\u00df-Gerau campus (revived)"
   }
  },
  "policy": {
@@ -230,6 +239,13 @@
    "milestone_date": "",
    "rag": "Amber",
    "_name": "Italy"
+  },
+  "Denmark": {
+   "policy_change": "Energinet temporary pause on new grid connections while capacity measures are prepared",
+   "next_milestone": "End of the pause / new connection rules",
+   "milestone_date": "",
+   "rag": "Red",
+   "_name": "Denmark"
   }
  },
  "sources": {
@@ -242,7 +258,7 @@
    "_name": "Government approves data centre sustainability royal decree"
   },
   "SRC003": {
-   "link_status": "OK",
+   "link_status": "BLOCKED",
    "_name": "SpainDC to file Supreme Court appeal against the decree"
   },
   "SRC004": {
@@ -374,7 +390,7 @@
    "_name": "Data4 lays foundations for Hanau campus (press release)"
   },
   "SRC036": {
-   "link_status": "OK (reader)",
+   "link_status": "BLOCKED",
    "_name": "Engineering a sustainable mega campus (Deerns with TTSP, Hanau)"
   },
   "SRC037": {
@@ -394,7 +410,7 @@
    "_name": "Digital Realty breaks ground on FRA20, Frankfurt"
   },
   "SRC041": {
-   "link_status": "OK (reader)",
+   "link_status": "OK",
    "_name": "EnEfG \u00a711 (data centre PUE, heat reuse, renewables)"
   },
   "SRC042": {
@@ -438,7 +454,7 @@
    "_name": "atNorth signs Calentix heat reuse deal at SWE04"
   },
   "SRC052": {
-   "link_status": "OK (reader)",
+   "link_status": "BLOCKED",
    "_name": "EdgeConneX looks to enter Swedish market (Skellefte\u00e5)"
   },
   "SRC053": {
@@ -464,6 +480,74 @@
   "SRC058": {
    "link_status": "OK",
    "_name": "Eiffage: Campus AI enters implementation phase (substation)"
+  },
+  "SRC059": {
+   "link_status": "BLOCKED",
+   "_name": "QTS Calatorao: 300 MW electrical capacity planned"
+  },
+  "SRC060": {
+   "link_status": "OK",
+   "_name": "QTS Calatorao campus: first building planned 2028"
+  },
+  "SRC061": {
+   "link_status": "OK",
+   "_name": "Zaragoza Wind: 144 MW IT, \u20ac1,224m, operation 2029"
+  },
+  "SRC062": {
+   "link_status": "OK",
+   "_name": "Merlin to develop \u20ac1.2B data centre in Zaragoza (144 MW IT, H2 2029)"
+  },
+  "SRC063": {
+   "link_status": "OK",
+   "_name": "Digital Realty earmarks ~\u20ac500m for Madrid and Barcelona (MAD5 20-24 MW)"
+  },
+  "SRC064": {
+   "link_status": "BLOCKED",
+   "_name": "Goodman MAD01: 6 MW IT, 9 MW on site"
+  },
+  "SRC065": {
+   "link_status": "OK",
+   "_name": "Goodman starts MAD01 construction, \u20ac200m initial investment"
+  },
+  "SRC066": {
+   "link_status": "OK",
+   "_name": "Microsoft region in Arag\u00f3n: La Muela 146 ha, \u20ac2,179m"
+  },
+  "SRC067": {
+   "link_status": "BROKEN",
+   "_name": "Castilla-La Mancha approves Meta PSI: \u20ac750m investment"
+  },
+  "SRC068": {
+   "link_status": "OK",
+   "_name": "Prefecture authorises Campus IA at Fouju (29 Jul 2026)"
+  },
+  "SRC069": {
+   "link_status": "OK",
+   "_name": "Campus IA: \u20ac8.5bn initial investment, build from H2 2026, live 2028"
+  },
+  "SRC070": {
+   "link_status": "OK",
+   "_name": "Genehmigungsbescheid RZ EdgeConneX Heusenstamm FRA11/FRA12 (16 Feb 2026)"
+  },
+  "SRC071": {
+   "link_status": "OK",
+   "_name": "Bad Vilbel: urban development contract VDC FRA62; B-Plan adoption planned 16 Dec 2025"
+  },
+  "SRC072": {
+   "link_status": "OK",
+   "_name": "Works on \u20ac1.6bn Ennis data centre to start; phase 1 commissioning by end 2028"
+  },
+  "SRC073": {
+   "link_status": "OK",
+   "_name": "Vantage revives Gro\u00df-Gerau data centre plan: 5 buildings, 174 MW, ~\u20ac2.5bn"
+  },
+  "SRC074": {
+   "link_status": "OK",
+   "_name": "Gro\u00df-Gerau says no to Vantage XXL data centre"
+  },
+  "SRC075": {
+   "link_status": "OK",
+   "_name": "Campus IA project calendar (Mistral 200 MW anchor client)"
   }
  }
 }

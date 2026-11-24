@@ -23,3 +23,24 @@ date,item_type,item_id,item_name,field,old_value,new_value,impact,source,logged_
 2026-11-24,projects,P-IE-02,Art Data Centres Ennis campus,target_online,,2028,Filled from verified research,SRC072,David C.
 2026-11-24,projects,P-DE-04,Vantage Groß-Gerau campus (revived),(new item),,added,"New Frankfurt-area opportunity, early stage",SRC073,David C.
 2026-11-24,Tracker,,Tracker,Baseline,none,"20 projects, 10 accounts, 7 policy rows, 58 sources",Baseline set; future changes logged automatically,,David C.
+2026-11-24,policy,Denmark,Denmark,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC069,"Campus IA: €8.5bn initial investment, build from H2 2026, live 2028",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC074,Groß-Gerau says no to Vantage XXL data centre,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC075,Campus IA project calendar (Mistral 200 MW anchor client),(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC066,"Microsoft region in Aragón: La Muela 146 ha, €2,179m",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC065,"Goodman starts MAD01 construction, €200m initial investment",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC071,Bad Vilbel: urban development contract VDC FRA62; B-Plan adoption planned 16 Dec 2025,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC067,Castilla-La Mancha approves Meta PSI: €750m investment,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC068,Prefecture authorises Campus IA at Fouju (29 Jul 2026),(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC061,"Zaragoza Wind: 144 MW IT, €1,224m, operation 2029",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC063,Digital Realty earmarks ~€500m for Madrid and Barcelona (MAD5 20-24 MW),(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC062,"Merlin to develop €1.2B data centre in Zaragoza (144 MW IT, H2 2029)",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC070,Genehmigungsbescheid RZ EdgeConneX Heusenstamm FRA11/FRA12 (16 Feb 2026),(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC059,QTS Calatorao: 300 MW electrical capacity planned,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC072,Works on €1.6bn Ennis data centre to start; phase 1 commissioning by end 2028,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC060,QTS Calatorao campus: first building planned 2028,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC073,"Vantage revives Groß-Gerau data centre plan: 5 buildings, 174 MW, ~€2.5bn",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC064,"Goodman MAD01: 6 MW IT, 9 MW on site",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC003,SpainDC to file Supreme Court appeal against the decree,link_status,OK,BLOCKED,Source needs attention,,auto
+2026-11-24,sources,SRC052,EdgeConneX looks to enter Swedish market (Skellefteå),link_status,OK (reader),BLOCKED,Source needs attention,,auto
+2026-11-24,sources,SRC036,"Engineering a sustainable mega campus (Deerns with TTSP, Hanau)",link_status,OK (reader),BLOCKED,Source needs attention,,auto
