@@ -293,3 +293,23 @@ run_at,step,status,detail,credits_used
 2026-11-24 21:05 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 29, 'Accounts': 10, 'Markets scored': 8, 'Sources': 105, 'Change-log entries': 122, 'News items': 205, 'AI scans': 36, 'Grid data months': 24, 'Public tenders': 85, 'Waiting for your decision': 18, 'Hiring signals': 1, 'Events': 11}",0
 2026-11-24 21:05 UTC,run_all,done,workbook rebuilt in output/,0
 2026-11-24 21:05 UTC,onedrive,ok,uploaded; view link https://1drv.ms/x/c/3aac4f65e8a264b6/IQB3yoSBMt6RSITvvHjY4YmBAQZQAfnt5KXRF7giAYKJq5A,0
+2026-11-24 21:06 UTC,run_all,start,light,0
+2026-11-24 21:06 UTC,onedrive,ok,OneDrive copy unchanged since the last upload; nothing to pull,0
+2026-11-24 21:06 UTC,sync_from_excel,skipped,Ethos_European_DC_Intelligence_Tracker.xlsx not found,0
+2026-11-24 21:07 UTC,news_watch,ok,"RSS: 29 queries ({'rss': 29}), 0 new articles, 0 failed",0
+2026-11-24 21:07 UTC,tender_watch,ok,"TED: 83 matches, 0 new (API total 97); FTS: 1 matches, 0 new",0
+2026-11-24 21:25 UTC,enrich,ok,"news summarised 42; tenders triaged 0; events rated 0; source dates 0; accounts noted 9; briefing failed: gemini-flash-latest: HTTP 429 {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Yo; 1 AI batches failed (first: gemini-flash-latest: HTTP 429 {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please ch)",0
+2026-11-24 21:27 UTC,next_actions,ok,"29 suggestions; Gemini rewrote 0; Gemini stopped: gemini-flash-latest: HTTP 429 {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please check your plan and billing details. For more information on this error,",0
+2026-11-24 21:27 UTC,detect_changes,ok,0 changes logged,0
+2026-11-24 21:27 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 29, 'Accounts': 10, 'Markets scored': 8, 'Sources': 105, 'Change-log entries': 122, 'News items': 205, 'AI scans': 36, 'Grid data months': 24, 'Public tenders': 85, 'Waiting for your decision': 18, 'Hiring signals': 1, 'Events': 11}",0
+2026-11-24 21:27 UTC,run_all,done,workbook rebuilt in output/,0
+2026-11-24 21:27 UTC,onedrive,ok,uploaded; view link https://1drv.ms/x/c/3aac4f65e8a264b6/IQB3yoSBMt6RSITvvHjY4YmBAQZQAfnt5KXRF7giAYKJq5A,0
