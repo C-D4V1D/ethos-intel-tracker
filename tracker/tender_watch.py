@@ -36,29 +36,36 @@ def _first(v):
 
 
 def ted(cfg, since: dt.date) -> list[dict]:
-    terms = " OR ".join(f'"{k}"' for k in cfg["keywords"])
+    """One query per keyword (TED returns nothing for some long OR-queries), merged."""
     countries = " ".join(ISO3[c] for c in cfg["countries"] if c in ISO3)
-    query = (f"FT~({terms}) AND buyer-country IN ({countries}) "
-             f"AND publication-date>={since:%Y%m%d}")
-    body = {"query": query,
-            "fields": ["publication-number", "notice-title", "buyer-name", "buyer-country",
-                       "publication-date", "deadline-receipt-tender-date-lot", "notice-type"],
-            "limit": cfg.get("max_results", 50), "page": 1, "scope": "ALL",
-            "paginationMode": "PAGE_NUMBER"}
-    r = requests.post(TED_URL, json=body, timeout=60)
-    if r.status_code != 200:
-        raise RuntimeError(f"TED HTTP {r.status_code}: {r.text[:300]}")
-    js = r.json()
-    ted.total = js.get("totalNoticeCount", len(js.get("notices", [])))
-    out = []
-    for n in js.get("notices", []):
-        pn = _first(n.get("publication-number"))
-        out.append({"source": "TED", "notice_id": pn, "title": _first(n.get("notice-title")),
-                    "buyer": _first(n.get("buyer-name")), "country": _first(n.get("buyer-country")),
-                    "published": _first(n.get("publication-date"))[:10],
-                    "deadline": _first(n.get("deadline-receipt-tender-date-lot"))[:10],
-                    "notice_type": _first(n.get("notice-type")),
-                    "url": f"https://ted.europa.eu/en/notice/-/detail/{pn}"})
+    out, seen, total = [], set(), 0
+    for kw in dict.fromkeys(cfg["keywords"]):
+        cpv = " ".join(cfg.get("cpv", []))
+        query = (f'FT~("{kw}") AND buyer-country IN ({countries}) '
+                 f"AND publication-date>={since:%Y%m%d}"
+                 + (f" AND (classification-cpv IN ({cpv}))" if cpv else ""))
+        body = {"query": query,
+                "fields": ["publication-number", "notice-title", "buyer-name", "buyer-country",
+                           "publication-date", "deadline-receipt-tender-date-lot", "notice-type"],
+                "limit": cfg.get("max_results", 50), "page": 1, "scope": "ALL",
+                "paginationMode": "PAGE_NUMBER"}
+        r = requests.post(TED_URL, json=body, timeout=60)
+        if r.status_code != 200:
+            raise RuntimeError(f"TED HTTP {r.status_code}: {r.text[:300]}")
+        js = r.json()
+        total += js.get("totalNoticeCount", 0)
+        for n in js.get("notices", []):
+            pn = _first(n.get("publication-number"))
+            if pn in seen:
+                continue
+            seen.add(pn)
+            out.append({"source": "TED", "notice_id": pn, "title": _first(n.get("notice-title")),
+                        "buyer": _first(n.get("buyer-name")), "country": _first(n.get("buyer-country")),
+                        "published": _first(n.get("publication-date"))[:10],
+                        "deadline": _first(n.get("deadline-receipt-tender-date-lot"))[:10],
+                        "notice_type": _first(n.get("notice-type")), "matched": kw,
+                        "url": f"https://ted.europa.eu/en/notice/-/detail/{pn}"})
+    ted.total = total
     return out
 
 

@@ -15,12 +15,16 @@ news:
 
 tenders:                       # free official APIs, no key: EU TED + UK Find a Tender
   enabled: true
-  lookback_days: 30
+  lookback_days: 90
   max_results: 50
   fts_max_pages: 15
   keywords: ["data centre", "data center", "datacenter", "centro de datos", "centre de données",
              "Rechenzentrum", "datacenter", "data centro", "datacentre"]
   countries: ["Spain", "Germany", "France", "Italy", "Sweden", "Ireland", "Denmark"]
+  # Only construction, engineering and M&E categories (CPV codes, hierarchical):
+  # 45 construction works, 71 architecture/engineering, 425 cooling/ventilation,
+  # 31 electrical equipment, 39717 HVAC appliances, 507 building M&E repair, 093 energy
+  cpv: ["45000000", "71000000", "42500000", "31000000", "39717000", "50700000", "09300000"]
 
 gemini:                        # free tier; needs the GEMINI_API_KEY secret
   enabled: true

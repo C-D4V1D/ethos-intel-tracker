@@ -18,6 +18,7 @@ from openpyxl.formatting.rule import CellIsRule, ColorScaleRule, DataBarRule, Fo
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter as L
 from openpyxl.worksheet.datavalidation import DataValidation
+from openpyxl.worksheet.hyperlink import Hyperlink
 
 from . import docs as DOCS
 from . import layout as LY
@@ -241,6 +242,104 @@ def polish(ws, cols, last):
         if not plain and start is not None:
             blocks.append((start, i - 1)); start = None
     ws._band = (blocks, end)   # added last (lowest priority) in add_banding()
+
+
+def _q(name):
+    return f"'{name}'" if " " in name else name
+
+
+def _index(ws, colletter):
+    out = {}
+    for r in range(FIRST, ws.max_row + 1):
+        v = ws[f"{colletter}{r}"].value
+        if isinstance(v, str) and v.strip():
+            out.setdefault(v.strip(), r)
+    return out
+
+
+def _link(cell, sheet, row, col_letter="A", note=None):
+    cell.hyperlink = Hyperlink(ref=cell.coordinate, location=f"{_q(sheet)}!{col_letter}{row}")
+    cell.font = F(cell.font.sz or 10, cell.font.b, TEAL, underline="single")
+    if note:
+        tip(cell, note, 300, min(40 + 16 * note.count("\n"), 200))
+
+
+def add_links(wb):
+    """Turn IDs and names into clickable jumps between tabs (first ID linked; all IDs in the hover note)."""
+    idx = {"Sources": _index(wb["Sources"], "A"), "Pipeline": _index(wb["Pipeline"], "A"),
+           "Accounts": _index(wb["Accounts"], "B"), "Markets": _index(wb["Markets"], "A"),
+           "Grid & Policy": _index(wb["Grid & Policy"], "A")}
+    acc_id = _index(wb["Accounts"], "A")
+    src_title = {wb["Sources"][f"A{r}"].value: f'{wb["Sources"][f"B{r}"].value} ({wb["Sources"][f"C{r}"].value})'
+                 for r in idx["Sources"].values()}
+    pipe_name = {wb["Pipeline"][f"A{r}"].value: wb["Pipeline"][f"B{r}"].value for r in idx["Pipeline"].values()}
+
+    def ids(v):
+        return [x.strip() for x in str(v or "").replace(",", ";").split(";") if x.strip()]
+
+    def link_ids(ws, key, layout, target, names):
+        c = col(layout, key)
+        for r in range(FIRST, ws.max_row + 1):
+            cell = ws[f"{c}{r}"]
+            found = [i for i in ids(cell.value) if i in idx[target]]
+            if found:
+                note = "\n".join(f"{i}: {names.get(i, '')}" for i in found) + "\n(click: open the first one)"
+                _link(cell, target, idx[target][found[0]], note=note)
+
+    for sheet, layout in (("Pipeline", LY.PIPELINE), ("Accounts", LY.ACCOUNTS), ("Markets", LY.MARKETS),
+                          ("Grid & Policy", LY.POLICY)):
+        link_ids(wb[sheet], "source_ids", layout, "Sources", src_title)
+    link_ids(wb["Accounts"], "linked_projects", LY.ACCOUNTS, "Pipeline", pipe_name)
+    # Pipeline: developer -> account, country -> market
+    ws = wb["Pipeline"]
+    dc, cc = col(LY.PIPELINE, "developer"), col(LY.PIPELINE, "country")
+    for r in range(FIRST, ws.max_row + 1):
+        dev = str(ws[f"{dc}{r}"].value or "")
+        for name, ar in idx["Accounts"].items():
+            if name.split(" (")[0].lower() in dev.lower():
+                _link(ws[f"{dc}{r}"], "Accounts", ar, "B"); break
+        ctry = ws[f"{cc}{r}"].value
+        if ctry in idx["Markets"]:
+            _link(ws[f"{cc}{r}"], "Markets", idx["Markets"][ctry])
+    # Markets <-> Grid & Policy
+    for a, b in (("Markets", "Grid & Policy"), ("Grid & Policy", "Markets")):
+        for ctry, r in idx[a].items():
+            if ctry in idx[b]:
+                _link(wb[a][f"A{r}"], b, idx[b][ctry])
+    # item IDs on log tabs -> their row
+    for sheet, layout in (("Changes", LY.CHANGES), ("News", LY.NEWS), ("AI Scan", LY.AI_SCAN)):
+        ws, c = wb[sheet], col(layout, "item_id")
+        for r in range(FIRST, ws.max_row + 1):
+            v = str(ws[f"{c}{r}"].value or "")
+            for target, table in (("Pipeline", idx["Pipeline"]), ("Sources", idx["Sources"]), ("Accounts", acc_id)):
+                if v in table:
+                    _link(ws[f"{c}{r}"], target, table[v]); break
+    # Sources 'used in' -> first project/account row, or the tab named
+    ws, c = wb["Sources"], col(LY.SOURCES, "used_in")
+    tabs = {"Policy": "Grid & Policy", "Accounts": "Accounts", "Markets": "Markets", "Live Data": "Live Data"}
+    for r in range(FIRST, ws.max_row + 1):
+        v = str(ws[f"{c}{r}"].value or "")
+        hit = next((i for i in ids(v) if i in idx["Pipeline"]), None)
+        if hit:
+            _link(ws[f"{c}{r}"], "Pipeline", idx["Pipeline"][hit])
+        elif next((i for i in ids(v) if i in acc_id), None):
+            _link(ws[f"{c}{r}"], "Accounts", acc_id[next(i for i in ids(v) if i in acc_id)])
+        else:
+            t = next((t for k, t in tabs.items() if k in v), None)
+            if t:
+                _link(ws[f"{c}{r}"], t, 1)
+    # Read me tab names -> tabs
+    ws = wb["Read me"]
+    for r in range(1, ws.max_row + 1):
+        v = ws[f"B{r}"].value
+        if isinstance(v, str) and v in wb.sheetnames and v != "Read me":
+            _link(ws[f"B{r}"], v, 1)
+    # Dashboard market table -> Markets
+    ws = wb["Dashboard"]
+    for r in range(15, 45):
+        v = ws[f"B{r}"].value
+        if isinstance(v, str) and v in idx["Markets"]:
+            _link(ws[f"B{r}"], "Markets", idx["Markets"][v])
 
 
 def add_banding(wb):
@@ -576,7 +675,8 @@ def sheet_dashboard(wb, pipe_last, sortcol, countries, cfg):
         rr = rt + 1 + n
         m = f"MATCH(LARGE({key},{n}),{key},0)"
         pick = lambda k: f'=IFERROR(INDEX({rng(k)},{m}),"")'
-        vals = [n, pick("project"), pick("developer"), pick("country"), pick("stage"),
+        proj_link = (f'=IFERROR(HYPERLINK("#Pipeline!B"&({m}+{FIRST - 1}),INDEX({rng("project")},{m})),"")')
+        vals = [n, proj_link, pick("developer"), pick("country"), pick("stage"),
                 pick("capacity_mw"), pick("_priority"),
                 f'=IFERROR(IF(INDEX({rng("next_action")},{m})<>"",INDEX({rng("next_action")},{m}),"Suggested: "&INDEX({rng("suggested_action")},{m})),"")']
         for (a, b), v in zip(spans, vals):
@@ -1022,6 +1122,7 @@ def run() -> str:
         _ws.sheet_properties.pageSetUpPr.fitToPage = True
         _ws.page_setup.fitToWidth = 1
         _ws.page_setup.fitToHeight = 0
+    add_links(wb)
     add_banding(wb)
     from openpyxl.workbook.properties import CalcProperties
     wb.calculation = CalcProperties(fullCalcOnLoad=True)  # Excel recalculates on open
