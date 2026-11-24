@@ -277,3 +277,11 @@ run_at,step,status,detail,credits_used
 2026-11-24 20:24 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 29, 'Accounts': 10, 'Markets scored': 8, 'Sources': 105, 'Change-log entries': 122, 'News items': 205, 'AI scans': 36, 'Grid data months': 24, 'Public tenders': 85, 'Waiting for your decision': 18, 'Hiring signals': 1, 'Events': 11}",0
 2026-11-24 20:24 UTC,run_all,done,workbook rebuilt in output/,0
 2026-11-24 20:29 UTC,onedrive,failed,file locked (open in Excel); will retry next run,0
+2026-11-24 20:54 UTC,run_all,start,approvals,0
+2026-11-24 20:54 UTC,sync_from_excel,skipped,no record of the last published workbook yet,0
+2026-11-24 20:54 UTC,onedrive,ok,pulled edits from OneDrive copy (0 changes taken),0
+2026-11-24 20:54 UTC,sync_from_excel,skipped,Ethos_European_DC_Intelligence_Tracker.xlsx not found,0
+2026-11-24 20:54 UTC,detect_changes,ok,0 changes logged,0
+2026-11-24 20:54 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 29, 'Accounts': 10, 'Markets scored': 8, 'Sources': 105, 'Change-log entries': 122, 'News items': 205, 'AI scans': 36, 'Grid data months': 24, 'Public tenders': 85, 'Waiting for your decision': 18, 'Hiring signals': 1, 'Events': 11}",0
+2026-11-24 20:54 UTC,run_all,done,workbook rebuilt in output/,0
+2026-11-24 20:58 UTC,onedrive,failed,file locked (open in Excel); will retry next run,0
