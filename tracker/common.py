@@ -54,17 +54,24 @@ SCHEMAS: dict[str, list[str]] = {
     ],
     "gaps": [
         "id", "gap", "why_it_matters", "how_to_close", "owner", "status",
-        "opened",
+        "opened", "answer",
     ],
     "grid_markets": ["country", "month", "renewable_share_pct", "price_eur_mwh", "source", "fetched"],
     "tenders": [
         "date_found", "source", "notice_id", "title", "buyer", "country",
-        "published", "deadline", "notice_type", "url", "matched",
+        "published", "deadline", "notice_type", "url", "matched", "title_en", "relevance", "why",
     ],
     "news": [
         "date_found", "item_id", "item_name", "title", "publisher",
-        "published", "url", "snippet", "query",
+        "published", "url", "snippet", "query", "summary", "implication",
     ],
+    "reviews": [
+        "id", "created", "area", "item_id", "item_name", "field", "current_value",
+        "proposed_value", "evidence", "source_url", "reason", "decision", "decided_on", "applied",
+    ],
+    "jobs": ["date_found", "company", "title", "location", "country", "posted", "via", "url", "signal"],
+    "events": ["date_found", "name", "date", "venue", "country", "url", "why"],
+    "briefing": ["date", "text"],
     "ai_scan": [
         "date", "item_id", "item_name", "query", "summary", "references",
         "flags", "review_status",
@@ -99,10 +106,16 @@ def load_env() -> None:
         pass
 
 
-def serpapi_key() -> str | None:
+def serpapi_keys() -> list[str]:
+    """All SerpApi keys available (SERPAPI_KEY, SERPAPI_KEY_2, ...). Used in turn as each runs out."""
     load_env()
-    key = os.environ.get("SERPAPI_KEY", "").strip()
-    return key or None
+    keys = [os.environ.get(n, "").strip() for n in ("SERPAPI_KEY", "SERPAPI_KEY_2", "SERPAPI_KEY_3")]
+    return [k for k in keys if k]
+
+
+def serpapi_key() -> str | None:
+    keys = serpapi_keys()
+    return keys[0] if keys else None
 
 
 def read_table(name: str) -> list[dict]:

@@ -122,23 +122,62 @@ GAPS = [
     ("owner", "Owner", 12, "text"),
     ("status", "Status", 10, "list:gapstatus"),
     ("opened", "Opened", 11, "date"),
+    ("answer", "Answer (when closed)", 40, "text"),
 ]
 
 NEWS = [
     ("date_found", "Found", 11, "date"),
     ("item_id", "ID", 9, "text"),
     ("item_name", "Project / account", 26, "text"),
-    ("title", "Headline", 60, "text"),
-    ("publisher", "Publisher", 18, "text"),
-    ("published", "Published", 14, "text"),
-    ("url", "Link", 34, "url"),
+    ("title", "Headline and summary", 70, "text"),
+    ("implication", "What it means for Ethos", 40, "auto"),
+    ("publisher", "Publisher", 16, "text"),
+    ("published", "Published", 13, "text"),
+    ("url", "Link", 28, "url"),
+]
+
+REVIEWS = [
+    ("decision", "Your decision", 13, "list:decision"),
+    ("id", "Review ID", 9, "text"),
+    ("area", "Tab", 12, "text"),
+    ("item_name", "Item", 28, "text"),
+    ("field", "What would change", 18, "text"),
+    ("current_value", "Now", 18, "text"),
+    ("proposed_value", "Proposed", 26, "text"),
+    ("reason", "Why it needs you", 30, "text"),
+    ("evidence", "Evidence (AI quote)", 46, "text"),
+    ("source_url", "Source", 28, "url"),
+    ("created", "Raised", 11, "date"),
+    ("decided_on", "Decided", 11, "date"),
+]
+
+JOBS = [
+    ("date_found", "Found", 11, "date"),
+    ("company", "Company", 20, "text"),
+    ("title", "Job title", 40, "text"),
+    ("location", "Location", 22, "text"),
+    ("signal", "What it signals", 40, "auto"),
+    ("posted", "Posted", 12, "text"),
+    ("via", "Via", 14, "text"),
+    ("url", "Link", 28, "url"),
+]
+
+EVENTS = [
+    ("date", "When", 18, "text"),
+    ("name", "Event", 44, "text"),
+    ("venue", "Where", 30, "text"),
+    ("country", "Market", 12, "text"),
+    ("why", "Why go", 40, "auto"),
+    ("url", "Link", 28, "url"),
 ]
 
 TENDERS = [
+    ("relevance", "Relevance to Ethos (1-5)", 11, "auto"),
     ("date_found", "Found", 11, "date"),
     ("source", "Source", 7, "text"),
     ("country", "Country", 10, "text"),
-    ("title", "Tender title", 60, "text"),
+    ("title_en", "Tender (English)", 50, "auto"),
+    ("why", "Why it matters", 34, "auto"),
     ("buyer", "Buyer", 30, "text"),
     ("published", "Published", 12, "date"),
     ("deadline", "Deadline", 12, "date"),
@@ -180,6 +219,7 @@ LISTS = {
     "ps": ["P", "S"],
     "gapstatus": ["Open", "In progress", "Closed"],
     "mstatus": ["Focus", "Watch"],
+    "decision": ["Pending", "Approve", "Reject"],
     "review": ["Needs review", "Accepted", "Dismissed", "No action"],
 }
 
@@ -199,4 +239,5 @@ SYNCED = {
     "Changes": ("changes", CHANGES),
     "Gaps": ("gaps", GAPS),
     "AI Scan": ("ai_scan", AI_SCAN),
+    "Review": ("reviews", REVIEWS),
 }

@@ -22,9 +22,10 @@ the weekly update.
 from __future__ import annotations
 
 import argparse
+import os
 import traceback
 
-from . import (auto_update, build_tracker, grid_markets, check_sources, detect_changes,
+from . import (auto_update, build_tracker, enrich, grid_markets, onedrive, review, check_sources, detect_changes,
                news_watch, next_actions, refresh_grid_data, sync_from_excel, tender_watch)
 from .common import log, serpapi_key
 
@@ -65,23 +66,35 @@ def main() -> None:
     p.add_argument("--dry-run", action="store_true", help="offline test with fixtures")
     p.add_argument("--no-serp", action="store_true", help="skip SerpApi steps")
     p.add_argument("--skip-links", action="store_true", help="skip the link checker")
+    p.add_argument("--light", action="store_true",
+                   help="daily run: pull OneDrive edits, apply approvals, free feeds, rebuild (no SerpApi)")
+    p.add_argument("--approvals-only", action="store_true",
+                   help="just apply review decisions and rebuild (used when you tick boxes on GitHub)")
     a = p.parse_args()
     dry = a.dry_run
     if dry:
         sandbox()
-    log("run_all", "start", "dry-run" if dry else "live")
+    if a.light or a.approvals_only:
+        os.environ["SKIP_SERP"] = "true"
+    log("run_all", "start", "dry-run" if dry else "approvals" if a.approvals_only else "light" if a.light else "full")
+    if not dry:
+        step("onedrive_pull", onedrive.pull)         # your edits + Approve/Reject from the OneDrive copy
     step("sync_from_excel", sync_from_excel.run)
-    if not a.skip_links:
-        step("check_sources", check_sources.run, dry)
-    step("refresh_grid_data", refresh_grid_data.run, dry)
-    step("news_watch", news_watch.run, dry)          # free Google News RSS by default
-    step("tender_watch", tender_watch.run, dry)      # free EU TED + UK Find a Tender
-    step("grid_markets", grid_markets.run, dry)      # renewable share + power price, every market
-    if not a.no_serp:
-        step("auto_update", auto_update.run, dry)    # AI Mode + Gemini + source check, auto-apply
-    else:
-        log("serpapi", "skipped", "no SERPAPI_KEY set or --no-serp used")
-    step("next_actions", next_actions.run, dry)      # rules, + Gemini if GEMINI_API_KEY set
+    step("review", review.run, not dry)               # apply approvals (Excel tab or GitHub tick boxes)
+    if not a.approvals_only:
+        if not (a.skip_links or a.light):
+            step("check_sources", check_sources.run, dry)
+        if not a.light:
+            step("refresh_grid_data", refresh_grid_data.run, dry)
+            step("grid_markets", grid_markets.run, dry)
+        step("news_watch", news_watch.run, dry)
+        step("tender_watch", tender_watch.run, dry)
+        if not (a.no_serp or a.light):
+            step("auto_update", auto_update.run, dry)  # AI Mode + Gemini + source check
+        step("enrich", enrich.run, dry, not (a.light or a.no_serp))
+        step("next_actions", next_actions.run, dry)
+        if not dry:
+            step("review_issue", review.publish_issue)   # refresh the GitHub tick-box list
     step("detect_changes", detect_changes.run, dry)
     step("build_tracker", build_tracker.run)
     log("run_all", "done", "workbook rebuilt in output/")

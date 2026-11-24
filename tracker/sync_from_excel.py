@@ -39,7 +39,7 @@ def run(path: str | None = None) -> int:
         labels = {c.value: i for i, c in enumerate(ws[HEADER_ROW], start=1) if c.value}
         cols = [(k, labels[lbl]) for k, lbl, _w, kind in layout
                 if not k.startswith("_") and lbl in labels]
-        key = cols[0][0]
+        key = "id" if "id" in dict(cols) else cols[0][0]
         old = {r[key]: r for r in read_table(table)}
         rows = []
         for r in range(HEADER_ROW + 1, ws.max_row + 1):

@@ -1,17 +1,26 @@
-name: Weekly intelligence refresh
+name: Intelligence refresh
 
-# Runs every Monday 06:17 UTC, and on demand from the Actions tab
-# ("Run workflow"). Also re-runs when someone uploads an edited workbook
-# to the inbox/ folder.
+# Full refresh every Monday 06:17 UTC (SerpApi AI checks, new projects, jobs, events, policy).
+# Light refresh every other day 07:17 UTC (your OneDrive edits and approvals, free news and
+# tender feeds, AI summaries) - no SerpApi searches.
+# Instant: when you tick boxes in the "Review queue" issue, approvals are applied in a few minutes.
 on:
   schedule:
     - cron: "17 6 * * 1"
+    - cron: "17 7 * * 0,2-6"
   workflow_dispatch:
     inputs:
-      skip_serp:
-        description: "Skip SerpApi (save credits)"
+      mode:
+        description: "full = everything; light = no SerpApi; approvals = just apply decisions"
+        type: choice
+        options: [full, light, approvals]
+        default: full
+      force_rescan:
+        description: "Re-check every project with AI Mode even if checked this week"
         type: boolean
         default: false
+  issues:
+    types: [edited]
   push:
     paths:
       - "inbox/*.xlsx"
@@ -19,6 +28,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: refresh
@@ -26,8 +36,12 @@ concurrency:
 
 jobs:
   refresh:
+    # issue edits only count when the repo owner ticks boxes in the review issue
+    if: >-
+      github.event_name != 'issues' ||
+      (startsWith(github.event.issue.title, 'Review queue') && github.event.sender.login == github.repository_owner)
     runs-on: ubuntu-latest
-    timeout-minutes: 75
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
 
@@ -50,22 +64,33 @@ jobs:
       - name: Refresh data and rebuild workbook
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+          SERPAPI_KEY_2: ${{ secrets.SERPAPI_KEY_2 }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          MS_CLIENT_ID: ${{ secrets.MS_CLIENT_ID }}
+          MS_REFRESH_TOKEN: ${{ secrets.MS_REFRESH_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GH_TOKEN: ${{ github.token }}
+          FORCE_RESCAN: ${{ inputs.force_rescan }}
           PYTHONUNBUFFERED: "1"
         run: |
-          if [ "${{ inputs.skip_serp }}" = "true" ]; then
-            python -m tracker.run_all --no-serp
-          else
-            python -m tracker.run_all
-          fi
+          mode="${{ inputs.mode }}"
+          if [ "${{ github.event_name }}" = "issues" ]; then mode=approvals; fi
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ github.event.schedule }}" = "17 7 * * 0,2-6" ]; then mode=light; fi
+          if [ "${{ github.event_name }}" = "push" ]; then mode=light; fi
+          case "$mode" in
+            approvals) python -m tracker.run_all --approvals-only ;;
+            light)     python -m tracker.run_all --light ;;
+            *)         python -m tracker.run_all ;;
+          esac
+          python -m tracker.onedrive push || true
 
       - name: Commit updated data
         run: |
           git config user.name  "intel-tracker-bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/ inbox/ 2>/dev/null || true
-          git diff --cached --quiet || git commit -m "Weekly refresh $(date -u +%F)"
-          git push
+          git diff --cached --quiet || git commit -m "Refresh $(date -u +%F)"
+          git pull --rebase -q && git push
 
       - name: Publish workbook to the "latest" release
         env:
@@ -73,7 +98,6 @@ jobs:
         run: |
           f=output/Ethos_European_DC_Intelligence_Tracker.xlsx
           gh release view latest >/dev/null 2>&1 || \
-            gh release create latest --title "Latest tracker" \
-              --notes "Refreshed automatically every Monday. Download the workbook below."
+            gh release create latest --title "Latest tracker" --notes "Refreshed automatically."
           gh release upload latest "$f" --clobber
           gh release edit latest --notes "Last refreshed: $(date -u '+%Y-%m-%d %H:%M UTC'). Download the workbook below."

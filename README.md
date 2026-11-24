@@ -129,3 +129,26 @@ filled once a project is under construction; very small investment figures on la
 Each week the same engine also searches every focus market for **new projects** (AI Mode + free market news).
 A new project is added (confidence *Low*, owner *Auto*) only when a source page names the developer and place;
 programmes, portfolios and multi-site plans go to review instead.
+
+
+## Approving with one click
+Anything the automation cannot confirm on its own goes to a review queue. Decide in either place:
+* **Workbook, Review tab** (OneDrive copy): set *Your decision* to Approve or Reject. Applied on the next daily run.
+* **GitHub, pinned issue "Review queue"**: tick ✅ or ❌ (works in the GitHub phone app). Applied within minutes.
+
+Approve writes the value to its tab, adds the source and logs the change; Reject means it is never proposed again.
+
+## Live copy on OneDrive (view-only link for anyone)
+1. Register a free Microsoft app: entra.microsoft.com > App registrations > New registration; name it
+   "Ethos tracker"; account types: "Accounts in any organizational directory and personal Microsoft accounts";
+   Register. Then Authentication > "Allow public client flows" = Yes > Save. Copy the *Application (client) ID*.
+2. GitHub secret `MS_CLIENT_ID` = that ID.
+3. GitHub secret `GH_PAT` = a fine-grained personal access token (github.com/settings/personal-access-tokens/new,
+   only this repository, permission "Secrets: Read and write") so the workflow can keep the Microsoft sign-in fresh.
+4. Actions tab > "Connect OneDrive (one time)" > Run workflow; open the log, go to microsoft.com/devicelogin,
+   enter the code and sign in. The workbook is uploaded and the view-only link printed (also shown on the Read me tab).
+
+## Schedule
+* Daily 07:17 UTC: OneDrive edits and approvals, free news and tenders with AI summaries, rebuild, OneDrive update.
+* Monday 06:17 UTC: everything, including SerpApi (AI Mode checks, new projects, Google News/Jobs/Events) and the
+  weekly AI briefing. A second SerpApi key can be added as secret `SERPAPI_KEY_2`; it is used when the first runs out.

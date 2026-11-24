@@ -60,6 +60,26 @@ def bing_rss(q: str) -> list[dict]:
     return out
 
 
+_SERP = None
+
+
+def serp_news(q: str) -> list[dict]:
+    """SerpApi Google News: direct article links (so the article can be read and summarised)."""
+    global _SERP
+    from .serp import Serp
+    if _SERP is None:
+        _SERP = Serp()
+    data = _SERP.search("google_news", q)
+    out = []
+    for n in data.get("news_results", []):
+        for it in ([n] + (n.get("stories") or [])):
+            if it.get("link") and it.get("title"):
+                out.append({"title": it["title"], "link": it["link"],
+                            "source": {"name": (it.get("source") or {}).get("name", "")},
+                            "date": (it.get("date") or "")[:16], "snippet": it.get("snippet", "")})
+    return out
+
+
 def run_rss(dry_run: bool) -> int:
     import time
     news = read_table("news")
@@ -71,7 +91,9 @@ def run_rss(dry_run: bool) -> int:
         q = query_for(row, "projects")
         arts = []
         if not dry_run:
-            for fn in (rss, bing_rss):
+            from .common import serpapi_key
+            feeds = (serp_news, rss, bing_rss) if (serpapi_key() and __import__("os").environ.get("SKIP_SERP") != "true") else (rss, bing_rss)
+            for fn in feeds:
                 try:
                     arts = fn(q)
                     used[fn.__name__] = used.get(fn.__name__, 0) + 1
@@ -88,17 +110,22 @@ def run_rss(dry_run: bool) -> int:
             seen.add(a["link"]); seen_titles.add(a["title"].lower())
             news.append({"date_found": today(), "item_id": row["id"], "item_name": row["project"],
                          "title": a["title"], "publisher": a["source"]["name"], "published": a["date"],
-                         "url": a["link"], "snippet": "", "query": q})
+                         "url": a["link"], "snippet": a.get("snippet", ""), "query": q})
             added += 1
         time.sleep(1)
     # market-wide feeds: raw material for automatic discovery of NEW projects
     from .auto_update import CODES
     for country in load_config().get("discovery", {}).get("markets", []):
         q = f'"data centre" OR "data center" {country} MW (planning OR approved OR announces OR construction)'
-        try:
-            arts = [] if dry_run else rss(q)
-        except Exception:  # noqa: BLE001
-            arts = []
+        arts = []
+        if not dry_run:
+            from .common import serpapi_key
+            for fn in ((serp_news, rss) if serpapi_key() and __import__("os").environ.get("SKIP_SERP") != "true" else (rss,)):
+                try:
+                    arts = fn(q)
+                    break
+                except Exception:  # noqa: BLE001
+                    continue
         for a in arts[:8]:
             if not a["link"] or a["link"] in seen or a["title"].lower() in seen_titles:
                 continue

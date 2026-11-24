@@ -16,6 +16,8 @@ Without GEMINI_API_KEY only the AI Mode answer is stored and flagged (no auto-ap
 from __future__ import annotations
 
 import argparse
+import json
+import os
 import re
 import time
 
@@ -27,6 +29,7 @@ def out_of_time(cfg) -> bool:
 
 from .common import load_config, log, read_table, today, write_table
 from .llm import gemini_json, gemini_key, norm, page_supports, page_title, read_page, resolve
+from . import review as RV
 from .serp import BudgetExceeded, Serp, pick_items
 
 FIELDS = ["stage", "capacity_mw", "capacity_basis", "investment_eur_m", "permit",
@@ -184,12 +187,13 @@ def _decide(field, old, new, stage=""):
     return "review"  # existing dates / design team: a person decides
 
 
-def update_projects(serp, cfg, projects, sources, scans, changes, use_ai):
+def update_projects(serp, cfg, projects, sources, scans, changes, use_ai, reviews):
     scfg = cfg["serpapi"]
     last = {}
     for s in scans:
         last[s["item_id"]] = max(last.get(s["item_id"], ""), s["date"])
-    items = pick_items("projects", scfg["ai_mode_per_run"], scfg["rescan_after_days"], last)
+    items = pick_items("projects", scfg["ai_mode_per_run"],
+                       0 if os.environ.get("FORCE_RESCAN") == "true" else scfg["rescan_after_days"], last)
     byid = {p["id"]: p for p in projects}
     applied = reviewed = scanned = 0
     for row in items:
@@ -224,7 +228,9 @@ def update_projects(serp, cfg, projects, sources, scans, changes, use_ai):
                 new = _norm_value(field, f.get("value"))
                 old = (p.get(field) or "").strip()
                 if field == "investment_eur_m" and new and float(new) < 50 and float(p.get("capacity_mw") or 0) >= 50:
-                    todo.append(f"investment: '{new}' looks too small for a {p['capacity_mw']} MW project (land price?)")
+                    RV.add(reviews, "Pipeline", p["id"], p["project"], field, old, new, f.get("quote", ""),
+                           resolve(f.get("url") or ""), f"Looks too small for a {p['capacity_mw']} MW project (land price?)")
+                    todo.append(field)
                     reviewed += 1
                     continue
                 decision = _decide(field, old, new, facts.get("stage", {}).get("value") if isinstance(facts.get("stage"), dict) and _decide("stage", p["stage"], facts["stage"].get("value")) == "apply" else p["stage"])
@@ -244,22 +250,26 @@ def update_projects(serp, cfg, projects, sources, scans, changes, use_ai):
                     p["last_checked"] = today()
                     applied += 1
                 else:
-                    why = ("not found on the cited page" if not proof else
-                           "would move the stage backwards" if field == "stage" else
-                           "differs from the current figure; a person decides")
-                    todo.append(f"{field}: '{old or 'blank'}' -> '{new}' ({why})")
+                    why = ("AI found it but the cited page does not confirm it" if not proof else
+                           "Would move the stage backwards" if field == "stage" else
+                           "Construction may only be planned" if field == "construction_start" else
+                           "Differs from the value we hold")
+                    RV.add(reviews, "Pipeline", p["id"], p["project"], field, old, new, f.get("quote", ""),
+                           proof or urls[0], why)
+                    todo.append(field)
                     reviewed += 1
         elif text:
             todo.append("AI answer stored; add GEMINI_API_KEY to extract and auto-apply facts")
         scans.append({"date": today(), "item_id": p["id"], "item_name": p["project"], "query": q,
                       "summary": text[:1800],
                       "references": " | ".join(f"{t}: {u}" for t, u in refs[:6]),
-                      "flags": "; ".join(todo + notes) or "Up to date (nothing new, or all changes verified and applied)",
-                      "review_status": "Needs review" if todo and use_ai else "No action"})
+                      "flags": ("Sent to the Review tab: " + ", ".join(todo) if todo else "")
+                               + ("; ".join(notes)) or "Up to date (nothing new, or all changes verified and applied)",
+                      "review_status": "In Review tab" if todo else ("Error" if notes else "No action")})
     return scanned, applied, reviewed
 
 
-def discover(serp, cfg, projects, sources, scans, changes, use_ai):
+def discover(serp, cfg, projects, sources, scans, changes, use_ai, reviews):
     if not use_ai:
         return 0, 0
     dcfg = cfg.get("discovery", {})
@@ -296,7 +306,9 @@ def discover(serp, cfg, projects, sources, scans, changes, use_ai):
             if not name or not dev:
                 continue
             place = (c.get("city_region") or "")
-            seen_before = any(dev.lower()[:8] in x["item_name"].lower() for x in scans if x["item_id"] == "NEW")
+            seen_before = any(dev.lower()[:8] in x["item_name"].lower() for x in reviews
+                              if x["field"] == "(new project)") or \
+                any(dev.lower()[:8] in x["item_name"].lower() for x in scans if x["item_id"] == "NEW")
             vague = bool(seen_before
                          or re.search(r"^(central|northern|southern|eastern|western|north|south|east|west)\b|region|nationwide|various|multiple",
                                       place.strip(), re.I)
@@ -310,14 +322,25 @@ def discover(serp, cfg, projects, sources, scans, changes, use_ai):
                 continue
             urls = [resolve(c.get("url") or "")] + [u for _t, u in refs]
             proof = next((u for u in urls[:3] if u and page_supports(read_page(u), "", f"{dev} {c.get('city_region','')}")), "")
-            if not proof or vague:
-                scans.append({"date": today(), "item_id": "NEW", "item_name": f"{name} ({country})",
-                              "query": "discovery", "summary": c.get("quote", ""), "references": c.get("url", ""),
-                              "flags": (f"Possible new project: {dev}, {place} - "
-                                        + ("looks like a programme or several sites, not one campus" if vague
-                                           else "not confirmed on a source page")),
-                              "review_status": "Needs review"})
+            if (not proof or vague) and not seen_before:
+                n_tmp = sum(1 for p in projects if p["country"] == country) + 1
+                payload = {"id": f"P-{CODES.get(country, 'XX')}-{n_tmp + 50:02d}", "project": name, "developer": dev,
+                           "country": country, "city_region": place,
+                           "capacity_mw": _norm_value("capacity_mw", c.get("capacity_mw")), "capacity_basis": "Unclear",
+                           "investment_eur_m": _norm_value("investment_eur_m", c.get("investment_eur_m")),
+                           "project_type": "New build", "stage": c.get("stage") if c.get("stage") in STAGES else "Announced",
+                           "announced": today()[:7], "permit": "", "construction_start": "", "target_online": "",
+                           "ethos_fit": "M&E design", "ethos_relationship": "Target", "design_team": "Not public",
+                           "next_action": "", "owner": "David C.", "confidence": "Low", "source_ids": "",
+                           "notes": f"Added from the review queue {today()}.", "last_checked": today(),
+                           "news_query": f"{dev} data centre {place}", "ai_query": "",
+                           "suggested_action": "", "suggested_by": ""}
+                RV.add(reviews, "Pipeline", "NEW", f"{name} ({country})", "(new project)", "",
+                       json.dumps(payload, ensure_ascii=False), c.get("quote", ""), resolve(c.get("url") or ""),
+                       "Looks like a programme or several sites" if vague else "Not confirmed on a source page")
                 queued += 1
+                continue
+            if not proof or vague:
                 continue
             n_country += 1
             pid = f"P-{CODES.get(country, 'XX')}-{n_country:02d}"
@@ -361,10 +384,12 @@ def run(dry_run: bool = False) -> dict:
         serp = None
     projects, sources = read_table("projects"), read_table("sources")
     scans, changes = read_table("ai_scan"), []
+    reviews = read_table("reviews")
     s = a = r = 0
     if serp is not None:
-        s, a, r = update_projects(serp, cfg, projects, sources, scans, changes, use_ai)
-    added, queued = discover(serp, cfg, projects, sources, scans, changes, use_ai)
+        s, a, r = update_projects(serp, cfg, projects, sources, scans, changes, use_ai, reviews)
+    added, queued = discover(serp, cfg, projects, sources, scans, changes, use_ai, reviews)
+    write_table("reviews", reviews)
     if not dry_run:
         write_table("projects", projects)
         write_table("sources", sources)

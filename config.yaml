@@ -65,3 +65,6 @@ workbook:
   prepared_by: "David Chukwuemeka"
   repo_url: "https://github.com/C-D4V1D/ethos-intel-tracker"
   latest_download: "https://github.com/C-D4V1D/ethos-intel-tracker/releases/latest/download/Ethos_European_DC_Intelligence_Tracker.xlsx"
+
+onedrive:                      # live copy (needs the one-time "Connect OneDrive" workflow)
+  folder: "Ethos Intelligence Tracker"

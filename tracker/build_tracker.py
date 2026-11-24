@@ -19,10 +19,12 @@ from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter as L
 from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.worksheet.hyperlink import Hyperlink
+from openpyxl.cell.rich_text import CellRichText, TextBlock
+from openpyxl.cell.text import InlineFont
 
 from . import docs as DOCS
 from . import layout as LY
-from .common import OUTPUT, WORKBOOK_NAME, load_config, log, now, read_table
+from .common import DATA, OUTPUT, WORKBOOK_NAME, load_config, log, now, read_table
 
 # ---------------------------------------------------------------- style kit
 FONT = "Arial"
@@ -336,7 +338,7 @@ def add_links(wb):
             _link(ws[f"B{r}"], v, 1)
     # Dashboard market table -> Markets
     ws = wb["Dashboard"]
-    for r in range(15, 45):
+    for r in range(15, 70):
         v = ws[f"B{r}"].value
         if isinstance(v, str) and v in idx["Markets"]:
             _link(ws[f"B{r}"], "Markets", idx["Markets"][v])
@@ -473,7 +475,7 @@ TILE_TIPS = {
     "HIGH-PRIORITY PROJECTS": "Projects scoring 9 or more out of 12. See the Scoring guide tab.",
     "SOURCES DUE A RE-CHECK": "Sources not confirmed for 90+ days.",
     "BROKEN / BLOCKED LINKS": "Sources the weekly link check could not open. Blocked sites usually open fine in a browser.",
-    "AI FLAGS TO REVIEW": "Google AI Mode answers that disagree with the Pipeline and need a person to check.",
+    "WAITING FOR YOUR DECISION": "Items on the Review tab the automation could not confirm on its own. Approve or reject them there, or tick the boxes in the GitHub 'Review queue' page.",
     "OPEN QUESTIONS": "Open questions on the Gaps tab.",
     "PUBLIC TENDERS (90 DAYS)": "Public notices mentioning data centres found in EU TED and UK Find a Tender in the last 90 days.",
     "HEADLINES (14 DAYS)": "New headlines found by the free Google News watch in the last 14 days.",
@@ -547,8 +549,8 @@ def sheet_dashboard(wb, pipe_last, sortcol, countries, cfg):
     tile(ws, 10, 6, "BROKEN / BLOCKED LINKS",
          f'=COUNTIF(Sources!$I${FIRST}:$I${MAXR},"BROKEN")+COUNTIF(Sources!$I${FIRST}:$I${MAXR},"BLOCKED")',
          note="From the weekly link check")
-    tile(ws, 10, 8, "AI FLAGS TO REVIEW", f"=COUNTIF('AI Scan'!$D${FIRST}:$D${MAXR},\"Needs review\")",
-         note="AI answers that conflict with our data")
+    tile(ws, 10, 8, "WAITING FOR YOUR DECISION", f'=COUNTIF(Review!$A${FIRST}:$A${MAXR},"Pending")',
+         note="Approve or reject on the Review tab")
     tile(ws, 10, 10, "OPEN QUESTIONS", f'=COUNTIF(Gaps!$F${FIRST}:$F${MAXR},"Open")',
          note="Unknowns listed on the Gaps tab")
     pd = f"Pipeline!${col(LY.PIPELINE, 'design_team')}${FIRST}:${col(LY.PIPELINE, 'design_team')}${MAXR}"
@@ -564,8 +566,21 @@ def sheet_dashboard(wb, pipe_last, sortcol, countries, cfg):
          f'=IFERROR(SMALL({ms},COUNTIF({ms},"<"&TODAY())+1),"none set")', fmt="dd mmm yyyy",
          note="Earliest upcoming date, Grid & Policy tab")
 
+    # weekly AI briefing
+    br = read_table("briefing")
+    section(ws, 20, 2, "This week in brief" + (f" ({br[0]['date']}, written by AI from this week's data)" if br else ""), 10)
+    ws.merge_cells("B21:K26")
+    c = ws["B21"]
+    c.value = br[0]["text"] if br else "The weekly briefing appears here after the next full run."
+    c.font = F(11, color=INK)
+    c.alignment = Alignment(wrap_text=True, vertical="top")
+    c.fill = fill(PALE)
+    for rr in range(21, 27):
+        ws.row_dimensions[rr].height = 22
+    tip(ws["B20"], "Written each week by Google's Gemini AI using only this tracker's changes, news, tenders and hiring signals.")
+
     # by country
-    r = 20
+    r = 28
     section(ws, r, 2, "Pipeline by market", 4)
     for i, h in enumerate(["Market", "Projects", "MW", "Score /25"]):
         c = ws.cell(r + 1, 2 + i, h)
@@ -1036,6 +1051,7 @@ def sheet_readme(wb, cfg, counts):
             ("Hover for help", "Every column header has a note (small red corner). Hover over it to see what the column means and how it is filled."),
             ("Sort & filter", "Click the arrow in any header to sort (e.g. Priority score, largest first) or filter (e.g. Country = Spain). Pipeline is already sorted by priority."),
             ("Colours", "Navy headers = data you can edit. Teal headers = formulas, don't type over them. Purple headers = written automatically each week. Green / amber / red = good / watch / act."),
+            ("Approving", "Review tab: choose Approve or Reject in the first column (OneDrive copy). Or tick boxes on the GitHub 'Review queue' page, also from the GitHub phone app."),
             ("Next actions", "'Next action (agreed)' is yours. 'Suggested next action (auto)' is rebuilt weekly from stage, relationship, news, AI flags and policy (and improved by Gemini when enabled). Copy a suggestion across when you agree with it."),
         ]),
         ("How to read it", [
@@ -1045,11 +1061,15 @@ def sheet_readme(wb, cfg, counts):
             ("UNVERIFIED / blank", "Left blank rather than guessed. Every blank is a research task, listed on the Gaps tab where it matters."),
         ]),
         ("Automation", [
-            ("What runs weekly", "1) save edits made in this workbook  2) re-check every source link  3) pull Red Eléctrica grid data  4) Google News headlines per project (free RSS)  5) public tenders from EU TED and UK Find a Tender  6) Google AI Mode status check per project  7) suggested next action per project (rules + Gemini)  8) log what changed  9) rebuild this workbook."),
+            ("Every day", "Your edits and Review decisions are pulled from the OneDrive copy and applied; new headlines (with AI summaries) and public tenders (AI-rated) are added; the workbook is rebuilt and the OneDrive copy replaced."),
+            ("Every Monday", "Also: every source link re-checked; grid data for all markets; Google's AI search checks every project and looks for new ones (facts applied only when found on the cited page); hiring signals, events, answers to open questions and rule changes; AI next actions and the weekly briefing."),
+            ("Within minutes", "When you tick Approve / Reject on the GitHub 'Review queue' page."),
             ("Where it runs", "On GitHub's free cloud servers (GitHub Actions). Nothing runs on your computer."),
             ("Code & run history", cfg["workbook"]["repo_url"]),
             ("Latest workbook", cfg["workbook"]["latest_download"]),
-            ("AI safety rule", "AI never writes a fact unless the same value is found on the web page it cites. That page is added to Sources and the change is logged. Anything unconfirmed waits on the AI Scan tab."),
+            ("Live copy (OneDrive)", (__import__("json").loads((DATA / "onedrive.json").read_text()).get("view_link", "")
+                                      if (DATA / "onedrive.json").exists() else "") or "Being set up"),
+            ("AI safety rule", "AI never writes a fact unless the same value is found on the web page it cites. That page is added to Sources and the change is logged. Anything unconfirmed waits on the Review tab for one click."),
             ("SerpApi credits", f"Only the Google AI search uses a paid-per-search service (SerpApi), capped at {cfg['serpapi']['monthly_budget']} searches a month to stay inside its 250 free searches."),
             ("Cost", "All services used are free tiers or free public APIs. The full list is on the Glossary tab."),
         ]),
@@ -1095,6 +1115,9 @@ def run() -> str:
         c["field"] = labels.get(c["field"], c["field"])
         c["item_type"] = areas.get(c["item_type"], c["item_type"])
     T["news"].sort(key=lambda r: r["date_found"], reverse=True)
+    T["reviews"] = read_table("reviews")
+    T["jobs"] = read_table("jobs")
+    T["events"] = read_table("events")
     T["ai_scan"].sort(key=lambda r: (r["review_status"] != "Needs review", r["date"]), reverse=False)
     def prio(p):
         mw = to_num(p["capacity_mw"]) or 0
@@ -1165,9 +1188,16 @@ def run() -> str:
                  tab="E67E22", span=9)
     ws, _ = sheet_simple(wb, "Gaps", LY.GAPS, T["gaps"], "Intelligence gaps",
                          "What we don't know yet, why it matters, and how to close it.", tab="E67E22", span=6, refs=refs)
-    sheet_simple(wb, "News", LY.NEWS, T["news"], "News watch",
-                 "Headlines found by the free weekly news search, for each project and each market. Newest first.",
+    ws, last = sheet_simple(wb, "News", LY.NEWS, T["news"], "News watch",
+                 "Headlines for every project and market, each with a short AI summary underneath and what it means for Ethos. Newest first.",
                  tab="95A5A6", span=6)
+    tcol = [k for k, *_ in LY.NEWS].index("title") + 1
+    for i, n in enumerate(T["news"]):
+        cell = ws.cell(FIRST + i, tcol)
+        if n.get("summary"):
+            cell.value = CellRichText(TextBlock(InlineFont(rFont="Arial", sz=10, b=True, color=NAVY), n["title"]),
+                                      TextBlock(InlineFont(rFont="Arial", sz=9, i=True, color="555555"), "\n" + n["summary"]))
+            ws.row_dimensions[FIRST + i].height = max(48, est_height([(n["title"] + " " + n["summary"], 70)]))
     ws, last = sheet_simple(wb, "AI Scan", LY.AI_SCAN, T["ai_scan"], "AI status check (Google AI Mode)",
                             "Each week Google's AI search is asked about every project. Facts found on the cited web page are applied automatically (see Changes, 'AI (verified)'). Rows marked 'Needs review' could not be confirmed: check them by hand.",
                             tab="95A5A6", span=6, refs=refs)
@@ -1177,8 +1207,30 @@ def run() -> str:
     ws.conditional_formatting.add(f"{rv}{FIRST}:{rv}{MAXR}",
         CellIsRule(operator="equal", formula=['"Needs review"'], fill=fill(AMBER_F), font=F(10, True, AMBER_T)))
 
+    pending = [r for r in T["reviews"] if r["decision"] in ("Pending", "")]
+    done = [r for r in T["reviews"] if r["decision"] not in ("Pending", "", "Superseded")][-40:][::-1]
+    ws, last = sheet_simple(wb, "Review", LY.REVIEWS, pending + done, "Your review queue",
+        "Things the automation found but could not confirm on its own. Pick Approve or Reject in the first column; "
+        "the next run (daily) applies it everywhere and logs it. Or tick the boxes on the GitHub 'Review queue' page: applied within minutes.",
+        f"{len(pending)} waiting. Approve = the proposed value is written to its tab and its source added. Reject = never proposed again. "
+        "Leave 'Pending' if unsure.", tab="C0392B", span=8, refs=refs)
+    chips(ws, "A", {"Approve": (GREEN_F, GREEN_T), "Reject": (RED_F, RED_T), "Pending": (AMBER_F, AMBER_T)})
+    issue = cfg["workbook"]["repo_url"].rstrip("/") + "/issues"
+    ws.cell(3, 10, "Open the GitHub tick-box page").hyperlink = issue
+    ws.cell(3, 10).font = F(10, True, TEAL, underline="single")
+    if not pending:
+        ws.cell(FIRST + len(done), 2, "Nothing waiting. New items appear after each run.").font = F(10, italic=True, color=MUTED)
+
+    sheet_simple(wb, "Hiring signals", LY.JOBS, T["jobs"], "Hiring signals (Google Jobs)",
+                 "Data-centre jobs posted by the developers we track, found weekly. A construction or design hire in a "
+                 "new location often means a project is moving. AI notes what each one signals.",
+                 tab="8E44AD", span=8)
+    sheet_simple(wb, "Events", LY.EVENTS, T["events"], "Industry events (Google Events)",
+                 "Upcoming data-centre, energy and construction events in the focus markets, found weekly. AI notes why "
+                 "each is worth attending.", tab="8E44AD", span=6)
+
     ws, last = sheet_simple(wb, "Tenders", LY.TENDERS, T["tenders"], "Public tender watch",
-        "Public tender notices mentioning data centres in the target markets, found weekly in the official EU (TED) and UK (Find a Tender) databases. Newest first.",
+        "Public tender notices mentioning data centres in the target markets, found in the official EU (TED) and UK (Find a Tender) databases. Most relevant first (AI-rated 1-5).",
         "Deadline turns red when 21 days or less away, grey once passed. Private campuses rarely go to public tender; these show public-sector projects and supporting works.",
         tab="2C3E50", span=8)
 
@@ -1209,11 +1261,12 @@ def run() -> str:
         "Markets scored": len(T["markets"]), "Sources": len(T["sources"]),
         "Change-log entries": len(T["changes"]), "News items": len(T["news"]),
         "AI scans": len(T["ai_scan"]), "Grid data months": len(T["grid_es"]),
-        "Public tenders": len(T["tenders"]),
+        "Public tenders": len(T["tenders"]), "Waiting for your decision": len([r for r in T["reviews"] if r["decision"] == "Pending"]),
+        "Hiring signals": len(T["jobs"]), "Events": len(T["events"]),
     }
     sheet_readme(wb, cfg, counts)
-    order = ["Read me", "Dashboard", "Pipeline", "Markets", "Grid & Policy", "Grid by market", "Accounts", "Sources",
-             "Changes", "Gaps", "News", "Tenders", "AI Scan", "Live Data", "Scoring guide", "Glossary", "Lists"]
+    order = ["Read me", "Dashboard", "Review", "Pipeline", "Markets", "Grid & Policy", "Grid by market", "Accounts", "Sources",
+             "Changes", "Gaps", "News", "Tenders", "Hiring signals", "Events", "AI Scan", "Live Data", "Scoring guide", "Glossary", "Lists"]
     wb._sheets = [wb[n] for n in order]
     wb.active = 1
     for ws in wb.worksheets:
