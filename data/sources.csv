@@ -1,7 +1,7 @@
 id,title,publisher,type,published,url,last_checked,http_status,link_status,used_in
 SRC001,Real Decreto 1032/2026 (data centre sustainability decree),BOE,P,2026-11-21,https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-24439,2026-11-24,200,OK,Policy ES
 SRC002,Government approves data centre sustainability royal decree,MITECO,P,2026-11-20,https://www.miteco.gob.es/es/prensa/ultimas-noticias/2026/noviembre/el-gobierno-aprueba-el-real-decreto-para-la-sostenibilidad-energ.html,2026-11-24,200,OK,Policy ES
-SRC003,SpainDC to file Supreme Court appeal against the decree,Europa Press,S,2026-11-23,https://www.europapress.es/economia/noticia-spaindc-llevara-semana-supremo-decreto-data-centers-frenar-fuga-9000-millones-20261123162152.html,2026-11-24,200,OK,Policy ES
+SRC003,SpainDC to file Supreme Court appeal against the decree,Europa Press,S,2026-11-23,https://www.europapress.es/economia/noticia-spaindc-llevara-semana-supremo-decreto-data-centers-frenar-fuga-9000-millones-20261123162152.html,2026-11-24,429,BLOCKED,Policy ES
 SRC004,Green light for works on QTS Calatorao campus,elDiario.es,S,2026-09-30,https://www.eldiario.es/aragon/sociedad/luz-verde-obras-campus-centros-datos-blackstone-calatorao-mayores-espana_1_13548934.html,2026-11-24,200,OK,P-ES-01
 SRC005,TSJ Aragón admits appeal against Calatorao campus,Infobae,S,2026-11-23,https://www.infobae.com/espana/agencias/2026/11/23/el-tsj-aragon-admite-el-recurso-de-ecologistas-en-accion-contra-el-campus-de-centro-de-datos-de-blackstone-calatorao/,2026-11-24,200,OK,P-ES-01
 SRC006,Luz verde a una inversión de 13.471 millones en Calatorao,La Razón,S,2026-10-01,https://www.larazon.es/aragon/luz-verde-inversion-13471-millones-calatorao_202610016abe838ebcc72875c67a866f.html,2026-11-24,200,OK,P-ES-01
@@ -95,4 +95,4 @@ SRC093,Cambois - QTS Data Centers,q.com,S,,https://q.com/data-centers/cambois/,2
 SRC094,QTS Data Center Campus Cambois | Corgan,corgan.com,S,,https://www.corgan.com/projects/qts-data-center-campus-cambois,2026-11-24,200,OK,P-UK-01
 SRC095,Place Viewer,google.com,S,,https://www.google.com/searchviewer/10?svid=CCYSESoPCg0vZy8xMXFuNnJxcHJ2GAo,2026-11-24,200,OK,P-DE-01
 SRC096,https://es.goodman.com/en/data-centres/madrid/mad01,es.goodman.com,S,,https://es.goodman.com/en/data-centres/madrid/mad01,2026-11-24,403,OK (reader),P-ES-07
-SRC097,"NorthC breaks ground on data center in Frankfurt, Germany - DCD",datacenterdynamics.com,S,,https://www.datacenterdynamics.com/en/news/northc-breaks-ground-on-data-center-in-frankfurt-germany/,2026-11-24,200,OK (reader),P-DE-05
+SRC097,"NorthC breaks ground on data center in Frankfurt, Germany - DCD",datacenterdynamics.com,S,,https://www.datacenterdynamics.com/en/news/northc-breaks-ground-on-data-center-in-frankfurt-germany/,2026-11-24,200,OK,P-DE-05

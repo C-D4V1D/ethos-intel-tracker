@@ -233,24 +233,6 @@
    "ethos_relationship": "Target",
    "design_team": "Not public",
    "_name": "Moncalieri Hyperscale Data Centre Project"
-  },
-  "P-SE-03": {
-   "stage": "Announced",
-   "capacity_mw": "",
-   "investment_eur_m": "",
-   "target_online": "",
-   "ethos_relationship": "Target",
-   "design_team": "Not public",
-   "_name": "Downing Renewable Developments Central Sweden Data Centre"
-  },
-  "P-SE-04": {
-   "stage": "Announced",
-   "capacity_mw": "",
-   "investment_eur_m": "",
-   "target_online": "",
-   "ethos_relationship": "Target",
-   "design_team": "Not public",
-   "_name": "Vertical Data Central Sweden Data Center"
   }
  },
  "policy": {
@@ -321,7 +303,7 @@
    "_name": "Government approves data centre sustainability royal decree"
   },
   "SRC003": {
-   "link_status": "OK",
+   "link_status": "BLOCKED",
    "_name": "SpainDC to file Supreme Court appeal against the decree"
   },
   "SRC004": {
@@ -693,12 +675,8 @@
    "_name": "https://es.goodman.com/en/data-centres/madrid/mad01"
   },
   "SRC097": {
-   "link_status": "OK (reader)",
+   "link_status": "OK",
    "_name": "NorthC breaks ground on data center in Frankfurt, Germany - DCD"
-  },
-  "SRC098": {
-   "link_status": "OK (reader)",
-   "_name": "Downing Renewable Developments expands into data centre sector with 500MW development pipeline  \u2013 Downing Renewable Developments"
   }
  }
 }

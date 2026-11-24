@@ -95,3 +95,6 @@ date,item_type,item_id,item_name,field,old_value,new_value,impact,source,logged_
 2026-11-24,projects,P-UK-01,QTS Cambois campus,design_team,Corgan,"Corgan (architect), Cundall (civil), Arcadis, Quod",Competitor or partner named,,auto
 2026-11-24,sources,SRC098,Downing Renewable Developments expands into data centre sector with 500MW development pipeline  – Downing Renewable Developments,(new item),,added,New item to review,,auto
 2026-11-24,sources,SRC097,"NorthC breaks ground on data center in Frankfurt, Germany - DCD",(new item),,added,New item to review,,auto
+2026-11-24,projects,P-SE-04,Vertical Data Central Sweden Data Center,(removed),present,,Item removed,,auto
+2026-11-24,projects,P-SE-03,Downing Renewable Developments Central Sweden Data Centre,(removed),present,,Item removed,,auto
+2026-11-24,sources,SRC098,Downing Renewable Developments expands into data centre sector with 500MW development pipeline  – Downing Renewable Developments,(removed),present,,Item removed,,auto
