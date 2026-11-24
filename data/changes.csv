@@ -1,8 +1,6 @@
 date,item_type,item_id,item_name,field,old_value,new_value,impact,source,logged_by
 2026-11-24,projects,P-DE-05,NorthC FRA01 Frankfurt,construction_start,,2026-09,Auto-updated: value found on the cited page,SRC097,AI (verified)
 2026-11-24,projects,P-DE-05,NorthC FRA01 Frankfurt,target_online,,2028,Auto-updated: value found on the cited page,SRC097,AI (verified)
-2026-11-24,projects,P-SE-03,Downing Renewable Developments Central Sweden Data Centre,(new item),,added,New project found automatically and confirmed on a source page,SRC098,AI (verified)
-2026-11-24,projects,P-SE-04,Vertical Data Central Sweden Data Center,(new item),,added,New project found automatically and confirmed on a source page,SRC098,AI (verified)
 2026-11-24,projects,P-ES-05,AWS La Cartuja campus,stage,Permitting,Permitted,Auto-updated: value found on the cited page,SRC081,AI (verified)
 2026-11-24,projects,P-ES-05,AWS La Cartuja campus,permit,,2024-05-22,Auto-updated: value found on the cited page,SRC081,AI (verified)
 2026-11-24,projects,P-ES-04,Microsoft La Muela campus,permit,,2025-11-14,Auto-updated: value found on the cited page,SRC083,AI (verified)
@@ -70,7 +68,6 @@ date,item_type,item_id,item_name,field,old_value,new_value,impact,source,logged_
 2026-11-24,sources,SRC082,Plans unveiled for ‘largest’ data center in Italy - DCD,(new item),,added,New item to review,,auto
 2026-11-24,sources,SRC076,10 UK data centre construction projects to watch - Construction Wave,(new item),,added,New item to review,,auto
 2026-11-24,projects,P-UK-04,East Havering Campus & Ecology Park,(removed),present,,Item removed,,auto
-2026-11-24,projects,P-SE-03,Downing Renewable Developments Pipeline,(removed),present,,Item removed,,auto
 2026-11-24,projects,P-IT-03,Retelit Milan and Rome Data Centre Deployments,(removed),present,,Item removed,,auto
 2026-11-24,projects,P-FR-02,SoftBank 5 GW AI data centre plan (Hauts-de-France),stage,Under construction,Announced,Check consultant appointment window,,auto
 2026-11-24,projects,P-FR-02,SoftBank 5 GW AI data centre plan (Hauts-de-France),capacity_mw,,5000,Re-size opportunity,,auto

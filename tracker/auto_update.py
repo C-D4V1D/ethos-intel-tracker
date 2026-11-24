@@ -296,8 +296,13 @@ def discover(serp, cfg, projects, sources, scans, changes, use_ai):
             if not name or not dev:
                 continue
             place = (c.get("city_region") or "")
-            vague = (re.search(r"pipeline|projects|deployments|portfolio|programme|program\b|partnership|order\b",
-                               f"{name} {dev}", re.I) or "/" in dev or " and " in place or ";" in place)
+            seen_before = any(dev.lower()[:8] in x["item_name"].lower() for x in scans if x["item_id"] == "NEW")
+            vague = bool(seen_before
+                         or re.search(r"^(central|northern|southern|eastern|western|north|south|east|west)\b|region|nationwide|various|multiple",
+                                      place.strip(), re.I)
+                         or re.search(r"pipeline|projects|deployments|portfolio|programme|program\b|partnership|order\b",
+                                      f"{name} {dev}", re.I)
+                         or "/" in dev or " and " in place or ";" in place)
             dup = any(dev.lower()[:6] in p["developer"].lower() and
                       ((c.get("city_region") or "").lower()[:5] in p["city_region"].lower() or
                        name.lower()[:8] in p["project"].lower()) for p in projects)
