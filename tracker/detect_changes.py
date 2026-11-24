@@ -68,6 +68,8 @@ def run(dry_run: bool = False) -> int:
                     changes.append({"item_type": table, "item_id": k, "item_name": n[k]["_name"],
                                     "field": f, "old_value": o[k].get(f, ""),
                                     "new_value": n[k].get(f, ""), "impact": IMPACT.get(f, "")})
+    logged = {(c["item_id"], c["field"], c["new_value"]) for c in read_table("changes") if c["date"] == today()}
+    changes = [c for c in changes if (c["item_id"], c["field"], c["new_value"]) not in logged]
     for c in changes:
         c.update({"date": today(), "source": "", "logged_by": "auto"})
     if changes and not dry_run:

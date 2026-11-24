@@ -10,7 +10,9 @@ Steps
  3. refresh_grid_data - Spain renewable share from Red Electrica
  4. news_watch        - new headlines per project (free Google News RSS)
  5. tender_watch      - public tenders mentioning data centres (EU TED, UK Find a Tender)
- 6. ai_mode_scan      - Google AI Mode status check per project (SerpApi, needs key)
+ 6. grid_markets      - renewable share and power price for every market (free APIs)
+ 6b. auto_update      - AI Mode + Gemini update every project and find new ones; values are
+                       written only when found on the cited page (needs keys)
  7. next_actions      - suggested next action per project (rules; Gemini if key set)
  8. detect_changes    - log what moved since last run
  9. build_tracker     - rebuild the formatted Excel workbook
@@ -22,7 +24,7 @@ from __future__ import annotations
 import argparse
 import traceback
 
-from . import (ai_mode_scan, build_tracker, check_sources, detect_changes,
+from . import (auto_update, build_tracker, grid_markets, check_sources, detect_changes,
                news_watch, next_actions, refresh_grid_data, sync_from_excel, tender_watch)
 from .common import log, serpapi_key
 
@@ -74,8 +76,9 @@ def main() -> None:
     step("refresh_grid_data", refresh_grid_data.run, dry)
     step("news_watch", news_watch.run, dry)          # free Google News RSS by default
     step("tender_watch", tender_watch.run, dry)      # free EU TED + UK Find a Tender
-    if dry or (not a.no_serp and serpapi_key()):
-        step("ai_mode_scan", ai_mode_scan.run, dry)
+    step("grid_markets", grid_markets.run, dry)      # renewable share + power price, every market
+    if not a.no_serp:
+        step("auto_update", auto_update.run, dry)    # AI Mode + Gemini + source check, auto-apply
     else:
         log("serpapi", "skipped", "no SERPAPI_KEY set or --no-serp used")
     step("next_actions", next_actions.run, dry)      # rules, + Gemini if GEMINI_API_KEY set

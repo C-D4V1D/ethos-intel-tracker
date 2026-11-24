@@ -56,6 +56,8 @@ ACCOUNTS = [
 
 MARKETS = [
     ("country", "Country", 14, "text"),
+    ("status", "Status", 9, "list:mstatus"),
+    ("status_reason", "Why this status", 30, "text"),
     ("pipeline_score", "Pipeline (1-5)", 10, "num"),
     ("capex_score", "Investment (1-5)", 10, "num"),
     ("grid_score", "Grid access (1-5)", 10, "num"),
@@ -65,6 +67,7 @@ MARKETS = [
     ("_rank", "Rank", 7, "formula"),
     ("_projects", "Projects tracked", 10, "formula"),
     ("_mw", "MW tracked", 10, "formula"),
+    ("_ren", "Renewable share, latest month (%)", 12, "formula"),
     ("evidence", "Evidence behind the scores", 70, "text"),
     ("source_ids", "Source IDs", 12, "text"),
     ("last_checked", "Last checked", 12, "date"),
@@ -176,6 +179,7 @@ LISTS = {
     "rag": ["Red", "Amber", "Green"],
     "ps": ["P", "S"],
     "gapstatus": ["Open", "In progress", "Closed"],
+    "mstatus": ["Focus", "Watch"],
     "review": ["Needs review", "Accepted", "Dismissed", "No action"],
 }
 

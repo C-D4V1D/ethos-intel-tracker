@@ -91,3 +91,8 @@ run_at,step,status,detail,credits_used
 2026-11-24 06:07 UTC,detect_changes,ok,0 changes logged,0
 2026-11-24 06:07 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 20, 'Accounts': 10, 'Markets scored': 8, 'Sources': 58, 'Change-log entries': 1, 'News items': 25, 'AI scans': 0, 'Grid data months': 24, 'Public tenders': 84}",0
 2026-11-24 06:07 UTC,run_all,done,workbook rebuilt in output/,0
+2026-11-24 06:35 UTC,grid_markets,ok,"8 markets, 13 months",0
+2026-11-24 06:37 UTC,grid_markets,ok,"8 markets, 13 months",0
+2026-11-24 06:38 UTC,next_actions,ok,21 suggestions; Gemini rewrote 0 (no GEMINI_API_KEY: rules only),0
+2026-11-24 06:38 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 21, 'Accounts': 10, 'Markets scored': 8, 'Sources': 75, 'Change-log entries': 24, 'News items': 25, 'AI scans': 0, 'Grid data months': 24, 'Public tenders': 84}",0
+2026-11-24 06:38 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 21, 'Accounts': 10, 'Markets scored': 8, 'Sources': 75, 'Change-log entries': 24, 'News items': 25, 'AI scans': 0, 'Grid data months': 24, 'Public tenders': 84}",0

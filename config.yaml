@@ -4,9 +4,9 @@
 serpapi:
   # Free plan = 250 searches/month. Each AI Mode or News query = 1 search.
   monthly_budget: 230          # hard stop, leaves headroom under 250
-  ai_mode_per_run: 12          # projects/accounts scanned by Google AI Mode per run
+  ai_mode_per_run: 25          # projects checked by Google AI Mode per run (all of them)
   news_per_run: 12             # only used when news.source = serpapi
-  rescan_after_days: 21        # don't re-scan an item more often than this
+  rescan_after_days: 6         # every project re-checked weekly (~100 searches/month)
   hl: en                       # result language
   gl: uk                       # Google country edition
 
@@ -25,6 +25,10 @@ tenders:                       # free official APIs, no key: EU TED + UK Find a 
   # 45 construction works, 71 architecture/engineering, 425 cooling/ventilation,
   # 31 electrical equipment, 39717 HVAC appliances, 507 building M&E repair, 093 energy
   cpv: ["45000000", "71000000", "42500000", "31000000", "39717000", "50700000", "09300000"]
+
+discovery:                     # weekly search for NEW projects (AI Mode + market news, Gemini, source check)
+  markets: ["Spain", "United Kingdom", "Germany", "France", "Ireland", "Sweden", "Italy"]
+  max_new_per_market: 3        # ~30 searches/month
 
 gemini:                        # free tier; needs the GEMINI_API_KEY secret
   enabled: true

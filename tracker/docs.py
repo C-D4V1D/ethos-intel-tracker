@@ -52,6 +52,9 @@ TIPS = {
     "_total": "Formula. Sum of the five scores (max 25). Green at 16+.",
     "_rank": "Formula. 1 = most attractive market.",
     "evidence": "The facts behind the scores, with Source IDs.",
+    "status": "Focus = one of the markets we actively research and pursue. Watch = scored but not pursued for now (reason in the next column).",
+    "status_reason": "Why the market is in focus or only being watched.",
+    "_ren": "Formula. Latest monthly renewable share of electricity generation, from the 'Grid by market' tab.",
     # policy
     "Grid & Policy:country": "Market.",
     "rag": "Red = rules or grid make new projects hard now. Amber = possible with engineering effort. Green = supportive.",
@@ -208,6 +211,8 @@ FREE_TOOLS = [
     ("UK Find a Tender API (OCDS)", "UK public tenders mentioning data centres. No key.", "In use"),
     ("Jina Reader (r.jina.ai)", "Second attempt for sources whose sites block automated link checks. Free, no key.", "In use"),
     ("Bing News RSS", "Backup headline feed when Google News RSS is unavailable. No key.", "In use"),
+    ("Energy-Charts (Fraunhofer ISE)", "Monthly renewable share for EU markets; open-licence power prices (SMARD, CC BY 4.0).", "In use"),
+    ("NESO Carbon Intensity API", "UK monthly generation mix.", "In use"),
     ("SerpApi Google AI Mode", "Weekly AI status check per project. Free plan 250 searches/month.", "Needs SERPAPI_KEY secret"),
     ("Google Gemini API (free tier)", "Rewrites the suggested next action from the row, news and AI answers.", "Needs GEMINI_API_KEY secret"),
 ]

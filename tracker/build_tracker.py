@@ -574,7 +574,7 @@ def sheet_dashboard(wb, pipe_last, sortcol, countries, cfg):
         ws.cell(rr, 3, f'=COUNTIF({rng("country")},B{rr})').font = F(10)
         ws.cell(rr, 4, f'=SUMIF({rng("country")},B{rr},{rng("capacity_mw")})').font = F(10)
         ws.cell(rr, 4).number_format = "#,##0"
-        ws.cell(rr, 5, f"=IFERROR(INDEX(Markets!$G${FIRST}:$G${MAXR},MATCH(B{rr},Markets!$A${FIRST}:$A${MAXR},0)),\"\")").font = F(10)
+        ws.cell(rr, 5, f"=IFERROR(INDEX(Markets!${col(LY.MARKETS, '_total')}${FIRST}:${col(LY.MARKETS, '_total')}${MAXR},MATCH(B{rr},Markets!$A${FIRST}:$A${MAXR},0)),\"\")").font = F(10)
         for cc in range(2, 6):
             ws.cell(rr, cc).border = BOX
     end_c = r + 1 + len(countries)
@@ -748,7 +748,8 @@ def sheet_dashboard(wb, pipe_last, sortcol, countries, cfg):
     sb.type, sb.grouping, sb.overlap = "bar", "stacked", 100
     sb.style = 10
     sb.title = "Market score breakdown (out of 25)"
-    sb.add_data(Reference(mk, min_col=2, max_col=6, min_row=LY.HEADER_ROW, max_row=LY.HEADER_ROW + n_m),
+    c0 = [k for k, *_ in LY.MARKETS].index("pipeline_score") + 1
+    sb.add_data(Reference(mk, min_col=c0, max_col=c0 + 4, min_row=LY.HEADER_ROW, max_row=LY.HEADER_ROW + n_m),
                 titles_from_data=True)
     sb.set_categories(Reference(mk, min_col=1, min_row=FIRST, max_row=FIRST + n_m - 1))
     for sr, colr in zip(sb.series, ("0F2537", "00707C", "7FB8BE", "E3A33B", "6C5CE7")):
@@ -805,6 +806,92 @@ def _row(ws, r, vals, start=2, bold_first=True, h=None):
         c.font = F(10, bold_first and i == 0, NAVY if bold_first and i == 0 else INK)
         c.alignment = WRAP_TOP; c.border = BOX
     ws.row_dimensions[r].height = h or est_height([(str(v), 34) for v in vals])
+
+
+def sheet_grid(wb, rows):
+    ws = wb.create_sheet("Grid by market")
+    ws.sheet_view.showGridLines = False
+    title_block(ws, "Grid by market: renewable share and power price",
+                "Monthly share of electricity from renewables in each market, refreshed weekly from free official data "
+                "(Energy-Charts / Fraunhofer ISE; UK from the NESO Carbon Intensity API).",
+                "Why it matters: Ireland, Germany and Spain now tie new data centres to renewable supply, and power price "
+                "drives running cost. The latest month may be part-month. Prices: only open-licence markets are shown.",
+                span=10)
+    countries = ["Spain", "United Kingdom", "Germany", "France", "Ireland", "Sweden", "Italy", "Denmark"]
+    months = sorted({r["month"] for r in rows})
+    val = {(r["country"], r["month"]): r for r in rows}
+    ws.column_dimensions["A"].width = 12
+    for i, c in enumerate(countries):
+        ws.column_dimensions[L(2 + i)].width = 14
+    # row 5: header, row 6: latest, rows 8+: monthly renewable share
+    hdr = ws.cell(5, 1, "Market")
+    for i, c in enumerate(countries):
+        h = ws.cell(5, 2 + i, c)
+    ws.cell(6, 1, "Latest (%)")
+    ws.cell(7, 1, "Latest price €/MWh")
+    for cc in range(1, 2 + len(countries)):
+        for rr, fillc in ((5, NAVY), ):
+            ws.cell(rr, cc).font = F(10, True, "FFFFFF"); ws.cell(rr, cc).fill = fill(fillc); ws.cell(rr, cc).alignment = CENTER
+    r0 = 10
+    ws.cell(r0 - 1, 1, "RENEWABLE SHARE OF GENERATION BY MONTH (%)").font = F(10, True, TEAL)
+    ws.cell(r0, 1, "Month")
+    for i, c in enumerate(countries):
+        ws.cell(r0, 2 + i, c)
+    for cc in range(1, 2 + len(countries)):
+        ws.cell(r0, cc).font = F(9, True, "FFFFFF"); ws.cell(r0, cc).fill = fill(NAVY); ws.cell(r0, cc).alignment = CENTER
+    for j, m in enumerate(months):
+        rr = r0 + 1 + j
+        ws.cell(rr, 1, m).font = F(10, True, NAVY)
+        for i, c in enumerate(countries):
+            v = to_num(val.get((c, m), {}).get("renewable_share_pct", ""))
+            cell = ws.cell(rr, 2 + i, v)
+            cell.number_format = "0.0"; cell.font = F(10); cell.border = BOX
+    last = r0 + len(months)
+    rp = last + 3
+    ws.cell(rp - 1, 1, "DAY-AHEAD POWER PRICE BY MONTH (€/MWh, open-licence markets only)").font = F(10, True, TEAL)
+    ws.cell(rp, 1, "Month")
+    for i, c in enumerate(countries):
+        ws.cell(rp, 2 + i, c)
+    for cc in range(1, 2 + len(countries)):
+        ws.cell(rp, cc).font = F(9, True, "FFFFFF"); ws.cell(rp, cc).fill = fill(NAVY); ws.cell(rp, cc).alignment = CENTER
+    for j, m in enumerate(months):
+        rr = rp + 1 + j
+        ws.cell(rr, 1, m).font = F(10, True, NAVY)
+        for i, c in enumerate(countries):
+            v = to_num(val.get((c, m), {}).get("price_eur_mwh", ""))
+            cell = ws.cell(rr, 2 + i, v if v is not None else "n/a")
+            cell.number_format = "0.0"; cell.font = F(10, color=INK if v is not None else MUTED); cell.border = BOX
+    plast = rp + len(months)
+    for i, c in enumerate(countries):
+        colL = L(2 + i)
+        a = ws.cell(6, 2 + i, f'=IFERROR(LOOKUP(2,1/({colL}{r0 + 1}:{colL}{last}<>""),{colL}{r0 + 1}:{colL}{last}),"")')
+        a.number_format = "0.0"; a.font = F(11, True, NAVY); a.border = BOX
+        b = ws.cell(7, 2 + i, f'=IFERROR(LOOKUP(2,1/ISNUMBER({colL}{rp + 1}:{colL}{plast}),{colL}{rp + 1}:{colL}{plast}),"n/a")')
+        b.number_format = "0.0"; b.font = F(10, color=INK); b.border = BOX
+    ws.conditional_formatting.add(f"B{r0 + 1}:{L(1 + len(countries))}{last}", ColorScaleRule(
+        start_type="num", start_value=20, start_color="F8696B", mid_type="num", mid_value=50,
+        mid_color="FFEB84", end_type="num", end_value=90, end_color="63BE7B"))
+    ws.conditional_formatting.add(f"B6:{L(1 + len(countries))}6", ColorScaleRule(
+        start_type="num", start_value=20, start_color="F8696B", mid_type="num", mid_value=50,
+        mid_color="FFEB84", end_type="num", end_value=90, end_color="63BE7B"))
+    tip(ws["A6"], "Most recent month with data for each market (may be part-month).")
+    tip(ws["A7"], "Average day-ahead wholesale price, most recent month. Spain, Sweden and Ireland prices are under a licence that forbids republishing, and the UK is not covered by this free feed.")
+    if months:
+        lc = LineChart()
+        lc.title = "Renewable share of generation (%)"
+        lc.add_data(Reference(ws, min_col=2, max_col=1 + len(countries), min_row=r0, max_row=last), titles_from_data=True)
+        lc.set_categories(Reference(ws, min_col=1, min_row=r0 + 1, max_row=last))
+        for sr, colr in zip(lc.series, ("C0392B", "0F2537", "7F8C8D", "2E86C1", "00707C", "E3A33B", "27AE60", "6C5CE7")):
+            sr.graphicalProperties.line.solidFill = colr
+            sr.graphicalProperties.line.width = 22000
+            sr.smooth = False
+        lc.y_axis.scaling.min, lc.y_axis.scaling.max = 0, 100
+        lc.height, lc.width = 9, 22
+        style_chart(lc)
+        lc.legend.position = "b"
+        ws.add_chart(lc, f"K5")
+    ws.freeze_panes = "B6"
+    ws.sheet_properties.tabColor = "16A085"
 
 
 def sheet_scoring(wb):
@@ -935,7 +1022,8 @@ def sheet_readme(wb, cfg, counts):
             ("News", "Latest headlines per project, collected weekly from Google News (free RSS feed)."),
             ("Tenders", "Public tenders mentioning data centres in the target markets (EU TED and UK Find a Tender)."),
             ("AI Scan", "Google AI Mode's latest status answer per project, with automatic flags where it disagrees with the tracker. Unverified until a person reviews it."),
-            ("Live Data", "Spain's monthly renewable share from Red Eléctrica's public API, against the 90% level in Real Decreto 1032/2026."),
+            ("Grid by market", "Monthly renewable share of electricity (all 8 markets) and wholesale power price (open-licence markets), refreshed weekly."),
+            ("Live Data", "Spain's official monthly renewable share (Red Eléctrica) against the 90% level in Real Decreto 1032/2026."),
             ("Scoring guide", "How the Priority score and the Market score are worked out, point by point, with a live worked example."),
             ("Glossary", "Plain-English meaning of every technical term and abbreviation, plus the free tools behind the automation."),
             ("Lists", "Dropdown values and the scoring points. Change a number here and every score updates."),
@@ -1025,8 +1113,10 @@ def run() -> str:
         fx={"_total": lambda r: f"=SUM({mc('pipeline_score')}{r}:{mc('fit_score')}{r})",
             "_rank": lambda r: f"=RANK({mc('_total')}{r},${mc('_total')}${FIRST}:${mc('_total')}${FIRST + len(T['markets']) - 1})",
             "_projects": lambda r: f"=COUNTIF({prng('country')},A{r})",
-            "_mw": lambda r: f"=SUMIF({prng('country')},A{r},{prng('capacity_mw')})"},
-        tab="2E8B57", span=11)
+            "_mw": lambda r: f"=SUMIF({prng('country')},A{r},{prng('capacity_mw')})",
+            "_ren": lambda r: (f"=IFERROR(INDEX('Grid by market'!$B$6:$I$6,MATCH(A{r},'Grid by market'!$B$5:$I$5,0)),\"\")")},
+        tab="2E8B57", span=11, refs=refs)
+    chips(ws, mc("status"), {"Focus": (GREEN_F, GREEN_T), "Watch": (PALE, MUTED)})
     for r in range(FIRST, last + 1):
         ws[f"A{r}"].font = F(10, True, NAVY)
     ws.conditional_formatting.add(f"{mc('_total')}{FIRST}:{mc('_total')}{MAXR}",
@@ -1095,6 +1185,7 @@ def run() -> str:
             ws.cell(r, 7).alignment = Alignment(horizontal="right", vertical="top")
             ws.row_dimensions[r].height = 16
 
+    sheet_grid(wb, read_table("grid_markets"))
     sheet_scoring(wb)
     sheet_glossary(wb)
     countries = [m["country"] for m in T["markets"]][:8] or LY.LISTS["countries"][:7]
@@ -1107,7 +1198,7 @@ def run() -> str:
         "Public tenders": len(T["tenders"]),
     }
     sheet_readme(wb, cfg, counts)
-    order = ["Read me", "Dashboard", "Pipeline", "Markets", "Grid & Policy", "Accounts", "Sources",
+    order = ["Read me", "Dashboard", "Pipeline", "Markets", "Grid & Policy", "Grid by market", "Accounts", "Sources",
              "Changes", "Gaps", "News", "Tenders", "AI Scan", "Live Data", "Scoring guide", "Glossary", "Lists"]
     wb._sheets = [wb[n] for n in order]
     wb.active = 1

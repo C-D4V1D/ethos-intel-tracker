@@ -36,7 +36,7 @@ SCHEMAS: dict[str, list[str]] = {
         "next_step", "source_ids", "last_checked",
     ],
     "markets": [
-        "country", "pipeline_score", "capex_score", "grid_score",
+        "country", "status", "status_reason", "pipeline_score", "capex_score", "grid_score",
         "policy_score", "fit_score", "evidence", "source_ids", "last_checked",
     ],
     "policy": [
@@ -56,6 +56,7 @@ SCHEMAS: dict[str, list[str]] = {
         "id", "gap", "why_it_matters", "how_to_close", "owner", "status",
         "opened",
     ],
+    "grid_markets": ["country", "month", "renewable_share_pct", "price_eur_mwh", "source", "fetched"],
     "tenders": [
         "date_found", "source", "notice_id", "title", "buyer", "country",
         "published", "deadline", "notice_type", "url", "matched",

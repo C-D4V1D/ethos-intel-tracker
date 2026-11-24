@@ -1,2 +1,25 @@
 date,item_type,item_id,item_name,field,old_value,new_value,impact,source,logged_by
+2026-11-24,projects,P-ES-01,QTS Calatorao campus (Project Rhodes),capacity_mw,,300,Filled from verified research,SRC059,David C.
+2026-11-24,projects,P-ES-01,QTS Calatorao campus (Project Rhodes),capacity_basis,Unclear,Grid,Updated from verified research,SRC059,David C.
+2026-11-24,projects,P-ES-01,QTS Calatorao campus (Project Rhodes),target_online,,2028,Filled from verified research,SRC059,David C.
+2026-11-24,projects,P-ES-03,Zaragoza-WIND campus,capacity_mw,,144,Filled from verified research,SRC061,David C.
+2026-11-24,projects,P-ES-03,Zaragoza-WIND campus,capacity_basis,Unclear,IT,Updated from verified research,SRC061,David C.
+2026-11-24,projects,P-ES-03,Zaragoza-WIND campus,investment_eur_m,,1225,Filled from verified research,SRC061,David C.
+2026-11-24,projects,P-ES-03,Zaragoza-WIND campus,city_region,"Zaragoza, Aragón","Botorrita, Zaragoza",Updated from verified research,SRC061,David C.
+2026-11-24,projects,P-ES-03,Zaragoza-WIND campus,target_online,,2029,Filled from verified research,SRC061,David C.
+2026-11-24,projects,P-ES-06,Digital Realty MAD5,capacity_mw,,24,Filled from verified research,SRC063,David C.
+2026-11-24,projects,P-ES-06,Digital Realty MAD5,target_online,,2028,Filled from verified research,SRC063,David C.
+2026-11-24,projects,P-ES-07,Goodman MAD01 (San Blas-Canillejas),capacity_mw,,6,Filled from verified research,SRC064,David C.
+2026-11-24,projects,P-ES-07,Goodman MAD01 (San Blas-Canillejas),capacity_basis,Unclear,IT,Updated from verified research,SRC064,David C.
+2026-11-24,projects,P-ES-07,Goodman MAD01 (San Blas-Canillejas),investment_eur_m,,200,Filled from verified research,SRC064,David C.
+2026-11-24,projects,P-ES-07,Goodman MAD01 (San Blas-Canillejas),target_online,,2027,Filled from verified research,SRC064,David C.
+2026-11-24,projects,P-ES-04,Microsoft La Muela campus,investment_eur_m,,2179,Filled from verified research,SRC066,David C.
+2026-11-24,projects,P-ES-08,Meta Talavera de la Reina campus,investment_eur_m,,750,Filled from verified research,SRC067,David C.
+2026-11-24,projects,P-FR-01,Campus IA Fouju,stage,Permitting,Permitted,Updated from verified research,SRC068,David C.
+2026-11-24,projects,P-FR-01,Campus IA Fouju,permit,,2026-07-29,Filled from verified research,SRC068,David C.
+2026-11-24,projects,P-FR-01,Campus IA Fouju,investment_eur_m,,8500,Filled from verified research,SRC068,David C.
+2026-11-24,projects,P-DE-02,EdgeConneX Heusenstamm (EDCFRA02),stage,Permitting,Permitted,Updated from verified research,SRC070,David C.
+2026-11-24,projects,P-DE-02,EdgeConneX Heusenstamm (EDCFRA02),permit,,2026-02-16,Filled from verified research,SRC070,David C.
+2026-11-24,projects,P-IE-02,Art Data Centres Ennis campus,target_online,,2028,Filled from verified research,SRC072,David C.
+2026-11-24,projects,P-DE-04,Vantage Groß-Gerau campus (revived),(new item),,added,"New Frankfurt-area opportunity, early stage",SRC073,David C.
 2026-11-24,Tracker,,Tracker,Baseline,none,"20 projects, 10 accounts, 7 policy rows, 58 sources",Baseline set; future changes logged automatically,,David C.

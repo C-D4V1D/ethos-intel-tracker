@@ -91,6 +91,24 @@ def run_rss(dry_run: bool) -> int:
                          "url": a["link"], "snippet": "", "query": q})
             added += 1
         time.sleep(1)
+    # market-wide feeds: raw material for automatic discovery of NEW projects
+    from .auto_update import CODES
+    for country in load_config().get("discovery", {}).get("markets", []):
+        q = f'"data centre" OR "data center" {country} MW (planning OR approved OR announces OR construction)'
+        try:
+            arts = [] if dry_run else rss(q)
+        except Exception:  # noqa: BLE001
+            arts = []
+        for a in arts[:8]:
+            if not a["link"] or a["link"] in seen or a["title"].lower() in seen_titles:
+                continue
+            seen.add(a["link"]); seen_titles.add(a["title"].lower())
+            news.append({"date_found": today(), "item_id": f"MKT-{CODES.get(country, country)}",
+                         "item_name": f"{country} market", "title": a["title"],
+                         "publisher": a["source"]["name"], "published": a["date"], "url": a["link"],
+                         "snippet": "", "query": q})
+            added += 1
+        time.sleep(1)
     news.sort(key=lambda n: n["date_found"], reverse=True)
     write_table("news", news[:400])
     log("news_watch", "dry-run" if dry_run else "ok",
