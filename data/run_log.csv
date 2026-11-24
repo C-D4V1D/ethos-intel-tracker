@@ -209,3 +209,17 @@ run_at,step,status,detail,credits_used
 2026-11-24 16:49 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 29, 'Accounts': 10, 'Markets scored': 8, 'Sources': 105, 'Change-log entries': 120, 'News items': 189, 'AI scans': 82, 'Grid data months': 24, 'Public tenders': 85, 'Waiting for your decision': 19, 'Hiring signals': 1, 'Events': 36}",0
 2026-11-24 16:49 UTC,sync_from_excel,ok,1 edited cells and 0 new rows taken from edit.xlsx,0
 2026-11-24 16:50 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 29, 'Accounts': 10, 'Markets scored': 8, 'Sources': 105, 'Change-log entries': 120, 'News items': 189, 'AI scans': 82, 'Grid data months': 24, 'Public tenders': 85, 'Waiting for your decision': 19, 'Hiring signals': 1, 'Events': 36}",0
+2026-11-24 16:50 UTC,run_all,start,light,0
+2026-11-24 16:50 UTC,onedrive,ok,OneDrive copy unchanged since the last upload; nothing to pull,0
+2026-11-24 16:50 UTC,sync_from_excel,skipped,Ethos_European_DC_Intelligence_Tracker.xlsx not found,0
+2026-11-24 16:51 UTC,news_watch,ok,"RSS: 29 queries ({'rss': 29}), 4 new articles, 0 failed",0
+2026-11-24 16:52 UTC,tender_watch,ok,"TED: 83 matches, 0 new (API total 97); FTS: 1 matches, 0 new",0
+2026-11-24 17:14 UTC,enrich,ok,"news summarised 24; tenders triaged 36; source dates 0; accounts noted 10; briefing written; 6 AI batches failed (first: gemini-flash-latest: HTTP 503 {
+  ""error"": {
+    ""code"": 503,
+    ""message"": ""This model is currently experiencing high )",0
+2026-11-24 17:16 UTC,next_actions,ok,29 suggestions; Gemini rewrote 25,0
+2026-11-24 17:16 UTC,detect_changes,ok,2 changes logged,0
+2026-11-24 17:16 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 29, 'Accounts': 10, 'Markets scored': 8, 'Sources': 105, 'Change-log entries': 122, 'News items': 193, 'AI scans': 82, 'Grid data months': 24, 'Public tenders': 85, 'Waiting for your decision': 19, 'Hiring signals': 1, 'Events': 36}",0
+2026-11-24 17:16 UTC,run_all,done,workbook rebuilt in output/,0
+2026-11-24 17:17 UTC,onedrive,ok,uploaded; view link https://1drv.ms/x/c/3aac4f65e8a264b6/IQB3yoSBMt6RSITvvHjY4YmBAQZQAfnt5KXRF7giAYKJq5A,0

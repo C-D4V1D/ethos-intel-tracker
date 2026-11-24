@@ -235,13 +235,13 @@
    "_name": "Moncalieri Hyperscale Data Centre Project"
   },
   "P-UK-04": {
-   "stage": "Announced",
+   "stage": "Permitted",
    "capacity_mw": "15",
    "investment_eur_m": "",
    "target_online": "",
    "ethos_relationship": "Target",
    "design_team": "Not public",
-   "_name": "Castleforge & Galaxy Data Centers Campus"
+   "_name": "Redhill Data Centre campus expansion"
   },
   "P-DE-06": {
    "stage": "Permitting",
@@ -260,15 +260,6 @@
    "ethos_relationship": "Target",
    "design_team": "Not public",
    "_name": "Verne / Ardian Group (Paris-Villaroche)"
-  },
-  "P-IE-04": {
-   "stage": "Permitting",
-   "capacity_mw": "",
-   "investment_eur_m": "",
-   "target_online": "",
-   "ethos_relationship": "Target",
-   "design_team": "Not public",
-   "_name": "Keppel Data Centres Citywest Business Campus"
   }
  },
  "policy": {
@@ -648,7 +639,7 @@
   },
   "SRC082": {
    "link_status": "OK",
-   "_name": "Plans for data center in Moncalieri, Italy, put on hold by town mayor - DCD"
+   "_name": "Plans unveiled for \u2018largest\u2019 data center in Italy - DCD"
   },
   "SRC081": {
    "link_status": "OK",
@@ -737,6 +728,14 @@
   "SRC103": {
    "link_status": "OK (reader)",
    "_name": "Government publishes Large Energy User Action Plan (LEAP), laying the foundation for future investments in energy intensive sectors - DETE"
+  },
+  "SRC104": {
+   "link_status": "Not checked",
+   "_name": "Green light for expansion of \u00a3500m Surrey data centre campus"
+  },
+  "SRC105": {
+   "link_status": "Not checked",
+   "_name": "Data centre sector rejects the new decree and will use all legal routes"
   }
  }
 }

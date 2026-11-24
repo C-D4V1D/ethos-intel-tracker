@@ -119,3 +119,5 @@ date,item_type,item_id,item_name,field,old_value,new_value,impact,source,logged_
 2026-11-24,projects,P-UK-04,Redhill Data Centre campus expansion,capacity_basis,Unclear,New 15 MW building,Checked against source,SRC104,manual check
 2026-11-24,projects,P-UK-04,Redhill Data Centre campus expansion,confidence,Low,Medium,Checked against source,SRC104,manual check
 2026-11-24,Pipeline,P-IE-04,Keppel Citywest,Source IDs,Low,Medium,"Existing site (built 2000), not a new project",,auto
+2026-11-24,sources,SRC105,Data centre sector rejects the new decree and will use all legal routes,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC104,Green light for expansion of £500m Surrey data centre campus,(new item),,added,New item to review,,auto
