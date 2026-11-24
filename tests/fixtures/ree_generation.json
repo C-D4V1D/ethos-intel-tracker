@@ -1,0 +1,430 @@
+{
+ "data": {
+  "type": "Generation structure",
+  "attributes": {
+   "title": "Generation structure"
+  }
+ },
+ "included": [
+  {
+   "type": "Solar photovoltaic",
+   "id": "Solar photovoltaic",
+   "attributes": {
+    "title": "Solar photovoltaic",
+    "type": "Renovable",
+    "values": [
+     {
+      "value": 3063564,
+      "percentage": 0,
+      "datetime": "2025-11-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4887414,
+      "percentage": 0,
+      "datetime": "2025-12-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 2764689,
+      "percentage": 0,
+      "datetime": "2026-01-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 3569837,
+      "percentage": 0,
+      "datetime": "2026-02-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 2994586,
+      "percentage": 0,
+      "datetime": "2026-03-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4578005,
+      "percentage": 0,
+      "datetime": "2026-04-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4385302,
+      "percentage": 0,
+      "datetime": "2026-05-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4480740,
+      "percentage": 0,
+      "datetime": "2026-06-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4092221,
+      "percentage": 0,
+      "datetime": "2026-07-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 3380614,
+      "percentage": 0,
+      "datetime": "2026-08-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 2893675,
+      "percentage": 0,
+      "datetime": "2026-09-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4546219,
+      "percentage": 0,
+      "datetime": "2026-10-01T00:00:00.000+01:00"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Wind",
+   "id": "Wind",
+   "attributes": {
+    "title": "Wind",
+    "type": "Renovable",
+    "values": [
+     {
+      "value": 3118897,
+      "percentage": 0,
+      "datetime": "2025-11-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4634976,
+      "percentage": 0,
+      "datetime": "2025-12-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4815156,
+      "percentage": 0,
+      "datetime": "2026-01-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 3008833,
+      "percentage": 0,
+      "datetime": "2026-02-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4868089,
+      "percentage": 0,
+      "datetime": "2026-03-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4117071,
+      "percentage": 0,
+      "datetime": "2026-04-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 3959498,
+      "percentage": 0,
+      "datetime": "2026-05-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 5479477,
+      "percentage": 0,
+      "datetime": "2026-06-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 3428771,
+      "percentage": 0,
+      "datetime": "2026-07-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4331396,
+      "percentage": 0,
+      "datetime": "2026-08-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 3128303,
+      "percentage": 0,
+      "datetime": "2026-09-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 3093625,
+      "percentage": 0,
+      "datetime": "2026-10-01T00:00:00.000+01:00"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Hydro",
+   "id": "Hydro",
+   "attributes": {
+    "title": "Hydro",
+    "type": "Renovable",
+    "values": [
+     {
+      "value": 1306727,
+      "percentage": 0,
+      "datetime": "2025-11-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 3470848,
+      "percentage": 0,
+      "datetime": "2025-12-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 1238608,
+      "percentage": 0,
+      "datetime": "2026-01-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 2798886,
+      "percentage": 0,
+      "datetime": "2026-02-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 2108483,
+      "percentage": 0,
+      "datetime": "2026-03-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 2970485,
+      "percentage": 0,
+      "datetime": "2026-04-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 1321805,
+      "percentage": 0,
+      "datetime": "2026-05-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 3413038,
+      "percentage": 0,
+      "datetime": "2026-06-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 2129842,
+      "percentage": 0,
+      "datetime": "2026-07-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 3036633,
+      "percentage": 0,
+      "datetime": "2026-08-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 3279587,
+      "percentage": 0,
+      "datetime": "2026-09-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 2177627,
+      "percentage": 0,
+      "datetime": "2026-10-01T00:00:00.000+01:00"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Nuclear",
+   "id": "Nuclear",
+   "attributes": {
+    "title": "Nuclear",
+    "type": "No-Renovable",
+    "values": [
+     {
+      "value": 4300000,
+      "percentage": 0,
+      "datetime": "2025-11-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4300000,
+      "percentage": 0,
+      "datetime": "2025-12-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4300000,
+      "percentage": 0,
+      "datetime": "2026-01-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4300000,
+      "percentage": 0,
+      "datetime": "2026-02-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4300000,
+      "percentage": 0,
+      "datetime": "2026-03-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4300000,
+      "percentage": 0,
+      "datetime": "2026-04-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4300000,
+      "percentage": 0,
+      "datetime": "2026-05-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4300000,
+      "percentage": 0,
+      "datetime": "2026-06-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4300000,
+      "percentage": 0,
+      "datetime": "2026-07-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4300000,
+      "percentage": 0,
+      "datetime": "2026-08-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4300000,
+      "percentage": 0,
+      "datetime": "2026-09-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4300000,
+      "percentage": 0,
+      "datetime": "2026-10-01T00:00:00.000+01:00"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Combined cycle",
+   "id": "Combined cycle",
+   "attributes": {
+    "title": "Combined cycle",
+    "type": "No-Renovable",
+    "values": [
+     {
+      "value": 3949972,
+      "percentage": 0,
+      "datetime": "2025-11-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 3468324,
+      "percentage": 0,
+      "datetime": "2025-12-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 3417634,
+      "percentage": 0,
+      "datetime": "2026-01-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4427716,
+      "percentage": 0,
+      "datetime": "2026-02-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 3715432,
+      "percentage": 0,
+      "datetime": "2026-03-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 2590134,
+      "percentage": 0,
+      "datetime": "2026-04-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4245585,
+      "percentage": 0,
+      "datetime": "2026-05-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 4833938,
+      "percentage": 0,
+      "datetime": "2026-06-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 2919431,
+      "percentage": 0,
+      "datetime": "2026-07-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 3279747,
+      "percentage": 0,
+      "datetime": "2026-08-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 3743151,
+      "percentage": 0,
+      "datetime": "2026-09-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 3007049,
+      "percentage": 0,
+      "datetime": "2026-10-01T00:00:00.000+01:00"
+     }
+    ]
+   }
+  },
+  {
+   "type": "Total generation",
+   "id": "Total generation",
+   "attributes": {
+    "title": "Total generation",
+    "type": "Total",
+    "values": [
+     {
+      "value": 15739160,
+      "percentage": 0,
+      "datetime": "2025-11-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 20761562,
+      "percentage": 0,
+      "datetime": "2025-12-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 16536087,
+      "percentage": 0,
+      "datetime": "2026-01-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 18105272,
+      "percentage": 0,
+      "datetime": "2026-02-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 17986590,
+      "percentage": 0,
+      "datetime": "2026-03-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 18555695,
+      "percentage": 0,
+      "datetime": "2026-04-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 18212190,
+      "percentage": 0,
+      "datetime": "2026-05-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 22507193,
+      "percentage": 0,
+      "datetime": "2026-06-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 16870265,
+      "percentage": 0,
+      "datetime": "2026-07-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 18328390,
+      "percentage": 0,
+      "datetime": "2026-08-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 17344716,
+      "percentage": 0,
+      "datetime": "2026-09-01T00:00:00.000+01:00"
+     },
+     {
+      "value": 17124520,
+      "percentage": 0,
+      "datetime": "2026-10-01T00:00:00.000+01:00"
+     }
+    ]
+   }
+  }
+ ]
+}

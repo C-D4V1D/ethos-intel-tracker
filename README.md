@@ -1,0 +1,92 @@
+# European Data Centre Pipeline & Grid Intelligence Tracker
+
+A structured tracker of data-centre projects, accounts, a grid and policy watchlist, and the sources behind them. It covers the European markets where Ethos Engineering can win work. It refreshes itself every week, so the numbers and links stay current without manual effort.
+
+Prepared by David Chukwuemeka.
+
+## Get the latest workbook
+
+[Download the latest Excel workbook](https://github.com/C-D4V1D/ethos-intel-tracker/releases/latest/download/Ethos_European_DC_Intelligence_Tracker.xlsx)
+
+It is rebuilt every Monday.
+
+## What updates automatically
+
+| Step | What it does | Source |
+|---|---|---|
+| Link checker | Checks that every source link still works and stamps the date checked | The source URLs listed in the tracker |
+| Spain grid data | Updates Spain's monthly renewable share of electricity (24 months of history) | Red Eléctrica REData API (free, no key) |
+| Project news | Finds new headlines for each project | SerpApi, Google News |
+| AI Mode status scan | Asks Google AI Mode whether a project's status has changed and flags possible changes for a person to review. It never overwrites data. | SerpApi, Google AI Mode |
+| Change log | Records what moved since the last run | The tracker's own data |
+| Workbook rebuild | Rebuilds the formatted Excel workbook and publishes it | The tracker's own data |
+
+AI Mode answers are leads to verify, not facts. Check them against a primary source before relying on them.
+
+A step that fails is logged and the run carries on, so one broken website never blocks the weekly update.
+
+## How it works
+
+```text
+data/*.csv  (source of truth)
+     |
+     v
+tracker scripts (Python)
+     |
+     v
+output/ Excel workbook
+     |
+     v
+GitHub Release "latest"
+```
+
+**Making hand edits.** Edit the workbook as normal. Then, on GitHub, open the `inbox/` folder and choose **Add file > Upload files** to upload your edited workbook. The weekly workflow syncs your edits back into the CSV files, then removes the uploaded file. Formula columns are ignored.
+
+## Set up the SerpApi key (one time)
+
+1. In this repository, go to **Settings > Secrets and variables > Actions > New repository secret**.
+2. Name it `SERPAPI_KEY` and paste your key as the value.
+
+Never paste the key into chat, code or the workbook.
+
+The SerpApi free plan allows 250 searches a month. The config caps usage at 230, and cached searches don't count. Without a key, the run skips the SerpApi steps and does everything else.
+
+## Run it now
+
+Go to the **Actions** tab, choose **Weekly refresh**, then **Run workflow**. There is an option to skip SerpApi and save search credits.
+
+The schedule is Mondays at 06:17 UTC. The workflow also re-runs when an edited workbook is uploaded to `inbox/`.
+
+## Run locally (optional)
+
+```bash
+pip install -r requirements.txt
+cp .env.example .env        # then add your SERPAPI_KEY
+python -m tracker.run_all   # live run
+```
+
+Options:
+
+- `--dry-run`: offline test with sample data. It works on a throw-away copy of the data and writes to `output/dry-run/`, so it never touches real data.
+- `--no-serp`: live run, but skip the SerpApi steps.
+- `--skip-links`: skip the link checker.
+
+## Repository layout
+
+- `data/`: the CSV tables that are the source of truth (projects, accounts, markets, policy, sources, changes, gaps, news, AI scan results, Spain grid data, run log)
+- `tracker/`: the Python scripts, one per step, plus `run_all.py` which runs them in order
+- `config.yaml`: settings (search budget, freshness thresholds, timeouts, AI scan keywords). No code changes needed.
+- `.github/workflows/weekly-refresh.yml`: the weekly automation
+- `output/`: the generated Excel workbook (`output/dry-run/` holds dry-run output)
+- `inbox/`: where edited workbooks are uploaded (created when first used)
+- `tests/`: test fixtures
+- `requirements.txt`, `.env.example`: dependencies and local key template
+
+## Data rules
+
+- Every row has source IDs and a last-checked date.
+- Sources are marked P (primary) or S (secondary).
+- Freshness: amber if not checked for more than 90 days, red after 180 days (both set in `config.yaml`).
+- Confidence is High, Medium or Low.
+- Megawatt (MW) figures state their basis: IT, Grid or Unclear.
+- Scoring weights live on the Lists sheet of the workbook.

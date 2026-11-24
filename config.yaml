@@ -1,0 +1,38 @@
+# Ethos European Data Centre Intelligence Tracker - settings
+# Edit these values; no code changes needed.
+
+serpapi:
+  # Free plan = 250 searches/month. Each AI Mode or News query = 1 search.
+  monthly_budget: 230          # hard stop, leaves headroom under 250
+  ai_mode_per_run: 12          # projects/accounts scanned by Google AI Mode per run
+  news_per_run: 12             # news queries per run
+  rescan_after_days: 21        # don't re-scan an item more often than this
+  hl: en                       # result language
+  gl: uk                       # Google country edition
+
+freshness:
+  amber_days: 90               # source/project not checked for 90+ days -> amber
+  red_days: 180                # 180+ days -> red
+
+source_check:
+  timeout_seconds: 20
+  max_per_run: 200
+
+grid_data:
+  spain_months_back: 24        # Red Electrica monthly history to keep
+  decree_threshold_pct: 90     # RD 1032/2026: rules ease once renewables pass 90%
+
+ai_scan:
+  # Words in an AI Mode answer that suggest a stage change.
+  stage_keywords:
+    Operational: ["operational", "opened", "went live", "in operation", "inaugurat"]
+    Under construction: ["under construction", "construction began", "broke ground", "groundbreaking", "construction started"]
+    Permitted: ["approved", "granted permission", "planning permission granted", "permit granted", "consent granted"]
+    Permitting: ["planning application", "submitted", "consultation", "environmental impact", "under review"]
+    Cancelled / paused: ["cancelled", "canceled", "paused", "withdrawn", "shelved", "rejected", "refused"]
+
+workbook:
+  title: "European Data Centre Pipeline & Grid Intelligence Tracker"
+  prepared_by: "David Chukwuemeka"
+  repo_url: "https://github.com/C-D4V1D/ethos-intel-tracker"
+  latest_download: "https://github.com/C-D4V1D/ethos-intel-tracker/releases/latest/download/Ethos_European_DC_Intelligence_Tracker.xlsx"

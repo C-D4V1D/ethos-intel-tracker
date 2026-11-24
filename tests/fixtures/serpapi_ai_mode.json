@@ -1,0 +1,27 @@
+{
+ "search_metadata": {
+  "status": "Success",
+  "cached": false
+ },
+ "text_blocks": [
+  {
+   "type": "paragraph",
+   "snippet": "FIXTURE ANSWER: The project received planning permission in October 2026 and construction started in November 2026. It is planned at 120 MW with first capacity expected in 2028."
+  },
+  {
+   "type": "list",
+   "list": [
+    {
+     "snippet": "Developer confirmed the timeline in a press release."
+    }
+   ]
+  }
+ ],
+ "references": [
+  {
+   "title": "Example press release",
+   "link": "https://example.com/press",
+   "source": "Example Co"
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+{
+ "search_metadata": {
+  "status": "Success",
+  "cached": false
+ },
+ "news_results": [
+  {
+   "title": "Sample: data centre project secures planning consent",
+   "link": "https://example.com/news/sample-1",
+   "source": {
+    "name": "Example News"
+   },
+   "date": "11/20/2026, 08:00 AM, +0000 UTC",
+   "snippet": "Fixture article used for offline tests."
+  },
+  {
+   "title": "Sample cluster",
+   "stories": [
+    {
+     "title": "Sample: operator expands campus to 120 MW",
+     "link": "https://example.com/news/sample-2",
+     "source": {
+      "name": "Example Trade"
+     },
+     "date": "11/18/2026"
+    }
+   ]
+  }
+ ]
+}

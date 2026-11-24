@@ -1,0 +1,77 @@
+name: Weekly intelligence refresh
+
+# Runs every Monday 06:17 UTC, and on demand from the Actions tab
+# ("Run workflow"). Also re-runs when someone uploads an edited workbook
+# to the inbox/ folder.
+on:
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      skip_serp:
+        description: "Skip SerpApi (save credits)"
+        type: boolean
+        default: false
+  push:
+    paths:
+      - "inbox/*.xlsx"
+      - "data/*.csv"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Pull edits from an uploaded workbook (if any)
+        run: |
+          f=$(ls inbox/*.xlsx 2>/dev/null | head -1 || true)
+          if [ -n "$f" ]; then
+            python -m tracker.sync_from_excel --workbook "$f"
+            git rm -q "$f"
+          fi
+
+      - name: Refresh data and rebuild workbook
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+        run: |
+          if [ "${{ inputs.skip_serp }}" = "true" ]; then
+            python -m tracker.run_all --no-serp
+          else
+            python -m tracker.run_all
+          fi
+
+      - name: Commit updated data
+        run: |
+          git config user.name  "intel-tracker-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/ inbox/ 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "Weekly refresh $(date -u +%F)"
+          git push
+
+      - name: Publish workbook to the "latest" release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          f=output/Ethos_European_DC_Intelligence_Tracker.xlsx
+          gh release view latest >/dev/null 2>&1 || \
+            gh release create latest --title "Latest tracker" \
+              --notes "Refreshed automatically every Monday. Download the workbook below."
+          gh release upload latest "$f" --clobber
+          gh release edit latest --notes "Last refreshed: $(date -u '+%Y-%m-%d %H:%M UTC'). Download the workbook below."
