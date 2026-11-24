@@ -105,10 +105,13 @@ def _baseline_download():
         return None
     d = OUTPUT / "baseline"
     d.mkdir(parents=True, exist_ok=True)
-    r = subprocess.run(["gh", "release", "download", "latest", "-p", BASELINE_ASSET, "-D", str(d), "--clobber"],
-                       capture_output=True, text=True)
-    p = d / BASELINE_ASSET
-    return p if r.returncode == 0 and p.exists() else None
+    for name in (BASELINE_ASSET, WORKBOOK_NAME):  # fall back to the last published workbook
+        r = subprocess.run(["gh", "release", "download", "latest", "-p", name, "-D", str(d), "--clobber"],
+                           capture_output=True, text=True)
+        p = d / name
+        if r.returncode == 0 and p.exists():
+            return p
+    return None
 
 
 def pull() -> bool:
