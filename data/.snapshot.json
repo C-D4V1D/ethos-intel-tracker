@@ -242,7 +242,7 @@
    "_name": "Government approves data centre sustainability royal decree"
   },
   "SRC003": {
-   "link_status": "BLOCKED",
+   "link_status": "OK",
    "_name": "SpainDC to file Supreme Court appeal against the decree"
   },
   "SRC004": {
@@ -374,7 +374,7 @@
    "_name": "Data4 lays foundations for Hanau campus (press release)"
   },
   "SRC036": {
-   "link_status": "BLOCKED",
+   "link_status": "OK (reader)",
    "_name": "Engineering a sustainable mega campus (Deerns with TTSP, Hanau)"
   },
   "SRC037": {
@@ -394,7 +394,7 @@
    "_name": "Digital Realty breaks ground on FRA20, Frankfurt"
   },
   "SRC041": {
-   "link_status": "ERROR",
+   "link_status": "OK (reader)",
    "_name": "EnEfG \u00a711 (data centre PUE, heat reuse, renewables)"
   },
   "SRC042": {
@@ -438,7 +438,7 @@
    "_name": "atNorth signs Calentix heat reuse deal at SWE04"
   },
   "SRC052": {
-   "link_status": "BLOCKED",
+   "link_status": "OK (reader)",
    "_name": "EdgeConneX looks to enter Swedish market (Skellefte\u00e5)"
   },
   "SRC053": {
