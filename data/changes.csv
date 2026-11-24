@@ -110,3 +110,12 @@ date,item_type,item_id,item_name,field,old_value,new_value,impact,source,logged_
 2026-11-24,sources,SRC102,"France AI Data Center Project Tracker: Announced, Authorised, In Service",(new item),,added,New item to review,,auto
 2026-11-24,sources,SRC099,St Athan data centre: Vantage Bro Tathan | Data Centre Watch,(new item),,added,New item to review,,auto
 2026-11-24,sources,SRC101,"Data center in Langenhorn, Germany, receives provisional approval from municipal authorities - DCD",(new item),,added,New item to review,,auto
+2026-11-24,projects,P-IE-04,Keppel Citywest,(removed),present,,"Existing site (built 2000), not a new project",,manual check
+2026-11-24,projects,P-UK-04,Redhill Data Centre campus expansion,project,Castleforge & Galaxy Data Centers Campus,Redhill Data Centre campus expansion,Checked against source,SRC104,manual check
+2026-11-24,projects,P-UK-04,Redhill Data Centre campus expansion,city_region,"Redhill, UK","Redhill, Surrey",Checked against source,SRC104,manual check
+2026-11-24,projects,P-UK-04,Redhill Data Centre campus expansion,stage,Announced,Permitted,Checked against source,SRC104,manual check
+2026-11-24,projects,P-UK-04,Redhill Data Centre campus expansion,permit,,"Full planning consent, May 2026",Checked against source,SRC104,manual check
+2026-11-24,projects,P-UK-04,Redhill Data Centre campus expansion,announced,2026-11,2025-01,Checked against source,SRC104,manual check
+2026-11-24,projects,P-UK-04,Redhill Data Centre campus expansion,capacity_basis,Unclear,New 15 MW building,Checked against source,SRC104,manual check
+2026-11-24,projects,P-UK-04,Redhill Data Centre campus expansion,confidence,Low,Medium,Checked against source,SRC104,manual check
+2026-11-24,projects,P-UK-04,Redhill Data Centre campus expansion,source_ids,SRC100,SRC104; SRC100,Checked against source,SRC104,manual check

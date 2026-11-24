@@ -53,7 +53,30 @@ def gemini(prompt: str, json_mode: bool = False, max_tokens: int = 4000) -> tupl
 def gemini_json(prompt: str):
     txt, model = gemini(prompt, json_mode=True)
     txt = re.sub(r"^```(?:json)?|```$", "", txt.strip(), flags=re.M).strip()
-    return json.loads(txt), model
+    try:
+        return json.loads(txt), model
+    except json.JSONDecodeError:
+        m = re.search(r"[\[{].*[\]}]", txt, flags=re.S)
+        if not m:
+            raise
+        return json.loads(m.group(0)), model
+
+
+def as_dict(obj) -> dict:
+    """Gemini sometimes wraps the object in a list; always hand back a dict."""
+    if isinstance(obj, list):
+        obj = next((x for x in obj if isinstance(x, dict)), {})
+    return obj if isinstance(obj, dict) else {}
+
+
+def as_items(obj, key: str = "items") -> list:
+    """Accept either {"items": [...]} or a bare [...] list."""
+    if isinstance(obj, list):
+        return [x for x in obj if isinstance(x, dict)]
+    if isinstance(obj, dict):
+        v = obj.get(key, [])
+        return v if isinstance(v, list) else []
+    return []
 
 
 _cache: dict[str, str] = {}

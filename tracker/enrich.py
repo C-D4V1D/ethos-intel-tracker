@@ -20,7 +20,7 @@ import os
 
 from . import review as RV
 from .common import days_since, load_config, log, read_table, today, write_table
-from .llm import gemini, gemini_json, gemini_key, read_page, resolve
+from .llm import as_dict, as_items, gemini, gemini_json, gemini_key, read_page, resolve
 from .serp import BudgetExceeded, Serp
 
 ETHOS = ("Ethos Engineering is an Irish M&E (mechanical & electrical), energy and sustainability engineering "
@@ -31,6 +31,9 @@ ETHOS = ("Ethos Engineering is an Irish M&E (mechanical & electrical), energy an
 def _chunks(xs, n):
     for i in range(0, len(xs), n):
         yield xs[i:i + n]
+
+
+ERRORS: list[str] = []
 
 
 def news_summaries(max_items=48) -> str:
@@ -48,8 +51,9 @@ def news_summaries(max_items=48) -> str:
                   "business development, max 25 words>\"}}]}}. If the text is missing, summarise from the "
                   "headline and say so briefly. Articles:\n" + json.dumps(items, ensure_ascii=False))
         try:
-            res = gemini_json(prompt)[0].get("items", [])
-        except Exception:  # noqa: BLE001
+            res = as_items(gemini_json(prompt)[0], "items")
+        except Exception as e:  # noqa: BLE001
+            ERRORS.append(str(e)[:120])
             continue
         for x in res:
             try:
@@ -74,8 +78,9 @@ def tender_triage(max_items=60) -> str:
                   "centre or its power/cooling; 1 = unrelated (software, cleaning, IT hardware)>, \"why\": \"<max 15 "
                   "words>\"}}]}}. Tenders:\n" + json.dumps(items, ensure_ascii=False))
         try:
-            res = gemini_json(prompt)[0].get("items", [])
-        except Exception:  # noqa: BLE001
+            res = as_items(gemini_json(prompt)[0], "items")
+        except Exception as e:  # noqa: BLE001
+            ERRORS.append(str(e)[:120])
             continue
         for x in res:
             try:
@@ -127,10 +132,10 @@ def hiring_signals(serp) -> str:
             items = [{"i": i, "company": x["company"], "title": x["title"], "location": x["location"],
                       "description": x["_desc"]} for i, x in enumerate(batch)]
             try:
-                res = gemini_json(f"{ETHOS}\nFor each job posting return JSON {{\"items\": [{{\"i\": n, \"signal\": "
+                res = as_items(gemini_json(f"{ETHOS}\nFor each job posting return JSON {{\"items\": [{{\"i\": n, \"signal\": "
                                   "\"<max 20 words: what this hire suggests about the company's data-centre plans "
                                   "in that location (e.g. new build moving to construction) and whether Ethos should "
-                                  "act>\"}}]}}. Jobs:\n" + json.dumps(items, ensure_ascii=False))[0].get("items", [])
+                                  "act>\"}}]}}. Jobs:\n" + json.dumps(items, ensure_ascii=False))[0], "items")
             except Exception:  # noqa: BLE001
                 res = []
             for x in res:
@@ -169,9 +174,9 @@ def events(serp) -> str:
     if new and gemini_key():
         items = [{"i": i, "name": x["name"], "when": x["date"], "where": x["venue"]} for i, x in enumerate(new)]
         try:
-            res = gemini_json(f"{ETHOS}\nFor each event return JSON {{\"items\": [{{\"i\": n, \"why\": \"<max 18 words: "
+            res = as_items(gemini_json(f"{ETHOS}\nFor each event return JSON {{\"items\": [{{\"i\": n, \"why\": \"<max 18 words: "
                               "who Ethos could meet or why it matters; say 'Low relevance' if it is not about data "
-                              "centres, energy or construction>\"}}]}}. Events:\n" + json.dumps(items))[0].get("items", [])
+                              "centres, energy or construction>\"}}]}}. Events:\n" + json.dumps(items))[0], "items")
         except Exception:  # noqa: BLE001
             res = []
         for x in res:
@@ -203,10 +208,10 @@ def gap_answers(serp, max_items=8) -> str:
             continue
         asked += 1
         try:
-            res = gemini_json("Does the text below answer this question? Question: " + g["gap"] +
+            res = as_dict(gemini_json("Does the text below answer this question? Question: " + g["gap"] +
                               "\nReturn JSON {\"answered\": true/false, \"answer\": \"<max 40 words>\", "
                               "\"quote\": \"<exact supporting words>\", \"url\": \"<reference URL>\"}.\nReferences:\n"
-                              + "\n".join(u for _t, u in refs[:8]) + "\nText:\n" + text[:5000])[0]
+                              + "\n".join(u for _t, u in refs[:8]) + "\nText:\n" + text[:5000])[0])
         except Exception:  # noqa: BLE001
             continue
         if res.get("answered") and res.get("answer"):
@@ -230,13 +235,13 @@ def policy_watch(serp) -> str:
             continue
         current = {k: row[k] for k in ("policy_change", "policy_date", "next_milestone", "milestone_date", "rag")}
         try:
-            res = gemini_json("Compare the current record with the new search answer. Propose updates ONLY for "
+            res = as_items(gemini_json("Compare the current record with the new search answer. Propose updates ONLY for "
                               "facts that are newer or more precise. Return JSON {\"updates\": [{\"field\": one of "
                               "policy_change|policy_date|next_milestone|milestone_date|rag, \"value\": \"...\", "
                               "\"quote\": \"<exact words>\", \"url\": \"<reference>\"}]} (dates YYYY-MM-DD; rag = Red, "
                               "Amber or Green for how hard it is to build a new data centre now). Empty list if "
                               f"nothing new.\nCurrent record: {json.dumps(current)}\nReferences:\n"
-                              + "\n".join(u for _t, u in refs[:8]) + "\nAnswer:\n" + text[:5000])[0].get("updates", [])
+                              + "\n".join(u for _t, u in refs[:8]) + "\nAnswer:\n" + text[:5000])[0], "updates")
         except Exception:  # noqa: BLE001
             continue
         for u in res[:3]:
@@ -268,10 +273,10 @@ def fill_prices(serp) -> str:
             continue
         try:
             text, refs = am(serp, f"Average day-ahead wholesale electricity price in {z} for {target} in EUR/MWh. Cite the source.")
-            res = gemini_json("From the answer, return JSON {\"price\": <number in EUR/MWh or null>, \"quote\": \"<exact "
+            res = as_dict(gemini_json("From the answer, return JSON {\"price\": <number in EUR/MWh or null>, \"quote\": \"<exact "
                               f"words>\", \"url\": \"<reference>\"}} for the {target} monthly average day-ahead price in "
                               f"{z}. Null if not stated for that exact month.\nReferences:\n"
-                              + "\n".join(u for _t, u in refs[:8]) + "\nAnswer:\n" + text[:4000])[0]
+                              + "\n".join(u for _t, u in refs[:8]) + "\nAnswer:\n" + text[:4000])[0])
         except BudgetExceeded:
             break
         except Exception:  # noqa: BLE001
@@ -389,6 +394,8 @@ def run(dry_run: bool = False, weekly: bool = True) -> None:
             notes.append(fn())
         except Exception as e:  # noqa: BLE001
             notes.append(f"{fn.__name__} failed: {str(e)[:80]}")
+    if ERRORS:
+        notes.append(f"{len(ERRORS)} AI batches failed (first: {ERRORS[0]})")
     log("enrich", "ok", "; ".join(notes))
 
 

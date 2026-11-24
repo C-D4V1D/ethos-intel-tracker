@@ -99,6 +99,7 @@ SOURCES = [
     ("link_status", "Link status", 11, "text"),
     ("http_status", "HTTP", 7, "text"),
     ("used_in", "Used in", 22, "text"),
+    ("archive_url", "Archived copy", 22, "url"),
 ]
 
 CHANGES = [

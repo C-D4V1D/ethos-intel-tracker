@@ -46,7 +46,7 @@ SCHEMAS: dict[str, list[str]] = {
     ],
     "sources": [
         "id", "title", "publisher", "type", "published", "url",
-        "last_checked", "http_status", "link_status", "used_in",
+        "last_checked", "http_status", "link_status", "used_in", "archive_url",
     ],
     "changes": [
         "date", "item_type", "item_id", "item_name", "field", "old_value",

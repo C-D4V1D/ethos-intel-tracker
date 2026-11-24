@@ -58,6 +58,16 @@ def _check(url: str, timeout: int, force_get: bool = False) -> int | None:
         return None
 
 
+def wayback(url: str) -> str:
+    """Latest Internet Archive (Wayback Machine) snapshot of the page, if one exists. Free, no key."""
+    try:
+        js = requests.get("https://archive.org/wayback/available", params={"url": url}, timeout=25).json()
+        snap = (js.get("archived_snapshots") or {}).get("closest") or {}
+        return snap.get("url", "") if snap.get("available") and str(snap.get("status", "200")) == "200" else ""
+    except (requests.RequestException, ValueError):
+        return ""
+
+
 def jina_alive(url: str, timeout: int) -> bool:
     """Ask the free Jina Reader to fetch the page. True if it returns real page text."""
     import os
@@ -77,7 +87,7 @@ def jina_alive(url: str, timeout: int) -> bool:
 def run(dry_run: bool = False) -> dict:
     cfg = load_config()["source_check"]
     rows = read_table("sources")
-    counts = {"OK": 0, "OK (reader)": 0, "BLOCKED": 0, "BROKEN": 0, "ERROR": 0}
+    counts = {"OK": 0, "OK (reader)": 0, "OK (archive)": 0, "BLOCKED": 0, "BROKEN": 0, "ERROR": 0}
     for i, row in enumerate(rows):
         if i >= cfg["max_per_run"]:
             break
@@ -89,9 +99,22 @@ def run(dry_run: bool = False) -> dict:
             code = check_url(row["url"], cfg["timeout_seconds"])
         status = classify(code)
         if status in ("BLOCKED", "ERROR") and not dry_run and cfg.get("jina_fallback", True):
-            if jina_alive(row["url"], cfg["timeout_seconds"]):
+            ok = jina_alive(row["url"], cfg["timeout_seconds"])
+            if not ok:
+                time.sleep(10)  # the free reader is rate-limited; one patient retry
+                ok = jina_alive(row["url"], cfg["timeout_seconds"])
+            if ok:
                 status = "OK (reader)"
-                time.sleep(3)  # free Jina tier is rate-limited
+                time.sleep(3)
+            else:
+                snap = wayback(row["url"])
+                if snap:
+                    row["archive_url"] = snap
+                    status = "OK (archive)"
+        if not dry_run and not row.get("archive_url") and status.startswith("OK"):
+            snap = wayback(row["url"])
+            if snap:
+                row["archive_url"] = snap
         counts[status] += 1
         row["http_status"] = str(code or "")
         row["link_status"] = status

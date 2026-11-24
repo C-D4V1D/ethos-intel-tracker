@@ -71,9 +71,10 @@ TIPS = {
     "type": "P = primary (company, regulator, grid operator, planning file). S = secondary (press, data trackers).",
     "published": "Publication date of the source.",
     "url": "Click to open the source.",
-    "link_status": "Result of the weekly link check. OK = opens. OK (reader) = the site blocks automated checks but a free reader service opened it, so the link works. BLOCKED = site refuses automated checks, open by hand. ERROR = no answer this week, retried next week. BROKEN = page gone, replace it.",
+    "link_status": "Result of the weekly link check. OK = opens. OK (reader) = the site blocks automated checks but a free reader service opened it, so the link works. OK (archive) = the live page could not be checked but the Internet Archive holds a copy (see 'Archived copy'). BLOCKED = site refuses automated checks, open by hand. ERROR = no answer this week, retried next week. BROKEN = page gone, replace it.",
     "http_status": "Technical response code from the link check (200 = OK, 403 = blocked, 404 = not found).",
     "used_in": "Rows or tabs that rely on this source.",
+    "archive_url": "Copy of the page kept by the Internet Archive (Wayback Machine), so the source can still be read if the site changes or blocks checks.",
     # changes
     "date": "When the change was logged.",
     "News:item_id": "Project ID, or MKT-xx for a market-wide headline.",
