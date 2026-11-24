@@ -1,0 +1,32 @@
+name: Fetch recent OneDrive versions
+
+# Downloads the last few saved versions of the OneDrive workbook so the owner's
+# edits can be recovered. Kept for one day only.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  versions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Download versions
+        env:
+          MS_CLIENT_ID: ${{ secrets.MS_CLIENT_ID }}
+          MS_REFRESH_TOKEN: ${{ secrets.MS_REFRESH_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: python -m tracker.onedrive_versions
+      - uses: actions/upload-artifact@v4
+        with:
+          name: onedrive-versions
+          path: output/versions/
+          retention-days: 1
