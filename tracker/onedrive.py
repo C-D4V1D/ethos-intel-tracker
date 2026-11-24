@@ -94,6 +94,14 @@ def pull() -> bool:
     except RuntimeError as e:
         log("onedrive", "skipped", str(e))
         return False
+    meta = requests.get(f"{GRAPH}{_path()}", headers=h, timeout=60)
+    if meta.status_code == 404:
+        log("onedrive", "ok", "no OneDrive copy yet (first upload pending)")
+        return False
+    info = json.loads(INFO.read_text()) if INFO.exists() else {}
+    if not info.get("uploaded_ctag") or meta.json().get("cTag") == info.get("uploaded_ctag"):
+        log("onedrive", "ok", "OneDrive copy unchanged since the last upload; nothing to pull")
+        return False
     r = requests.get(f"{GRAPH}{_path()}/content", headers=h, timeout=120)
     if r.status_code == 404:
         log("onedrive", "ok", "no OneDrive copy yet (first upload pending)")
@@ -104,7 +112,7 @@ def pull() -> bool:
     tmp.write_bytes(r.content)
     from . import sync_from_excel
     n = sync_from_excel.run(str(tmp))
-    log("onedrive", "ok", f"pulled edits from OneDrive copy ({n} rows read)")
+    log("onedrive", "ok", f"pulled edits from OneDrive copy ({n} changes taken)")
     return True
 
 
@@ -135,7 +143,8 @@ def push() -> str:
                            json={"type": "view", "scope": "anonymous"}, timeout=60).json()
         info = {"item_id": item["id"], "view_link": lk.get("link", {}).get("webUrl", ""),
                 "owner_link": item.get("webUrl", "")}
-        INFO.write_text(json.dumps(info, indent=2))
+    info["uploaded_ctag"] = item.get("cTag", "")
+    INFO.write_text(json.dumps(info, indent=2))
     log("onedrive", "ok", f"uploaded; view link {info.get('view_link', '')}")
     return info.get("view_link", "")
 

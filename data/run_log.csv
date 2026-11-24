@@ -204,3 +204,8 @@ run_at,step,status,detail,credits_used
 2026-11-24 16:47 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 26, 'Accounts': 10, 'Markets scored': 8, 'Sources': 97, 'Change-log entries': 112, 'News items': 189, 'AI scans': 57, 'Grid data months': 24, 'Public tenders': 85, 'Waiting for your decision': 19, 'Hiring signals': 1, 'Events': 36}",0
 2026-11-24 16:47 UTC,run_all,done,workbook rebuilt in output/,0
 2026-11-24 16:47 UTC,onedrive,ok,uploaded; view link https://1drv.ms/x/c/3aac4f65e8a264b6/IQB3yoSBMt6RSITvvHjY4YmBAQZQAfnt5KXRF7giAYKJq5A,0
+2026-11-24 16:49 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 29, 'Accounts': 10, 'Markets scored': 8, 'Sources': 105, 'Change-log entries': 120, 'News items': 189, 'AI scans': 82, 'Grid data months': 24, 'Public tenders': 85, 'Waiting for your decision': 19, 'Hiring signals': 1, 'Events': 36}",0
+2026-11-24 16:49 UTC,sync_from_excel,ok,835 edited cells and 0 new rows taken from edit.xlsx,0
+2026-11-24 16:49 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 29, 'Accounts': 10, 'Markets scored': 8, 'Sources': 105, 'Change-log entries': 120, 'News items': 189, 'AI scans': 82, 'Grid data months': 24, 'Public tenders': 85, 'Waiting for your decision': 19, 'Hiring signals': 1, 'Events': 36}",0
+2026-11-24 16:49 UTC,sync_from_excel,ok,1 edited cells and 0 new rows taken from edit.xlsx,0
+2026-11-24 16:50 UTC,build_tracker,ok,"Ethos_European_DC_Intelligence_Tracker.xlsx: {'Projects': 29, 'Accounts': 10, 'Markets scored': 8, 'Sources': 105, 'Change-log entries': 120, 'News items': 189, 'AI scans': 82, 'Grid data months': 24, 'Public tenders': 85, 'Waiting for your decision': 19, 'Hiring signals': 1, 'Events': 36}",0

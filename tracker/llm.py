@@ -43,7 +43,7 @@ def gemini(prompt: str, json_mode: bool = False, max_tokens: int = 4000) -> tupl
                     last = f"{m}: empty answer"
                     break
             last = f"{m}: HTTP {r.status_code} {r.text[:160]}"
-            if r.status_code == 429 and attempt == 0:
+            if r.status_code in (429, 500, 503) and attempt == 0:
                 time.sleep(30)
                 continue
             break

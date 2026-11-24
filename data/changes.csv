@@ -1,113 +1,121 @@
 date,item_type,item_id,item_name,field,old_value,new_value,impact,source,logged_by
-2026-11-24,Pipeline,P-DE-05,NorthC FRA01 Frankfurt,Construction start,,2026-09,Auto-updated: value found on the cited page,SRC097,AI (verified)
-2026-11-24,Pipeline,P-DE-05,NorthC FRA01 Frankfurt,Target online,,2028,Auto-updated: value found on the cited page,SRC097,AI (verified)
-2026-11-24,Pipeline,P-ES-05,AWS La Cartuja campus,Stage,Permitting,Permitted,Auto-updated: value found on the cited page,SRC081,AI (verified)
-2026-11-24,Pipeline,P-ES-05,AWS La Cartuja campus,Permit / approval,,2024-05-22,Auto-updated: value found on the cited page,SRC081,AI (verified)
-2026-11-24,Pipeline,P-ES-04,Microsoft La Muela campus,Permit / approval,,2025-11-14,Auto-updated: value found on the cited page,SRC083,AI (verified)
-2026-11-24,Pipeline,P-ES-08,Meta Talavera de la Reina campus,Stage,Permitting,Permitted,Auto-updated: value found on the cited page,SRC085,AI (verified)
-2026-11-24,Pipeline,P-FR-02,SoftBank 5 GW AI data centre plan (Hauts-de-France),Target online,,2031,Auto-updated: value found on the cited page,SRC078,AI (verified)
-2026-11-24,Pipeline,P-FR-03,Escaudain Campus,Capacity (MW),,700,Auto-updated: value found on the cited page,SRC079,AI (verified)
-2026-11-24,Pipeline,P-IE-03,Google data center expansion at Grange Castle Business Park,Capacity (MW),,180,Auto-updated: value found on the cited page,SRC090,AI (verified)
-2026-11-24,Pipeline,P-IE-03,Google data center expansion at Grange Castle Business Park,Permit / approval,,2026-09-28,Auto-updated: value found on the cited page,SRC091,AI (verified)
-2026-11-24,Pipeline,P-DE-05,NorthC data center Frankfurt,New item added,,added,New project found automatically and confirmed on a source page,SRC077,AI (verified)
-2026-11-24,Pipeline,P-FR-02,Hauts-de-France Hub,New item added,,added,New project found automatically and confirmed on a source page,SRC078,AI (verified)
-2026-11-24,Pipeline,P-FR-03,Escaudain Campus,New item added,,added,New project found automatically and confirmed on a source page,SRC079,AI (verified)
-2026-11-24,Pipeline,P-IE-03,Google data center expansion at Grange Castle Business Park,New item added,,added,New project found automatically and confirmed on a source page,SRC080,AI (verified)
-2026-11-24,Pipeline,P-IT-02,Moncalieri Hyperscale Data Centre Project,New item added,,added,New project found automatically and confirmed on a source page,SRC082,AI (verified)
-2026-11-24,Pipeline,P-ES-01,QTS Calatorao campus (Project Rhodes),Capacity (MW),,300,Filled from verified research,SRC059,David C.
-2026-11-24,Pipeline,P-ES-01,QTS Calatorao campus (Project Rhodes),MW basis,Unclear,Grid,Updated from verified research,SRC059,David C.
-2026-11-24,Pipeline,P-ES-01,QTS Calatorao campus (Project Rhodes),Target online,,2028,Filled from verified research,SRC059,David C.
-2026-11-24,Pipeline,P-ES-03,Zaragoza-WIND campus,Capacity (MW),,144,Filled from verified research,SRC061,David C.
-2026-11-24,Pipeline,P-ES-03,Zaragoza-WIND campus,MW basis,Unclear,IT,Updated from verified research,SRC061,David C.
-2026-11-24,Pipeline,P-ES-03,Zaragoza-WIND campus,Investment (€m),,1225,Filled from verified research,SRC061,David C.
-2026-11-24,Pipeline,P-ES-03,Zaragoza-WIND campus,City / region,"Zaragoza, Aragón","Botorrita, Zaragoza",Updated from verified research,SRC061,David C.
-2026-11-24,Pipeline,P-ES-03,Zaragoza-WIND campus,Target online,,2029,Filled from verified research,SRC061,David C.
-2026-11-24,Pipeline,P-ES-06,Digital Realty MAD5,Capacity (MW),,24,Filled from verified research,SRC063,David C.
-2026-11-24,Pipeline,P-ES-06,Digital Realty MAD5,Target online,,2028,Filled from verified research,SRC063,David C.
-2026-11-24,Pipeline,P-ES-07,Goodman MAD01 (San Blas-Canillejas),Capacity (MW),,6,Filled from verified research,SRC064,David C.
-2026-11-24,Pipeline,P-ES-07,Goodman MAD01 (San Blas-Canillejas),MW basis,Unclear,IT,Updated from verified research,SRC064,David C.
-2026-11-24,Pipeline,P-ES-07,Goodman MAD01 (San Blas-Canillejas),Investment (€m),,200,Filled from verified research,SRC064,David C.
-2026-11-24,Pipeline,P-ES-07,Goodman MAD01 (San Blas-Canillejas),Target online,,2027,Filled from verified research,SRC064,David C.
-2026-11-24,Pipeline,P-ES-04,Microsoft La Muela campus,Investment (€m),,2179,Filled from verified research,SRC066,David C.
-2026-11-24,Pipeline,P-ES-08,Meta Talavera de la Reina campus,Investment (€m),,750,Filled from verified research,SRC067,David C.
-2026-11-24,Pipeline,P-FR-01,Campus IA Fouju,Stage,Permitting,Permitted,Updated from verified research,SRC068,David C.
-2026-11-24,Pipeline,P-FR-01,Campus IA Fouju,Permit / approval,,2026-07-29,Filled from verified research,SRC068,David C.
-2026-11-24,Pipeline,P-FR-01,Campus IA Fouju,Investment (€m),,8500,Filled from verified research,SRC068,David C.
-2026-11-24,Pipeline,P-DE-02,EdgeConneX Heusenstamm (EDCFRA02),Stage,Permitting,Permitted,Updated from verified research,SRC070,David C.
-2026-11-24,Pipeline,P-DE-02,EdgeConneX Heusenstamm (EDCFRA02),Permit / approval,,2026-02-16,Filled from verified research,SRC070,David C.
-2026-11-24,Pipeline,P-IE-02,Art Data Centres Ennis campus,Target online,,2028,Filled from verified research,SRC072,David C.
-2026-11-24,Pipeline,P-DE-04,Vantage Groß-Gerau campus (revived),New item added,,added,"New Frankfurt-area opportunity, early stage",SRC073,David C.
+2026-11-24,projects,P-ES-02,Tillion Aragón campus,permit,,2024,Auto-updated: value found on the cited page,SRC084,AI (verified)
+2026-11-24,projects,P-ES-02,Tillion Aragón campus,target_online,,2028,Auto-updated: value found on the cited page,SRC098,AI (verified)
+2026-11-24,projects,P-UK-02,"Vantage South Wales AI Growth Zone expansion (Newport, Bridgend, Bro Tathan)",design_team,Not public,"CarneySweeney, Hoare Lea",Auto-updated: value found on the cited page,SRC099,AI (verified)
+2026-11-24,projects,P-UK-04,Castleforge & Galaxy Data Centers Campus,(new item),,added,New project found automatically and confirmed on a source page,SRC100,AI (verified)
+2026-11-24,projects,P-DE-06,Langenhorn Data Center Project,(new item),,added,New project found automatically and confirmed on a source page,SRC101,AI (verified)
+2026-11-24,projects,P-FR-04,Verne / Ardian Group (Paris-Villaroche),(new item),,added,New project found automatically and confirmed on a source page,SRC102,AI (verified)
+2026-11-24,projects,P-IE-04,Keppel Data Centres Citywest Business Campus,(new item),,added,New project found automatically and confirmed on a source page,SRC103,AI (verified)
+2026-11-24,projects,P-DE-05,NorthC FRA01 Frankfurt,construction_start,,2026-09,Auto-updated: value found on the cited page,SRC097,AI (verified)
+2026-11-24,projects,P-DE-05,NorthC FRA01 Frankfurt,target_online,,2028,Auto-updated: value found on the cited page,SRC097,AI (verified)
+2026-11-24,projects,P-ES-05,AWS La Cartuja campus,stage,Permitting,Permitted,Auto-updated: value found on the cited page,SRC081,AI (verified)
+2026-11-24,projects,P-ES-05,AWS La Cartuja campus,permit,,2024-05-22,Auto-updated: value found on the cited page,SRC081,AI (verified)
+2026-11-24,projects,P-ES-04,Microsoft La Muela campus,permit,,2025-11-14,Auto-updated: value found on the cited page,SRC083,AI (verified)
+2026-11-24,projects,P-ES-08,Meta Talavera de la Reina campus,stage,Permitting,Permitted,Auto-updated: value found on the cited page,SRC085,AI (verified)
+2026-11-24,projects,P-FR-02,SoftBank 5 GW AI data centre plan (Hauts-de-France),target_online,,2031,Auto-updated: value found on the cited page,SRC078,AI (verified)
+2026-11-24,projects,P-FR-03,Escaudain Campus,capacity_mw,,700,Auto-updated: value found on the cited page,SRC079,AI (verified)
+2026-11-24,projects,P-IE-03,Google data center expansion at Grange Castle Business Park,capacity_mw,,180,Auto-updated: value found on the cited page,SRC090,AI (verified)
+2026-11-24,projects,P-IE-03,Google data center expansion at Grange Castle Business Park,permit,,2026-09-28,Auto-updated: value found on the cited page,SRC091,AI (verified)
+2026-11-24,projects,P-DE-05,NorthC data center Frankfurt,(new item),,added,New project found automatically and confirmed on a source page,SRC077,AI (verified)
+2026-11-24,projects,P-FR-02,Hauts-de-France Hub,(new item),,added,New project found automatically and confirmed on a source page,SRC078,AI (verified)
+2026-11-24,projects,P-FR-03,Escaudain Campus,(new item),,added,New project found automatically and confirmed on a source page,SRC079,AI (verified)
+2026-11-24,projects,P-IE-03,Google data center expansion at Grange Castle Business Park,(new item),,added,New project found automatically and confirmed on a source page,SRC080,AI (verified)
+2026-11-24,projects,P-IT-02,Moncalieri Hyperscale Data Centre Project,(new item),,added,New project found automatically and confirmed on a source page,SRC082,AI (verified)
+2026-11-24,projects,P-ES-01,QTS Calatorao campus (Project Rhodes),capacity_mw,,300,Filled from verified research,SRC059,David C.
+2026-11-24,projects,P-ES-01,QTS Calatorao campus (Project Rhodes),capacity_basis,Unclear,Grid,Updated from verified research,SRC059,David C.
+2026-11-24,projects,P-ES-01,QTS Calatorao campus (Project Rhodes),target_online,,2028,Filled from verified research,SRC059,David C.
+2026-11-24,projects,P-ES-03,Zaragoza-WIND campus,capacity_mw,,144,Filled from verified research,SRC061,David C.
+2026-11-24,projects,P-ES-03,Zaragoza-WIND campus,capacity_basis,Unclear,IT,Updated from verified research,SRC061,David C.
+2026-11-24,projects,P-ES-03,Zaragoza-WIND campus,investment_eur_m,,1225,Filled from verified research,SRC061,David C.
+2026-11-24,projects,P-ES-03,Zaragoza-WIND campus,city_region,"Zaragoza, Aragón","Botorrita, Zaragoza",Updated from verified research,SRC061,David C.
+2026-11-24,projects,P-ES-03,Zaragoza-WIND campus,target_online,,2029,Filled from verified research,SRC061,David C.
+2026-11-24,projects,P-ES-06,Digital Realty MAD5,capacity_mw,,24,Filled from verified research,SRC063,David C.
+2026-11-24,projects,P-ES-06,Digital Realty MAD5,target_online,,2028,Filled from verified research,SRC063,David C.
+2026-11-24,projects,P-ES-07,Goodman MAD01 (San Blas-Canillejas),capacity_mw,,6,Filled from verified research,SRC064,David C.
+2026-11-24,projects,P-ES-07,Goodman MAD01 (San Blas-Canillejas),capacity_basis,Unclear,IT,Updated from verified research,SRC064,David C.
+2026-11-24,projects,P-ES-07,Goodman MAD01 (San Blas-Canillejas),investment_eur_m,,200,Filled from verified research,SRC064,David C.
+2026-11-24,projects,P-ES-07,Goodman MAD01 (San Blas-Canillejas),target_online,,2027,Filled from verified research,SRC064,David C.
+2026-11-24,projects,P-ES-04,Microsoft La Muela campus,investment_eur_m,,2179,Filled from verified research,SRC066,David C.
+2026-11-24,projects,P-ES-08,Meta Talavera de la Reina campus,investment_eur_m,,750,Filled from verified research,SRC067,David C.
+2026-11-24,projects,P-FR-01,Campus IA Fouju,stage,Permitting,Permitted,Updated from verified research,SRC068,David C.
+2026-11-24,projects,P-FR-01,Campus IA Fouju,permit,,2026-07-29,Filled from verified research,SRC068,David C.
+2026-11-24,projects,P-FR-01,Campus IA Fouju,investment_eur_m,,8500,Filled from verified research,SRC068,David C.
+2026-11-24,projects,P-DE-02,EdgeConneX Heusenstamm (EDCFRA02),stage,Permitting,Permitted,Updated from verified research,SRC070,David C.
+2026-11-24,projects,P-DE-02,EdgeConneX Heusenstamm (EDCFRA02),permit,,2026-02-16,Filled from verified research,SRC070,David C.
+2026-11-24,projects,P-IE-02,Art Data Centres Ennis campus,target_online,,2028,Filled from verified research,SRC072,David C.
+2026-11-24,projects,P-DE-04,Vantage Groß-Gerau campus (revived),(new item),,added,"New Frankfurt-area opportunity, early stage",SRC073,David C.
 2026-11-24,Tracker,,Tracker,Baseline,none,"20 projects, 10 accounts, 7 policy rows, 58 sources",Baseline set; future changes logged automatically,,David C.
-2026-11-24,Grid & Policy,Denmark,Denmark,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC069,"Campus IA: €8.5bn initial investment, build from H2 2026, live 2028",New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC074,Groß-Gerau says no to Vantage XXL data centre,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC075,Campus IA project calendar (Mistral 200 MW anchor client),New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC066,"Microsoft region in Aragón: La Muela 146 ha, €2,179m",New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC065,"Goodman starts MAD01 construction, €200m initial investment",New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC071,Bad Vilbel: urban development contract VDC FRA62; B-Plan adoption planned 16 Dec 2025,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC067,Castilla-La Mancha approves Meta PSI: €750m investment,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC068,Prefecture authorises Campus IA at Fouju (29 Jul 2026),New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC061,"Zaragoza Wind: 144 MW IT, €1,224m, operation 2029",New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC063,Digital Realty earmarks ~€500m for Madrid and Barcelona (MAD5 20-24 MW),New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC062,"Merlin to develop €1.2B data centre in Zaragoza (144 MW IT, H2 2029)",New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC070,Genehmigungsbescheid RZ EdgeConneX Heusenstamm FRA11/FRA12 (16 Feb 2026),New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC059,QTS Calatorao: 300 MW electrical capacity planned,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC072,Works on €1.6bn Ennis data centre to start; phase 1 commissioning by end 2028,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC060,QTS Calatorao campus: first building planned 2028,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC073,"Vantage revives Groß-Gerau data centre plan: 5 buildings, 174 MW, ~€2.5bn",New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC064,"Goodman MAD01: 6 MW IT, 9 MW on site",New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC003,SpainDC to file Supreme Court appeal against the decree,Link status,OK,BLOCKED,Source needs attention,,auto
-2026-11-24,Sources,SRC052,EdgeConneX looks to enter Swedish market (Skellefteå),Link status,OK (reader),BLOCKED,Source needs attention,,auto
-2026-11-24,Sources,SRC036,"Engineering a sustainable mega campus (Deerns with TTSP, Hanau)",Link status,OK (reader),BLOCKED,Source needs attention,,auto
-2026-11-24,Sources,SRC077,"NorthC breaks ground on data center in Frankfurt, Germany &#8211; BeBeez International",New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC078,SoftBank Group to Build 5 GW of AI Data Center Capacity in France | SoftBank Group Corp.,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC079,"In Northern France, Data4 launches its largest data center campus to support Europe’s AI growth  - DATA4",New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC083,Retelit secures €50m extra for data center expansion &#8211; BeBeez International,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC080,Google gets approval for data center expansion in South Dublin &#8211; w.media,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC081,Downing Renewable Developments expands into data centre sector with 500MW development pipeline  – Downing Renewable Developments,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC082,Plans unveiled for ‘largest’ data center in Italy - DCD,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC076,10 UK data centre construction projects to watch - Construction Wave,New item added,,added,New item to review,,auto
-2026-11-24,Pipeline,P-UK-04,East Havering Campus & Ecology Park,Item removed,present,,Item removed,,auto
-2026-11-24,Pipeline,P-IT-03,Retelit Milan and Rome Data Centre Deployments,Item removed,present,,Item removed,,auto
-2026-11-24,Pipeline,P-FR-02,SoftBank 5 GW AI data centre plan (Hauts-de-France),Stage,Under construction,Announced,Check consultant appointment window,,auto
-2026-11-24,Pipeline,P-FR-02,SoftBank 5 GW AI data centre plan (Hauts-de-France),Capacity (MW),,5000,Re-size opportunity,,auto
-2026-11-24,Pipeline,P-IT-02,Moncalieri Hyperscale Data Centre Project,Stage,Announced,Permitting,Check consultant appointment window,,auto
-2026-11-24,Pipeline,P-FR-03,Escaudain Campus,Stage,Permitting,Announced,Check consultant appointment window,,auto
-2026-11-24,Sources,SRC090,Google Dublin 180 MW Hyperscale Data Center Campus Ireland,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC085,Meta Data Center Campus Talavera Spain Specs,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC093,Cambois - QTS Data Centers,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC084,Azora to invest €2 billion in Zaragoza data centre,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC094,QTS Data Center Campus Cambois | Corgan,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC086,El Gobierno regional aprueba definitivamente la reparcelación del PSI del futuro campus de centros de datos de Meta en Talavera de la Reina,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC091,Google wins planning permission for Dublin data centre extension – The Irish Times,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC095,Place Viewer,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC096,https://es.goodman.com/en/data-centres/madrid/mad01,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC088,"MGX, Bpifrance, Nvidia, and Mistral AI plan 1.4GW Paris data center campus - DCD",New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC092,New milestone reached on multi-billion pound data centre project | Northumberland County Council,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC087,"New 300MW mega site in Sollefteå, Sweden - atNorth",New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC089,"Blackstone to develop 300MW data center campus in Aragon, Spain - DCD",New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC076,10 UK data centre construction projects to watch - Construction Wave,Item removed,present,,Item removed,,auto
-2026-11-24,Pipeline,P-IT-02,Moncalieri Hyperscale Data Centre Project,Investment (€m),9,,Re-size opportunity,,auto
-2026-11-24,Pipeline,P-DE-01,Data4 Hanau campus (FRA1),Known design team / contractors,FTA (Faruk Tepe Architektur),Deerns with TTSP; FTA (Faruk Tepe Architektur) named as architect,Competitor or partner named,,auto
-2026-11-24,Pipeline,P-FR-01,Campus IA Fouju,Known design team / contractors,"MGX, Bpifrance, Mistral AI, Nvidia, EDG Group, Sipartech, RTE, Bouygues, École Polytechnique",Arcadis (permitting); Eiffage (substation),Competitor or partner named,,auto
-2026-11-24,Pipeline,P-UK-02,"Vantage South Wales AI Growth Zone expansion (Newport, Bridgend, Bro Tathan)",Stage,Operational,Announced,Check consultant appointment window,,auto
-2026-11-24,Pipeline,P-UK-01,QTS Cambois campus,Target online,2028,2029,Timeline moved,,auto
-2026-11-24,Pipeline,P-UK-01,QTS Cambois campus,Known design team / contractors,Corgan,"Corgan (architect), Cundall (civil), Arcadis, Quod",Competitor or partner named,,auto
-2026-11-24,Sources,SRC098,Downing Renewable Developments expands into data centre sector with 500MW development pipeline  – Downing Renewable Developments,New item added,,added,New item to review,,auto
-2026-11-24,Sources,SRC097,"NorthC breaks ground on data center in Frankfurt, Germany - DCD",New item added,,added,New item to review,,auto
-2026-11-24,Pipeline,P-SE-04,Vertical Data Central Sweden Data Center,Item removed,present,,Item removed,,auto
-2026-11-24,Pipeline,P-SE-03,Downing Renewable Developments Central Sweden Data Centre,Item removed,present,,Item removed,,auto
-2026-11-24,Sources,SRC098,Downing Renewable Developments expands into data centre sector with 500MW development pipeline  – Downing Renewable Developments,Item removed,present,,Item removed,,auto
-2026-11-24,projects,P-IE-04,Keppel Data Centres Citywest Business Campus,(removed),present,,Item removed,,auto
-2026-11-24,projects,P-DE-06,Langenhorn Data Center Project,(removed),present,,Item removed,,auto
-2026-11-24,projects,P-FR-04,Verne / Ardian Group (Paris-Villaroche),(removed),present,,Item removed,,auto
-2026-11-24,projects,P-UK-04,Castleforge & Galaxy Data Centers Campus,(removed),present,,Item removed,,auto
-2026-11-24,projects,P-ES-02,Tillion Aragón campus,target_online,2028,,Timeline moved,,auto
-2026-11-24,projects,P-UK-02,"Vantage South Wales AI Growth Zone expansion (Newport, Bridgend, Bro Tathan)",design_team,"CarneySweeney, Hoare Lea",Not public,Competitor or partner named,,auto
-2026-11-24,sources,SRC102,"France AI Data Center Project Tracker: Announced, Authorised, In Service",(removed),present,,Item removed,,auto
-2026-11-24,sources,SRC103,"Government publishes Large Energy User Action Plan (LEAP), laying the foundation for future investments in energy intensive sectors - DETE",(removed),present,,Item removed,,auto
-2026-11-24,sources,SRC101,"Data center in Langenhorn, Germany, receives provisional approval from municipal authorities - DCD",(removed),present,,Item removed,,auto
-2026-11-24,sources,SRC100,Data Center Projects in the United Kingdom (2026): Tenders & Awards,(removed),present,,Item removed,,auto
-2026-11-24,sources,SRC098,https://www.datacentermap.com/spain/zaragoza/tilion-aragon/,(removed),present,,Item removed,,auto
-2026-11-24,sources,SRC099,St Athan data centre: Vantage Bro Tathan | Data Centre Watch,(removed),present,,Item removed,,auto
+2026-11-24,policy,Denmark,Denmark,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC069,"Campus IA: €8.5bn initial investment, build from H2 2026, live 2028",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC074,Groß-Gerau says no to Vantage XXL data centre,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC075,Campus IA project calendar (Mistral 200 MW anchor client),(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC066,"Microsoft region in Aragón: La Muela 146 ha, €2,179m",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC065,"Goodman starts MAD01 construction, €200m initial investment",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC071,Bad Vilbel: urban development contract VDC FRA62; B-Plan adoption planned 16 Dec 2025,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC067,Castilla-La Mancha approves Meta PSI: €750m investment,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC068,Prefecture authorises Campus IA at Fouju (29 Jul 2026),(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC061,"Zaragoza Wind: 144 MW IT, €1,224m, operation 2029",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC063,Digital Realty earmarks ~€500m for Madrid and Barcelona (MAD5 20-24 MW),(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC062,"Merlin to develop €1.2B data centre in Zaragoza (144 MW IT, H2 2029)",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC070,Genehmigungsbescheid RZ EdgeConneX Heusenstamm FRA11/FRA12 (16 Feb 2026),(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC059,QTS Calatorao: 300 MW electrical capacity planned,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC072,Works on €1.6bn Ennis data centre to start; phase 1 commissioning by end 2028,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC060,QTS Calatorao campus: first building planned 2028,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC073,"Vantage revives Groß-Gerau data centre plan: 5 buildings, 174 MW, ~€2.5bn",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC064,"Goodman MAD01: 6 MW IT, 9 MW on site",(new item),,added,New item to review,,auto
 2026-11-24,sources,SRC003,SpainDC to file Supreme Court appeal against the decree,link_status,OK,BLOCKED,Source needs attention,,auto
+2026-11-24,sources,SRC052,EdgeConneX looks to enter Swedish market (Skellefteå),link_status,OK (reader),BLOCKED,Source needs attention,,auto
+2026-11-24,sources,SRC036,"Engineering a sustainable mega campus (Deerns with TTSP, Hanau)",link_status,OK (reader),BLOCKED,Source needs attention,,auto
+2026-11-24,sources,SRC077,"NorthC breaks ground on data center in Frankfurt, Germany &#8211; BeBeez International",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC078,SoftBank Group to Build 5 GW of AI Data Center Capacity in France | SoftBank Group Corp.,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC079,"In Northern France, Data4 launches its largest data center campus to support Europe’s AI growth  - DATA4",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC083,Retelit secures €50m extra for data center expansion &#8211; BeBeez International,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC080,Google gets approval for data center expansion in South Dublin &#8211; w.media,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC081,Downing Renewable Developments expands into data centre sector with 500MW development pipeline  – Downing Renewable Developments,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC082,Plans unveiled for ‘largest’ data center in Italy - DCD,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC076,10 UK data centre construction projects to watch - Construction Wave,(new item),,added,New item to review,,auto
+2026-11-24,projects,P-UK-04,East Havering Campus & Ecology Park,(removed),present,,Item removed,,auto
+2026-11-24,projects,P-IT-03,Retelit Milan and Rome Data Centre Deployments,(removed),present,,Item removed,,auto
+2026-11-24,projects,P-FR-02,SoftBank 5 GW AI data centre plan (Hauts-de-France),stage,Under construction,Announced,Check consultant appointment window,,auto
+2026-11-24,projects,P-FR-02,SoftBank 5 GW AI data centre plan (Hauts-de-France),capacity_mw,,5000,Re-size opportunity,,auto
+2026-11-24,projects,P-IT-02,Moncalieri Hyperscale Data Centre Project,stage,Announced,Permitting,Check consultant appointment window,,auto
+2026-11-24,projects,P-FR-03,Escaudain Campus,stage,Permitting,Announced,Check consultant appointment window,,auto
+2026-11-24,sources,SRC090,Google Dublin 180 MW Hyperscale Data Center Campus Ireland,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC085,Meta Data Center Campus Talavera Spain Specs,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC093,Cambois - QTS Data Centers,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC084,Azora to invest €2 billion in Zaragoza data centre,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC094,QTS Data Center Campus Cambois | Corgan,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC086,El Gobierno regional aprueba definitivamente la reparcelación del PSI del futuro campus de centros de datos de Meta en Talavera de la Reina,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC091,Google wins planning permission for Dublin data centre extension – The Irish Times,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC095,Place Viewer,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC096,https://es.goodman.com/en/data-centres/madrid/mad01,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC088,"MGX, Bpifrance, Nvidia, and Mistral AI plan 1.4GW Paris data center campus - DCD",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC092,New milestone reached on multi-billion pound data centre project | Northumberland County Council,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC087,"New 300MW mega site in Sollefteå, Sweden - atNorth",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC089,"Blackstone to develop 300MW data center campus in Aragon, Spain - DCD",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC076,10 UK data centre construction projects to watch - Construction Wave,(removed),present,,Item removed,,auto
+2026-11-24,projects,P-IT-02,Moncalieri Hyperscale Data Centre Project,investment_eur_m,9,,Re-size opportunity,,auto
+2026-11-24,projects,P-DE-01,Data4 Hanau campus (FRA1),design_team,FTA (Faruk Tepe Architektur),Deerns with TTSP; FTA (Faruk Tepe Architektur) named as architect,Competitor or partner named,,auto
+2026-11-24,projects,P-FR-01,Campus IA Fouju,design_team,"MGX, Bpifrance, Mistral AI, Nvidia, EDG Group, Sipartech, RTE, Bouygues, École Polytechnique",Arcadis (permitting); Eiffage (substation),Competitor or partner named,,auto
+2026-11-24,projects,P-UK-02,"Vantage South Wales AI Growth Zone expansion (Newport, Bridgend, Bro Tathan)",stage,Operational,Announced,Check consultant appointment window,,auto
+2026-11-24,projects,P-UK-01,QTS Cambois campus,target_online,2028,2029,Timeline moved,,auto
+2026-11-24,projects,P-UK-01,QTS Cambois campus,design_team,Corgan,"Corgan (architect), Cundall (civil), Arcadis, Quod",Competitor or partner named,,auto
+2026-11-24,sources,SRC098,Downing Renewable Developments expands into data centre sector with 500MW development pipeline  – Downing Renewable Developments,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC097,"NorthC breaks ground on data center in Frankfurt, Germany - DCD",(new item),,added,New item to review,,auto
+2026-11-24,projects,P-SE-04,Vertical Data Central Sweden Data Center,(removed),present,,Item removed,,auto
+2026-11-24,projects,P-SE-03,Downing Renewable Developments Central Sweden Data Centre,(removed),present,,Item removed,,auto
+2026-11-24,sources,SRC098,Downing Renewable Developments expands into data centre sector with 500MW development pipeline  – Downing Renewable Developments,(removed),present,,Item removed,,auto
+2026-11-24,sources,SRC100,Data Center Projects in the United Kingdom (2026): Tenders & Awards,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC103,"Government publishes Large Energy User Action Plan (LEAP), laying the foundation for future investments in energy intensive sectors - DETE",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC102,"France AI Data Center Project Tracker: Announced, Authorised, In Service",(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC099,St Athan data centre: Vantage Bro Tathan | Data Centre Watch,(new item),,added,New item to review,,auto
+2026-11-24,sources,SRC101,"Data center in Langenhorn, Germany, receives provisional approval from municipal authorities - DCD",(new item),,added,New item to review,,auto
+2026-11-24,projects,P-IE-04,Keppel Citywest,(removed),present,,"Existing site (built 2000), not a new project",,manual check
+2026-11-24,projects,P-UK-04,Redhill Data Centre campus expansion,project,Castleforge & Galaxy Data Centers Campus,Redhill Data Centre campus expansion,Checked against source,SRC104,manual check
+2026-11-24,projects,P-UK-04,Redhill Data Centre campus expansion,city_region,"Redhill, UK","Redhill, Surrey",Checked against source,SRC104,manual check
+2026-11-24,projects,P-UK-04,Redhill Data Centre campus expansion,stage,Announced,Permitted,Checked against source,SRC104,manual check
+2026-11-24,projects,P-UK-04,Redhill Data Centre campus expansion,permit,,"Full planning consent, May 2026",Checked against source,SRC104,manual check
+2026-11-24,projects,P-UK-04,Redhill Data Centre campus expansion,announced,2026-11,2025-01,Checked against source,SRC104,manual check
+2026-11-24,projects,P-UK-04,Redhill Data Centre campus expansion,capacity_basis,Unclear,New 15 MW building,Checked against source,SRC104,manual check
+2026-11-24,projects,P-UK-04,Redhill Data Centre campus expansion,confidence,Low,Medium,Checked against source,SRC104,manual check
+2026-11-24,Pipeline,P-IE-04,Keppel Citywest,Source IDs,Low,Medium,"Existing site (built 2000), not a new project",,auto

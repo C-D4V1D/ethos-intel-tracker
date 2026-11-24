@@ -1,10 +1,10 @@
-id,gap,why_it_matters,how_to_close,owner,status,opened,answer
-G-02,Design teams unknown for most pipeline projects,Shows where Ethos can still get in,Ask client partners; LinkedIn; planning drawings,David C.,Open,2026-11-24,
-G-04,Vantage MXP2 phase 1 live or delayed?,Spring 2026 target has passed,Ask Vantage; news scan,David C.,Open,2026-11-24,
-G-05,Energinet pause end date and terms,Denmark score depends on it,Read Energinet notice in full (page lacked detail),David C.,Open,2026-11-24,
-G-06,Ethos client partner names per account,Accounts tab needs an owner,Confirm internally,David C.,Open,2026-11-24,
-G-07,Capacity basis (IT vs grid) for several projects,MW totals mix bases,Check each primary source; keep basis column current,David C.,Open,2026-11-24,
-G-08,Italy: large (€1bn+) investment announcements not yet sourced,Italy's investment score (2/5) may be too low,Find primary releases for hyperscaler investments in Lombardy,David C.,Open,2026-11-24,
-G-09,Which Ethos clients are building in the UK,UK 'Ethos fit' score (3/5) assumes targets only,Confirm with Ethos UK team,David C.,Open,2026-11-24,
-G-01,MW for QTS Calatorao not confirmed,Can't size the opportunity or rank it fully,Check Aragón PIGA documents; AI Mode scan,David C.,Closed,2026-11-24,
-G-03,EdgeConneX Heusenstamm permit status after Feb 2025,Stage may be out of date,Check Heusenstamm council minutes,David C.,Closed,2026-11-24,
+id,gap,why_it_matters,how_to_close,owner,status,opened
+G-01,MW for QTS Calatorao not confirmed,Can't size the opportunity or rank it fully,Check Aragón PIGA documents; AI Mode scan,David C.,Closed,2026-11-24
+G-02,Design teams unknown for most pipeline projects,Shows where Ethos can still get in,Ask client partners; LinkedIn; planning drawings,David C.,Open,2026-11-24
+G-03,EdgeConneX Heusenstamm permit status after Feb 2025,Stage may be out of date,Check Heusenstamm council minutes,David C.,Closed,2026-11-24
+G-04,Vantage MXP2 phase 1 live or delayed?,Spring 2026 target has passed,Ask Vantage; news scan,David C.,Open,2026-11-24
+G-05,Energinet pause end date and terms,Denmark score depends on it,Read Energinet notice in full (page lacked detail),David C.,Open,2026-11-24
+G-06,Ethos client partner names per account,Accounts tab needs an owner,Confirm internally,David C.,Open,2026-11-24
+G-07,Capacity basis (IT vs grid) for several projects,MW totals mix bases,Check each primary source; keep basis column current,David C.,Open,2026-11-24
+G-08,Italy: large (€1bn+) investment announcements not yet sourced,Italy's investment score (2/5) may be too low,Find primary releases for hyperscaler investments in Lombardy,David C.,Open,2026-11-24
+G-09,Which Ethos clients are building in the UK,UK 'Ethos fit' score (3/5) assumes targets only,Confirm with Ethos UK team,David C.,Open,2026-11-24

@@ -1290,6 +1290,8 @@ def run() -> str:
     from openpyxl.workbook.properties import CalcProperties
     wb.calculation = CalcProperties(fullCalcOnLoad=True)  # Excel recalculates on open
     wb.save(path)
+    from .sync_from_excel import remember_published
+    remember_published(path)
     log("build_tracker", "ok", f"{path.name}: {counts}")
     return str(path)
 
