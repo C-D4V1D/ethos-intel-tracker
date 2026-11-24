@@ -123,7 +123,7 @@ def push() -> str:
         log("onedrive", "skipped", str(e))
         return ""
     f = OUTPUT / WORKBOOK_NAME
-    for attempt in range(4):
+    for attempt in range(11):  # about 10 minutes while someone has it open
         r = requests.put(f"{GRAPH}{_path()}/content", headers={**h, "Content-Type":
                          "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
                          data=f.read_bytes(), timeout=180)
