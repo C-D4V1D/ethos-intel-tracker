@@ -10,20 +10,24 @@
    "15": 18.0,
    "16": 32.25,
    "17": 27.75,
-   "74": 33.75,
-   "75": 47.25,
-   "76": 47.25,
-   "77": 33.75,
-   "78": 86.25,
-   "79": 60.0,
-   "80": 47.25,
-   "81": 47.25,
-   "82": 47.25,
-   "83": 125.25,
-   "90": 47.25,
-   "91": 33.75,
-   "92": 33.75,
-   "93": 33.75
+   "74": 35.25,
+   "75": 35.25,
+   "76": 35.25,
+   "77": 35.25,
+   "78": 60.0,
+   "79": 35.25,
+   "80": 35.25,
+   "81": 35.25,
+   "82": 35.25,
+   "83": 84.75,
+   "90": 35.25,
+   "91": 24.0,
+   "92": 24.0,
+   "93": 24.0,
+   "73": 21.75,
+   "87": 21.75,
+   "88": 24.0,
+   "89": 24.0
   },
   "cells": {
    "B5": {
@@ -75,58 +79,848 @@
     "fmt": "dd\\ mmm\\ yyyy"
    },
    "I74": {
-    "fmt": "0.0"
+    "fmt": "0.0",
+    "v": "center"
    },
    "I75": {
-    "fmt": "0.0"
+    "fmt": "0.0",
+    "v": "center"
    },
    "I76": {
-    "fmt": "0.0"
+    "fmt": "0.0",
+    "v": "center"
    },
    "I77": {
-    "fmt": "0.0"
+    "fmt": "0.0",
+    "v": "center"
    },
    "I78": {
-    "fmt": "0.0"
+    "fmt": "0.0",
+    "v": "center"
    },
    "I79": {
-    "fmt": "0.0"
+    "fmt": "0.0",
+    "v": "center"
    },
    "I80": {
-    "fmt": "0.0"
+    "fmt": "0.0",
+    "v": "center"
    },
    "I81": {
-    "fmt": "0.0"
+    "fmt": "0.0",
+    "v": "center"
    },
    "I82": {
-    "fmt": "0.0"
+    "fmt": "0.0",
+    "v": "center"
    },
    "I83": {
-    "fmt": "0.0"
+    "fmt": "0.0",
+    "v": "center"
    },
    "B88": {
     "h": "center",
-    "fmt": "dd\\ mmm\\ yyyy"
+    "fmt": "dd\\ mmm\\ yyyy",
+    "v": "center"
    },
    "B89": {
     "h": "center",
-    "fmt": "dd\\ mmm\\ yyyy"
+    "fmt": "dd\\ mmm\\ yyyy",
+    "v": "center"
    },
    "B90": {
     "h": "center",
-    "fmt": "dd\\ mmm\\ yyyy"
+    "fmt": "dd\\ mmm\\ yyyy",
+    "v": "center"
    },
    "B91": {
     "h": "center",
-    "fmt": "dd\\ mmm\\ yyyy"
+    "fmt": "dd\\ mmm\\ yyyy",
+    "v": "center"
    },
    "B92": {
     "h": "center",
-    "fmt": "dd\\ mmm\\ yyyy"
+    "fmt": "dd\\ mmm\\ yyyy",
+    "v": "center"
    },
    "B93": {
     "h": "center",
-    "fmt": "dd\\ mmm\\ yyyy"
+    "fmt": "dd\\ mmm\\ yyyy",
+    "v": "center"
+   },
+   "A73": {
+    "b": true,
+    "sz": 9.0,
+    "color": "FFFFFF",
+    "name": "Arial",
+    "fill": "0F2537",
+    "h": "center",
+    "v": "center",
+    "wrap": true
+   },
+   "C73": {
+    "b": false,
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "fill": null,
+    "h": null,
+    "v": null,
+    "wrap": null
+   },
+   "D73": {
+    "b": true,
+    "sz": 9.0,
+    "color": "FFFFFF",
+    "name": "Arial",
+    "fill": "0F2537",
+    "h": "center",
+    "v": "center",
+    "wrap": true
+   },
+   "E73": {
+    "b": false,
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "fill": null,
+    "h": null,
+    "v": null,
+    "wrap": null
+   },
+   "A74": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "h": "center",
+    "v": "center"
+   },
+   "B74": {
+    "b": true,
+    "color": "0F2537",
+    "h": null,
+    "v": "center",
+    "wrap": true
+   },
+   "C74": {
+    "b": false,
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "D74": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "v": "center",
+    "wrap": true
+   },
+   "E74": {
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "F74": {
+    "v": "center"
+   },
+   "G74": {
+    "v": "center"
+   },
+   "H74": {
+    "v": "center"
+   },
+   "J74": {
+    "v": "center"
+   },
+   "A75": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "h": "center",
+    "v": "center"
+   },
+   "B75": {
+    "b": true,
+    "color": "0F2537",
+    "h": null,
+    "v": "center",
+    "wrap": true
+   },
+   "C75": {
+    "b": false,
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "D75": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "v": "center",
+    "wrap": true
+   },
+   "E75": {
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "F75": {
+    "v": "center"
+   },
+   "G75": {
+    "v": "center"
+   },
+   "H75": {
+    "v": "center"
+   },
+   "J75": {
+    "v": "center"
+   },
+   "A76": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "h": "center",
+    "v": "center"
+   },
+   "B76": {
+    "b": true,
+    "color": "0F2537",
+    "h": null,
+    "v": "center",
+    "wrap": true
+   },
+   "C76": {
+    "b": false,
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "D76": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "v": "center",
+    "wrap": true
+   },
+   "E76": {
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "F76": {
+    "v": "center"
+   },
+   "G76": {
+    "v": "center"
+   },
+   "H76": {
+    "v": "center"
+   },
+   "J76": {
+    "v": "center"
+   },
+   "A77": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "h": "center",
+    "v": "center"
+   },
+   "B77": {
+    "b": true,
+    "color": "0F2537",
+    "h": null,
+    "v": "center",
+    "wrap": true
+   },
+   "C77": {
+    "b": false,
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "D77": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "v": "center",
+    "wrap": true
+   },
+   "E77": {
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "F77": {
+    "v": "center"
+   },
+   "G77": {
+    "v": "center"
+   },
+   "H77": {
+    "v": "center"
+   },
+   "J77": {
+    "v": "center"
+   },
+   "A78": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "h": "center",
+    "v": "center"
+   },
+   "B78": {
+    "b": true,
+    "color": "0F2537",
+    "h": null,
+    "v": "center",
+    "wrap": true
+   },
+   "C78": {
+    "b": false,
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "D78": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "v": "center",
+    "wrap": true
+   },
+   "E78": {
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "F78": {
+    "v": "center"
+   },
+   "G78": {
+    "v": "center"
+   },
+   "H78": {
+    "v": "center"
+   },
+   "J78": {
+    "v": "center"
+   },
+   "A79": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "h": "center",
+    "v": "center"
+   },
+   "B79": {
+    "b": true,
+    "color": "0F2537",
+    "h": null,
+    "v": "center",
+    "wrap": true
+   },
+   "C79": {
+    "b": false,
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "D79": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "v": "center",
+    "wrap": true
+   },
+   "E79": {
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "F79": {
+    "v": "center"
+   },
+   "G79": {
+    "v": "center"
+   },
+   "H79": {
+    "v": "center"
+   },
+   "J79": {
+    "v": "center"
+   },
+   "A80": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "h": "center",
+    "v": "center"
+   },
+   "B80": {
+    "b": true,
+    "color": "0F2537",
+    "h": null,
+    "v": "center",
+    "wrap": true
+   },
+   "C80": {
+    "b": false,
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "D80": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "v": "center",
+    "wrap": true
+   },
+   "E80": {
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "F80": {
+    "v": "center"
+   },
+   "G80": {
+    "v": "center"
+   },
+   "H80": {
+    "v": "center"
+   },
+   "J80": {
+    "v": "center"
+   },
+   "A81": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "h": "center",
+    "v": "center"
+   },
+   "B81": {
+    "b": true,
+    "color": "0F2537",
+    "h": null,
+    "v": "center",
+    "wrap": true
+   },
+   "C81": {
+    "b": false,
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "D81": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "v": "center",
+    "wrap": true
+   },
+   "E81": {
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "F81": {
+    "v": "center"
+   },
+   "G81": {
+    "v": "center"
+   },
+   "H81": {
+    "v": "center"
+   },
+   "J81": {
+    "v": "center"
+   },
+   "A82": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "h": "center",
+    "v": "center"
+   },
+   "B82": {
+    "b": true,
+    "color": "0F2537",
+    "h": null,
+    "v": "center",
+    "wrap": true
+   },
+   "C82": {
+    "b": false,
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "D82": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "v": "center",
+    "wrap": true
+   },
+   "E82": {
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "F82": {
+    "v": "center"
+   },
+   "G82": {
+    "v": "center"
+   },
+   "H82": {
+    "v": "center"
+   },
+   "J82": {
+    "v": "center"
+   },
+   "A83": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "h": "center",
+    "v": "center"
+   },
+   "B83": {
+    "b": true,
+    "color": "0F2537",
+    "h": null,
+    "v": "center",
+    "wrap": true
+   },
+   "C83": {
+    "b": false,
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "D83": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "v": "center",
+    "wrap": true
+   },
+   "E83": {
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "F83": {
+    "v": "center"
+   },
+   "G83": {
+    "v": "center"
+   },
+   "H83": {
+    "v": "center"
+   },
+   "J83": {
+    "v": "center"
+   },
+   "C88": {
+    "v": "center"
+   },
+   "F88": {
+    "v": "center"
+   },
+   "H88": {
+    "v": "center"
+   },
+   "C89": {
+    "v": "center"
+   },
+   "F89": {
+    "v": "center"
+   },
+   "H89": {
+    "v": "center"
+   },
+   "C90": {
+    "v": "center"
+   },
+   "F90": {
+    "v": "center"
+   },
+   "H90": {
+    "v": "center"
+   },
+   "C91": {
+    "v": "center"
+   },
+   "F91": {
+    "v": "center"
+   },
+   "H91": {
+    "v": "center"
+   },
+   "C92": {
+    "v": "center"
+   },
+   "F92": {
+    "v": "center"
+   },
+   "H92": {
+    "v": "center"
+   },
+   "C93": {
+    "v": "center"
+   },
+   "F93": {
+    "v": "center"
+   },
+   "H93": {
+    "v": "center"
+   }
+  },
+  "cols": {
+   "F": {
+    "w": 13.29,
+    "hidden": false
+   },
+   "K": {
+    "w": 19.0,
+    "hidden": false
+   },
+   "A": {
+    "w": 5.0,
+    "hidden": false
+   },
+   "H": {
+    "w": 13.29,
+    "hidden": false
+   },
+   "B": {
+    "w": 18.29,
+    "hidden": false
+   },
+   "D": {
+    "w": 15.29,
+    "hidden": false
+   },
+   "G": {
+    "w": 19.86,
+    "hidden": false
+   },
+   "I": {
+    "w": 13.29,
+    "hidden": false
+   },
+   "C": {
+    "w": 12.14,
+    "hidden": false
+   },
+   "J": {
+    "w": 19.0,
+    "hidden": false
+   }
+  },
+  "values": {
+   "A73": {
+    "from": "None",
+    "to": "#"
+   },
+   "B73": {
+    "from": "#",
+    "to": "Project"
+   },
+   "D73": {
+    "from": "None",
+    "to": "Developer"
+   },
+   "A74": {
+    "from": "None",
+    "to": 1
+   },
+   "B74": {
+    "from": "1",
+    "to": "=IFERROR(HYPERLINK(\"#Pipeline!B\"&(MATCH(LARGE(Pipeline!$AC$5:$AC$400,1),Pipeline!$AC$5:$AC$400,0)+4),INDEX(Pipeline!$B$5:$B$400,MATCH(LARGE(Pipeline!$AC$5:$AC$400,1),Pipeline!$AC$5:$AC$400,0))),\"\")"
+   },
+   "D74": {
+    "from": "None",
+    "to": "=IFERROR(INDEX(Pipeline!$C$5:$C$400,MATCH(LARGE(Pipeline!$AC$5:$AC$400,1),Pipeline!$AC$5:$AC$400,0)),\"\")"
+   },
+   "A75": {
+    "from": "None",
+    "to": 2
+   },
+   "B75": {
+    "from": "2",
+    "to": "=IFERROR(HYPERLINK(\"#Pipeline!B\"&(MATCH(LARGE(Pipeline!$AC$5:$AC$400,2),Pipeline!$AC$5:$AC$400,0)+4),INDEX(Pipeline!$B$5:$B$400,MATCH(LARGE(Pipeline!$AC$5:$AC$400,2),Pipeline!$AC$5:$AC$400,0))),\"\")"
+   },
+   "D75": {
+    "from": "None",
+    "to": "=IFERROR(INDEX(Pipeline!$C$5:$C$400,MATCH(LARGE(Pipeline!$AC$5:$AC$400,2),Pipeline!$AC$5:$AC$400,0)),\"\")"
+   },
+   "A76": {
+    "from": "None",
+    "to": 3
+   },
+   "B76": {
+    "from": "3",
+    "to": "=IFERROR(HYPERLINK(\"#Pipeline!B\"&(MATCH(LARGE(Pipeline!$AC$5:$AC$400,3),Pipeline!$AC$5:$AC$400,0)+4),INDEX(Pipeline!$B$5:$B$400,MATCH(LARGE(Pipeline!$AC$5:$AC$400,3),Pipeline!$AC$5:$AC$400,0))),\"\")"
+   },
+   "D76": {
+    "from": "None",
+    "to": "=IFERROR(INDEX(Pipeline!$C$5:$C$400,MATCH(LARGE(Pipeline!$AC$5:$AC$400,3),Pipeline!$AC$5:$AC$400,0)),\"\")"
+   },
+   "A77": {
+    "from": "None",
+    "to": 4
+   },
+   "B77": {
+    "from": "4",
+    "to": "=IFERROR(HYPERLINK(\"#Pipeline!B\"&(MATCH(LARGE(Pipeline!$AC$5:$AC$400,4),Pipeline!$AC$5:$AC$400,0)+4),INDEX(Pipeline!$B$5:$B$400,MATCH(LARGE(Pipeline!$AC$5:$AC$400,4),Pipeline!$AC$5:$AC$400,0))),\"\")"
+   },
+   "D77": {
+    "from": "None",
+    "to": "=IFERROR(INDEX(Pipeline!$C$5:$C$400,MATCH(LARGE(Pipeline!$AC$5:$AC$400,4),Pipeline!$AC$5:$AC$400,0)),\"\")"
+   },
+   "A78": {
+    "from": "None",
+    "to": 5
+   },
+   "B78": {
+    "from": "5",
+    "to": "=IFERROR(HYPERLINK(\"#Pipeline!B\"&(MATCH(LARGE(Pipeline!$AC$5:$AC$400,5),Pipeline!$AC$5:$AC$400,0)+4),INDEX(Pipeline!$B$5:$B$400,MATCH(LARGE(Pipeline!$AC$5:$AC$400,5),Pipeline!$AC$5:$AC$400,0))),\"\")"
+   },
+   "D78": {
+    "from": "None",
+    "to": "=IFERROR(INDEX(Pipeline!$C$5:$C$400,MATCH(LARGE(Pipeline!$AC$5:$AC$400,5),Pipeline!$AC$5:$AC$400,0)),\"\")"
+   },
+   "A79": {
+    "from": "None",
+    "to": 6
+   },
+   "B79": {
+    "from": "6",
+    "to": "=IFERROR(HYPERLINK(\"#Pipeline!B\"&(MATCH(LARGE(Pipeline!$AC$5:$AC$400,6),Pipeline!$AC$5:$AC$400,0)+4),INDEX(Pipeline!$B$5:$B$400,MATCH(LARGE(Pipeline!$AC$5:$AC$400,6),Pipeline!$AC$5:$AC$400,0))),\"\")"
+   },
+   "D79": {
+    "from": "None",
+    "to": "=IFERROR(INDEX(Pipeline!$C$5:$C$400,MATCH(LARGE(Pipeline!$AC$5:$AC$400,6),Pipeline!$AC$5:$AC$400,0)),\"\")"
+   },
+   "A80": {
+    "from": "None",
+    "to": 7
+   },
+   "B80": {
+    "from": "7",
+    "to": "=IFERROR(HYPERLINK(\"#Pipeline!B\"&(MATCH(LARGE(Pipeline!$AC$5:$AC$400,7),Pipeline!$AC$5:$AC$400,0)+4),INDEX(Pipeline!$B$5:$B$400,MATCH(LARGE(Pipeline!$AC$5:$AC$400,7),Pipeline!$AC$5:$AC$400,0))),\"\")"
+   },
+   "D80": {
+    "from": "None",
+    "to": "=IFERROR(INDEX(Pipeline!$C$5:$C$400,MATCH(LARGE(Pipeline!$AC$5:$AC$400,7),Pipeline!$AC$5:$AC$400,0)),\"\")"
+   },
+   "A81": {
+    "from": "None",
+    "to": 8
+   },
+   "B81": {
+    "from": "8",
+    "to": "=IFERROR(HYPERLINK(\"#Pipeline!B\"&(MATCH(LARGE(Pipeline!$AC$5:$AC$400,8),Pipeline!$AC$5:$AC$400,0)+4),INDEX(Pipeline!$B$5:$B$400,MATCH(LARGE(Pipeline!$AC$5:$AC$400,8),Pipeline!$AC$5:$AC$400,0))),\"\")"
+   },
+   "D81": {
+    "from": "None",
+    "to": "=IFERROR(INDEX(Pipeline!$C$5:$C$400,MATCH(LARGE(Pipeline!$AC$5:$AC$400,8),Pipeline!$AC$5:$AC$400,0)),\"\")"
+   },
+   "A82": {
+    "from": "None",
+    "to": 9
+   },
+   "B82": {
+    "from": "9",
+    "to": "=IFERROR(HYPERLINK(\"#Pipeline!B\"&(MATCH(LARGE(Pipeline!$AC$5:$AC$400,9),Pipeline!$AC$5:$AC$400,0)+4),INDEX(Pipeline!$B$5:$B$400,MATCH(LARGE(Pipeline!$AC$5:$AC$400,9),Pipeline!$AC$5:$AC$400,0))),\"\")"
+   },
+   "D82": {
+    "from": "None",
+    "to": "=IFERROR(INDEX(Pipeline!$C$5:$C$400,MATCH(LARGE(Pipeline!$AC$5:$AC$400,9),Pipeline!$AC$5:$AC$400,0)),\"\")"
+   },
+   "A83": {
+    "from": "None",
+    "to": 10
+   },
+   "B83": {
+    "from": "10",
+    "to": "=IFERROR(HYPERLINK(\"#Pipeline!B\"&(MATCH(LARGE(Pipeline!$AC$5:$AC$400,10),Pipeline!$AC$5:$AC$400,0)+4),INDEX(Pipeline!$B$5:$B$400,MATCH(LARGE(Pipeline!$AC$5:$AC$400,10),Pipeline!$AC$5:$AC$400,0))),\"\")"
+   },
+   "D83": {
+    "from": "None",
+    "to": "=IFERROR(INDEX(Pipeline!$C$5:$C$400,MATCH(LARGE(Pipeline!$AC$5:$AC$400,10),Pipeline!$AC$5:$AC$400,0)),\"\")"
+   },
+   "F88": {
+    "from": "=IF(Changes!E5=\"\",\"\",Changes!E5&\": \"&Changes!F5&\" → \"&Changes!G5)",
+    "to": "=IF(Changes!A5=\"\",\"\",Changes!E5&IF(Changes!G5=\"added\",\"\",IF(Changes!F5=\"\",\": \"&Changes!G5,\": \"&Changes!F5&\" → \"&Changes!G5)))"
+   },
+   "F89": {
+    "from": "=IF(Changes!E6=\"\",\"\",Changes!E6&\": \"&Changes!F6&\" → \"&Changes!G6)",
+    "to": "=IF(Changes!A6=\"\",\"\",Changes!E6&IF(Changes!G6=\"added\",\"\",IF(Changes!F6=\"\",\": \"&Changes!G6,\": \"&Changes!F6&\" → \"&Changes!G6)))"
+   },
+   "F90": {
+    "from": "=IF(Changes!E7=\"\",\"\",Changes!E7&\": \"&Changes!F7&\" → \"&Changes!G7)",
+    "to": "=IF(Changes!A7=\"\",\"\",Changes!E7&IF(Changes!G7=\"added\",\"\",IF(Changes!F7=\"\",\": \"&Changes!G7,\": \"&Changes!F7&\" → \"&Changes!G7)))"
+   },
+   "F91": {
+    "from": "=IF(Changes!E8=\"\",\"\",Changes!E8&\": \"&Changes!F8&\" → \"&Changes!G8)",
+    "to": "=IF(Changes!A8=\"\",\"\",Changes!E8&IF(Changes!G8=\"added\",\"\",IF(Changes!F8=\"\",\": \"&Changes!G8,\": \"&Changes!F8&\" → \"&Changes!G8)))"
+   },
+   "F92": {
+    "from": "=IF(Changes!E9=\"\",\"\",Changes!E9&\": \"&Changes!F9&\" → \"&Changes!G9)",
+    "to": "=IF(Changes!A9=\"\",\"\",Changes!E9&IF(Changes!G9=\"added\",\"\",IF(Changes!F9=\"\",\": \"&Changes!G9,\": \"&Changes!F9&\" → \"&Changes!G9)))"
+   },
+   "F93": {
+    "from": "=IF(Changes!E10=\"\",\"\",Changes!E10&\": \"&Changes!F10&\" → \"&Changes!G10)",
+    "to": "=IF(Changes!A10=\"\",\"\",Changes!E10&IF(Changes!G10=\"added\",\"\",IF(Changes!F10=\"\",\": \"&Changes!G10,\": \"&Changes!F10&\" → \"&Changes!G10)))"
    }
   }
  },
@@ -166,35 +960,67 @@
    }
   },
   "rows": {
-   "4": 42.0,
+   "4": 32.25,
    "Pending|R-0001": 42.0,
-   "Pending|R-0003": 42.0,
-   "Pending|R-0004": 42.0,
-   "Pending|R-0005": 184.5,
-   "Pending|R-0006": 66.0,
-   "Pending|R-0007": 54.0,
-   "Pending|R-0008": 54.0,
-   "Pending|R-0009": 54.0,
-   "Pending|R-0010": 54.0,
-   "Pending|R-0011": 54.0,
-   "Pending|R-0012": 54.0,
-   "Pending|R-0013": 42.0,
-   "Pending|R-0014": 54.0,
-   "Pending|R-0015": 54.0,
-   "Pending|R-0016": 54.0,
-   "Pending|R-0017": 54.0,
-   "Pending|R-0018": 42.0,
-   "Pending|R-0019": 66.0,
-   "Pending|R-0002": 33.0
+   "Pending|R-0003": 30.0,
+   "Pending|R-0004": 30.0,
+   "Pending|R-0005": 216.75,
+   "Pending|R-0006": 54.0,
+   "Pending|R-0007": 42.0,
+   "Pending|R-0008": 42.0,
+   "Pending|R-0009": 42.0,
+   "Pending|R-0010": 42.0,
+   "Pending|R-0011": 42.0,
+   "Pending|R-0012": 42.0,
+   "Pending|R-0013": 30.0,
+   "Pending|R-0014": 42.0,
+   "Pending|R-0015": 42.0,
+   "Pending|R-0016": 42.0,
+   "Pending|R-0017": 42.0,
+   "Pending|R-0018": 30.0,
+   "Pending|R-0019": 54.0,
+   "Pending|R-0002": 24.0
   },
   "colstyle": {
    "Raised": {
     "fmt": "dd\\ mmm\\ yyyy",
-    "h": "center"
+    "h": "center",
+    "v": "center"
    },
    "Decided": {
     "fmt": "dd\\ mmm\\ yyyy",
-    "h": "center"
+    "h": "center",
+    "v": "center"
+   },
+   "Your decision": {
+    "v": "center"
+   },
+   "Review ID": {
+    "v": "center"
+   },
+   "Tab": {
+    "v": "center"
+   },
+   "Item": {
+    "v": "center"
+   },
+   "What would change": {
+    "v": "center"
+   },
+   "Now": {
+    "v": "center"
+   },
+   "Proposed": {
+    "v": "center"
+   },
+   "Why it needs you": {
+    "v": "center"
+   },
+   "Evidence (AI quote)": {
+    "v": "center"
+   },
+   "Source": {
+    "v": "center"
    }
   }
  },
@@ -205,7 +1031,7 @@
     "hidden": false
    },
    "Suggested next action (auto)": {
-    "w": 47.57,
+    "w": 61.0,
     "hidden": false
    },
    "Suggested by": {
@@ -229,7 +1055,7 @@
     "hidden": false
    },
    "Next action (agreed)": {
-    "w": 34.29,
+    "w": 38.14,
     "hidden": false
    },
    "Announced": {
@@ -237,7 +1063,7 @@
     "hidden": false
    },
    "Notes & assumptions": {
-    "w": 47.57,
+    "w": 61.0,
     "hidden": false
    },
    "Investment (€m)": {
@@ -261,7 +1087,7 @@
     "hidden": false
    },
    "Source IDs": {
-    "w": 23.86,
+    "w": 28.57,
     "hidden": false
    },
    "Permit / approval": {
@@ -271,73 +1097,151 @@
    "MW basis": {
     "w": 11.86,
     "hidden": false
+   },
+   "Known design team / contractors": {
+    "w": 30.43,
+    "hidden": false
    }
   },
   "rows": {
-   "4": 56.25,
-   "P-ES-04|Microsoft La Muela campus": 69.75,
-   "P-ES-02|Tillion Aragón campus": 69.75,
-   "P-SE-01|atNorth SWE04 Sollefteå": 33.75,
-   "P-SE-02|EdgeConneX Skellefteå campus": 33.75,
-   "P-IT-02|Moncalieri Hyperscale Data Centre Project": 45.75,
-   "P-FR-01|Campus IA Fouju": 69.75,
-   "P-UK-03|DataVita Lanarkshire AI Growth Zone": 45.75,
-   "P-IE-02|Art Data Centres Ennis campus": 57.75,
-   "P-DE-03|Vantage Bad Vilbel 'Im Schleid' (FRA62)": 57.75,
-   "P-FR-02|SoftBank 5 GW AI data centre plan (Hauts-de-France)": 57.75,
-   "P-UK-02|Vantage South Wales AI Growth Zone expansion (Newport, Bridgend, Bro Tathan)": 57.75,
-   "P-ES-05|AWS La Cartuja campus": 69.75,
-   "P-FR-03|Escaudain Campus": 57.75,
-   "P-ES-01|QTS Calatorao campus (Project Rhodes)": 57.75,
-   "P-ES-08|Meta Talavera de la Reina campus": 57.75,
-   "P-FR-04|Verne / Ardian Group (Paris-Villaroche)": 45.75,
-   "P-DE-06|Langenhorn Data Center Project": 45.75,
-   "P-IE-03|Google data center expansion at Grange Castle Business Park": 33.75,
-   "P-ES-03|Zaragoza-WIND campus": 57.75,
-   "P-ES-06|Digital Realty MAD5": 57.75,
-   "P-UK-01|QTS Cambois campus": 45.75,
-   "P-DE-04|Vantage Groß-Gerau campus (revived)": 45.75,
-   "P-UK-04|Redhill Data Centre campus expansion": 45.75,
-   "P-DE-02|EdgeConneX Heusenstamm (EDCFRA02)": 57.75,
-   "P-IE-01|Echelon DUB20 Arklow": 45.75,
-   "P-DE-01|Data4 Hanau campus (FRA1)": 45.75,
-   "P-IT-01|Vantage MXP2 Milan II": 45.75,
-   "P-ES-07|Goodman MAD01 (San Blas-Canillejas)": 33.75,
-   "P-DE-05|NorthC FRA01 Frankfurt": 45.75
+   "4": 33.75,
+   "P-ES-04|Microsoft La Muela campus": 54.0,
+   "P-ES-02|Tillion Aragón campus": 54.0,
+   "P-SE-01|atNorth SWE04 Sollefteå": 30.0,
+   "P-SE-02|EdgeConneX Skellefteå campus": 30.0,
+   "P-IT-02|Moncalieri Hyperscale Data Centre Project": 30.0,
+   "P-FR-01|Campus IA Fouju": 54.0,
+   "P-UK-03|DataVita Lanarkshire AI Growth Zone": 42.0,
+   "P-IE-02|Art Data Centres Ennis campus": 42.0,
+   "P-DE-03|Vantage Bad Vilbel 'Im Schleid' (FRA62)": 42.0,
+   "P-FR-02|SoftBank 5 GW AI data centre plan (Hauts-de-France)": 54.0,
+   "P-UK-02|Vantage South Wales AI Growth Zone expansion (Newport, Bridgend, Bro Tathan)": 42.0,
+   "P-ES-05|AWS La Cartuja campus": 54.0,
+   "P-FR-03|Escaudain Campus": 54.0,
+   "P-ES-01|QTS Calatorao campus (Project Rhodes)": 54.0,
+   "P-ES-08|Meta Talavera de la Reina campus": 42.0,
+   "P-FR-04|Verne / Ardian Group (Paris-Villaroche)": 42.0,
+   "P-DE-06|Langenhorn Data Center Project": 42.0,
+   "P-IE-03|Google data center expansion at Grange Castle Business Park": 30.0,
+   "P-ES-03|Zaragoza-WIND campus": 54.0,
+   "P-ES-06|Digital Realty MAD5": 42.0,
+   "P-UK-01|QTS Cambois campus": 42.0,
+   "P-DE-04|Vantage Groß-Gerau campus (revived)": 30.0,
+   "P-UK-04|Redhill Data Centre campus expansion": 42.0,
+   "P-DE-02|EdgeConneX Heusenstamm (EDCFRA02)": 42.0,
+   "P-IE-01|Echelon DUB20 Arklow": 30.0,
+   "P-DE-01|Data4 Hanau campus (FRA1)": 42.0,
+   "P-IT-01|Vantage MXP2 Milan II": 30.0,
+   "P-ES-07|Goodman MAD01 (San Blas-Canillejas)": 30.0,
+   "P-DE-05|NorthC FRA01 Frankfurt": 42.0
   },
   "colstyle": {
    "Capacity (MW)": {
-    "fmt": "#,##0.0"
+    "fmt": "#,##0.0",
+    "v": "center"
    },
    "Investment (€m)": {
-    "fmt": "#,##0"
+    "fmt": "#,##0",
+    "v": "center"
    },
    "Priority score": {
-    "fmt": "0.0"
+    "fmt": "0.0",
+    "v": "center"
    },
    "Announced": {
-    "h": "center"
+    "h": "center",
+    "v": "center"
    },
    "Permit / approval": {
-    "h": "center"
+    "h": "center",
+    "v": "center"
    },
    "Construction start": {
-    "h": "center"
+    "h": "center",
+    "v": "center"
    },
    "Target online": {
-    "h": "center"
+    "h": "center",
+    "v": "center"
    },
    "Last checked": {
     "fmt": "dd\\ mmm\\ yyyy",
-    "h": "center"
+    "h": "center",
+    "v": "center"
+   },
+   "ID": {
+    "h": "center",
+    "v": "center"
+   },
+   "Project / campus": {
+    "v": "center"
+   },
+   "Developer / operator": {
+    "v": "center"
+   },
+   "Country": {
+    "v": "center"
+   },
+   "City / region": {
+    "v": "center"
+   },
+   "MW basis": {
+    "h": "center",
+    "v": "center"
+   },
+   "Type": {
+    "h": "center",
+    "v": "center"
+   },
+   "Stage": {
+    "v": "center"
+   },
+   "Priority": {
+    "v": "center"
+   },
+   "Ethos service fit": {
+    "v": "center"
+   },
+   "Ethos relationship": {
+    "v": "center"
+   },
+   "Known design team / contractors": {
+    "v": "center"
+   },
+   "Next action (agreed)": {
+    "v": "center"
+   },
+   "Suggested next action (auto)": {
+    "v": "center"
+   },
+   "Suggested by": {
+    "h": "center",
+    "v": "center"
+   },
+   "Owner": {
+    "h": "center",
+    "v": "center"
+   },
+   "Confidence": {
+    "h": "center",
+    "v": "center"
+   },
+   "Source IDs": {
+    "v": "center"
+   },
+   "Notes & assumptions": {
+    "v": "center"
+   },
+   "Days since check": {
+    "v": "center"
    }
   },
-  "freeze": "C6"
+  "freeze": "Q5"
  },
  "Markets": {
   "cols": {
    "MW tracked": {
-    "w": 16.71,
+    "w": 16.0,
     "hidden": false
    },
    "Last checked": {
@@ -345,7 +1249,7 @@
     "hidden": false
    },
    "Projects tracked": {
-    "w": 15.0,
+    "w": 16.0,
     "hidden": false
    },
    "Grid access (1-5)": {
@@ -381,54 +1285,98 @@
     "hidden": false
    },
    "Source IDs": {
-    "w": 21.0,
+    "w": 28.57,
     "hidden": false
    },
    "Rank": {
     "w": 8.71,
     "hidden": false
+   },
+   "Why this status": {
+    "w": 45.71,
+    "hidden": false
    }
   },
   "rows": {
-   "4": 45.75,
-   "Denmark|Watch": 57.75
+   "4": 33.75,
+   "Denmark|Watch": 30.0,
+   "United Kingdom|Focus": 30.0,
+   "Spain|Focus": 30.0,
+   "France|Focus": 24.0,
+   "Germany|Focus": 30.0,
+   "Sweden|Focus": 24.0,
+   "Ireland|Focus": 30.0,
+   "Italy|Focus": 30.0
   },
   "colstyle": {
    "Pipeline (1-5)": {
-    "fmt": "0"
+    "fmt": "0",
+    "h": "center",
+    "v": "center"
    },
    "Investment (1-5)": {
-    "fmt": "0"
+    "fmt": "0",
+    "h": "center",
+    "v": "center"
    },
    "Grid access (1-5)": {
-    "fmt": "0"
+    "fmt": "0",
+    "h": "center",
+    "v": "center"
    },
    "Policy (1-5)": {
-    "fmt": "0"
+    "fmt": "0",
+    "h": "center",
+    "v": "center"
    },
    "Ethos fit (1-5)": {
-    "fmt": "0"
+    "fmt": "0",
+    "h": "center",
+    "v": "center"
    },
    "Total /25": {
-    "fmt": "0"
+    "fmt": "0",
+    "v": "center"
    },
    "Rank": {
-    "fmt": "0"
+    "fmt": "0",
+    "v": "center"
    },
    "Projects tracked": {
-    "fmt": "0"
+    "fmt": "0",
+    "v": "center"
    },
    "MW tracked": {
-    "fmt": "#,##0"
+    "fmt": "#,##0",
+    "v": "center"
    },
    "Renewable share, latest month (%)": {
-    "fmt": "0.0"
+    "fmt": "0.0",
+    "v": "center"
    },
    "Last checked": {
     "fmt": "dd\\ mmm\\ yyyy",
-    "h": "center"
+    "h": "center",
+    "v": "center"
+   },
+   "Country": {
+    "v": "center"
+   },
+   "Status": {
+    "h": "center",
+    "v": "center"
+   },
+   "Why this status": {
+    "v": "center"
+   },
+   "Evidence behind the scores": {
+    "v": "center"
+   },
+   "Source IDs": {
+    "v": "center"
    }
-  }
+  },
+  "freeze": "K5"
  },
  "Grid & Policy": {
   "cols": {
@@ -449,27 +1397,60 @@
     "hidden": false
    },
    "Source IDs": {
-    "w": 21.0,
+    "w": 28.57,
     "hidden": false
    }
   },
   "rows": {
-   "4": 42.0,
-   "Denmark|Red": 45.75,
-   "Spain|Red": 33.75
+   "4": 32.25,
+   "Denmark|Red": 42.0,
+   "Spain|Red": 30.0,
+   "Germany|Amber": 30.0,
+   "Ireland|Amber": 30.0,
+   "Italy|Amber": 30.0,
+   "France|Green": 30.0,
+   "Sweden|Green": 30.0,
+   "United Kingdom|Green": 30.0
   },
   "colstyle": {
    "In force / dated": {
     "fmt": "dd\\ mmm\\ yyyy",
-    "h": "center"
+    "h": "center",
+    "v": "center"
    },
    "Milestone date": {
     "fmt": "dd\\ mmm\\ yyyy",
-    "h": "center"
+    "h": "center",
+    "v": "center"
    },
    "Last checked": {
     "fmt": "dd\\ mmm\\ yyyy",
-    "h": "center"
+    "h": "center",
+    "v": "center"
+   },
+   "Country": {
+    "v": "center"
+   },
+   "Risk": {
+    "v": "center"
+   },
+   "Grid connection (large loads)": {
+    "v": "center"
+   },
+   "Latest rule change (2025-26)": {
+    "v": "center"
+   },
+   "Next milestone to watch": {
+    "v": "center"
+   },
+   "Why this rating": {
+    "v": "center"
+   },
+   "Work Ethos could sell": {
+    "v": "center"
+   },
+   "Source IDs": {
+    "v": "center"
    }
   }
  },
@@ -510,7 +1491,40 @@
   },
   "rows": {
    "Latest (%)|=IFERROR(LOOKUP(2,1/(B11:B23<>\"\"),B11:B23),\"\")": 27.75,
-   "2026-11|61.9": 27.75
+   "2026-11|61.9": 15.0,
+   "2": 18.0,
+   "3": 23.25,
+   "4": 6.75,
+   "Market|Spain": 15.0,
+   "Latest price €/MWh|=IFERROR(LOOKUP(2,1/ISNUMBER(B27:B39),B27:B39),\"n/a\")": 15.0,
+   "RENEWABLE SHARE OF GENERATION BY MONTH (%)|": 15.0,
+   "Month|Spain": 15.0,
+   "2025-11|no data": 15.0,
+   "2025-12|49.9": 15.0,
+   "2026-01|59.5": 15.0,
+   "2026-02|67.7": 15.0,
+   "2026-03|69.1": 15.0,
+   "2026-04|66.5": 15.0,
+   "2026-05|67.8": 15.0,
+   "2026-06|65.2": 15.0,
+   "2026-07|60.1": 15.0,
+   "2026-08|59.9": 15.0,
+   "2026-09|56.5": 15.0,
+   "2026-10|54.1": 15.0,
+   "DAY-AHEAD POWER PRICE BY MONTH (€/MWh, open-licence markets only)|": 15.0,
+   "2025-11|-": 15.0,
+   "2025-12|-": 15.0,
+   "2026-01|-": 15.0,
+   "2026-02|-": 15.0,
+   "2026-03|-": 15.0,
+   "2026-04|-": 15.0,
+   "2026-05|-": 15.0,
+   "2026-06|-": 15.0,
+   "2026-07|-": 15.0,
+   "2026-08|-": 15.0,
+   "2026-09|-": 15.0,
+   "2026-10|not yet": 15.0,
+   "2026-11|not yet": 15.0
   },
   "cells": {
    "A6": {
@@ -1430,13 +2444,175 @@
    "I39": {
     "h": "center",
     "v": "center"
+   },
+   "A2": {
+    "v": "top",
+    "wrap": true
+   },
+   "A3": {
+    "v": "top",
+    "wrap": true
+   },
+   "A11": {
+    "v": "center"
+   },
+   "J11": {
+    "v": "center"
+   },
+   "A12": {
+    "v": "center"
+   },
+   "J12": {
+    "v": "center"
+   },
+   "A13": {
+    "v": "center"
+   },
+   "J13": {
+    "v": "center"
+   },
+   "A14": {
+    "v": "center"
+   },
+   "J14": {
+    "v": "center"
+   },
+   "A15": {
+    "v": "center"
+   },
+   "J15": {
+    "v": "center"
+   },
+   "A16": {
+    "v": "center"
+   },
+   "J16": {
+    "v": "center"
+   },
+   "A17": {
+    "v": "center"
+   },
+   "J17": {
+    "v": "center"
+   },
+   "A18": {
+    "v": "center"
+   },
+   "J18": {
+    "v": "center"
+   },
+   "A19": {
+    "v": "center"
+   },
+   "J19": {
+    "v": "center"
+   },
+   "A20": {
+    "v": "center"
+   },
+   "J20": {
+    "v": "center"
+   },
+   "A21": {
+    "v": "center"
+   },
+   "J21": {
+    "v": "center"
+   },
+   "A22": {
+    "v": "center"
+   },
+   "J22": {
+    "v": "center"
+   },
+   "J23": {
+    "v": "center"
+   },
+   "A27": {
+    "v": "center"
+   },
+   "J27": {
+    "v": "center"
+   },
+   "A28": {
+    "v": "center"
+   },
+   "J28": {
+    "v": "center"
+   },
+   "A29": {
+    "v": "center"
+   },
+   "J29": {
+    "v": "center"
+   },
+   "A30": {
+    "v": "center"
+   },
+   "J30": {
+    "v": "center"
+   },
+   "A31": {
+    "v": "center"
+   },
+   "J31": {
+    "v": "center"
+   },
+   "A32": {
+    "v": "center"
+   },
+   "J32": {
+    "v": "center"
+   },
+   "A33": {
+    "v": "center"
+   },
+   "J33": {
+    "v": "center"
+   },
+   "A34": {
+    "v": "center"
+   },
+   "J34": {
+    "v": "center"
+   },
+   "A35": {
+    "v": "center"
+   },
+   "J35": {
+    "v": "center"
+   },
+   "A36": {
+    "v": "center"
+   },
+   "J36": {
+    "v": "center"
+   },
+   "A37": {
+    "v": "center"
+   },
+   "J37": {
+    "v": "center"
+   },
+   "A38": {
+    "v": "center"
+   },
+   "J38": {
+    "v": "center"
+   },
+   "A39": {
+    "v": "center"
+   },
+   "J39": {
+    "v": "center"
    }
-  }
+  },
+  "freeze": "A6"
  },
  "Accounts": {
   "cols": {
    "Source IDs": {
-    "w": 21.0,
+    "w": 28.57,
     "hidden": false
    },
    "MW tracked": {
@@ -1458,33 +2634,75 @@
    "Linked project IDs": {
     "w": 17.57,
     "hidden": false
+   },
+   "Why now": {
+    "w": 68.57,
+    "hidden": false
+   },
+   "European pipeline (public)": {
+    "w": 38.14,
+    "hidden": false
    }
   },
   "rows": {
-   "4": 56.25,
-   "A-DLR|Digital Realty": 81.75,
-   "A-EDGE|EdgeConneX (EQT)": 93.75,
-   "A-ATN|atNorth": 81.75,
-   "A-ART|Art Data Centres": 69.75,
-   "A-AZORA|Azora": 69.75,
-   "A-CIA|Campus IA": 69.75,
-   "A-ECH|Echelon Data Centres": 69.75,
-   "A-MERLIN|Merlin Properties": 57.75,
-   "A-QTS|QTS (Blackstone)": 69.75,
-   "A-VAN|Vantage Data Centers": 69.75
+   "4": 33.75,
+   "A-DLR|Digital Realty": 54.0,
+   "A-EDGE|EdgeConneX (EQT)": 66.0,
+   "A-ATN|atNorth": 54.0,
+   "A-ART|Art Data Centres": 42.0,
+   "A-AZORA|Azora": 42.0,
+   "A-CIA|Campus IA": 42.0,
+   "A-ECH|Echelon Data Centres": 42.0,
+   "A-MERLIN|Merlin Properties": 30.0,
+   "A-QTS|QTS (Blackstone)": 54.0,
+   "A-VAN|Vantage Data Centers": 42.0
   },
   "colstyle": {
    "Projects tracked": {
-    "fmt": "0"
+    "fmt": "0",
+    "v": "center"
    },
    "MW tracked": {
-    "fmt": "#,##0"
+    "fmt": "#,##0",
+    "v": "center"
    },
    "Last checked": {
     "fmt": "dd\\ mmm\\ yyyy",
-    "h": "center"
+    "h": "center",
+    "v": "center"
+   },
+   "ID": {
+    "v": "center"
+   },
+   "Account": {
+    "v": "center"
+   },
+   "HQ": {
+    "v": "center"
+   },
+   "Ethos relationship": {
+    "v": "center"
+   },
+   "European pipeline (public)": {
+    "v": "center"
+   },
+   "Why now": {
+    "v": "center"
+   },
+   "Ethos Client Partner": {
+    "v": "center"
+   },
+   "Linked project IDs": {
+    "v": "center"
+   },
+   "Next step": {
+    "v": "center"
+   },
+   "Source IDs": {
+    "v": "center"
    }
-  }
+  },
+  "freeze": "E5"
  },
  "Sources": {
   "cols": {
@@ -1515,107 +2733,162 @@
    "HTTP": {
     "w": 8.71,
     "hidden": false
+   },
+   "Link": {
+    "w": 28.57,
+    "hidden": false
    }
   },
   "rows": {
-   "4": 56.25,
-   "SRC001|Real Decreto 1032/2026 (data centre sustainability decree)": 24.75,
-   "SRC002|Government approves data centre sustainability royal decree": 24.75,
-   "SRC003|SpainDC to file Supreme Court appeal against the decree": 24.75,
-   "SRC004|Green light for works on QTS Calatorao campus": 24.75,
-   "SRC005|TSJ Aragón admits appeal against Calatorao campus": 24.75,
-   "SRC006|Luz verde a una inversión de 13.471 millones en Calatorao": 24.75,
-   "SRC007|Azora to invest €2 billion in Zaragoza data centre": 24.75,
-   "SRC008|PIGA Tillion Aragón": 24.75,
-   "SRC009|Tillion Aragón: 300 MW campus with 2.2 MW rooftop solar": 24.75,
-   "SRC010|Zaragoza-WIND receives DIGA approval": 24.75,
-   "SRC011|Merlin doubles down on Aragón with a second campus": 24.75,
-   "SRC012|Microsoft advances 345.6 MW La Muela campus (6 x 57.6 MW)": 33.75,
-   "SRC013|Microsoft prepares land in Zaragoza, La Muela & Villamayor": 24.75,
-   "SRC014|AWS La Cartuja (Zaragoza) campus to need up to 850 MW": 24.75,
-   "SRC015|Ministry note on Amazon (AWS) investment": 33.75,
-   "SRC016|Digital Realty puts almost €500m into Madrid and Barcelona (MAD5)": 33.75,
-   "SRC017|Digital Realty MAD5: planned, construction not started": 24.75,
-   "SRC018|Goodman starts construction of data centre in San Blas-Canillejas": 33.75,
-   "SRC019|Final approval of land reparcelation, Meta Talavera": 33.75,
-   "SRC020|Meta plans Talavera data centre: 180 ha, 248 MW installed power": 33.75,
-   "SRC021|Ethos projects (atNorth, EdgeConneX, Digital Realty)": 24.75,
-   "SRC022|Blackstone gets green light for £10bn QTS data center in Northumberland": 33.75,
-   "SRC023|Multi-billion pound data centre campus gets green light from planners": 33.75,
-   "SRC024|Green light for £10bn data hub prep works in Northumberland": 24.75,
-   "SRC026|Vantage and Nebius: first deployment in South Wales AI Growth Zone": 33.75,
-   "SRC027|Lanarkshire named latest AI Growth Zone (3,400+ jobs)": 24.75,
-   "SRC028|North Lanarkshire AI Growth Zone could unlock 500MW": 24.75,
-   "SRC029|Delivering AI Growth Zones": 24.75,
-   "SRC030|Echelon plans Ireland's first Green Energy Park in Co Wicklow": 24.75,
-   "SRC031|Major Irish data center clears final hurdle (DUB20 phase 1 90 MW)": 33.75,
-   "SRC032|Supreme Court rejects application to appeal Ennis data centre": 24.75,
-   "SRC033|Art Data Centres judicial review dismissed; 83MVA grid application": 33.75,
-   "SRC034|CRU decision on new electricity connection policy for data centres (CRU2025236)": 33.75,
-   "SRC035|Data4 lays foundations for Hanau campus (press release)": 24.75,
-   "SRC037|EdgeConneX proposes data center campus in Heusenstamm": 24.75,
-   "SRC038|Bad Vilbel council: 5th amendment B-Plan 'Im Schleid' (Vantage, 160 MW IT)": 33.75,
-   "SRC039|Petition response: Vantage campus 160 MW IT on ~10 ha": 24.75,
-   "SRC040|Digital Realty breaks ground on FRA20, Frankfurt": 24.75,
-   "SRC042|Campus IA and RTE sign fast-track grid connection contract (Fouju)": 33.75,
-   "SRC043|Calendrier du projet Campus IA": 33.75,
-   "SRC044|Arcadis joins Europe's largest AI campus (permitting)": 24.75,
-   "SRC046|Datacenters: how France powers the AI wave (28.6 GW requested)": 33.75,
-   "SRC047|Vantage expands with second Italian campus (MXP2, 32MW, €350m+)": 33.75,
-   "SRC048|Italy passes new data center regulations (LD 21/2026)": 24.75,
-   "SRC049|Data center in Italia: Law 49/2026 converts the 'decreto bollette'": 33.75,
-   "SRC051|atNorth signs Calentix heat reuse deal at SWE04": 24.75,
-   "SRC052|EdgeConneX looks to enter Swedish market (Skellefteå)": 24.75,
-   "SRC053|Setterwalls advised EdgeConneX: site up to 1 GW": 24.75,
-   "SRC054|Svenska kraftnät intensifies effort to connect mature projects": 24.75,
-   "SRC056|REData API: generation structure (monthly, Spain)": 24.75,
-   "SRC057|Echelon secures grid connection for Co Wicklow data centre": 24.75,
-   "SRC058|Eiffage: Campus AI enters implementation phase (substation)": 24.75,
-   "SRC059|QTS Calatorao: 300 MW electrical capacity planned": 24.75,
-   "SRC060|QTS Calatorao campus: first building planned 2028": 24.75,
-   "SRC061|Zaragoza Wind: 144 MW IT, €1,224m, operation 2029": 24.75,
-   "SRC062|Merlin to develop €1.2B data centre in Zaragoza (144 MW IT, H2 2029)": 33.75,
-   "SRC063|Digital Realty earmarks ~€500m for Madrid and Barcelona (MAD5 20-24 MW)": 33.75,
-   "SRC064|Goodman MAD01: 6 MW IT, 9 MW on site": 24.75,
-   "SRC065|Goodman starts MAD01 construction, €200m initial investment": 33.75,
-   "SRC066|Microsoft region in Aragón: La Muela 146 ha, €2,179m": 24.75,
-   "SRC067|Meta accelerates Talavera campus: 191 ha, €750m investment": 33.75,
-   "SRC068|Prefecture authorises Campus IA at Fouju (29 Jul 2026)": 24.75,
-   "SRC069|Campus IA: €8.5bn initial investment, build from H2 2026, live 2028": 33.75,
-   "SRC070|Genehmigungsbescheid RZ EdgeConneX Heusenstamm FRA11/FRA12 (16 Feb 2026)": 33.75,
-   "SRC071|Bad Vilbel: urban development contract VDC FRA62; B-Plan adoption planned 16 Dec 2025": 33.75,
-   "SRC072|Works on €1.6bn Ennis data centre to start; phase 1 commissioning by end 2028": 33.75,
-   "SRC074|Groß-Gerau": 24.75,
-   "SRC075|Campus IA project calendar (Mistral 200 MW anchor client)": 33.75,
-   "SRC079|In Northern France, Data4 launches its largest data center campus to support Europe’s AI growth  - DATA4": 33.75,
-   "SRC082|Plans unveiled for ‘largest’ data center in Italy - DCD": 24.75,
-   "SRC081|#datacentres #spain #aws | DC Spotter | European Data Centre Construction News": 33.75,
-   "SRC083|Microsoft gets initial approval for data center campuses in Aragón, Spain - DCD": 33.75,
-   "SRC084|Azora to invest €2 billion in Zaragoza data centre": 24.75,
-   "SRC085|Meta Data Center Campus Talavera Spain Specs": 24.75,
-   "SRC086|El Gobierno regional aprueba definitivamente la reparcelación del PSI del futuro campus de centros de datos de Meta en Talavera de la Reina": 45.75,
-   "SRC087|New 300MW mega site in Sollefteå, Sweden - atNorth": 24.75,
-   "SRC088|MGX, Bpifrance, Nvidia, and Mistral AI plan 1.4GW Paris data center campus - DCD": 33.75,
-   "SRC089|Blackstone to develop 300MW data center campus in Aragon, Spain - DCD": 33.75,
-   "SRC091|Google wins planning permission for Dublin data centre extension – The Irish Times": 33.75,
-   "SRC092|New milestone reached on multi-billion pound data centre project | Northumberland County Council": 33.75,
-   "SRC093|Cambois - QTS Data Centers": 24.75,
-   "SRC094|QTS Data Center Campus Cambois | Corgan": 24.75,
-   "SRC095|Place Viewer": 24.75,
-   "SRC096|https://es.goodman.com/en/data-centres/madrid/mad01": 24.75,
-   "SRC097|NorthC breaks ground on data center in Frankfurt, Germany - DCD": 33.75,
-   "SRC098|https://www.datacentermap.com/spain/zaragoza/tilion-aragon/": 24.75,
-   "SRC101|Data center in Langenhorn, Germany, receives provisional approval from municipal authorities - DCD": 33.75,
-   "SRC103|Government publishes Large Energy User Action Plan (LEAP), laying the foundation for future investments in energy intensive sectors - DETE": 45.75,
-   "SRC104|Green light for expansion of £500m Surrey data centre campus": 33.75
+   "4": 33.75,
+   "SRC001|Real Decreto 1032/2026 (data centre sustainability decree)": 24.0,
+   "SRC002|Government approves data centre sustainability royal decree": 24.0,
+   "SRC003|SpainDC to file Supreme Court appeal against the decree": 24.0,
+   "SRC004|Green light for works on QTS Calatorao campus": 24.0,
+   "SRC005|TSJ Aragón admits appeal against Calatorao campus": 24.0,
+   "SRC006|Luz verde a una inversión de 13.471 millones en Calatorao": 24.0,
+   "SRC007|Azora to invest €2 billion in Zaragoza data centre": 24.0,
+   "SRC008|PIGA Tillion Aragón": 24.0,
+   "SRC009|Tillion Aragón: 300 MW campus with 2.2 MW rooftop solar": 24.0,
+   "SRC010|Zaragoza-WIND receives DIGA approval": 24.0,
+   "SRC011|Merlin doubles down on Aragón with a second campus": 24.0,
+   "SRC012|Microsoft advances 345.6 MW La Muela campus (6 x 57.6 MW)": 30.0,
+   "SRC013|Microsoft prepares land in Zaragoza, La Muela & Villamayor": 24.0,
+   "SRC014|AWS La Cartuja (Zaragoza) campus to need up to 850 MW": 24.0,
+   "SRC015|Ministry note on Amazon (AWS) investment": 30.0,
+   "SRC016|Digital Realty puts almost €500m into Madrid and Barcelona (MAD5)": 30.0,
+   "SRC017|Digital Realty MAD5: planned, construction not started": 24.0,
+   "SRC018|Goodman starts construction of data centre in San Blas-Canillejas": 30.0,
+   "SRC019|Final approval of land reparcelation, Meta Talavera": 30.0,
+   "SRC020|Meta plans Talavera data centre: 180 ha, 248 MW installed power": 30.0,
+   "SRC021|Ethos projects (atNorth, EdgeConneX, Digital Realty)": 24.0,
+   "SRC022|Blackstone gets green light for £10bn QTS data center in Northumberland": 30.0,
+   "SRC023|Multi-billion pound data centre campus gets green light from planners": 30.0,
+   "SRC024|Green light for £10bn data hub prep works in Northumberland": 24.0,
+   "SRC026|Vantage and Nebius: first deployment in South Wales AI Growth Zone": 30.0,
+   "SRC027|Lanarkshire named latest AI Growth Zone (3,400+ jobs)": 24.0,
+   "SRC028|North Lanarkshire AI Growth Zone could unlock 500MW": 24.0,
+   "SRC029|Delivering AI Growth Zones": 24.0,
+   "SRC030|Echelon plans Ireland's first Green Energy Park in Co Wicklow": 24.0,
+   "SRC031|Major Irish data center clears final hurdle (DUB20 phase 1 90 MW)": 30.0,
+   "SRC032|Supreme Court rejects application to appeal Ennis data centre": 24.0,
+   "SRC033|Art Data Centres judicial review dismissed; 83MVA grid application": 30.0,
+   "SRC034|CRU decision on new electricity connection policy for data centres (CRU2025236)": 30.0,
+   "SRC035|Data4 lays foundations for Hanau campus (press release)": 24.0,
+   "SRC037|EdgeConneX proposes data center campus in Heusenstamm": 24.0,
+   "SRC038|Bad Vilbel council: 5th amendment B-Plan 'Im Schleid' (Vantage, 160 MW IT)": 30.0,
+   "SRC039|Petition response: Vantage campus 160 MW IT on ~10 ha": 24.0,
+   "SRC040|Digital Realty breaks ground on FRA20, Frankfurt": 24.0,
+   "SRC042|Campus IA and RTE sign fast-track grid connection contract (Fouju)": 30.0,
+   "SRC043|Calendrier du projet Campus IA": 30.0,
+   "SRC044|Arcadis joins Europe's largest AI campus (permitting)": 24.0,
+   "SRC046|Datacenters: how France powers the AI wave (28.6 GW requested)": 30.0,
+   "SRC047|Vantage expands with second Italian campus (MXP2, 32MW, €350m+)": 30.0,
+   "SRC048|Italy passes new data center regulations (LD 21/2026)": 24.0,
+   "SRC049|Data center in Italia: Law 49/2026 converts the 'decreto bollette'": 30.0,
+   "SRC051|atNorth signs Calentix heat reuse deal at SWE04": 24.0,
+   "SRC052|EdgeConneX looks to enter Swedish market (Skellefteå)": 24.0,
+   "SRC053|Setterwalls advised EdgeConneX: site up to 1 GW": 24.0,
+   "SRC054|Svenska kraftnät intensifies effort to connect mature projects": 24.0,
+   "SRC056|REData API: generation structure (monthly, Spain)": 24.0,
+   "SRC057|Echelon secures grid connection for Co Wicklow data centre": 24.0,
+   "SRC058|Eiffage: Campus AI enters implementation phase (substation)": 24.0,
+   "SRC059|QTS Calatorao: 300 MW electrical capacity planned": 24.0,
+   "SRC060|QTS Calatorao campus: first building planned 2028": 24.0,
+   "SRC061|Zaragoza Wind: 144 MW IT, €1,224m, operation 2029": 24.0,
+   "SRC062|Merlin to develop €1.2B data centre in Zaragoza (144 MW IT, H2 2029)": 30.0,
+   "SRC063|Digital Realty earmarks ~€500m for Madrid and Barcelona (MAD5 20-24 MW)": 30.0,
+   "SRC064|Goodman MAD01: 6 MW IT, 9 MW on site": 24.0,
+   "SRC065|Goodman starts MAD01 construction, €200m initial investment": 30.0,
+   "SRC066|Microsoft region in Aragón: La Muela 146 ha, €2,179m": 24.0,
+   "SRC067|Meta accelerates Talavera campus: 191 ha, €750m investment": 30.0,
+   "SRC068|Prefecture authorises Campus IA at Fouju (29 Jul 2026)": 24.0,
+   "SRC069|Campus IA: €8.5bn initial investment, build from H2 2026, live 2028": 30.0,
+   "SRC070|Genehmigungsbescheid RZ EdgeConneX Heusenstamm FRA11/FRA12 (16 Feb 2026)": 30.0,
+   "SRC071|Bad Vilbel: urban development contract VDC FRA62; B-Plan adoption planned 16 Dec 2025": 30.0,
+   "SRC072|Works on €1.6bn Ennis data centre to start; phase 1 commissioning by end 2028": 30.0,
+   "SRC074|Groß-Gerau": 24.0,
+   "SRC075|Campus IA project calendar (Mistral 200 MW anchor client)": 30.0,
+   "SRC079|In Northern France, Data4 launches its largest data center campus to support Europe’s AI growth  - DATA4": 30.0,
+   "SRC082|Plans unveiled for ‘largest’ data center in Italy - DCD": 24.0,
+   "SRC081|#datacentres #spain #aws | DC Spotter | European Data Centre Construction News": 30.0,
+   "SRC083|Microsoft gets initial approval for data center campuses in Aragón, Spain - DCD": 30.0,
+   "SRC084|Azora to invest €2 billion in Zaragoza data centre": 24.0,
+   "SRC085|Meta Data Center Campus Talavera Spain Specs": 24.0,
+   "SRC086|El Gobierno regional aprueba definitivamente la reparcelación del PSI del futuro campus de centros de datos de Meta en Talavera de la Reina": 42.0,
+   "SRC087|New 300MW mega site in Sollefteå, Sweden - atNorth": 24.0,
+   "SRC088|MGX, Bpifrance, Nvidia, and Mistral AI plan 1.4GW Paris data center campus - DCD": 30.0,
+   "SRC089|Blackstone to develop 300MW data center campus in Aragon, Spain - DCD": 30.0,
+   "SRC091|Google wins planning permission for Dublin data centre extension – The Irish Times": 30.0,
+   "SRC092|New milestone reached on multi-billion pound data centre project | Northumberland County Council": 30.0,
+   "SRC093|Cambois - QTS Data Centers": 24.0,
+   "SRC094|QTS Data Center Campus Cambois | Corgan": 24.0,
+   "SRC095|Place Viewer": 24.0,
+   "SRC096|https://es.goodman.com/en/data-centres/madrid/mad01": 24.0,
+   "SRC097|NorthC breaks ground on data center in Frankfurt, Germany - DCD": 30.0,
+   "SRC098|https://www.datacentermap.com/spain/zaragoza/tilion-aragon/": 24.0,
+   "SRC101|Data center in Langenhorn, Germany, receives provisional approval from municipal authorities - DCD": 30.0,
+   "SRC103|Government publishes Large Energy User Action Plan (LEAP), laying the foundation for future investments in energy intensive sectors - DETE": 42.0,
+   "SRC104|Green light for expansion of £500m Surrey data centre campus": 30.0,
+   "SRC025|Cambois campus project team (Quod, Corgan, Arcadis, Cundall)": 30.0,
+   "SRC036|Engineering a sustainable mega campus (Deerns with TTSP, Hanau)": 30.0,
+   "SRC041|EnEfG §11 (data centre PUE, heat reuse, renewables)": 30.0,
+   "SRC045|Publication of the fast-track procedure (CRE approved 7 May 2025)": 30.0,
+   "SRC050|atNorth confirms 300MW mega site in Sollefteå (operational H1 2028)": 30.0,
+   "SRC055|Energinet introduces temporary pause on new grid connections": 30.0,
+   "SRC073|Vantage revives Groß-Gerau data centre plan: 5 buildings, 174 MW, ~€2.5bn": 30.0,
+   "SRC077|NorthC breaks ground on data center in Frankfurt, Germany &#8211; BeBeez International": 30.0,
+   "SRC078|SoftBank Group to Build 5 GW of AI Data Center Capacity in France | SoftBank Group Corp.": 30.0,
+   "SRC080|Google gets approval for data center expansion in South Dublin &#8211; w.media": 30.0,
+   "SRC090|Google Dublin 180 MW Hyperscale Data Center Campus Ireland": 30.0,
+   "SRC099|St Athan data centre: Vantage Bro Tathan | Data Centre Watch": 30.0,
+   "SRC100|Data Center Projects in the United Kingdom (2026): Tenders & Awards": 30.0,
+   "SRC102|France AI Data Center Project Tracker: Announced, Authorised, In Service": 30.0,
+   "SRC105|Data centre sector rejects the new decree and will use all legal routes": 30.0
   },
   "colstyle": {
    "Published": {
-    "h": "center"
+    "h": "center",
+    "v": "center"
    },
    "Last checked": {
     "fmt": "dd\\ mmm\\ yyyy",
-    "h": "center"
+    "h": "center",
+    "v": "center"
+   },
+   "ID": {
+    "h": "center",
+    "v": "center"
+   },
+   "Title": {
+    "v": "center"
+   },
+   "Publisher": {
+    "v": "center"
+   },
+   "P / S": {
+    "h": "center",
+    "v": "center"
+   },
+   "Link": {
+    "v": "center"
+   },
+   "Days since check": {
+    "v": "center"
+   },
+   "Link status": {
+    "h": "center",
+    "v": "center"
+   },
+   "HTTP": {
+    "h": "center",
+    "v": "center"
+   },
+   "Used in": {
+    "v": "center"
+   },
+   "Archived copy": {
+    "v": "center"
    }
   }
  },
@@ -1644,14 +2917,47 @@
   },
   "rows": {
    "4": 32.25,
-   "2026-11-24|Pipeline": 24.75,
-   "2026-11-24|Tracker": 33.75,
-   "2026-11-24|Sources": 33.75
+   "2026-11-24|Pipeline": 24.0,
+   "2026-11-24|Tracker": 30.0,
+   "2026-11-24|Sources": 30.0,
+   "2026-11-24|Grid & Policy": 30.0
   },
   "colstyle": {
    "Date": {
     "fmt": "dd\\ mmm\\ yyyy",
-    "h": "center"
+    "h": "center",
+    "v": "center"
+   },
+   "Area": {
+    "h": "center",
+    "v": "center"
+   },
+   "ID": {
+    "h": "center",
+    "v": "center"
+   },
+   "Item": {
+    "v": "center"
+   },
+   "What changed": {
+    "v": "center"
+   },
+   "Before": {
+    "v": "center"
+   },
+   "After": {
+    "v": "center"
+   },
+   "Why it matters": {
+    "v": "center"
+   },
+   "Source": {
+    "h": "center",
+    "v": "center"
+   },
+   "Logged by": {
+    "h": "center",
+    "v": "center"
    }
   }
  },
@@ -1668,16 +2974,44 @@
   },
   "rows": {
    "4": 32.25,
-   "G-04|Vantage MXP2 phase 1 live or delayed?": 24.75,
-   "G-06|Ethos client partner names per account": 24.75,
-   "G-09|Which Ethos clients are building in the UK": 24.75,
-   "G-01|MW for QTS Calatorao not confirmed": 24.75,
-   "G-03|EdgeConneX Heusenstamm permit status after Feb 2025": 24.75
+   "G-04|Vantage MXP2 phase 1 live or delayed?": 24.0,
+   "G-06|Ethos client partner names per account": 24.0,
+   "G-09|Which Ethos clients are building in the UK": 24.0,
+   "G-01|MW for QTS Calatorao not confirmed": 24.0,
+   "G-03|EdgeConneX Heusenstamm permit status after Feb 2025": 24.0,
+   "G-02|Design teams unknown for most pipeline projects": 30.0,
+   "G-05|Energinet pause end date and terms": 30.0,
+   "G-07|Capacity basis (IT vs grid) for several projects": 30.0,
+   "G-08|Italy: large (€1bn+) investment announcements not yet sourced": 30.0
   },
   "colstyle": {
    "Opened": {
     "fmt": "dd\\ mmm\\ yyyy",
-    "h": "center"
+    "h": "center",
+    "v": "center"
+   },
+   "ID": {
+    "v": "center"
+   },
+   "What we don't know yet": {
+    "v": "center"
+   },
+   "Why it matters": {
+    "v": "center"
+   },
+   "How to close it": {
+    "v": "center"
+   },
+   "Owner": {
+    "h": "center",
+    "v": "center"
+   },
+   "Status": {
+    "h": "center",
+    "v": "center"
+   },
+   "Answer (when closed)": {
+    "v": "center"
    }
   }
  },
@@ -1694,49 +3028,70 @@
   },
   "rows": {
    "4": 32.25,
-   "2026-11-24|P-ES-01": 45.75,
-   "2026-11-24|P-ES-03": 57.75,
-   "2026-11-24|P-ES-05": 45.75,
-   "2026-11-24|P-UK-01": 57.75,
-   "2026-11-24|P-UK-03": 33.75,
-   "2026-11-24|P-IE-01": 57.75,
-   "2026-11-24|P-IE-02": 45.75,
-   "2026-11-24|P-FR-01": 33.75,
-   "2026-11-24|P-SE-01": 24.75,
-   "2026-11-24|P-SE-02": 57.75,
-   "2026-11-24|MKT-ES": 33.75,
-   "2026-11-24|MKT-UK": 69.75,
-   "2026-11-24|MKT-DE": 33.75,
-   "2026-11-24|MKT-FR": 69.75,
-   "2026-11-24|MKT-IE": 24.75,
-   "2026-11-24|MKT-SE": 33.75,
-   "2026-11-24|MKT-IT": 33.75,
-   "2026-11-24|P-DE-05": 69.75,
-   "2026-11-24|P-IE-03": 45.75,
-   "2026-11-24|P-IT-02": 45.75,
-   "2026-11-24|P-ES-02": 69.75,
-   "2026-11-24|P-ES-04": 33.75,
-   "2026-11-24|P-ES-06": 57.75,
-   "2026-11-24|P-ES-07": 69.75,
-   "2026-11-24|P-ES-08": 45.75,
-   "2026-11-24|P-UK-02": 57.75,
-   "2026-11-24|P-DE-01": 57.75,
-   "2026-11-24|P-DE-02": 45.75,
-   "2026-11-24|P-DE-03": 45.75,
-   "2026-11-24|P-IT-01": 57.75,
-   "2026-11-24|P-DE-04": 57.75,
-   "2026-11-24|P-FR-02": 69.75,
-   "2026-11-24|P-FR-03": 45.75,
-   "2026-11-24|P-UK-04": 33.75,
-   "2026-11-24|P-DE-06": 33.75
+   "2026-11-24|P-ES-01": 42.0,
+   "2026-11-24|P-ES-03": 54.0,
+   "2026-11-24|P-ES-05": 42.0,
+   "2026-11-24|P-UK-01": 54.0,
+   "2026-11-24|P-UK-03": 30.0,
+   "2026-11-24|P-IE-01": 54.0,
+   "2026-11-24|P-IE-02": 42.0,
+   "2026-11-24|P-FR-01": 30.0,
+   "2026-11-24|P-SE-01": 24.0,
+   "2026-11-24|P-SE-02": 54.0,
+   "2026-11-24|MKT-ES": 30.0,
+   "2026-11-24|MKT-UK": 66.0,
+   "2026-11-24|MKT-DE": 30.0,
+   "2026-11-24|MKT-FR": 66.0,
+   "2026-11-24|MKT-IE": 24.0,
+   "2026-11-24|MKT-SE": 30.0,
+   "2026-11-24|MKT-IT": 30.0,
+   "2026-11-24|P-DE-05": 66.0,
+   "2026-11-24|P-IE-03": 42.0,
+   "2026-11-24|P-IT-02": 42.0,
+   "2026-11-24|P-ES-02": 66.0,
+   "2026-11-24|P-ES-04": 30.0,
+   "2026-11-24|P-ES-06": 54.0,
+   "2026-11-24|P-ES-07": 66.0,
+   "2026-11-24|P-ES-08": 42.0,
+   "2026-11-24|P-UK-02": 54.0,
+   "2026-11-24|P-DE-01": 54.0,
+   "2026-11-24|P-DE-02": 42.0,
+   "2026-11-24|P-DE-03": 42.0,
+   "2026-11-24|P-IT-01": 54.0,
+   "2026-11-24|P-DE-04": 54.0,
+   "2026-11-24|P-FR-02": 66.0,
+   "2026-11-24|P-FR-03": 42.0,
+   "2026-11-24|P-UK-04": 30.0,
+   "2026-11-24|P-DE-06": 30.0
   },
   "colstyle": {
    "Found": {
     "fmt": "dd\\ mmm\\ yyyy",
-    "h": "center"
+    "h": "center",
+    "v": "center"
    },
    "Published": {
-    "h": "center"
+    "h": "center",
+    "v": "center"
+   },
+   "ID": {
+    "h": "center",
+    "v": "center"
+   },
+   "Project / account": {
+    "v": "center"
+   },
+   "Headline and summary": {
+    "v": "center"
+   },
+   "What it means for Ethos": {
+    "v": "center"
+   },
+   "Publisher": {
+    "v": "center"
+   },
+   "Link": {
+    "v": "center"
    }
   }
  },
@@ -1768,26 +3123,61 @@
    }
   },
   "rows": {
-   "4": 36.0,
-   "1|2026-11-24": 45.75,
-   "2|2026-11-24": 45.75,
-   "5|2026-11-24": 57.75,
-   "3|2026-11-24": 45.75,
+   "4": 33.75,
+   "1|2026-11-24": 30.0,
+   "2|2026-11-24": 42.0,
+   "5|2026-11-24": 30.0,
+   "3|2026-11-24": 42.0,
    "None|2026-11-24": 24.75,
-   "4|2026-11-24": 45.75
+   "4|2026-11-24": 42.0
   },
   "colstyle": {
    "Found": {
     "fmt": "dd\\ mmm\\ yyyy",
-    "h": "center"
+    "h": "center",
+    "v": "center"
    },
    "Published": {
     "fmt": "dd\\ mmm\\ yyyy",
-    "h": "center"
+    "h": "center",
+    "v": "center"
    },
    "Deadline": {
     "fmt": "dd\\ mmm\\ yyyy",
-    "h": "center"
+    "h": "center",
+    "v": "center"
+   },
+   "Relevance to Ethos (1-5)": {
+    "h": "center",
+    "v": "center"
+   },
+   "Source": {
+    "h": "center",
+    "v": "center"
+   },
+   "Country": {
+    "h": "center",
+    "v": "center"
+   },
+   "Tender (English)": {
+    "v": "center"
+   },
+   "Why it matters": {
+    "v": "center"
+   },
+   "Buyer": {
+    "v": "center"
+   },
+   "Notice type": {
+    "h": "center",
+    "v": "center"
+   },
+   "Matched": {
+    "h": "center",
+    "v": "center"
+   },
+   "Link": {
+    "v": "center"
    }
   }
  },
@@ -1804,15 +3194,35 @@
   },
   "rows": {
    "4": 32.25,
-   "2026-11-24|QTS": 57.75
+   "2026-11-24|QTS": 54.0
   },
   "colstyle": {
    "Found": {
     "fmt": "dd\\ mmm\\ yyyy",
-    "h": "center"
+    "h": "center",
+    "v": "center"
    },
    "Posted": {
-    "h": "center"
+    "h": "center",
+    "v": "center"
+   },
+   "Company": {
+    "v": "center"
+   },
+   "Job title": {
+    "v": "center"
+   },
+   "Location": {
+    "v": "center"
+   },
+   "What it signals": {
+    "v": "center"
+   },
+   "Via": {
+    "v": "center"
+   },
+   "Link": {
+    "v": "center"
    }
   }
  },
@@ -1822,27 +3232,54 @@
    "Nov 25, 6:00 PM|Tech Women Talk": 33.75,
    "Nov 26, 9:00 AM|Data Dreamland - Conference": 33.75,
    "Mar 17|DATA festival": 24.75,
-   "Dec 2, 12:00 AM|Green IO Paris – From Dependency to Sustainability": 45.75,
+   "Dec 2, 12:00 AM|Green IO Paris – From Dependency to Sustainability": 30.0,
    "Dec 8, 12:00 AM|Data + AI World Tour Paris": 24.75,
    "Nov 30, 10:00 AM|Adopt AI": 24.75,
-   "May 25, 6:30 PM|Dublin Tech Summit": 45.75,
-   "May 25|Stockholm Tech Show": 45.75,
-   "May 19|AUTOMATIONSTEKNIK": 45.75,
+   "May 25, 6:30 PM|Dublin Tech Summit": 30.0,
+   "May 25|Stockholm Tech Show": 30.0,
+   "May 19|AUTOMATIONSTEKNIK": 30.0,
    "Apr 21, 9:00 AM|GITEX AI Mediterranean Italy": 24.75,
-   "May 27, 2:00 AM|AWS Summit": 24.75,
+   "May 27, 2:00 AM|AWS Summit": 30.0,
    "Jun 10|We Make Future": 24.75,
    "May 25|AI WEEK 2027": 24.75,
    "Nov 28|Expo Elettronica": 24.75,
-   "Dec 2, 8:30 AM|HPE Discover": 45.75,
-   "Mar 15|Open Sovereign AI + Cloud Day Europe": 45.75,
-   "May 6|Big Data & AI World Frankfurt": 45.75,
-   "Nov 25, 9:00 AM|Manufacturing & Supply Chain West Conference & Expo": 45.75,
-   "May 18|Data Innovation Summit: Dates, Venue and Who Should Go": 45.75,
-   "May 25|BIG DATA & AI EXPO": 45.75
+   "Dec 2, 8:30 AM|HPE Discover": 30.0,
+   "Mar 15|Open Sovereign AI + Cloud Day Europe": 30.0,
+   "May 6|Big Data & AI World Frankfurt": 30.0,
+   "Nov 25, 9:00 AM|Manufacturing & Supply Chain West Conference & Expo": 30.0,
+   "May 18|Data Innovation Summit: Dates, Venue and Who Should Go": 30.0,
+   "May 25|BIG DATA & AI EXPO": 30.0
   },
   "colstyle": {
    "When": {
-    "h": "center"
+    "h": "center",
+    "v": "center"
+   },
+   "Event": {
+    "v": "center"
+   },
+   "Where": {
+    "v": "center"
+   },
+   "Market": {
+    "h": "center",
+    "v": "center"
+   },
+   "Why go": {
+    "v": "center"
+   },
+   "Link": {
+    "v": "center"
+   }
+  },
+  "cols": {
+   "Why go": {
+    "w": 62.86,
+    "hidden": false
+   },
+   "Link": {
+    "w": 19.0,
+    "hidden": false
    }
   }
  },
@@ -1855,44 +3292,62 @@
    "References given": {
     "w": 57.14,
     "hidden": false
+   },
+   "Google AI Mode answer (unverified)": {
+    "w": 99.0,
+    "hidden": false
    }
   },
   "rows": {
    "4": 32.25,
    "2026-11-24|NEW": 57.75,
-   "2026-11-24|P-ES-05": 409.6,
-   "2026-11-24|P-IT-02": 402.75,
-   "2026-11-24|P-ES-04": 409.6,
-   "2026-11-24|P-ES-02": 402.75,
-   "2026-11-24|P-ES-08": 319.5,
-   "2026-11-24|P-DE-03": 331.5,
-   "2026-11-24|P-SE-02": 390.75,
-   "2026-11-24|P-ES-06": 390.75,
-   "2026-11-24|P-FR-02": 409.6,
-   "2026-11-24|P-UK-02": 409.6,
-   "2026-11-24|P-UK-03": 378.75,
-   "2026-11-24|P-DE-04": 409.6,
-   "2026-11-24|P-FR-03": 402.75,
-   "2026-11-24|P-SE-01": 295.5,
-   "2026-11-24|P-DE-02": 402.75,
-   "2026-11-24|P-FR-01": 409.6,
-   "2026-11-24|P-ES-01": 390.75,
-   "2026-11-24|P-IE-02": 355.5,
-   "2026-11-24|P-ES-03": 390.75,
-   "2026-11-24|P-IE-03": 390.75,
-   "2026-11-24|P-UK-01": 378.75,
-   "2026-11-24|P-DE-01": 390.75,
-   "2026-11-24|P-IE-01": 355.5,
-   "2026-11-24|P-IT-01": 409.6,
+   "2026-11-24|P-ES-05": 96.0,
+   "2026-11-24|P-IT-02": 96.0,
+   "2026-11-24|P-ES-04": 96.0,
+   "2026-11-24|P-ES-02": 96.0,
+   "2026-11-24|P-ES-08": 96.0,
+   "2026-11-24|P-DE-03": 96.0,
+   "2026-11-24|P-SE-02": 96.0,
+   "2026-11-24|P-ES-06": 96.0,
+   "2026-11-24|P-FR-02": 96.0,
+   "2026-11-24|P-UK-02": 96.0,
+   "2026-11-24|P-UK-03": 96.0,
+   "2026-11-24|P-DE-04": 96.0,
+   "2026-11-24|P-FR-03": 96.0,
+   "2026-11-24|P-SE-01": 96.0,
+   "2026-11-24|P-DE-02": 96.0,
+   "2026-11-24|P-FR-01": 96.0,
+   "2026-11-24|P-ES-01": 96.0,
+   "2026-11-24|P-IE-02": 96.0,
+   "2026-11-24|P-ES-03": 96.0,
+   "2026-11-24|P-IE-03": 96.0,
+   "2026-11-24|P-UK-01": 96.0,
+   "2026-11-24|P-DE-01": 96.0,
+   "2026-11-24|P-IE-01": 96.0,
+   "2026-11-24|P-IT-01": 96.0,
    "2026-11-24|P-ES-07": 409.6,
    "2026-11-24|P-DE-05": 409.6
   },
   "colstyle": {
    "Scanned": {
     "fmt": "dd\\ mmm\\ yyyy",
-    "h": "center"
+    "h": "center",
+    "v": "center"
+   },
+   "ID": {
+    "h": "center",
+    "v": "center"
+   },
+   "Project": {
+    "h": "center",
+    "v": "center"
+   },
+   "Review": {
+    "h": "center",
+    "v": "center"
    }
-  }
+  },
+  "freeze": "C8"
  },
  "Live Data": {
   "cols": {
@@ -1901,11 +3356,11 @@
     "hidden": false
    },
    "Gap to 90% (percentage points)": {
-    "w": 28.57,
+    "w": 22.43,
     "hidden": false
    },
    "Total generation (GWh)": {
-    "w": 21.29,
+    "w": 19.86,
     "hidden": false
    },
    "Renewable (GWh)": {
@@ -1913,40 +3368,44 @@
     "hidden": false
    },
    "Renewable share (%)": {
-    "w": 21.29,
+    "w": 19.0,
     "hidden": false
    },
    "Decree level (%)": {
     "w": 16.71,
     "hidden": false
+   },
+   "Fetched": {
+    "w": 24.43,
+    "hidden": false
    }
   },
   "rows": {
    "4": 45.75,
-   "2024-11|50.8": 18.75,
-   "2024-12|48": 18.75,
-   "2025-01|55.5": 18.75,
-   "2025-02|54": 18.75,
-   "2025-03|61.2": 18.75,
-   "2025-04|64.4": 18.75,
-   "2025-05|61.6": 18.75,
-   "2025-06|54.2": 18.75,
-   "2025-07|55.1": 18.75,
-   "2025-08|52.2": 18.75,
-   "2025-09|53.1": 18.75,
-   "2025-10|50": 18.75,
-   "2025-11|56.8": 18.75,
-   "2025-12|48.9": 18.75,
-   "2026-01|55.7": 18.75,
-   "2026-02|63.3": 18.75,
-   "2026-03|63.2": 18.75,
-   "2026-04|59.4": 18.75,
-   "2026-05|60": 18.75,
-   "2026-06|58.5": 18.75,
-   "2026-07|54.2": 18.75,
-   "2026-08|52.9": 18.75,
-   "2026-09|50.8": 18.75,
-   "2026-10|48.5": 18.75
+   "2024-11|50.8": 21.75,
+   "2024-12|48": 21.75,
+   "2025-01|55.5": 21.75,
+   "2025-02|54": 21.75,
+   "2025-03|61.2": 21.75,
+   "2025-04|64.4": 21.75,
+   "2025-05|61.6": 21.75,
+   "2025-06|54.2": 21.75,
+   "2025-07|55.1": 21.75,
+   "2025-08|52.2": 21.75,
+   "2025-09|53.1": 21.75,
+   "2025-10|50": 21.75,
+   "2025-11|56.8": 21.75,
+   "2025-12|48.9": 21.75,
+   "2026-01|55.7": 21.75,
+   "2026-02|63.3": 21.75,
+   "2026-03|63.2": 21.75,
+   "2026-04|59.4": 21.75,
+   "2026-05|60": 21.75,
+   "2026-06|58.5": 21.75,
+   "2026-07|54.2": 21.75,
+   "2026-08|52.9": 21.75,
+   "2026-09|50.8": 21.75,
+   "2026-10|48.5": 21.75
   },
   "cells": {
    "G4": {
@@ -1957,22 +3416,38 @@
   },
   "colstyle": {
    "Month": {
-    "h": "center"
+    "h": "center",
+    "v": "center"
    },
    "Renewable share (%)": {
-    "fmt": "0.0"
+    "fmt": "0.0",
+    "h": "center",
+    "v": "center"
    },
    "Gap to 90% (percentage points)": {
-    "fmt": "0.0"
+    "fmt": "0.0",
+    "v": "center"
    },
    "Renewable (GWh)": {
-    "fmt": "#,##0"
+    "fmt": "#,##0",
+    "h": "center",
+    "v": "center"
    },
    "Total generation (GWh)": {
-    "fmt": "#,##0"
+    "fmt": "#,##0",
+    "h": "center",
+    "v": "center"
    },
    "Fetched": {
-    "h": "center"
+    "h": "center",
+    "color": "595959",
+    "sz": 8.0,
+    "v": "center",
+    "wrap": null
+   },
+   "Decree level (%)": {
+    "h": "center",
+    "v": "center"
    }
   }
  },
@@ -1981,50 +3456,1277 @@
    "1": 27.75,
    "2": 18.0,
    "3": 9.75,
-   "7": 18.75,
-   "8": 30.0,
-   "9": 42.0,
-   "10": 30.0,
-   "11": 30.0,
-   "12": 18.75,
-   "13": 18.75,
-   "14": 30.0,
-   "15": 18.75,
-   "16": 30.0,
-   "17": 18.75,
-   "18": 18.75,
-   "19": 18.75,
-   "20": 18.75,
-   "21": 18.75,
-   "22": 18.75,
-   "23": 18.75,
-   "38": 18.75,
-   "39": 42.0,
-   "40": 30.0,
-   "41": 30.0,
-   "42": 30.0,
-   "43": 18.75,
+   "7": 24.0,
+   "8": 21.75,
+   "9": 21.75,
+   "10": 21.75,
+   "11": 21.75,
+   "12": 21.75,
+   "13": 21.75,
+   "14": 21.75,
+   "15": 21.75,
+   "16": 21.75,
+   "17": 21.75,
+   "18": 21.75,
+   "19": 21.75,
+   "20": 21.75,
+   "21": 21.75,
+   "22": 21.75,
+   "23": 21.75,
+   "38": 24.0,
+   "39": 49.5,
+   "40": 36.75,
+   "41": 36.75,
+   "42": 36.75,
+   "43": 23.25,
    "46": 18.75,
    "47": 18.75,
    "48": 18.75,
    "49": 18.75
+  },
+  "cols": {
+   "E": {
+    "w": 30.43,
+    "hidden": false
+   },
+   "F": {
+    "w": 36.14,
+    "hidden": false
+   },
+   "D": {
+    "w": 11.43,
+    "hidden": false
+   },
+   "G": {
+    "w": 36.14,
+    "hidden": false
+   },
+   "C": {
+    "w": 32.43,
+    "hidden": false
+   },
+   "H": {
+    "w": 36.14,
+    "hidden": false
+   }
+  },
+  "cells": {
+   "B5": {
+    "v": "center"
+   },
+   "B6": {
+    "v": "center"
+   },
+   "C6": {
+    "v": "center"
+   },
+   "D6": {
+    "v": "center"
+   },
+   "E6": {
+    "v": "center"
+   },
+   "F6": {
+    "v": "center"
+   },
+   "G6": {
+    "v": "center"
+   },
+   "H6": {
+    "v": "center"
+   },
+   "B8": {
+    "v": "center"
+   },
+   "C8": {
+    "v": "center"
+   },
+   "D8": {
+    "h": "center",
+    "v": "center"
+   },
+   "E8": {
+    "v": "center"
+   },
+   "B9": {
+    "v": "center"
+   },
+   "C9": {
+    "v": "center"
+   },
+   "D9": {
+    "h": "center",
+    "v": "center"
+   },
+   "E9": {
+    "v": "center"
+   },
+   "B10": {
+    "v": "center"
+   },
+   "C10": {
+    "v": "center"
+   },
+   "D10": {
+    "h": "center",
+    "v": "center"
+   },
+   "E10": {
+    "v": "center"
+   },
+   "B11": {
+    "v": "center"
+   },
+   "C11": {
+    "v": "center"
+   },
+   "D11": {
+    "h": "center",
+    "v": "center"
+   },
+   "E11": {
+    "v": "center"
+   },
+   "B12": {
+    "v": "center"
+   },
+   "C12": {
+    "v": "center"
+   },
+   "D12": {
+    "h": "center",
+    "v": "center"
+   },
+   "E12": {
+    "v": "center"
+   },
+   "B13": {
+    "v": "center"
+   },
+   "C13": {
+    "v": "center"
+   },
+   "D13": {
+    "h": "center",
+    "v": "center"
+   },
+   "E13": {
+    "v": "center"
+   },
+   "B14": {
+    "v": "center"
+   },
+   "C14": {
+    "v": "center"
+   },
+   "D14": {
+    "h": "center",
+    "v": "center"
+   },
+   "E14": {
+    "v": "center"
+   },
+   "B15": {
+    "v": "center"
+   },
+   "C15": {
+    "v": "center"
+   },
+   "D15": {
+    "h": "center",
+    "v": "center"
+   },
+   "E15": {
+    "v": "center"
+   },
+   "B16": {
+    "v": "center"
+   },
+   "C16": {
+    "v": "center"
+   },
+   "D16": {
+    "h": "center",
+    "v": "center"
+   },
+   "E16": {
+    "v": "center"
+   },
+   "B17": {
+    "v": "center"
+   },
+   "C17": {
+    "v": "center"
+   },
+   "D17": {
+    "h": "center",
+    "v": "center"
+   },
+   "E17": {
+    "v": "center"
+   },
+   "B18": {
+    "v": "center"
+   },
+   "C18": {
+    "v": "center"
+   },
+   "D18": {
+    "h": "center",
+    "v": "center"
+   },
+   "E18": {
+    "v": "center"
+   },
+   "B19": {
+    "v": "center"
+   },
+   "C19": {
+    "v": "center"
+   },
+   "D19": {
+    "h": "center",
+    "v": "center"
+   },
+   "E19": {
+    "v": "center"
+   },
+   "B20": {
+    "v": "center"
+   },
+   "C20": {
+    "v": "center"
+   },
+   "D20": {
+    "h": "center",
+    "v": "center"
+   },
+   "E20": {
+    "v": "center"
+   },
+   "B21": {
+    "v": "center"
+   },
+   "C21": {
+    "v": "center"
+   },
+   "D21": {
+    "h": "center",
+    "v": "center"
+   },
+   "E21": {
+    "v": "center"
+   },
+   "B22": {
+    "v": "center"
+   },
+   "C22": {
+    "v": "center"
+   },
+   "D22": {
+    "h": "center",
+    "v": "center"
+   },
+   "E22": {
+    "v": "center"
+   },
+   "B23": {
+    "v": "center"
+   },
+   "C23": {
+    "v": "center"
+   },
+   "D23": {
+    "h": "center",
+    "v": "center"
+   },
+   "E23": {
+    "v": "center"
+   },
+   "B24": {
+    "v": "center"
+   },
+   "C24": {
+    "v": "center"
+   },
+   "D24": {
+    "v": "center"
+   },
+   "E24": {
+    "v": "center"
+   },
+   "F24": {
+    "v": "center"
+   },
+   "G24": {
+    "v": "center"
+   },
+   "H24": {
+    "v": "center"
+   },
+   "B25": {
+    "v": "center"
+   },
+   "C25": {
+    "v": "center"
+   },
+   "D25": {
+    "v": "center"
+   },
+   "E25": {
+    "v": "center"
+   },
+   "F25": {
+    "v": "center"
+   },
+   "G25": {
+    "v": "center"
+   },
+   "H25": {
+    "v": "center"
+   },
+   "B26": {
+    "v": "center"
+   },
+   "C26": {
+    "v": "center"
+   },
+   "D26": {
+    "v": "center"
+   },
+   "E26": {
+    "v": "center"
+   },
+   "F26": {
+    "v": "center"
+   },
+   "G26": {
+    "v": "center"
+   },
+   "H26": {
+    "v": "center"
+   },
+   "B27": {
+    "v": "center"
+   },
+   "C27": {
+    "v": "center"
+   },
+   "D27": {
+    "v": "center"
+   },
+   "E27": {
+    "v": "center"
+   },
+   "F27": {
+    "v": "center"
+   },
+   "G27": {
+    "v": "center"
+   },
+   "H27": {
+    "v": "center"
+   },
+   "B28": {
+    "v": "center"
+   },
+   "C28": {
+    "v": "center"
+   },
+   "D28": {
+    "v": "center"
+   },
+   "E28": {
+    "v": "center"
+   },
+   "F28": {
+    "v": "center"
+   },
+   "G28": {
+    "v": "center"
+   },
+   "H28": {
+    "v": "center"
+   },
+   "B29": {
+    "v": "center"
+   },
+   "C29": {
+    "v": "center"
+   },
+   "D29": {
+    "v": "center"
+   },
+   "E29": {
+    "v": "center"
+   },
+   "F29": {
+    "v": "center"
+   },
+   "G29": {
+    "v": "center"
+   },
+   "H29": {
+    "v": "center"
+   },
+   "B30": {
+    "v": "center"
+   },
+   "C30": {
+    "v": "center"
+   },
+   "D30": {
+    "v": "center"
+   },
+   "E30": {
+    "v": "center"
+   },
+   "F30": {
+    "v": "center"
+   },
+   "G30": {
+    "v": "center"
+   },
+   "H30": {
+    "v": "center"
+   },
+   "B31": {
+    "v": "center"
+   },
+   "C31": {
+    "v": "center"
+   },
+   "D31": {
+    "v": "center"
+   },
+   "E31": {
+    "v": "center"
+   },
+   "F31": {
+    "v": "center"
+   },
+   "G31": {
+    "v": "center"
+   },
+   "H31": {
+    "v": "center"
+   },
+   "B32": {
+    "v": "center"
+   },
+   "C32": {
+    "h": "left",
+    "v": "center"
+   },
+   "D32": {
+    "v": "center"
+   },
+   "E32": {
+    "v": "center"
+   },
+   "F32": {
+    "v": "center"
+   },
+   "G32": {
+    "v": "center"
+   },
+   "H32": {
+    "v": "center"
+   },
+   "B33": {
+    "v": "center"
+   },
+   "C33": {
+    "h": "left",
+    "v": "center"
+   },
+   "D33": {
+    "v": "center"
+   },
+   "E33": {
+    "v": "center"
+   },
+   "F33": {
+    "v": "center"
+   },
+   "G33": {
+    "v": "center"
+   },
+   "H33": {
+    "v": "center"
+   },
+   "B34": {
+    "v": "center"
+   },
+   "C34": {
+    "v": "center"
+   },
+   "D34": {
+    "v": "center"
+   },
+   "E34": {
+    "v": "center"
+   },
+   "F34": {
+    "v": "center"
+   },
+   "G34": {
+    "v": "center"
+   },
+   "H34": {
+    "v": "center"
+   },
+   "B35": {
+    "v": "center"
+   },
+   "C35": {
+    "v": "center"
+   },
+   "D35": {
+    "v": "center"
+   },
+   "E35": {
+    "v": "center"
+   },
+   "F35": {
+    "v": "center"
+   },
+   "G35": {
+    "v": "center"
+   },
+   "H35": {
+    "v": "center"
+   },
+   "B36": {
+    "v": "center"
+   },
+   "B37": {
+    "v": "center"
+   },
+   "C37": {
+    "v": "center"
+   },
+   "D37": {
+    "v": "center"
+   },
+   "E37": {
+    "v": "center"
+   },
+   "F37": {
+    "v": "center"
+   },
+   "G37": {
+    "v": "center"
+   },
+   "H37": {
+    "v": "center"
+   },
+   "E38": {
+    "b": false,
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "fill": null,
+    "h": null,
+    "v": null,
+    "wrap": null
+   },
+   "H38": {
+    "b": true,
+    "sz": 10.0,
+    "color": "FFFFFF",
+    "name": "Arial",
+    "fill": "0F2537",
+    "h": "center",
+    "v": "center",
+    "wrap": true
+   },
+   "B39": {
+    "h": "center",
+    "v": "center"
+   },
+   "C39": {
+    "v": "center"
+   },
+   "D39": {
+    "v": "center"
+   },
+   "E39": {
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "F39": {
+    "v": "center"
+   },
+   "G39": {
+    "v": "center"
+   },
+   "H39": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "v": "center",
+    "wrap": true
+   },
+   "B40": {
+    "h": "center",
+    "v": "center"
+   },
+   "C40": {
+    "v": "center"
+   },
+   "D40": {
+    "v": "center"
+   },
+   "E40": {
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "F40": {
+    "v": "center"
+   },
+   "G40": {
+    "v": "center"
+   },
+   "H40": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "v": "center",
+    "wrap": true
+   },
+   "B41": {
+    "h": "center",
+    "v": "center"
+   },
+   "C41": {
+    "v": "center"
+   },
+   "D41": {
+    "v": "center"
+   },
+   "E41": {
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "F41": {
+    "v": "center"
+   },
+   "G41": {
+    "v": "center"
+   },
+   "H41": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "v": "center",
+    "wrap": true
+   },
+   "B42": {
+    "h": "center",
+    "v": "center"
+   },
+   "C42": {
+    "v": "center"
+   },
+   "D42": {
+    "v": "center"
+   },
+   "E42": {
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "F42": {
+    "v": "center"
+   },
+   "G42": {
+    "v": "center"
+   },
+   "H42": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "v": "center",
+    "wrap": true
+   },
+   "B43": {
+    "h": "center",
+    "v": "center"
+   },
+   "C43": {
+    "v": "center"
+   },
+   "D43": {
+    "v": "center"
+   },
+   "E43": {
+    "sz": 11.0,
+    "color": null,
+    "name": "Calibri",
+    "v": null,
+    "wrap": null
+   },
+   "F43": {
+    "v": "center"
+   },
+   "G43": {
+    "v": "center"
+   },
+   "H43": {
+    "sz": 10.0,
+    "color": "1A2530",
+    "name": "Arial",
+    "v": "center",
+    "wrap": true
+   },
+   "B44": {
+    "v": "center"
+   },
+   "C44": {
+    "v": "center"
+   },
+   "D44": {
+    "v": "center"
+   },
+   "E44": {
+    "v": "center"
+   },
+   "F44": {
+    "v": "center"
+   },
+   "G44": {
+    "v": "center"
+   },
+   "H44": {
+    "v": "center"
+   },
+   "B45": {
+    "v": "center"
+   },
+   "C45": {
+    "v": "center"
+   },
+   "D45": {
+    "v": "center"
+   },
+   "E45": {
+    "v": "center"
+   },
+   "F45": {
+    "v": "center"
+   },
+   "G45": {
+    "v": "center"
+   },
+   "H45": {
+    "v": "center"
+   },
+   "B46": {
+    "v": "center"
+   },
+   "C46": {
+    "v": "center"
+   },
+   "B47": {
+    "v": "center"
+   },
+   "C47": {
+    "v": "center"
+   },
+   "B48": {
+    "v": "center"
+   },
+   "C48": {
+    "v": "center"
+   },
+   "B49": {
+    "v": "center"
+   },
+   "C49": {
+    "v": "center"
+   }
+  },
+  "values": {
+   "F38": {
+    "from": "Policy",
+    "to": "Grid access"
+   },
+   "G38": {
+    "from": "Ethos fit",
+    "to": "Policy"
+   },
+   "H38": {
+    "from": "None",
+    "to": "Ethos fit"
+   },
+   "F39": {
+    "from": "Active incentives and simplified permits",
+    "to": "Fast, reserved connections available today"
+   },
+   "G39": {
+    "from": "Home or priority market with existing clients building there",
+    "to": "Active incentives and simplified permits"
+   },
+   "H39": {
+    "from": "None",
+    "to": "Home or priority market with existing clients building there"
+   },
+   "F40": {
+    "from": "Supportive, with recent simplification",
+    "to": "State-backed priority routes (fast-track, growth zones)"
+   },
+   "G40": {
+    "from": "Existing clients building there",
+    "to": "Supportive, with recent simplification"
+   },
+   "H40": {
+    "from": "None",
+    "to": "Existing clients building there"
+   },
+   "F41": {
+    "from": "Neutral or strict but stable and clear",
+    "to": "Possible but slow (multi-year queues)"
+   },
+   "G41": {
+    "from": "Target clients only; reachable from current offices",
+    "to": "Neutral or strict but stable and clear"
+   },
+   "H41": {
+    "from": "None",
+    "to": "Target clients only; reachable from current offices"
+   },
+   "F42": {
+    "from": "New costly rules or legal uncertainty",
+    "to": "Heavily restricted: must bring own power or accept strict caps"
+   },
+   "G42": {
+    "from": "Weak service match or hard to reach",
+    "to": "New costly rules or legal uncertainty"
+   },
+   "H42": {
+    "from": "None",
+    "to": "Weak service match or hard to reach"
+   },
+   "F43": {
+    "from": "Moratorium or hostile rules",
+    "to": "New connections paused or refused"
+   },
+   "G43": {
+    "from": "No realistic route in",
+    "to": "Moratorium or hostile rules"
+   },
+   "H43": {
+    "from": "None",
+    "to": "No realistic route in"
+   }
   }
  },
  "Glossary": {
   "rows": {
    "1": 27.75,
    "2": 18.0,
-   "3": 9.75
+   "3": 9.75,
+   "8": 28.5,
+   "29": 29.25,
+   "30": 30.0,
+   "32": 28.5,
+   "48": 19.5,
+   "63": 24.75
   }
  },
  "Read me": {
-  "rows": {},
+  "rows": {
+   "5": 30.0,
+   "6": 30.0,
+   "7": 30.0,
+   "9": 21.0,
+   "10": 21.0,
+   "11": 21.0,
+   "12": 21.0,
+   "13": 21.0,
+   "14": 21.0,
+   "15": 30.0,
+   "16": 21.0,
+   "17": 21.0,
+   "18": 21.0,
+   "19": 21.0,
+   "20": 21.0,
+   "21": 21.0,
+   "22": 21.0,
+   "23": 21.0,
+   "24": 21.0,
+   "25": 21.0,
+   "26": 21.0,
+   "27": 30.0,
+   "28": 21.0,
+   "30": 21.0,
+   "31": 30.0,
+   "32": 30.0,
+   "33": 30.0,
+   "34": 30.0,
+   "35": 30.0,
+   "37": 21.0,
+   "38": 21.0,
+   "39": 21.0,
+   "40": 30.0,
+   "41": 21.0,
+   "43": 21.0,
+   "44": 30.0,
+   "45": 42.0,
+   "46": 21.0,
+   "47": 21.0,
+   "48": 21.0,
+   "49": 21.0,
+   "50": 21.0,
+   "51": 30.0,
+   "52": 30.0,
+   "53": 21.0,
+   "55": 21.0,
+   "56": 21.0,
+   "57": 21.0,
+   "58": 21.0,
+   "59": 21.0,
+   "60": 21.0,
+   "61": 21.0,
+   "62": 21.0,
+   "63": 21.0,
+   "64": 21.0,
+   "65": 21.0,
+   "66": 21.0,
+   "67": 21.0
+  },
   "cells": {
    "B57": {
-    "color": "0F2537"
+    "color": "0F2537",
+    "v": "center"
    },
    "B59": {
-    "color": "0F2537"
+    "color": "0F2537",
+    "v": "center"
+   },
+   "B5": {
+    "v": "center"
+   },
+   "C5": {
+    "v": "center"
+   },
+   "B6": {
+    "v": "center"
+   },
+   "C6": {
+    "v": "center"
+   },
+   "B7": {
+    "v": "center"
+   },
+   "C7": {
+    "v": "center"
+   },
+   "B10": {
+    "v": "center"
+   },
+   "C10": {
+    "v": "center"
+   },
+   "B11": {
+    "v": "center"
+   },
+   "C11": {
+    "v": "center"
+   },
+   "B12": {
+    "v": "center"
+   },
+   "C12": {
+    "v": "center"
+   },
+   "B13": {
+    "v": "center"
+   },
+   "C13": {
+    "v": "center"
+   },
+   "B14": {
+    "v": "center"
+   },
+   "C14": {
+    "v": "center"
+   },
+   "B15": {
+    "v": "center"
+   },
+   "C15": {
+    "v": "center"
+   },
+   "B16": {
+    "v": "center"
+   },
+   "C16": {
+    "v": "center"
+   },
+   "B17": {
+    "v": "center"
+   },
+   "C17": {
+    "v": "center"
+   },
+   "B18": {
+    "v": "center"
+   },
+   "C18": {
+    "v": "center"
+   },
+   "B19": {
+    "v": "center"
+   },
+   "C19": {
+    "v": "center"
+   },
+   "B20": {
+    "v": "center"
+   },
+   "C20": {
+    "v": "center"
+   },
+   "B21": {
+    "v": "center"
+   },
+   "C21": {
+    "v": "center"
+   },
+   "B22": {
+    "v": "center"
+   },
+   "C22": {
+    "v": "center"
+   },
+   "B23": {
+    "v": "center"
+   },
+   "C23": {
+    "v": "center"
+   },
+   "B24": {
+    "v": "center"
+   },
+   "C24": {
+    "v": "center"
+   },
+   "B25": {
+    "v": "center"
+   },
+   "C25": {
+    "v": "center"
+   },
+   "B26": {
+    "v": "center"
+   },
+   "C26": {
+    "v": "center"
+   },
+   "B27": {
+    "v": "center"
+   },
+   "C27": {
+    "v": "center"
+   },
+   "B28": {
+    "v": "center"
+   },
+   "C28": {
+    "v": "center"
+   },
+   "B31": {
+    "v": "center"
+   },
+   "C31": {
+    "v": "center"
+   },
+   "B32": {
+    "v": "center"
+   },
+   "C32": {
+    "v": "center"
+   },
+   "B33": {
+    "v": "center"
+   },
+   "C33": {
+    "v": "center"
+   },
+   "B34": {
+    "v": "center"
+   },
+   "C34": {
+    "v": "center"
+   },
+   "B35": {
+    "v": "center"
+   },
+   "C35": {
+    "v": "center"
+   },
+   "B38": {
+    "v": "center"
+   },
+   "C38": {
+    "v": "center"
+   },
+   "B39": {
+    "v": "center"
+   },
+   "C39": {
+    "v": "center"
+   },
+   "B40": {
+    "v": "center"
+   },
+   "C40": {
+    "v": "center"
+   },
+   "B41": {
+    "v": "center"
+   },
+   "C41": {
+    "v": "center"
+   },
+   "B44": {
+    "v": "center"
+   },
+   "C44": {
+    "v": "center"
+   },
+   "B45": {
+    "v": "center"
+   },
+   "C45": {
+    "v": "center"
+   },
+   "B46": {
+    "v": "center"
+   },
+   "C46": {
+    "v": "center"
+   },
+   "B47": {
+    "v": "center"
+   },
+   "C47": {
+    "v": "center"
+   },
+   "B48": {
+    "v": "center"
+   },
+   "C48": {
+    "v": "center"
+   },
+   "B49": {
+    "v": "center"
+   },
+   "C49": {
+    "v": "center"
+   },
+   "B50": {
+    "v": "center"
+   },
+   "C50": {
+    "v": "center"
+   },
+   "B51": {
+    "v": "center"
+   },
+   "C51": {
+    "v": "center"
+   },
+   "B52": {
+    "v": "center"
+   },
+   "C52": {
+    "v": "center"
+   },
+   "B53": {
+    "v": "center"
+   },
+   "C53": {
+    "v": "center"
+   },
+   "B56": {
+    "v": "center"
+   },
+   "C56": {
+    "v": "center"
+   },
+   "C57": {
+    "v": "center"
+   },
+   "B58": {
+    "v": "center"
+   },
+   "C58": {
+    "v": "center"
+   },
+   "C59": {
+    "v": "center"
+   },
+   "B60": {
+    "v": "center"
+   },
+   "C60": {
+    "v": "center"
+   },
+   "B61": {
+    "v": "center"
+   },
+   "C61": {
+    "v": "center"
+   },
+   "B62": {
+    "v": "center"
+   },
+   "C62": {
+    "v": "center"
+   },
+   "B63": {
+    "v": "center"
+   },
+   "C63": {
+    "v": "center"
+   },
+   "B64": {
+    "v": "center"
+   },
+   "C64": {
+    "v": "center"
+   },
+   "B65": {
+    "v": "center"
+   },
+   "C65": {
+    "v": "center"
+   },
+   "B66": {
+    "v": "center"
+   },
+   "C66": {
+    "v": "center"
+   },
+   "B67": {
+    "v": "center"
+   },
+   "C67": {
+    "v": "center"
    }
   }
  }
