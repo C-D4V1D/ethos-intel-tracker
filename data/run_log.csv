@@ -337,3 +337,15 @@ run_at,step,status,detail,credits_used
 2026-11-26 17:48 UTC,detect_changes,ok,0 changes logged,0
 2026-11-26 17:48 UTC,build_tracker,failed,AttributeError: 'MergedCell' object attribute 'value' is read-only,0
 2026-11-26 17:48 UTC,run_all,done,workbook rebuilt in output/,0
+2026-11-27 17:26 UTC,run_all,start,light,0
+2026-11-27 17:26 UTC,sync_from_excel,ok,0 edited cells and 0 new rows taken from onedrive_copy.xlsx,0
+2026-11-27 17:26 UTC,owner_layout,ok,1928 layout changes kept from the OneDrive copy,0
+2026-11-27 17:26 UTC,onedrive,ok,pulled edits from OneDrive copy (0 changes taken),0
+2026-11-27 17:26 UTC,sync_from_excel,skipped,Ethos_European_DC_Intelligence_Tracker.xlsx not found,0
+2026-11-27 17:27 UTC,news_watch,ok,"RSS: 29 queries ({'rss': 29}), 8 new articles, 0 failed",0
+2026-11-27 17:27 UTC,tender_watch,ok,"TED: 81 matches, 0 new (API total 95); FTS: 3 matches, 0 new",0
+2026-11-27 17:29 UTC,enrich,ok,news summarised 8; tenders triaged 0; events rated 0; source dates 0; accounts noted 10; briefing written,0
+2026-11-27 17:32 UTC,next_actions,ok,29 suggestions; Gemini rewrote 25,0
+2026-11-27 17:32 UTC,detect_changes,ok,0 changes logged,0
+2026-11-27 17:32 UTC,build_tracker,failed,AttributeError: 'MergedCell' object attribute 'value' is read-only,0
+2026-11-27 17:32 UTC,run_all,done,workbook rebuilt in output/,0
